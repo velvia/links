@@ -31,3 +31,10 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 * [SBuild Example](https://github.com/lefou/domino/blob/master/SBuild.scala)
 * [SBuild Home Page](http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Wiki)
+
+
+## Distributed Systems
+
+### Indexing
+
+* [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
