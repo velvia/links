@@ -5,6 +5,8 @@ Just a bunch of useful links
 
 ## Scala
 
+* [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
+
 ### Serialization
 
 * [scala-pickling](https://github.com/scala/pickling) might become part of Scala standard library.  Really neat project.  Also see the [slides](https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala).
@@ -26,6 +28,8 @@ Just a bunch of useful links
 ### Build, Tooling
 
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
+* [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
+* [Linter](https://github.com/jorgeortiz85/linter) - Scala linter compiler plugin
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
 
