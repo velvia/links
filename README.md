@@ -25,6 +25,8 @@ Just a bunch of useful links
 
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 
+* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
+
 ### Build, Tooling
 
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
