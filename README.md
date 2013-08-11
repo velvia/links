@@ -28,6 +28,8 @@ Just a bunch of useful links
 
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 
+* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+
 ### Build, Tooling
 
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
@@ -45,3 +47,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ### Indexing
 
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
+
+## Other Random Stuff
+
+* [Clay](https://github.com/jckarter/clay) - an interesting LLVM/C-based language with flexible static types
