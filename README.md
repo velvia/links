@@ -24,6 +24,8 @@ Just a bunch of useful links
 
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
 
+* [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) - IPython for Scala.  Including D3 Plots.  Would be pretty kickass integrated with Spark.
+
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
