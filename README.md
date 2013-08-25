@@ -18,6 +18,16 @@ Just a bunch of useful links
 
 * [Retry for futures](https://github.com/softprops/retry)
 
+## Big Data Processing
+
+* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
+
+* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
+
+* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+
+* [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
+
 ### Web / REST / General
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
@@ -27,10 +37,6 @@ Just a bunch of useful links
 * [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) - IPython for Scala.  Including D3 Plots.  Would be pretty kickass integrated with Spark.
 
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
-
-* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
-
-* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 
 ### Build, Tooling
 
