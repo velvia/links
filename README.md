@@ -17,6 +17,8 @@ Just a bunch of useful links
 ### Concurrency
 
 * [Retry for futures](https://github.com/softprops/retry)
+* [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
+* [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 
 ## Big Data Processing
 
@@ -43,6 +45,7 @@ Just a bunch of useful links
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
 * [Linter](https://github.com/jorgeortiz85/linter) - Scala linter compiler plugin
+* [scala type debugger](http://lampwww.epfl.ch/~plocinic/type-debugger-tutorial/tutorial.html) - Still in alpha, but a great UI to explore how scalac type system works, and debug compilation problems in your code
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
 
