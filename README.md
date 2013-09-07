@@ -61,4 +61,5 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Other Random Stuff
 
+* [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Clay](https://github.com/jckarter/clay) - an interesting LLVM/C-based language with flexible static types
