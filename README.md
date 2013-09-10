@@ -40,6 +40,7 @@ Just a bunch of useful links
 
 ### Build, Tooling
 
+* [SBT Shell Prompt](https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192) with Git and project name :) (SBT 0.13 only)
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
 * [Linter](https://github.com/jorgeortiz85/linter) - Scala linter compiler plugin
