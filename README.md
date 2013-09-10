@@ -33,12 +33,10 @@ Just a bunch of useful links
 ### Web / REST / General
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
-
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
-
 * [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) - IPython for Scala.  Including D3 Plots.  Would be pretty kickass integrated with Spark.
-
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
+* [Heterogeneous maps in Scala](http://stackoverflow.com/questions/17684023/different-types-in-map-scala/18287852#18287852)
 
 ### Build, Tooling
 
