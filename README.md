@@ -52,6 +52,9 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [SBuild Example](https://github.com/lefou/domino/blob/master/SBuild.scala)
 * [SBuild Home Page](http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Wiki)
 
+### JVM Other
+
+* [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 
 ## Distributed Systems
 
