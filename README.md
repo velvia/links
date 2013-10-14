@@ -5,6 +5,7 @@ Just a bunch of useful links
 
 ## Scala
 
+* [Scala Design Patterns](http://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 
@@ -38,6 +39,7 @@ Just a bunch of useful links
 * [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) - IPython for Scala.  Including D3 Plots.  Would be pretty kickass integrated with Spark.
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 * [Heterogeneous maps in Scala](http://stackoverflow.com/questions/17684023/different-types-in-map-scala/18287852#18287852)
+* [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
 
 ### Build, Tooling
 
@@ -64,5 +66,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Other Random Stuff
 
+* [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
+* [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Clay](https://github.com/jckarter/clay) - an interesting LLVM/C-based language with flexible static types
