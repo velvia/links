@@ -57,6 +57,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ### JVM Other
 
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
+* [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
 
 ## Distributed Systems
 
