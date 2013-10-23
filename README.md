@@ -24,13 +24,12 @@ Just a bunch of useful links
 
 ## Big Data Processing
 
-* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
-
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
-
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+* [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
 
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
+* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
 ### Web / REST / General
 
