@@ -48,7 +48,7 @@ Just a bunch of useful links
 * [SBT Shell Prompt](https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192) with Git and project name :) (SBT 0.13 only)
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
-* [Linter](https://github.com/jorgeortiz85/linter) - Scala linter compiler plugin
+* [Linter](https://github.com/HairyFotr/linter) - Scala linter compiler plugin
 * [scala type debugger](http://lampwww.epfl.ch/~plocinic/type-debugger-tutorial/tutorial.html) - Still in alpha, but a great UI to explore how scalac type system works, and debug compilation problems in your code
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
