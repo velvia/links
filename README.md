@@ -8,6 +8,8 @@ Just a bunch of useful links
 * [Scala Design Patterns](http://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
+* [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
+* [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 
 ### Serialization
 
@@ -46,9 +48,10 @@ Just a bunch of useful links
 ### Build, Tooling
 
 * [SBT Shell Prompt](https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192) with Git and project name :) (SBT 0.13 only)
+* [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
-* [Linter](https://github.com/jorgeortiz85/linter) - Scala linter compiler plugin
+* [Linter](https://github.com/HairyFotr/linter) - Scala linter compiler plugin
 * [scala type debugger](http://lampwww.epfl.ch/~plocinic/type-debugger-tutorial/tutorial.html) - Still in alpha, but a great UI to explore how scalac type system works, and debug compilation problems in your code
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
