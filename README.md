@@ -17,12 +17,15 @@ Just a bunch of useful links
     * TODO: make msgpack4s implement the Pickling interface
 * [jsonpickler](https://github.com/teigen/jsonpicklers/blob/master/src/test/scala/calendar/CalendarList.scala)
 
-### Concurrency
+### Concurrency, Actors
 
 * [Retry for futures](https://github.com/softprops/retry)
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
+
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
+* [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
+* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788) - from the great Helena Edelson
 
 ## Big Data Processing
 
@@ -32,6 +35,7 @@ Just a bunch of useful links
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
+* [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
 
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
@@ -46,6 +50,8 @@ Just a bunch of useful links
 * [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
 
 ### Build, Tooling
+
+* [Run Scala scripts with dependencies](http://www.scala-sbt.org/release/docs/Detailed-Topics/Scripts) - ie you don't need a project file
 
 * [SBT Shell Prompt](https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192) with Git and project name :) (SBT 0.13 only)
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
