@@ -22,10 +22,12 @@ Just a bunch of useful links
 * [Retry for futures](https://github.com/softprops/retry)
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
+* [scala-atomic](https://github.com/alexandru/scala-atomic) - a nice set of wrappers around j.u.c.Atomic\*.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788) - from the great Helena Edelson
+* [Monitoring Akka](http://www.cakesolutions.net/teamblogs/2013/11/01/monitoring-akka/) - using AspectJ, they instrument the mailboxes etc.  Interesting alternative.
 
 ## Big Data Processing
 
