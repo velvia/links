@@ -7,6 +7,7 @@ Just a bunch of useful links
 
 * [Scala Design Patterns](http://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
+* [Spark, Parquet, and Avro](http://zenfractal.com/2013/08/21/a-powerful-big-data-trio/) - a powerful big data trio
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
