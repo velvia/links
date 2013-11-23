@@ -32,6 +32,7 @@ Just a bunch of useful links
 
 ## Big Data Processing
 
+* Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
 
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
@@ -41,6 +42,8 @@ Just a bunch of useful links
 
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
+
+* [Dwarf](http://www.cs.umd.edu/~nick/projects/Dwarf.pdf) - a brilliant algorithm for compressing OLAP data cubes. Also see this [Ruby implementation](https://github.com/activewarehouse/activewarehouse).
 
 ## Big Data Storage
 
