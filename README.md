@@ -36,6 +36,7 @@ Just a bunch of useful links
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
 
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
+* [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
@@ -43,7 +44,6 @@ Just a bunch of useful links
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
-* [Dwarf](http://www.cs.umd.edu/~nick/projects/Dwarf.pdf) - a brilliant algorithm for compressing OLAP data cubes. Also see this [Ruby implementation](https://github.com/activewarehouse/activewarehouse).
 
 ## Big Data Storage
 
@@ -80,15 +80,17 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
 
-## Distributed Systems
+## Databases
 
 ### Indexing
 
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
+* [Dwarf](http://www.cs.umd.edu/~nick/projects/Dwarf.pdf) - a brilliant algorithm for compressing OLAP data cubes. Also see this [Ruby implementation](https://github.com/activewarehouse/activewarehouse).
 
 ## Other Random Stuff
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
+* [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
 * [Clay](https://github.com/jckarter/clay) - an interesting LLVM/C-based language with flexible static types
