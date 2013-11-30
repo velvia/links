@@ -94,10 +94,14 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
 * [Dwarf](http://www.cs.umd.edu/~nick/projects/Dwarf.pdf) - a brilliant algorithm for compressing OLAP data cubes. Also see this [Ruby implementation](https://github.com/activewarehouse/activewarehouse).
 
+### ML and Data Science
+
+* [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
+
 ## Other Random Stuff
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
-* [Bret Victor](http://worrydream.com) - A set of excellent essays, visualizations, etc.
+* [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
