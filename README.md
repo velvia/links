@@ -7,10 +7,10 @@ Just a bunch of useful links
 
 * [Scala Design Patterns](http://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
-* [Spark, Parquet, and Avro](http://zenfractal.com/2013/08/21/a-powerful-big-data-trio/) - a powerful big data trio
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
+* [Scala School 2](https://github.com/twitter/scala_school2) - Twitter's next generation interactive scala tutorial
 
 ### Serialization
 
@@ -39,6 +39,7 @@ Just a bunch of useful links
 
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
+* [Spark, Parquet, and Avro](http://zenfractal.com/2013/08/21/a-powerful-big-data-trio/) - a powerful big data trio
 
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
@@ -84,6 +85,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
+* [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central
 
 ## Databases
 
@@ -98,4 +100,4 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
-* [Clay](https://github.com/jckarter/clay) - an interesting LLVM/C-based language with flexible static types
+* [Bret Victor](http://worrydream.com) - A set of excellent essays, visualizations, etc.
