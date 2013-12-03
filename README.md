@@ -51,7 +51,7 @@ Just a bunch of useful links
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
 
-## Big Data Storage
+### Big Data Storage
 
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
 * [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
@@ -64,6 +64,8 @@ Just a bunch of useful links
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 * [Heterogeneous maps in Scala](http://stackoverflow.com/questions/17684023/different-types-in-map-scala/18287852#18287852)
 * [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
+
+* [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
 
 ### Build, Tooling
 
