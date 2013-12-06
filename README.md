@@ -91,10 +91,11 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Databases
 
-### Indexing
+### Indexing and OLAP
 
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
 * [Dwarf](http://www.cs.umd.edu/~nick/projects/Dwarf.pdf) - a brilliant algorithm for compressing OLAP data cubes. Also see this [Ruby implementation](https://github.com/activewarehouse/activewarehouse).
+* [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
 
 ### ML and Data Science
 
