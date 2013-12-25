@@ -11,6 +11,7 @@ Just a bunch of useful links
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 * [Scala School 2](https://github.com/twitter/scala_school2) - Twitter's next generation interactive scala tutorial
+* [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 
 ### Serialization
 
@@ -24,6 +25,8 @@ Just a bunch of useful links
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 * [scala-atomic](https://github.com/alexandru/scala-atomic) - a nice set of wrappers around j.u.c.Atomic\*.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
+* [Future Perfect](https://github.com/wix/future-perfect) - a set of useful wrappers around Twitter Futures esp retry and other things.  
+    * Note that the latest Spark code has a cancellable version of Scala's Futures as well, and the Coursera Reactive Programming class has a solution as well
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
@@ -68,6 +71,7 @@ Just a bunch of useful links
 * [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
 
 * [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
+* [ScalaUtils](http://www.scalautils.org/) - ===, !== with tolerance for floats, an OR operator for types for easy validation (`Int Or One[ErrorMessage]`)
 
 ### Build, Tooling
 
