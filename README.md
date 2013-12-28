@@ -12,12 +12,12 @@ Just a bunch of useful links
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 * [Scala School 2](https://github.com/twitter/scala_school2) - Twitter's next generation interactive scala tutorial
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
+* [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 
 ### Serialization
 
 * [scala-pickling](https://github.com/scala/pickling) might become part of Scala standard library.  Really neat project.  Also see the [slides](https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala).
     * TODO: make msgpack4s implement the Pickling interface
-* [jsonpickler](https://github.com/teigen/jsonpicklers/blob/master/src/test/scala/calendar/CalendarList.scala)
 
 ### Concurrency, Actors
 
@@ -44,17 +44,21 @@ Just a bunch of useful links
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
 * [Spark, Parquet, and Avro](http://zenfractal.com/2013/08/21/a-powerful-big-data-trio/) - a powerful big data trio
 
-* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
-* [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
-* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
+* [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
-* [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
 
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
+### Collections, Numeric Processing, Fast Loops
+
+* [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
+* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
+* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+* [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
+* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 
 ### Big Data Storage
 
@@ -66,9 +70,8 @@ Just a bunch of useful links
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
 * [IScala](https://github.com/mattpap/IScala) - Scala backend for IPython.  Looks promising.  There is also [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) but it's more of a research project.
-* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
-* [Heterogeneous maps in Scala](http://stackoverflow.com/questions/17684023/different-types-in-map-scala/18287852#18287852)
 * [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
+* [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 
 * [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
 * [ScalaUtils](http://www.scalautils.org/) - ===, !== with tolerance for floats, an OR operator for types for easy validation (`Int Or One[ErrorMessage]`)
