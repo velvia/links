@@ -117,3 +117,4 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
+* [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
