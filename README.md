@@ -110,6 +110,14 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
 
+## Distributed Systems
+
+* [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
+
+## Sublime Text
+
+I love Sublime and use it for everything, even Scala!  Going to put my Sublime stuff in a [separate page](sublime.md).
+
 ## Other Random Stuff
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
