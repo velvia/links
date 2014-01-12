@@ -1,6 +1,9 @@
 ## Sublime Text packages
 
-TBD.
+* Git - essential
+* DocBlockr - very useful for JavaDoc/ScalaDoc/etc.
+* SublimeREPL
+* Modific - highlights lines changed since last commit
 
 ## Sublime Text config
 
