@@ -33,6 +33,8 @@ Just a bunch of useful links
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788) - from the great Helena Edelson
 * [Monitoring Akka](http://www.cakesolutions.net/teamblogs/2013/11/01/monitoring-akka/) - using AspectJ, they instrument the mailboxes etc.  Interesting alternative.
 
+* [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
+
 ### Async Database Libs
 
 * [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
@@ -41,8 +43,8 @@ Just a bunch of useful links
 ## Big Data Processing
 
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
+* Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
-* [Spark, Parquet, and Avro](http://zenfractal.com/2013/08/21/a-powerful-big-data-trio/) - a powerful big data trio
 
 * [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
