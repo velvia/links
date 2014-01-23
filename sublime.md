@@ -28,6 +28,13 @@
       ]
     }
 
+## Favorite Shortcuts
+
+Some of these are SublimeText3 only.
+
+ * Jump To Definition - Opt+Cmd+Down  -- if you create a project (sbt-sublime) then you can jump into library sources too :)
+*  Jump Back / Jump Forward - Cmd+-, Cmd+Shift+- - like the back or forward button in browser, super useful in conjunction with above
+
 ## Sublime Text config
 
     {
