@@ -86,6 +86,13 @@ Some of these are SublimeText3 only.
       "use_tab_stops": false
     }
 
+### Key bindings - user
+
+    [
+        { "keys": ["super+alt+s"], "command": "sort_lines", "args": {"case_sensitive": false} },
+        { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" }
+    ]
+
 ## Blogs
 
 TBD.
