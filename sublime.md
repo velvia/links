@@ -33,7 +33,8 @@
 Some of these are SublimeText3 only.
 
 * Jump To Definition - Opt+Cmd+Down  -- if you create a project (sbt-sublime) then you can jump into library sources too :)
-*  Jump Back / Jump Forward - Cmd+-, Cmd+Shift+- - like the back or forward button in browser, super useful in conjunction with above
+* Jump Back / Jump Forward - Cmd+-, Cmd+Shift+- - like the back or forward button in browser, super useful in conjunction with above
+* Reveal in sidebar - Cmd+shift+r  -- reveal current file in sidebar
 
 Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.github.com/artero/1236170).
 
