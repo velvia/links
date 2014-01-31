@@ -28,6 +28,10 @@
       ]
     }
 
+Other useful packages:
+
+* [Text Pastry](https://github.com/duydao/Text-Pastry/blob/master/README.md)
+
 ## Favorite Shortcuts
 
 Some of these are SublimeText3 only.
