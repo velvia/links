@@ -9,6 +9,7 @@
 * Highlight - lets you export selected region as RDF text (w syntax highlighting) for Keynote presos
 * SyncedSidebar - reveals current file in sidebar file explorer, great for big projects
 * BracketHighlighter - shows current brackets, bracketing utils
+* [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * SublimeREPL
 
     {
@@ -21,6 +22,7 @@
         "Highlight",
         "iOpener",
         "Markdown Preview",
+        "MaxPane",
         "Modific",
         "PlainTasks",
         "SublimeREPL",
@@ -31,6 +33,7 @@
 Other useful packages:
 
 * [Text Pastry](https://github.com/duydao/Text-Pastry/blob/master/README.md)
+* [OmniDocs](https://sublime.wbond.net/packages/OmniDocs) - potentially useful doc lookup for languages, but Scala/Scalex support is quite lacking right now.
 
 ## Favorite Shortcuts
 
