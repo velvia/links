@@ -14,10 +14,13 @@ Just a bunch of useful links
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 
+* Important [compiler flags](https://gist.github.com/tpolecat/8812750)
+
 ### Serialization
 
 * [scala-pickling](https://github.com/scala/pickling) might become part of Scala standard library.  Really neat project.  Also see the [slides](https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala).
     * TODO: make msgpack4s implement the Pickling interface
+* [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 
 ### Concurrency, Actors
 
@@ -25,7 +28,7 @@ Just a bunch of useful links
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 * [scala-atomic](https://github.com/alexandru/scala-atomic) - a nice set of wrappers around j.u.c.Atomic\*.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
-* [Future Perfect](https://github.com/wix/future-perfect) - a set of useful wrappers around Twitter Futures esp retry and other things.  
+* [Future Perfect](https://github.com/wix/future-perfect) - a set of useful wrappers around Twitter Futures esp retry and other things.
     * Note that the latest Spark code has a cancellable version of Scala's Futures as well, and the Coursera Reactive Programming class has a solution as well
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime

@@ -79,6 +79,7 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
       ],
       "font_size": 12,
       "highlight_line": true,
+      "highlight_modified_tabs": true,
       "ignored_packages":
       [
         "Vintage"
@@ -103,6 +104,7 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
         { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" }
     ]
 
-## Blogs
+## Blogs and Articles
 
-TBD.
+* A collection of [favorite enhancements](http://webdesign.tutsplus.com/articles/simple-visual-enhancements-for-better-coding-in-sublime-text--webdesign-18052)
+
