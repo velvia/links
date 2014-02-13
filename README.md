@@ -21,6 +21,8 @@ Just a bunch of useful links
 * [scala-pickling](https://github.com/scala/pickling) might become part of Scala standard library.  Really neat project.  Also see the [slides](https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala).
     * TODO: make msgpack4s implement the Pickling interface
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
+* [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
+* Akka's ByteString class - immutable rope class for fast byte additions
 
 ### Concurrency, Actors
 
