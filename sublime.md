@@ -8,6 +8,7 @@
 * PlainTasks - an awesome TODO list manager
 * Highlight - lets you export selected region as RDF text (w syntax highlighting) for Keynote presos
 * SyncedSidebar - reveals current file in sidebar file explorer, great for big projects
+* [SideBarFolders](https://sublime.wbond.net/packages/SideBarFolders) - quickly switch set of folders listed in side bar.  Think of it as quick way to switch "projects" without needing to generate projects or open a new window.
 * BracketHighlighter - shows current brackets, bracketing utils
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * SublimeREPL
@@ -25,6 +26,8 @@
         "MaxPane",
         "Modific",
         "PlainTasks",
+        "SideBarEnhancements",
+        "SideBarFolders",
         "SublimeREPL",
         "Theme - Spacegray"
       ]
