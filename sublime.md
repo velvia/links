@@ -13,25 +13,27 @@
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * SublimeREPL
 
-    {
-      "installed_packages":
-      [
-        "AdvancedNewFile",
-        "ApacheConf.tmLanguage",
-        "BracketHighlighter",
-        "DocBlockr",
-        "Highlight",
-        "iOpener",
-        "Markdown Preview",
-        "MaxPane",
-        "Modific",
-        "PlainTasks",
-        "SideBarEnhancements",
-        "SideBarFolders",
-        "SublimeREPL",
-        "Theme - Spacegray"
-      ]
-    }
+My package control config:
+
+        {
+          "installed_packages":
+          [
+            "AdvancedNewFile",
+            "ApacheConf.tmLanguage",
+            "BracketHighlighter",
+            "DocBlockr",
+            "Highlight",
+            "iOpener",
+            "Markdown Preview",
+            "MaxPane",
+            "Modific",
+            "PlainTasks",
+            "SideBarEnhancements",
+            "SideBarFolders",
+            "SublimeREPL",
+            "Theme - Spacegray"
+          ]
+        }
 
 Other useful packages:
 
