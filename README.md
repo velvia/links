@@ -134,6 +134,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
+* [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
 * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
 * [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
