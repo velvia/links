@@ -66,6 +66,7 @@ Just a bunch of useful links
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
+* [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 
 ### Big Data Storage
 
