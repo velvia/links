@@ -11,6 +11,8 @@
 * [SideBarFolders](https://sublime.wbond.net/packages/SideBarFolders) - quickly switch set of folders listed in side bar.  Think of it as quick way to switch "projects" without needing to generate projects or open a new window.
 * BracketHighlighter - shows current brackets, bracketing utils
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
+* [Sublimall](http://sublimall.org/#) - sync your SublimeText config to cloud, all your machines
+* [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
 * SublimeREPL
 
 My package control config:
