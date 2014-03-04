@@ -132,6 +132,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 
 ## Other Random Stuff
 
+* [Pragmatic RESTful API Design](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - really good stuff
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
