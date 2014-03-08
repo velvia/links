@@ -63,6 +63,7 @@ Just a bunch of useful links
 ### Collections, Numeric Processing, Fast Loops
 
 * [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
+  * [spire-ops](https://github.com/non/spire-ops) - a set of macros for no-overhead implicit operator enrichment
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
@@ -108,7 +109,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
-* [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central
+* [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
 
 ## Databases
 
