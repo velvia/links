@@ -15,11 +15,13 @@ Just a bunch of useful links
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 
 * Important [compiler flags](https://gist.github.com/tpolecat/8812750)
+* [Recursive Types](http://blog.originate.com/blog/2014/02/27/types-inside-types-in-scala/) - signatures like
+  `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
+  probably better ways of solving the problem, ie via composition.
 
 ### Serialization
 
-* [scala-pickling](https://github.com/scala/pickling) might become part of Scala standard library.  Really neat project.  Also see the [slides](https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala).
-    * TODO: make msgpack4s implement the Pickling interface
+* [Dijon](https://github.com/pathikrit/dijon/blob/master/README.md) - a neat, simple JSON parser using dynamic types and special string parsers.
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
 * Akka's ByteString class - immutable rope class for fast byte additions
@@ -51,6 +53,7 @@ Just a bunch of useful links
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
+* [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 
 * [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
