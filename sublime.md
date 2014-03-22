@@ -13,6 +13,7 @@
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * [Sublimall](http://sublimall.org/#) - sync your SublimeText config to cloud, all your machines
 * [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
+* [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
 * SublimeREPL
 
 My package control config:
