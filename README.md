@@ -37,6 +37,7 @@ Just a bunch of useful links
     * Note that the latest Spark code has a cancellable version of Scala's Futures as well, and the Coursera Reactive Programming class has a solution as well
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
+  * [rxmon](https://github.com/vigdorchik/rxmon) - Akka monitoring via RxJava
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
@@ -88,6 +89,7 @@ Just a bunch of useful links
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 * [Scaldi](http://scaldi.github.io/scaldi/Scaldi.html) - A lightweight dependency injection library, with
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
+* How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
 * [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
 * [ScalaUtils](http://www.scalautils.org/) - ===, !== with tolerance for floats, an OR operator for types for easy validation (`Int Or One[ErrorMessage]`)
