@@ -38,8 +38,8 @@ Just a bunch of useful links
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
-* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788) - from the great Helena Edelson
-* [Monitoring Akka](http://www.cakesolutions.net/teamblogs/2013/11/01/monitoring-akka/) - using AspectJ, they instrument the mailboxes etc.  Interesting alternative.
+* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
+* Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
 
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
