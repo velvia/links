@@ -21,6 +21,8 @@ Just a bunch of useful links
 
 ### Serialization
 
+* [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
+Google Protobuf !!
 * [Dijon](https://github.com/pathikrit/dijon/blob/master/README.md) - a neat, simple JSON parser using dynamic types and special string parsers.
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
@@ -48,6 +50,11 @@ Just a bunch of useful links
 
 * [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
 * [Postgresql-Async](https://github.com/mauricio/postgresql-async) - Netty-based async drivers for PostgreSQL and MySQL
+
+### Caching
+
+* [Cacheable](https://github.com/cb372/cacheable) - a clever memoization / caching library (with Guava, Redis,
+Memcached or EHCache backends) using Scala 2.10 macros to remember function parameters
 
 ## Big Data Processing
 
