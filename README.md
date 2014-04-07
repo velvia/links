@@ -34,9 +34,7 @@ Google Protobuf !!
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
-* [scala-atomic](https://github.com/alexandru/scala-atomic) - a nice set of wrappers around j.u.c.Atomic\*.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
-* [Future Perfect](https://github.com/wix/future-perfect) - a set of useful wrappers around Twitter Futures esp retry and other things.
-    * Note that the latest Spark code has a cancellable version of Scala's Futures as well, and the Coursera Reactive Programming class has a solution as well
+* [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic\*, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
   * [rxmon](https://github.com/vigdorchik/rxmon) - Akka monitoring via RxJava
