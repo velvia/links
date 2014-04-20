@@ -112,6 +112,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
 * [Linter](https://github.com/HairyFotr/linter) - Scala linter compiler plugin
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
+* [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration. 
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
 
