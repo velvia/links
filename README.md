@@ -82,6 +82,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Big Data Storage
 
+* [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
 * [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
 
