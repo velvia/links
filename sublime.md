@@ -109,7 +109,12 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
 
     [
         { "keys": ["super+alt+s"], "command": "sort_lines", "args": {"case_sensitive": false} },
-        { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" }
+        { "keys": ["super+alt+r"], "command": "reveal_in_side_bar" },
+        // Without these lines Home/End moves to beg/end of doc!  Not acceptable!
+        { "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+        { "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+        { "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+        { "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } }
     ]
 
 ## Blogs and Articles
