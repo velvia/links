@@ -82,6 +82,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Big Data Storage
 
+* [Phantom](http://newzly.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
 * [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
