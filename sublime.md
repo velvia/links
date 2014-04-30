@@ -61,7 +61,6 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
       "caret_style": "phase",
       "color_scheme": "Packages/User/customizedBlackboard.tmTheme",
       "fade_fold_buttons": false,
-      "indent_guide_options": ["draw_normal", "draw_active"],
       "file_exclude_patterns":
       [
         ".*",
@@ -94,6 +93,12 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
       [
         "Vintage"
       ],
+      "indent_guide_options":
+      [
+        "draw_normal",
+        "draw_active"
+      ],
+      "indent_to_bracket": true,
       "line_padding_bottom": 1,
       "rulers":
       [
