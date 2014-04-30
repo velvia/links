@@ -56,6 +56,8 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
 
 ## Sublime Text config
 
+Note: `indent_to_bracket` means when you break up lines of long arguments it will indent automatically to beg of first bracket of prev line!
+
     {
       "bold_folder_labels": true,
       "caret_style": "phase",
