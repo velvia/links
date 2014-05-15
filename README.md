@@ -61,14 +61,17 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 
-* [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
-* [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
-* [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
-* [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
-
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
+
+### Geospatial and Graph
+* [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
+* [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
+* [GeoScript.scala](https://github.com/dwins/geoscript.scala) - Scala wrappers for Geotools, Shapefile and geo data manipulation and rendering
+
+* [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
+* [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
 
 ### Collections, Numeric Processing, Fast Loops
 
@@ -100,6 +103,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
 * How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
+* [Scala-rainbow](https://github.com/ktoso/scala-rainbow) - super simple terminal color output, easier than Console.XXX
 * [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
 * [ScalaUtils](http://www.scalautils.org/) - ===, !== with tolerance for floats, an OR operator for types for easy validation (`Int Or One[ErrorMessage]`)
 
