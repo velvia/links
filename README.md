@@ -79,6 +79,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
   * [spire-ops](https://github.com/non/spire-ops) - a set of macros for no-overhead implicit operator enrichment
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
+* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
+    - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
