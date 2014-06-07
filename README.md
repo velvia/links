@@ -36,6 +36,8 @@ Google Protobuf !!
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic\*, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
+* [CEP using Akka Streams](http://www.franklysauer.com/2014/05/cep-using-akka-streams/) - great example of using Akka's new Streams for distributed stream processing with backpressure
+
 * [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
   * [rxmon](https://github.com/vigdorchik/rxmon) - Akka monitoring via RxJava
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
@@ -66,7 +68,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
 ### Geospatial and Graph
-* [Archery](http://making.meetup.com/post/64387936554/archery-an-immutable-r-tree-for-scala) - immutable R-tree library for fast geo/XY searches
+* [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
 * [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
 * [GeoScript.scala](https://github.com/dwins/geoscript.scala) - Scala wrappers for Geotools, Shapefile and geo data manipulation and rendering
 
@@ -82,7 +84,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
-* [Scala-blitz](http://scala-blitz.github.io/) - A new "lightning fast" parallel collections framework
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 
