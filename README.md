@@ -89,6 +89,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ### Big Data Storage
 
 * [Phantom](http://newzly.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
+* [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
@@ -158,6 +159,8 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 I love Sublime and use it for everything, even Scala!  Going to put my Sublime stuff in a [separate page](sublime.md).
 
 ## Other Random Stuff
+
+* [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
 
 * [Semver](http://semver.org/) - Semantic versioning, how to deal with dev workflows and corner cases -- a must read
 
