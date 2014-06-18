@@ -23,6 +23,7 @@ Just a bunch of useful links
 
 * [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
 Google Protobuf !!
+* [Comparison of Cap'n Proto, SBE, FlatBuffers](https://kentonv.github.io/capnproto/news/2014-06-17-capnproto-flatbuffers-sbe.html) from the Cap'n Proto people
 * [Dijon](https://github.com/pathikrit/dijon/blob/master/README.md) - a neat, simple JSON parser using dynamic types and special string parsers.
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
