@@ -160,13 +160,19 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 I love Sublime and use it for everything, even Scala!  Going to put my Sublime stuff in a [separate page](sublime.md).
 
+## Best Practices and Design
+
+* [Semver](http://semver.org/) - Semantic versioning, how to deal with dev workflows and corner cases -- a must read
+* [Pragmatic RESTful API Design](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - really good stuff
+* [Blameless Post-Mortems](http://www.paperplanes.de/2014/6/20/what-blameless-postmortem-taught-me.html) - why they are crucial to good culture
+* [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
+* [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
+
 ## Other Random Stuff
 
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
 
-* [Semver](http://semver.org/) - Semantic versioning, how to deal with dev workflows and corner cases -- a must read
 
-* [Pragmatic RESTful API Design](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - really good stuff
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
@@ -175,5 +181,3 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Gherkin](https://github.com/alandipert/gherkin) - a Lisp implemented in bash !!
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
-* [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
-* [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
