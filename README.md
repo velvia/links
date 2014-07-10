@@ -68,6 +68,9 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
+### Spark
+* [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.
+
 ### Geospatial and Graph
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
 * [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
