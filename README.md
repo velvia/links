@@ -74,7 +74,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ### Geospatial and Graph
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
 * [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
-* [GeoScript.scala](https://github.com/dwins/geoscript.scala) - Scala wrappers for Geotools, Shapefile and geo data manipulation and rendering
 
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
 * [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
@@ -96,6 +95,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Phantom](http://newzly.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
 * [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
+* [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
 * [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
