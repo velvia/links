@@ -37,7 +37,7 @@ Google Protobuf !!
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
-* [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic\*, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
+* [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
 * [CEP using Akka Streams](http://www.franklysauer.com/2014/05/cep-using-akka-streams/) - great example of using Akka's new Streams for distributed stream processing with backpressure
 
@@ -71,7 +71,11 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
 
 ### Spark
-* [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.
+* [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.  Based originally on my own [spark-jobserver](http://github.com/ooyala/spark-jobserver)
+* [Thunderain](https://github.com/thunderain-project/thunderain) - a framework for combining stream processing with historical data, think Lamba architecture
+
+### Infrastructure
+* [Elastic Mesos](https://elastic.mesosphere.io/) - create Mesos clusters on AWS with ZK, HDFS
 
 ### Geospatial and Graph
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
