@@ -107,6 +107,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
 * [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
 
+* [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
+
 ### Web / REST / General
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
