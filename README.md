@@ -32,6 +32,7 @@ Google Protobuf !!
 ### Concurrency, Actors
 
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
+* [Wake](https://github.com/Microsoft-CISL/Wake) - A Java event-driven framework from Microsoft (!)
 
 * [Retry for futures](https://github.com/softprops/retry)
 * [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
