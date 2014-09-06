@@ -155,6 +155,10 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
 * [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
 
+## Monitoring
+
+* [Grafana](http://grafana.org/) and [Graphene](http://jondot.github.io/graphene/) - great replacement UIs for the clunky default Graphite UI
+
 ## Databases
 
 ### Indexing and OLAP
