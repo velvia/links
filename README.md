@@ -10,7 +10,6 @@ Just a bunch of useful links
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
-* [Scala School 2](https://github.com/twitter/scala_school2) - Twitter's next generation interactive scala tutorial
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 
@@ -27,7 +26,6 @@ Google Protobuf !!
 * [Jawn](https://github.com/non/jawn) - @d3's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
-* Akka's ByteString class - immutable rope class for fast byte additions
 
 ### Concurrency, Actors
 
@@ -35,17 +33,12 @@ Google Protobuf !!
 * [Wake](https://github.com/Microsoft-CISL/Wake) - A Java event-driven framework from Microsoft (!)
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 
-* [Retry for futures](https://github.com/softprops/retry)
-* [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
+* [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
-* [CEP using Akka Streams](http://www.franklysauer.com/2014/05/cep-using-akka-streams/) - great example of using Akka's new Streams for distributed stream processing with backpressure
-
-* [akka instrumentation](https://github.com/vatel/scala-akka-monitoring) - an experiment to walk the actor tree and see stuff at runtime
-  * [rxmon](https://github.com/vigdorchik/rxmon) - Akka monitoring via RxJava
-  * [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
+* [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
@@ -145,7 +138,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
-* [Linter](https://github.com/HairyFotr/linter) - Scala linter compiler plugin
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
 * [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration. 
 
@@ -196,7 +188,6 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 ## Other Random Stuff
 
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
-
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
