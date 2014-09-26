@@ -193,6 +193,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
 * [MacroPy](https://github.com/lihaoyi/macropy) - Scala-like macros, case classes, pattern matching, parser combos for Python (!!)
 * [Scala 2.11 vs Swift](https://github.com/densh/talks/raw/master/swift-vs-scala-211-2014-06-03/Swift%20vs%20Scala%202.11.pdf) - Apple's new iOS language is often compared to Scala.
+* [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
 * [Gherkin](https://github.com/alandipert/gherkin) - a Lisp implemented in bash !!
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
