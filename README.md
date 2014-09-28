@@ -121,10 +121,9 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
 * How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
+* [lamma.io](http://www.lamma.io/) - the easiest date generation library
 * [Pimpathon](https://github.com/stacycurl/pimpathon) - a set of useful pimp-my-library extensions
 * [Scala-rainbow](https://github.com/ktoso/scala-rainbow) - super simple terminal color output, easier than Console.XXX
-* [SExt](https://github.com/nikita-volkov/sext) - Supplies some missing Standard Library functions, like pretty-printing data structures, unfold, etc.
-* [ScalaUtils](http://www.scalautils.org/) - ===, !== with tolerance for floats, an OR operator for types for easy validation (`Int Or One[ErrorMessage]`)
 
 ### Build, Tooling
 
