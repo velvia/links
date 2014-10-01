@@ -71,8 +71,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Spark
 * [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.  Based originally on my own [spark-jobserver](http://github.com/ooyala/spark-jobserver)
-* [DF from Ayasdi](https://github.com/AyasdiOpenSource/df) - Pandas-like data frame implementation for Spark
-* [Thunderain](https://github.com/thunderain-project/thunderain) - a framework for combining stream processing with historical data, think Lamba architecture
+* [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 
 ### Infrastructure
 * [Elastic Mesos](https://elastic.mesosphere.io/) - create Mesos clusters on AWS with ZK, HDFS
