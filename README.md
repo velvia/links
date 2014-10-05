@@ -32,6 +32,7 @@ Google Protobuf !!
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
 * [Wake](https://github.com/Microsoft-CISL/Wake) - A Java event-driven framework from Microsoft (!)
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
+* [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
 
 * [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
 * [Execute Futures serially](http://www.michaelpollmeier.com/execute-scala-futures-in-serial-one-after-the-other-non-blocking/) - in nonblocking fashion
@@ -136,6 +137,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
+* [scala-abide](https://github.com/scala/scala-abide) - an official linter from Typesafe
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
 * [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration. 
 
