@@ -1,6 +1,16 @@
-// Drop this file in ~/.sbt/0.13/plugins/Prompt.scala
-// for an awesome Prompt
-// Came from https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192
+/** Drop this file in ~/.sbt/0.13/plugins/Prompt.scala for a prompt of the form:
+  * <code>sbt projectNameOrId version (branch dirty aheadBehind)</code>
+  * Where dirty is zero or more of:
+  * `*` - at least one modified file
+  * `+` - at least one new file
+  * `$` - something is stashed
+  * `%` - at least one untracked file
+  * And aheadBehind is one of:
+  * `=` - equal to upstream
+  * `>` - ahead of upstream
+  * `<` - behind upstream
+  * Modified from https://github.com/novus/salat/commit/4e1c11e4e72da75f3bef0da28f59048225f4bd74#commitcomment-4037192 
+  * This utility requires git to be installed and on the path */
 
 import sbt._
 import Keys._
@@ -18,63 +28,72 @@ object ShellPrompt extends Plugin {
      def error (s: => String) { }
      def buffer[T] (f: => T): T = f
   }
-  def currBranch() = ("git rev-parse --abbrev-ref HEAD" lines_! devnull).headOption.getOrElse("???")
 
-  private def parseToBool(cmd: String) = (cmd lines_! devnull).headOption.exists(_ == "true")
+  private def cleanupGitReponse(string: String): String = 
+    if (string.endsWith("%")) string.substring(0, string.length-1) else string
+  
+  lazy val currBranch:String = {
+    val branch: String = ("git rev-parse --abbrev-ref HEAD" lines_! devnull).headOption.getOrElse("???")
+    cleanupGitReponse(branch)
+  }
 
-  private def successfulExit(cmd: String) = cmd ! devnull == 0
+  private def parseToBool(cmd: String): Boolean = (cmd lines_! devnull).headOption.exists(_ == "true")
 
-  private def unsuccessfulExit(cmd: String) = !successfulExit(cmd)
+  private def successfulExit(cmd: String): Boolean = cmd ! devnull == 0
 
-  def showDirtyState() = {
+  private def unsuccessfulExit(cmd: String): Boolean = !successfulExit(cmd)
+
+  private def dirtyState: String = {
     // transposed from git-completion.bash
     val insideGitDir = parseToBool("git rev-parse --is-inside-git-dir")
     val insideWorkTree = !insideGitDir && parseToBool("git rev-parse --is-inside-work-tree")
-    val showDirtyState = insideWorkTree && unsuccessfulExit("git config --bool bash.showDirtyState") // for some reason, this exits with 1 but that's what we want
-    if (showDirtyState) {
-      // modified
-      val w = if (unsuccessfulExit("git diff --no-ext-diff --quiet --exit-code")) "*" else ""
-      // added
-      val i = if (successfulExit("git rev-parse --quiet --verify HEAD") && unsuccessfulExit("git diff-index --cached --quiet HEAD --")) "+" else ""
-      // stashed
-      val s = if (successfulExit("git rev-parse --verify refs/stash")) "$" else ""
-      // untracked
-      val u = if (("git ls-files --others --exclude-standard" lines_! devnull).nonEmpty) "%" else ""
-      "%s%s%s%s".format(w, i, s, u)
+
+    /** For some reason, git config exits with 1 but that's what we want */
+    val dirtyState = insideWorkTree && unsuccessfulExit("git config --bool bash.dirtyState") 
+    if (dirtyState) {
+      val modified = if (unsuccessfulExit("git diff --no-ext-diff --quiet --exit-code")) "*" else ""
+      val added = if (successfulExit("git rev-parse --quiet --verify HEAD") && 
+                      unsuccessfulExit("git diff-index --cached --quiet HEAD --")) "+" else ""
+      val stashed = if (successfulExit("git rev-parse --verify refs/stash")) "$" else ""
+      val untracked = if (("git ls-files --others --exclude-standard" lines_! devnull).nonEmpty) "%" else ""
+      s"$modified$added$stashed$untracked"
+    } else ""
+  }
+
+  private def upstreamState: String = {
+    val counts: String = ("git rev-list --count --left-right @{upstream}...HEAD" lines_! devnull).headOption.getOrElse("")
+    cleanupGitReponse(counts) match {
+        case cs if cs.isEmpty => "" // no upstream
+        case cs if cs == "0\t0" => "=" // equal to upstream
+        case cs if cs.startsWith("0") => ">" // ahead of upstream
+        case cs if cs.endsWith("\t0") => "<" // behind upstream
+        case _ => "<>" // oh crumbs
     }
-    else ""
   }
 
-  private def showUpstream() = {
-    val counts = ("git rev-list --count --left-right @{upstream}...HEAD" lines_! devnull).headOption.getOrElse("")
-    if (counts.isEmpty) "" // no upstream
-    else if (counts == "0\t0") "=" // equal to upstream
-    else if (counts.startsWith("0")) ">" // ahead of upstream
-    else if (counts.endsWith("\t0")) "<" // behind upstream
-    else "<>" // oh crumbs
-  }
-
-  val buildShellPrompt = (state: State) => {
-    // thanks to https://groups.google.com/forum/#!searchin/simple-build-tool/How$20to$20color$20ShellPrompt/simple-build-tool/H7HcaYiv8FM/lMa2aVgCa3gJ
-    // and http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
-    val p = Project.extract(state)
-    val projectNameOrId = p.getOpt(sbt.Keys.name).getOrElse(p.currentProject.id)
-    val projectVersion = p.getOpt(sbt.Keys.version).getOrElse("")
-
+  // thanks to https://groups.google.com/forum/#!searchin/simple-build-tool/How$20to$20color$20ShellPrompt/simple-build-tool/H7HcaYiv8FM/lMa2aVgCa3gJ
+  // and http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
+  val buildShellPrompt: State => String = (state: State) => {
     import scala.Console.RESET
-    val YELLOW_I = "\033[0;92m"
-    val GREEN_I = "\033[0;92m"
-    val RED_I = "\033[0;91m"
-    val BLACK_I = "\033[0;90m"
-    val CYAN_I = "\033[0;96m"
 
-    val projectVersionColor =
+    val ep: Extracted = Project.extract(state)
+    val projectNameOrId: String = ep.getOpt(Keys.name).getOrElse(ep.currentProject.id)
+    val projectVersion: String = ep.getOpt(Keys.version).getOrElse("")
+
+    val YELLOW_I = "\033[0;92m"
+    val GREEN_I  = "\033[0;92m"
+    val RED_I    = "\033[0;91m"
+    val BLACK_I  = "\033[00m" // "\033[0;90m" // previous color was invisible with solarized xfce4-terminal over mintty
+    val CYAN_I   = "\033[0;96m"
+
+    val dirtyColor: String =
       if (("git status" lines_! devnull).filter(_.contains("nothing to commit")).nonEmpty) GREEN_I
       else RED_I
 
-    "%s%s%s %s%s%s %s%s%s%s%s%s%s $ ".format(
+    "sbt %s%s%s %s%s%s %s(%s%s%s) > ".format(
       CYAN_I, projectNameOrId, RESET,
       BLACK_I, projectVersion, RESET,
-      projectVersionColor, "(", currBranch(), showDirtyState(), showUpstream(), ")", RESET)
+      dirtyColor, currBranch, dirtyState, upstreamState, RESET)
    }
  }
+ 
