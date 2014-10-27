@@ -188,6 +188,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 ## Other Random Stuff
 
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
+* [How To Be a Great Developer](http://funkatron.com/posts/how-to-be-a-great-developer.html) - a reminder to be empathetic, humble, and make lives around us better. Awesome list.
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Underscore-CLI](https://github.com/ddopson/underscore-cli) - a Node-JS based command line JSON parser
