@@ -171,6 +171,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Distributed Systems
 
+* [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
 * [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
 
 ## Sublime Text
