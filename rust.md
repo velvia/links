@@ -1,5 +1,12 @@
 ## Some links on Rust
 
+Dealing with strings are confusing in Rust, because there are two types: a heap-
+allocated `String` and a pointer to a slice of String bytes: `&str`.  Knowing
+what to use, and defining structures on them, immediately exposes the steep
+learning curve of ownership.
+
+See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
+
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
