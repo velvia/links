@@ -63,6 +63,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
+* [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
@@ -76,6 +77,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Infrastructure
 * [Elastic Mesos](https://elastic.mesosphere.io/) - create Mesos clusters on AWS with ZK, HDFS
+* [Clustering Graphite](http://grey-boundary.com/the-architecture-of-clustering-graphite/) - in depth look at how to scale out Graphite clusters
 
 ### Geospatial and Graph
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
