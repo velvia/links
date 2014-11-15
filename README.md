@@ -138,7 +138,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
-* [scala-abide](https://github.com/scala/scala-abide) - an official linter from Typesafe
+* [Towards a Safer Scala](http://tinyurl.com/pnwslint) - great talk/slides on tools for Scala linting and static analysis
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
 * [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration. 
 
