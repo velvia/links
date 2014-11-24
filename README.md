@@ -102,7 +102,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Big Data Storage
 
-* [Phantom](http://newzly.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
+* [Phantom](http://websudos.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
 * [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
 * [CCM](https://github.com/pcmanus/ccm) - easily build local Cassandra clusters for testing!
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
