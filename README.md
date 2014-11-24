@@ -108,6 +108,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
 * [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
 * [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support.  Also see [Stargate](http://tuplejump.github.io/stargate/).
+* [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
+
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
 * [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
