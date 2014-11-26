@@ -97,7 +97,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
-* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples
+* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 
 ### Big Data Storage
