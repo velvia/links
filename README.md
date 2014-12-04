@@ -92,6 +92,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 * [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
   * [spire-ops](https://github.com/non/spire-ops) - a set of macros for no-overhead implicit operator enrichment
+* [Framian](https://github.com/pellucidanalytics/framian) - a new data frame implementation from the authors of Spire
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
@@ -197,6 +198,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 ## Other Random Stuff
 
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
+* [Mermaid](https://github.com/knsv/mermaid) - think of it as Markdown for diagrams.  Would be awesome to integrate this into reveal.js!
 * [How To Be a Great Developer](http://funkatron.com/posts/how-to-be-a-great-developer.html) - a reminder to be empathetic, humble, and make lives around us better. Awesome list.
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
