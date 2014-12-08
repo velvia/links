@@ -23,7 +23,13 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
 Google Protobuf !!
 * [Comparison of Cap'n Proto, SBE, FlatBuffers](https://kentonv.github.io/capnproto/news/2014-06-17-capnproto-flatbuffers-sbe.html) from the Cap'n Proto people
-* [Jawn](https://github.com/non/jawn) - @d3's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
+    - Cap'n Proto [native layout](https://kentonv.github.io/capnproto/encoding.html#) uses 64-bit words, relies on separate packing/unpacking to achieve efficient wire representation.  Has RPC (but not for Java).   Bitset support.  Java is third party support.
+    - [Flatbuffers](http://google.github.io/flatbuffers/index.html) is from Google. 32-bit word size, more compact native representation, native Java support.
+    - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
+* [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
+    - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
+* [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
+* [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
 
@@ -63,8 +69,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
-* [Summingbird](https://github.com/twitter/summingbird) - For any dataset that can be aggregated using a monoid, promises to unify Storm, Hadoop, and in the future, Akka and Spark with a single DSL.  Also has a neat library of monoids built in.
 * [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
+* [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
@@ -108,6 +114,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [CCM](https://github.com/pcmanus/ccm) - easily build local Cassandra clusters for testing!
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
 * [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
+* [Doradus](https://github.com/dell-oss/Doradus) - A Graph / OLAP store on top of Cassandra
 * [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support.  Also see [Stargate](http://tuplejump.github.io/stargate/).
 * [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
 
