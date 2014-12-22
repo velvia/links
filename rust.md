@@ -12,3 +12,4 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
+* [Columnarization in Rust](http://www.frankmcsherry.org/columnarization/serialization/rust/2014/12/15/Columnarization-in-Rust.html)
