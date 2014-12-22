@@ -18,7 +18,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
   probably better ways of solving the problem, ie via composition.
 
-### Serialization
+### Serialization / In-Memory Data Structures
 
 * [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
 Google Protobuf !!
@@ -28,6 +28,9 @@ Google Protobuf !!
     - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
 * [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
     - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
+* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
+    - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
+* [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
@@ -42,6 +45,7 @@ Google Protobuf !!
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
 * [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
+* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
@@ -101,8 +105,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Framian](https://github.com/pellucidanalytics/framian) - a new data frame implementation from the authors of Spire
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
-* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
-    - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
+* An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
