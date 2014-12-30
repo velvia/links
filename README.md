@@ -45,6 +45,7 @@ Google Protobuf !!
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 
 * [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
+* [akka-tracing](https://github.com/levkhomich/akka-tracing) - A distributed tracing Akka extension based on Twitter's Zipkin, which can be used as performance diagnostics and debugging tool. Supports Spray!
 * [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
@@ -103,6 +104,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
   * [spire-ops](https://github.com/non/spire-ops) - a set of macros for no-overhead implicit operator enrichment
 * [Framian](https://github.com/pellucidanalytics/framian) - a new data frame implementation from the authors of Spire
+* [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
 * [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
