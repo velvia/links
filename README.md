@@ -87,6 +87,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.  Based originally on my own [spark-jobserver](http://github.com/ooyala/spark-jobserver)
 * Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
 * [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
+* [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 
 ### Infrastructure
