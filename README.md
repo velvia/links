@@ -60,6 +60,10 @@ Google Protobuf !!
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
 
+### Reactive Streams
+
+* [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
+
 ### Async Database Libs
 
 * [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
@@ -136,11 +140,13 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
+* [Ammonite](https://github.com/lihaoyi/Ammonite) - Scala DSL for easy BASH-like filesystem operations
 * [IScala](https://github.com/mattpap/IScala) - Scala backend for IPython.  Looks promising.  There is also [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) but it's more of a research project.
 * [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 * [Scaldi](http://scaldi.github.io/scaldi/Scaldi.html) - A lightweight dependency injection library, with
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
+
 * How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
 * [lamma.io](http://www.lamma.io/) - the easiest date generation library
