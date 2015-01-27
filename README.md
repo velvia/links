@@ -77,6 +77,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ## Big Data Processing
 
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
+* List of free [big data sources](http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A244056) - includes some Socrata datasets, climate data, data from Google, tweets, etc.
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
 * [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
