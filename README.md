@@ -64,10 +64,12 @@ Google Protobuf !!
 
 * [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
 
-### Async Database Libs
+### Database Libs
 
 * [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
 * [Postgresql-Async](https://github.com/mauricio/postgresql-async) - Netty-based async drivers for PostgreSQL and MySQL
+
+* [Relate](https://github.com/lucidsoftware/relate) - a very lightweight, fast Scala wrapper on top of JDBC
 
 ### Caching
 
