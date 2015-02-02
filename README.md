@@ -46,6 +46,7 @@ Google Protobuf !!
 
 * [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
 * [akka-tracing](https://github.com/levkhomich/akka-tracing) - A distributed tracing Akka extension based on Twitter's Zipkin, which can be used as performance diagnostics and debugging tool. Supports Spray!
+* [DI in Akka](http://di-in-scala.github.io/#akka) - great guide to using MacWire with Akka for DI
 * [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
