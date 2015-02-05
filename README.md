@@ -28,9 +28,10 @@ Google Protobuf !!
     - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
 * [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
     - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
-* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Would work really well for in-memory queries.
+* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
+* [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
