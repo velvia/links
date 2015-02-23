@@ -52,6 +52,7 @@ Google Protobuf !!
 * [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
 * [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
+* [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
 
@@ -60,7 +61,6 @@ Google Protobuf !!
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
 
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
-* [Wake](https://github.com/Microsoft-CISL/Wake) - A Java event-driven framework from Microsoft (!)
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
 
@@ -185,6 +185,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ### JVM Other
 
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
+* Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start`
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
 * [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
 * [Changing JVM flags live](http://nonfunctionaltestingtools.blogspot.co.uk/2012/11/enabling-gc-activity-logging-without.html?m=1) - such as enabling GC logging without restarting JVM. Cool!
