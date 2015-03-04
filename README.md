@@ -9,6 +9,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
+* [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
@@ -92,7 +93,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
 * [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
-* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing
+* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing based on factor graphs
 
 ### Spark
 * [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.  Based originally on my own [spark-jobserver](http://github.com/ooyala/spark-jobserver)
