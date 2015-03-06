@@ -14,6 +14,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 * [Selfless Trait Pattern](http://www.artima.com/scalazine/articles/selfless_trait_pattern.html) - allow users to either mix in a Trait or import an Object.
+* [Scalacaster](https://github.com/vkostyukov/scalacaster) - classic data structures in Scala
 
 * Important [compiler flags](https://gist.github.com/tpolecat/8812750)
 * [Recursive Types](http://blog.originate.com/blog/2014/02/27/types-inside-types-in-scala/) - signatures like
