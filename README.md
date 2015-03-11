@@ -108,7 +108,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
 * [ApertureTiles](http://aperturetiles.com/) - system using Spark to generate a tile pyramid for interactive analytical geo exploration
 * [HZSpatial](https://github.com/mraad/HZSpatial) - adding QuadTree / spatial indexing to HazelCast
-* [Spatial framework for Hadoop](https://github.com/Esri/spatial-framework-for-hadoop) - PostGIS-like operators / UDFs for Hive.  We want this for Spark!
+* [Twofishes](http://twofishes.net/) - Foursquare's Scala-based coarse forward and reverse geocoder
 
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
 * [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
