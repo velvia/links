@@ -105,9 +105,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 
 ### Geospatial and Graph
-* [GeoTrellis](http://geotrellis.io) - distributed raster processing, adding Vector/geom support, Akka Cluster and Spark implementations!
+* [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://geomesa.org) - distributed vector database + feature filtering
 * [ApertureTiles](http://aperturetiles.com/) - system using Spark to generate a tile pyramid for interactive analytical geo exploration
-* [HZSpatial](https://github.com/mraad/HZSpatial) - adding QuadTree / spatial indexing to HazelCast
 * [Twofishes](http://twofishes.net/) - Foursquare's Scala-based coarse forward and reverse geocoder
 
 * [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
@@ -174,6 +173,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
+* [Twitter Iago](https://github.com/twitter/iago) - Perf load test tool based on replaying logs.  Compare vs [Gatling](http://gatling.io) for example.
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
 * [Towards a Safer Scala](http://tinyurl.com/pnwslint) - great talk/slides on tools for Scala linting and static analysis
