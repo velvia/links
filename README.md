@@ -58,6 +58,7 @@ Google Protobuf !!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
 
+* [Why Async](https://www.slideshare.net/ktoso/need-for-async-hot-pursuit-for-scalable-internetscale-applications?from_m_app=ios) - An excellent overview of async architecture from Async I/O all the way up to application layer.
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
@@ -91,6 +92,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 * [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
+* [Calcite](http://calcite.incubator.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
 
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
