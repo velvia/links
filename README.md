@@ -34,6 +34,7 @@ Google Protobuf !!
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
+* [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
@@ -86,6 +87,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ## Big Data Processing
 
 * Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
+* List of [Database Papers](https://github.com/rxin/db-readings)
 * List of free [big data sources](http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A244056) - includes some Socrata datasets, climate data, data from Google, tweets, etc.
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
