@@ -31,6 +31,7 @@ Google Protobuf !!
     - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
 * [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
     - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
+* [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
