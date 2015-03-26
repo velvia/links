@@ -13,3 +13,7 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [Columnarization in Rust](http://www.frankmcsherry.org/columnarization/serialization/rust/2014/12/15/Columnarization-in-Rust.html)
+* [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
+
+Cool Rust Projects
+* [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool

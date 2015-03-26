@@ -192,6 +192,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ### JVM Other
 
+* [-XX:+PerfDisableSharedMem](http://www.evanjones.ca/jvm-mmap-pause.html)
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start`
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
@@ -252,3 +253,10 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Gherkin](https://github.com/alandipert/gherkin) - a Lisp implemented in bash !!
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
+
+### Tips on installing Ruby
+
+becoz it's so darn painful.
+
+* On OSX: make sure setUID bit is not set on dtrace: `sudo chmod -s /usr/sbin/dtrace` (see [this Homebrew issue](https://github.com/Homebrew/homebrew/issues/32910))
+* Try [chruby](https://github.com/postmodern/chruby) and ruby-install instead of rbenv.  Installs rubies into /opt/rubies and lighter weight, also there is a fish shell [chruby-fish](https://github.com/JeanMertz/chruby-fish).
