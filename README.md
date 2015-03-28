@@ -193,6 +193,8 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ### JVM Other
 
 * [-XX:+PerfDisableSharedMem](http://www.evanjones.ca/jvm-mmap-pause.html)
+* Al Tobey's flags for running JDK8 apps.  Note: G1GC!  Also no need for `MaxPermSize` anymore:
+        `-Xmx8G -Xms8G -Xss256k -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=0`
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start`
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
