@@ -11,6 +11,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
+* [Better Type Classes](http://aakashns.github.io/better-type-class.html) - also see one of first links for good intro to type classes
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 * [Selfless Trait Pattern](http://www.artima.com/scalazine/articles/selfless_trait_pattern.html) - allow users to either mix in a Trait or import an Object.
