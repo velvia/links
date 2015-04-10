@@ -200,6 +200,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
         `-Xmx8G -Xms8G -Xss256k -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=0`
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start jmxremote.port=26010 jmxremote.ssl=false jmxremote.authenticate=false`
+* [HeapAudit](https://github.com/foursquare/heapaudit) - A Java agent for lightweight production heap profiling
 * [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
 * [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
 * [Changing JVM flags live](http://nonfunctionaltestingtools.blogspot.co.uk/2012/11/enabling-gc-activity-logging-without.html?m=1) - such as enabling GC logging without restarting JVM. Cool!
