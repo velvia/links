@@ -207,6 +207,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Monitoring / Infrastructure
 
+* [Keywhiz](https://corner.squareup.com/2015/04/keywhiz.html) - a store for infrastructure secrets
 * [HTrace](http://htrace.org/) - distributed tracing library, can dump data to Zipkin or HBase
 * [cass_top](http://www.jebriggs.com/blog/2014/09/top-utility-for-cassandra-clusters-cass_top/) - simple top utility for cass clusters
 * [Grafana](http://grafana.org/) and [Graphene](http://jondot.github.io/graphene/) - great replacement UIs for the clunky default Graphite UI
