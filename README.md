@@ -99,6 +99,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 * [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
 * [Calcite](http://calcite.incubator.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
+* [redash.io](http://redash.io/) - data visualization / collaboration.  TODO: integrate this with Spark SQL / Hive...
 
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
