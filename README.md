@@ -251,6 +251,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 ## Other Random Stuff
 
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
+* [Awesome public datasets](https://github.com/caesar0301/awesome-public-datasets) - no doubt some are Socrata sites!
 * [Mermaid](https://github.com/knsv/mermaid) - think of it as Markdown for diagrams.  Would be awesome to integrate this into reveal.js!
 * [How To Be a Great Developer](http://funkatron.com/posts/how-to-be-a-great-developer.html) - a reminder to be empathetic, humble, and make lives around us better. Awesome list.
 
