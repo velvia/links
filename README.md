@@ -22,7 +22,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
   probably better ways of solving the problem, ie via composition.
 
-### Serialization / In-Memory Data Structures
+### Serialization / Off-heap Data Structures / Unsafe
 
 * [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
 Google Protobuf !!
@@ -38,6 +38,7 @@ Google Protobuf !!
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
 * [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
+* [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
