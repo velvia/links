@@ -42,6 +42,7 @@ Google Protobuf !!
 * [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
+* [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
 
