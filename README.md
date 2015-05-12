@@ -78,7 +78,9 @@ Google Protobuf !!
 
 ### Reactive Streams
 
+* [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
 * [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
+* [Zoom](http://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
 
 ### Database Libs
 
