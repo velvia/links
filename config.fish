@@ -37,6 +37,10 @@ function list-java
   lsof -a -d cwd -c java
 end
 
+function list-ports
+  lsof -iTCP -sTCP:LISTEN -P
+end
+
 # Environment vars
 # set -x HADOOP_HOME blah blah
 set -x SBT_OPTS "-XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled -Xmx8g"
