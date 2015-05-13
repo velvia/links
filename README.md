@@ -161,6 +161,10 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 * [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
 
+### Distributed Systems
+
+* An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
+
 ### Web / REST / General
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
