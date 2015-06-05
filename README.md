@@ -178,6 +178,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 * [Scaldi](http://scaldi.github.io/scaldi/Scaldi.html) - A lightweight dependency injection library, with
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
+* [Knobs](http://oncue.github.io/knobs/) - Scala config library with reactive change detection, env var substitution, can read from Typesafe Config/HOCON, ZK, AWS
 
 * How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
