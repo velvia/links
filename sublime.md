@@ -126,6 +126,18 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
         { "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } }
     ]
 
+### SublimeHighlight config
+
+```
+{
+    "theme": "monokai",
+    "linenos": "inline",
+    "noclasses": true,
+    "fontface": "Menlo"
+}
+```
+
+
 ## Blogs and Articles
 
 * A collection of [favorite enhancements](http://webdesign.tutsplus.com/articles/simple-visual-enhancements-for-better-coding-in-sublime-text--webdesign-18052)
