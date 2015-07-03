@@ -49,6 +49,7 @@ Google Protobuf !!
 ### Concurrency, Actors
 
 * [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
+* [Throttling Scala Futures](http://quantifind.com/blog/2015/06/throttling-instantiations-of-scala-futures-1/) - using a custom executor
 * [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, converting between Try, timeouts, etc.
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
@@ -153,6 +154,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
 
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
+* [CurioDB](https://github.com/stephenmcd/curiodb/blob/master/README.md) - distributed persistent Redis built on Akka cluster, etc.  :)
 * [Ivory](https://github.com/ambiata/ivory) - An immutable, versioned, RDF-triple / fact store for feature extraction / machine learning
 * [Hibari](https://github.com/hibari/hibari) - ordered key-value store using chain replicaton for strong consistency
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
