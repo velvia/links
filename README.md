@@ -212,6 +212,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ### JVM Other
 
+* [Swiss Java Knife](https://github.com/aragozin/jvm-tools) - super handy collection of JVM tools.  Try `java -jar sjk.jar ttop -p PID -o CPU -n 10` for regular reporting of the top 10 threads by CPU usage!
 * [-XX:+PerfDisableSharedMem](http://www.evanjones.ca/jvm-mmap-pause.html)
 * Al Tobey's flags for running JDK8 apps.  Note: G1GC!  Also no need for `MaxPermSize` anymore:
         `-Xmx8G -Xms8G -Xss256k -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=0`
