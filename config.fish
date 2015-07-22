@@ -43,11 +43,11 @@ end
 
 # Environment vars
 # set -x HADOOP_HOME blah blah
-set -x SBT_OPTS "-XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled -Xmx8g"
+set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx8g"
 set -x DOCKER_HOST (bash -c '$(dvm env);echo $DOCKER_HOST')
 set -x EDITOR /usr/bin/vim
 
-set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/lib/rustlib/x86_64-apple-darwin/lib/
+# set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/lib/rustlib/x86_64-apple-darwin/lib/
 
 # Docker vars
 
@@ -62,9 +62,7 @@ set PATH ~/bin $PATH
 # set PATH $HOME/.rbenv/shims $PATH
 # rbenv rehash >/dev/null ^&1
 set -gx RBENV_ROOT /usr/local/Cellar/rbenv/0.4.0
-. (rbenv init -|psub)
+# . (rbenv init -|psub)
 
 # Aliases
 alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
-
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
