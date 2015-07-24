@@ -194,9 +194,10 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * sbt-assembly [0.10.2](http://notes.implicit.ly/post/72263234118/sbt-assembly-0-10-2) supports adding a shell script to your jar to make it executable!  No more "java ...." to start your Scala program, and no more `ps ax | grep java | grep ....`
 * Other useful SBT plugins - [sbt-sonatype](https://github.com/xerial/sbt-sonatype), [sbt-pom-reader](https://github.com/sbt/sbt-pom-reader), [sbt-sound](https://github.com/orrsella/sbt-sound), [plugins page](http://www.scala-sbt.org/release/docs/Community/Community-Plugins.html)
 * [SCoverage](https://github.com/scoverage) - *statement* coverage tool, much more useful than line-based or branch-based tools.  Has SBT plugin.  [Blog post](https://coderwall.com/p/_l-zhw) on why it's an improvement.
-* [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH profiling tool
+* [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH microbench profiling tool
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 
+* [Adaptive microbenchmarking of big data](http://www.autoletics.com/posts/microbenchmarking-big-data-solutions-on-the-jvm-part-1) - really neat JVM agent which allows turning benchmarking code on and off for better benchmarking
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Twitter Iago](https://github.com/twitter/iago) - Perf load test tool based on replaying logs.  Compare vs [Gatling](http://gatling.io) for example.
 * [Thyme and Parsley](https://github.com/Ichoran/thyme) - microbenchmarking and profiling tools, seems useful
