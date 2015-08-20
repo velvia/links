@@ -115,7 +115,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing based on factor graphs
 
 ### Spark
-* [Jaws](http://xpatterns.com/our-spark-sql-rest-server-codename-jaws-is-now-open-source/) - Spark SQL REST server, includes query cancellation, logs, load balancing.  Based originally on my own [spark-jobserver](http://github.com/ooyala/spark-jobserver)
+* [spark-jobserver](http://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
+* [docker-spark](https://github.com/kushalmangtani/docker-spark) to easily deploy a Spark cluster
 * Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
 * [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
 * [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
