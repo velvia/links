@@ -17,27 +17,30 @@
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
 * SublimeREPL
 
+Themes:
+
+* [Afterglow](https://github.com/YabataDesign/afterglow-theme) - excellent theme and syntax color highlighting package. Includes file type icons in side bar!
+
 My package control config:
 
-        {
-          "installed_packages":
-          [
-            "AdvancedNewFile",
-            "ApacheConf.tmLanguage",
-            "BracketHighlighter",
-            "DocBlockr",
-            "Highlight",
-            "iOpener",
-            "MarkdownEditing",
-            "MaxPane",
-            "Modific",
-            "PlainTasks",
-            "SideBarEnhancements",
-            "SideBarFolders",
-            "SublimeREPL",
-            "Theme - Spacegray"
-          ]
-        }
+    {
+      "installed_packages":
+      [
+        "ApacheConf.tmLanguage",
+        "BracketHighlighter",
+        "DocBlockr",
+        "Dockerfile Syntax Highlighting",
+        "Git",
+        "GitGutter",
+        "iOpener",
+        "MarkdownEditing",
+        "Package Control",
+        "SideBarEnhancements",
+        "SyncedSideBar",
+        "Theme - Afterglow",
+        "Theme - Spacegray"
+      ]
+    }
 
 Other useful packages:
 
@@ -59,9 +62,18 @@ Also, have a look at how to [launch SublimeText from OSX Terminal](https://gist.
 Note: `indent_to_bracket` means when you break up lines of long arguments it will indent automatically to beg of first bracket of prev line!
 
     {
+      "added_words":
+      [
+        "Facebook",
+        "Pinterest",
+        "datastore",
+        "blog",
+        "typeclass",
+        "timestamp"
+      ],
       "bold_folder_labels": true,
       "caret_style": "phase",
-      "color_scheme": "Packages/User/customizedBlackboard.tmTheme",
+      "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
       "fade_fold_buttons": false,
       "file_exclude_patterns":
       [
@@ -88,11 +100,13 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
         ".idea*",
         ".ensime*"
       ],
+      "folder_no_icon": true,
       "font_size": 12,
       "highlight_line": true,
       "highlight_modified_tabs": true,
       "ignored_packages":
       [
+        "Markdown",
         "Vintage"
       ],
       "indent_guide_options":
@@ -107,7 +121,8 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
         110
       ],
       "tab_size": 2,
-      "theme": "Spacegray.sublime-theme",
+      "tabs_small": true,
+      "theme": "Afterglow.sublime-theme",
       "translate_tabs_to_spaces": true,
       "trim_automatic_white_space": true,
       "trim_trailing_white_space_on_save": true,
