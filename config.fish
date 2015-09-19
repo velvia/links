@@ -35,7 +35,7 @@ end
 
 # Environment vars
 # NOTE: below is for JDK 8
-set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx5g -XX:MaxMetaspaceSize=128m"
+set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx5g -XX:MaxMetaspaceSize=512m"
 # relies on setting up host-only networking with static IP in Linux VM
 set -x DOCKER_HOST tcp://192.168.56.10:2375
 set -x EDITOR /usr/bin/vim
