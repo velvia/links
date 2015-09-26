@@ -217,6 +217,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 * [Swiss Java Knife](https://github.com/aragozin/jvm-tools) - super handy collection of JVM tools.  Try `java -jar sjk.jar ttop -p PID -o CPU -n 10` for regular reporting of the top 10 threads by CPU usage!
 * [-XX:+PerfDisableSharedMem](http://www.evanjones.ca/jvm-mmap-pause.html)
+* [Al's Guide to Cassandra 2.1 Ops](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html) - awesome, not just for C* but tools in general
 * Al Tobey's flags for running JDK8 apps.  Note: G1GC!  Also no need for `MaxPermSize` anymore:
         `-Xmx8G -Xms8G -Xss256k -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=0`
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
