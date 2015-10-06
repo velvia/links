@@ -220,6 +220,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [Al's Guide to Cassandra 2.1 Ops](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html) - awesome, not just for C* but tools in general
 * Al Tobey's flags for running JDK8 apps.  Note: G1GC!  Also no need for `MaxPermSize` anymore:
         `-Xmx8G -Xms8G -Xss256k -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=0`
+* [Perils of writing isolating classloaders](http://nuhk.blogspot.com/2008/03/perils-of-writing-isolated-classloader.html) - Good read, tips on how to write a classloader that can isolate and load different versions of the same classes
 * [Quick dumping your JVM heap using GDB](http://blogs.atlassian.com/2013/03/so-you-want-your-jvms-heap/) -- too bad it doesn't work on OSX.
 * Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start jmxremote.port=26010 jmxremote.ssl=false jmxremote.authenticate=false`
 * [HeapAudit](https://github.com/foursquare/heapaudit) - A Java agent for lightweight production heap profiling
