@@ -152,6 +152,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
 * [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
 * [Doradus](https://github.com/dell-oss/Doradus) - A Graph / OLAP store on top of Cassandra
+* [Khronus](https://github.com/Searchlight/khronus) - Time series DB built on Cassandra + Akka Cluster
 * [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support (see the [blog](http://www.openstratio.org/blog/advanced-search-in-cassandra/)).  Also see [Stargate](http://tuplejump.github.io/stargate/).
 * [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
 
