@@ -234,6 +234,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ## Monitoring / Infrastructure
 
 * [Keywhiz](https://corner.squareup.com/2015/04/keywhiz.html) - a store for infrastructure secrets
+* [Ranwhen](https://github.com/p-e-w/ranwhen) - Visualize when your system was running, graphs in Terminal
 * [HTrace](http://htrace.org/) - distributed tracing library, can dump data to Zipkin or HBase
 * [cass_top](http://www.jebriggs.com/blog/2014/09/top-utility-for-cassandra-clusters-cass_top/) - simple top utility for cass clusters
 * [Grafana](http://grafana.org/) and [Graphene](http://jondot.github.io/graphene/) - great replacement UIs for the clunky default Graphite UI
@@ -253,6 +254,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 ### ML and Data Science
 
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
+* [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
 
 ## Distributed Systems
 
@@ -277,6 +279,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [A list of great docs](https://github.com/PharkMillups/beautiful-docs/blob/master/README.md)
 * [Awesome public datasets](https://github.com/caesar0301/awesome-public-datasets) - no doubt some are Socrata sites!
 * [Mermaid](https://github.com/knsv/mermaid) - think of it as Markdown for diagrams.  Would be awesome to integrate this into reveal.js!
+* [Markdeep](http://casual-effects.com/markdeep/) - Markdown++ with diagrams, add single line at bottom to convert to HTML!
 * [How To Be a Great Developer](http://funkatron.com/posts/how-to-be-a-great-developer.html) - a reminder to be empathetic, humble, and make lives around us better. Awesome list.
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
