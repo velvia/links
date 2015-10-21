@@ -17,7 +17,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Selfless Trait Pattern](http://www.artima.com/scalazine/articles/selfless_trait_pattern.html) - allow users to either mix in a Trait or import an Object.
 * [Scalacaster](https://github.com/vkostyukov/scalacaster) - classic data structures in Scala
 
-* Important [compiler flags](https://gist.github.com/tpolecat/8812750)
+* Important [compiler flags](http://tpolecat.github.io/2014/04/11/scalac-flags.html)
 * [Recursive Types](http://blog.originate.com/blog/2014/02/27/types-inside-types-in-scala/) - signatures like
   `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
   probably better ways of solving the problem, ie via composition.
