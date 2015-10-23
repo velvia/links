@@ -21,6 +21,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Recursive Types](http://blog.originate.com/blog/2014/02/27/types-inside-types-in-scala/) - signatures like
   `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
   probably better ways of solving the problem, ie via composition.
+* [Preprocessor](https://github.com/speedcom/preprocessor) - combination of different Scala Types like Phantom Types, Recursive Types, Self Types to make pipeline of computation in typesafe manner
 
 ### Serialization / Off-heap Data Structures / Unsafe
 
@@ -207,7 +208,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [ScalaStyle](http://www.scalastyle.org/) - Scala style checker / linter
 * [Towards a Safer Scala](http://tinyurl.com/pnwslint) - great talk/slides on tools for Scala linting and static analysis
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
-* [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration. 
+* [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration.
 
 SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
 
