@@ -10,6 +10,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
+* [SBT Tips and Tricks](http://underscore.io/blog/posts/2015/11/09/sbt-commands.html)
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 * [Better Type Classes](http://aakashns.github.io/better-type-class.html) - also see one of first links for good intro to type classes
 * [Type classes and generic derivation](https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/) - How to avoid common boilerplate for type classes and case classes using Shapeless HLists
@@ -26,6 +27,14 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 ### Serialization / Off-heap Data Structures / Unsafe
 
+* [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
+* [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
+* [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
+* [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
+* [Filo](http://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences
+
+Java, not Scala
+
 * [Simple Binary Encoding](https://github.com/real-logic/simple-binary-encoding) - supposedly 20-50x faster than
 Google Protobuf !!
 * [Comparison of Cap'n Proto, SBE, FlatBuffers](https://kentonv.github.io/capnproto/news/2014-06-17-capnproto-flatbuffers-sbe.html) from the Cap'n Proto people
@@ -34,7 +43,6 @@ Google Protobuf !!
     - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
 * [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
     - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
-* [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
@@ -43,9 +51,6 @@ Google Protobuf !!
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
-* [Jawn](https://github.com/non/jawn) - @d6's new fast JSON parser, parses to multiple ASTs including rojoma-json, spray-json, argonaut
-* [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
-* [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
 
 ### Concurrency, Actors
@@ -79,11 +84,12 @@ Google Protobuf !!
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
 
-### Reactive Streams
+### Reactive Streams / Streaming
 
 * [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
 * [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
 * [Zoom](http://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
+* [Akka Streams vs Scalaz Stream](https://softwaremill.com/comparing-akka-stream-scalaz-stream/)
 
 ### Database Libs
 
