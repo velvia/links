@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Some links on Rust](#some-links-on-rust)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Some links on Rust
 
 Dealing with strings are confusing in Rust, because there are two types: a heap-

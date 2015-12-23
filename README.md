@@ -1,3 +1,35 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [links](#links)
+  - [Scala](#scala)
+    - [Serialization / Off-heap Data Structures / Unsafe](#serialization--off-heap-data-structures--unsafe)
+    - [Concurrency, Actors](#concurrency-actors)
+    - [Reactive Streams / Streaming](#reactive-streams--streaming)
+    - [Database Libs](#database-libs)
+    - [Caching](#caching)
+  - [Big Data Processing](#big-data-processing)
+    - [Spark](#spark)
+    - [Geospatial and Graph](#geospatial-and-graph)
+    - [Collections, Numeric Processing, Fast Loops](#collections-numeric-processing-fast-loops)
+    - [Big Data Storage](#big-data-storage)
+    - [Distributed Systems](#distributed-systems)
+    - [Web / REST / General](#web--rest--general)
+    - [Build, Tooling](#build-tooling)
+    - [JVM Other](#jvm-other)
+  - [Monitoring / Infrastructure](#monitoring--infrastructure)
+  - [Databases](#databases)
+    - [Indexing and OLAP](#indexing-and-olap)
+    - [ML and Data Science](#ml-and-data-science)
+  - [Distributed Systems](#distributed-systems-1)
+  - [Sublime Text](#sublime-text)
+  - [Best Practices and Design](#best-practices-and-design)
+  - [Other Random Stuff](#other-random-stuff)
+    - [Tips on installing Ruby](#tips-on-installing-ruby)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 links
 =====
 

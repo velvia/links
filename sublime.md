@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Sublime Text packages](#sublime-text-packages)
+- [Favorite Shortcuts](#favorite-shortcuts)
+- [Sublime Text config](#sublime-text-config)
+  - [Key bindings - user](#key-bindings---user)
+  - [SublimeHighlight config](#sublimehighlight-config)
+- [Blogs and Articles](#blogs-and-articles)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Sublime Text packages
 
 * Git - essential, esp quickly select what to check in, commit
