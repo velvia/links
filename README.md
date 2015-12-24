@@ -37,8 +37,8 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 ## Scala
 
-* [Scala Design Patterns](http://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
-* [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala) - great post on styling Scala for readability
+* [Scala Design Patterns](https://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
+* [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala/) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
@@ -63,7 +63,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
-* [Filo](http://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences
+* [Filo](https://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences
 
 Java, not Scala
 
@@ -79,7 +79,7 @@ Google Protobuf !!
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
 * [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
-* [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/blog/2015/apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
+* [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/2015/Apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
@@ -87,7 +87,7 @@ Google Protobuf !!
 
 ### Concurrency, Actors
 
-* [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.42go.com/future-safefuture-timeout-cancelable/) - very useful
+* [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.kifi.com/future-safefuture-timeout-cancelable/) - very useful
 * [Throttling Scala Futures](http://quantifind.com/blog/2015/06/throttling-instantiations-of-scala-futures-1/) - using a custom executor
 * [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, converting between Try, timeouts, etc.
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
@@ -107,7 +107,7 @@ Google Protobuf !!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
 
-* [Why Async](https://www.slideshare.net/ktoso/need-for-async-hot-pursuit-for-scalable-internetscale-applications?from_m_app=ios) - An excellent overview of async architecture from Async I/O all the way up to application layer.
+* [Why Async](http://www.slideshare.net/ktoso/need-for-async-hot-pursuit-for-scalable-internetscale-applications?from_m_app=ios) - An excellent overview of async architecture from Async I/O all the way up to application layer.
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
@@ -120,7 +120,7 @@ Google Protobuf !!
 
 * [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
 * [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
-* [Zoom](http://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
+* [Zoom](https://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
 * [Akka Streams vs Scalaz Stream](https://softwaremill.com/comparing-akka-stream-scalaz-stream/)
 
 ### Database Libs
@@ -132,7 +132,7 @@ Google Protobuf !!
 
 ### Caching
 
-* [Cacheable](https://github.com/cb372/cacheable) - a clever memoization / caching library (with Guava, Redis,
+* [Cacheable](https://github.com/cb372/scalacache) - a clever memoization / caching library (with Guava, Redis,
 Memcached or EHCache backends) using Scala 2.10 macros to remember function parameters
 
 ## Big Data Processing
@@ -146,16 +146,16 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Aesop](https://github.com/Flipkart/aesop) - a scalable pub-sub / change propagation system, esp between different datastores, with reliability. Based on LinkedIn DataBus, suports pull or push producers.
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 * [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
-* [Calcite](http://calcite.incubator.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
+* [Calcite](http://calcite.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
 * [redash.io](http://redash.io/) - data visualization / collaboration.  TODO: integrate this with Spark SQL / Hive...
 
 * [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
 * [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
-* [stringmetric](http://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
+* [stringmetric](https://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
 * [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing based on factor graphs
 
 ### Spark
-* [spark-jobserver](http://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
+* [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
 * [docker-spark](https://github.com/kushalmangtani/docker-spark) to easily deploy a Spark cluster
 * Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
 * [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark
@@ -164,7 +164,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 
 ### Geospatial and Graph
-* [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://geomesa.org) - distributed vector database + feature filtering
+* [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://www.geomesa.org/) - distributed vector database + feature filtering
 * [ApertureTiles](http://aperturetiles.com/) - system using Spark to generate a tile pyramid for interactive analytical geo exploration
 * [Twofishes](http://twofishes.net/) - Foursquare's Scala-based coarse forward and reverse geocoder
 
@@ -173,11 +173,11 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Collections, Numeric Processing, Fast Loops
 
-* [Breeze](https://github.com/dlwh/breeze/), [Spire](http://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
-  * [spire-ops](https://github.com/non/spire-ops) - a set of macros for no-overhead implicit operator enrichment
-* [Framian](https://github.com/pellucidanalytics/framian) - a new data frame implementation from the authors of Spire
+* [Breeze](https://github.com/dlwh/breeze/), [Spire](https://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
+  * [spire-ops](https://github.com/typelevel/machinist) - a set of macros for no-overhead implicit operator enrichment
+* [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
 * [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
-* [ScalaXY](https://github.com/ochafik/Scalaxy) - collection of macros for performant for loops, extension methods etc
+* [ScalaXY](https://github.com/nativelibs4java/Scalaxy) - collection of macros for performant for loops, extension methods etc
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
@@ -220,7 +220,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Enumeratum](https://github.com/lloydmeta/enumeratum/blob/master/README.md) - a Scala Enum library, much better than built in Enumeration
 * [Ammonite](https://github.com/lihaoyi/Ammonite) - Scala DSL for easy BASH-like filesystem operations
 * [IScala](https://github.com/mattpap/IScala) - Scala backend for IPython.  Looks promising.  There is also [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) but it's more of a research project.
-* [Scaposer](https://github.com/ngocdaothanh/scaposer) - i18n / .po file library
+* [Scaposer](https://github.com/xitrum-framework/scaposer) - i18n / .po file library
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 * [Scaldi](http://scaldi.github.io/scaldi/Scaldi.html) - A lightweight dependency injection library, with
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
@@ -269,8 +269,8 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * Start a JMX agent in running JVM: `jcmd <pid> ManagementAgent.start jmxremote.port=26010 jmxremote.ssl=false jmxremote.authenticate=false`
 * [HeapAudit](https://github.com/foursquare/heapaudit) - A Java agent for lightweight production heap profiling
 * [Lion's Share](https://github.com/fommil/lions-share) - tools for memory analysis, outputs Google Charts compatible output
-* [jHiccup](http://www.azulsystems.com/downloads/jHiccup) -- "Hiccup" or GC pause analysis tool
-* [Bintray](http://bintray.com) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
+* [jHiccup](http://www.azul.com/downloads/jhiccup/) -- "Hiccup" or GC pause analysis tool
+* [Bintray](https://bintray.com/) - friendlier alternative to Sonatype OSS / Maven central.  Also see [bintray-sbt](https://github.com/softprops/bintray-sbt) plugin.
 * [Changing JVM flags live](http://nonfunctionaltestingtools.blogspot.co.uk/2012/11/enabling-gc-activity-logging-without.html?m=1) - such as enabling GC logging without restarting JVM. Cool!
 
 ## Monitoring / Infrastructure
@@ -312,7 +312,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Semver](http://semver.org/) - Semantic versioning, how to deal with dev workflows and corner cases -- a must read
 * [Pragmatic RESTful API Design](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - really good stuff
 * [Blameless Post-Mortems](http://www.paperplanes.de/2014/6/20/what-blameless-postmortem-taught-me.html) - why they are crucial to good culture
-* [How to Pair with Jr Devs](https://devmynd.com/blog/2015-1-pairing-with-junior-developers) - really good advice.  Make them type.  Listen and be on the same level.
+* [How to Pair with Jr Devs](https://devmynd.com/blog/2015-1-pairing-with-junior-developers/) - really good advice.  Make them type.  Listen and be on the same level.
 * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
 * [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
 
