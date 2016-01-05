@@ -89,7 +89,7 @@ Google Protobuf !!
 
 * [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.kifi.com/future-safefuture-timeout-cancelable/) - very useful
 * [Throttling Scala Futures](http://quantifind.com/blog/2015/06/throttling-instantiations-of-scala-futures-1/) - using a custom executor
-* [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, converting between Try, timeouts, etc.
+* [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, retries, converting between Try, timeouts, etc.
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 * [Scala Coroutines](http://storm-enroute.com/coroutines/) - really neat, coroutines with yield.
@@ -104,6 +104,7 @@ Google Protobuf !!
 * [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
 * [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
+* [Akka mock scheduler](https://github.com/miguno/akka-mock-scheduler) - great for testing!
 * [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
