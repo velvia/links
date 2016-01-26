@@ -279,6 +279,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ## Monitoring / Infrastructure
 
+* [DLite](https://github.com/nlf/dlite) - Easier way to run Docker on OSX
 * [Keywhiz](https://corner.squareup.com/2015/04/keywhiz.html) - a store for infrastructure secrets
 * [Ranwhen](https://github.com/p-e-w/ranwhen) - Visualize when your system was running, graphs in Terminal
 * [HTrace](http://htrace.org/) - distributed tracing library, can dump data to Zipkin or HBase
