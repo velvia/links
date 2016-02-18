@@ -338,7 +338,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
 * [Gherkin](https://github.com/alandipert/gherkin) - a Lisp implemented in bash !!
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
-* [Pony](http://www.ponylang.org/) - A capabilities-based Actor-centric language with no deadlocks
+* [Pony](http://www.ponylang.org/) - A capabilities-based Actor-centric static language, deadlock-free, null-free, data-race-free!
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
 
 ### Tips on installing Ruby
