@@ -117,6 +117,7 @@ Google Protobuf !!
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
+* (JAVA) [JCTools](https://github.com/JCTools/JCTools) - very high performance concurrent queues, used by Netty and other projects
 
 ### Reactive Streams / Streaming
 
@@ -244,8 +245,11 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [acyclic](https://github.com/lihaoyi/acyclic) - a Compiler plugin to detect cylical dependencies between source files.  Eliminate them for faster builds!
 * Other useful SBT plugins - [sbt-sonatype](https://github.com/xerial/sbt-sonatype), [sbt-pom-reader](https://github.com/sbt/sbt-pom-reader), [sbt-sound](https://github.com/orrsella/sbt-sound), [plugins page](http://www.scala-sbt.org/release/docs/Community/Community-Plugins.html)
 * [sbt-big-project](https://github.com/fommil/sbt-big-project/tree/v1.0.0) - a plugin to speed up compilation when there are hundreds of projects
+* [Coursier](https://github.com/alexarchambault/coursier) - a much improved jar dependency fetcher, written in pure Scala.  Has SBT plugin, programmatic API
 * [SCoverage](https://github.com/scoverage) - *statement* coverage tool, much more useful than line-based or branch-based tools.  Has SBT plugin.  [Blog post](https://coderwall.com/p/_l-zhw) on why it's an improvement.
-* [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH microbench profiling tool
+* [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH microbench profiling tool.  Also see [jmh-profilers](https://github.com/biboudis/jmh-profilers) project.
+  - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
+  - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 
 * [Adaptive microbenchmarking of big data](http://www.autoletics.com/posts/microbenchmarking-big-data-solutions-on-the-jvm-part-1) - really neat JVM agent which allows turning benchmarking code on and off for better benchmarking
