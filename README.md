@@ -41,6 +41,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala/) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
+* [Strategic Scala Style: Principle of Least Power](https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html) - an excellent read about how to choose the path of less complexity and higher readability in the huge landscape that is Scala programming
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
 * [SBT Tips and Tricks](http://underscore.io/blog/posts/2015/11/09/sbt-commands.html)
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
@@ -118,6 +119,7 @@ Google Protobuf !!
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
 * (JAVA) [JCTools](https://github.com/JCTools/JCTools) - very high performance concurrent queues, used by Netty and other projects
+* (JAVA) [Windmill](https://github.com/xedin/windmill) - a library for efficient IO/Network processing, Futures based.  Has per-CPU network/IO sockets.
 
 ### Reactive Streams / Streaming
 
