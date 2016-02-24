@@ -253,6 +253,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
+* [CharybdeFS](https://github.com/scylladb/charybdefs) - FUSE layer to inject filesystem faults for testing
 
 * [Adaptive microbenchmarking of big data](http://www.autoletics.com/posts/microbenchmarking-big-data-solutions-on-the-jvm-part-1) - really neat JVM agent which allows turning benchmarking code on and off for better benchmarking
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
