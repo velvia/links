@@ -166,6 +166,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark
 * [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
 * [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
+* [SparkInternals](https://github.com/JerryLead/SparkInternals) - extremely detailed description of how Spark internals work
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 * [Salt](https://github.com/unchartedsoftware/salt) - Scala/Spark tile generation/visualization for big datasets.  Cool!
 
