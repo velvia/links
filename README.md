@@ -310,6 +310,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ### ML and Data Science
 
+* [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
 
