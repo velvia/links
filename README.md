@@ -206,6 +206,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Khronus](https://github.com/Searchlight/khronus) - Time series DB built on Cassandra + Akka Cluster
 * [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support (see the [blog](http://www.openstratio.org/blog/advanced-search-in-cassandra/)).  Also see [Stargate](http://tuplejump.github.io/stargate/).
 * [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
+* [Cassandra Compaction and Tombstoning](http://engblog.polyvore.com/2015/03/cassandra-compaction-and-tombstone.html)
 
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
 * [CurioDB](https://github.com/stephenmcd/curiodb/blob/master/README.md) - distributed persistent Redis built on Akka cluster, etc.  :)
