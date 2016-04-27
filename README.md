@@ -275,6 +275,7 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 
 ### JVM Other
 
+* [HotSwapAgent](http://www.hotswapagent.org/) - dynamic reload for standard Java frameworks, needs some plugin
 * [Swiss Java Knife](https://github.com/aragozin/jvm-tools) - super handy collection of JVM tools.  Try `java -jar sjk.jar ttop -p PID -o CPU -n 10` for regular reporting of the top 10 threads by CPU usage!
 * [-XX:+PerfDisableSharedMem](http://www.evanjones.ca/jvm-mmap-pause.html)
 * [Al's Guide to Cassandra 2.1 Ops](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html) - awesome, not just for C* but tools in general
