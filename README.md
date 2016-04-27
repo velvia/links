@@ -170,6 +170,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 * [Salt](https://github.com/unchartedsoftware/salt) - Scala/Spark tile generation/visualization for big datasets.  Cool!
 * [Spatial Spark](http://simin.me/projects/spatialspark/) - spatial joins in Spark
+* [Flinkrock](https://github.com/nchammas/flintrock) - scripts to deploy Spark clusters on AWS
 
 ### Geospatial and Graph
 * [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://www.geomesa.org/) - distributed vector database + feature filtering
