@@ -81,6 +81,7 @@ Google Protobuf !!
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
 * [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
 * [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/2015/Apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
+* [Byte-buddy](https://github.com/raphw/byte-buddy), a Java class generation library
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
