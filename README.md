@@ -50,6 +50,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
 * [Monads are not Metaphors](http://www.codecommit.com/blog/ruby/monads-are-not-metaphors) - a great explanation of monads
 * [Selfless Trait Pattern](http://www.artima.com/scalazine/articles/selfless_trait_pattern.html) - allow users to either mix in a Trait or import an Object.
+* [Tagged Types](http://blog.scalac.io/2016/05/26/simple-types-in-play.html) - great post from Scalac blog
 * [Scalacaster](https://github.com/vkostyukov/scalacaster) - classic data structures in Scala
 
 * Important [compiler flags](http://tpolecat.github.io/2014/04/11/scalac-flags.html)
