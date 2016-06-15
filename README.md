@@ -42,6 +42,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Strategic Scala Style: Principle of Least Power](https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html) - an excellent read about how to choose the path of less complexity and higher readability in the huge landscape that is Scala programming
+  * [Designing Data Types](http://www.lihaoyi.com/post/StrategicScalaStyleDesigningDatatypes.html)
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
 * [SBT Tips and Tricks](http://underscore.io/blog/posts/2015/11/09/sbt-commands.html)
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
@@ -258,6 +259,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH microbench profiling tool.  Also see [jmh-profilers](https://github.com/biboudis/jmh-profilers) project.
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
+* [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 * [CharybdeFS](https://github.com/scylladb/charybdefs) - FUSE layer to inject filesystem faults for testing
 
