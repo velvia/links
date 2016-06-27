@@ -97,6 +97,7 @@ Google Protobuf !!
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
 * [Scala Coroutines](http://storm-enroute.com/coroutines/) - really neat, coroutines with yield.
+* [Demystifying the blocking construct in Scala Futures](http://www.cakesolutions.net/teamblogs/demystifying-the-blocking-construct-in-scala-futures) - great blog explaining not only about the default global ExecutionContext, but choice of thread pool types, and more
 
 * [Colossus](http://tumblr.github.io/colossus/) - an extremely fast, NIO and Akka-based microservice framework. Read [their blog post](http://engineering.tumblr.com/post/102906359034/colossus-a-new-service-framework-from-tumblr).
 * [Socko](http://sockoweb.org/) and [Xitrum](http://xitrum-framework.github.io/) - Two very fast web frameworks built on Akka and Netty
