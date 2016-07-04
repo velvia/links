@@ -110,6 +110,7 @@ Google Protobuf !!
 * [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka mock scheduler](https://github.com/miguno/akka-mock-scheduler) - great for testing!
+* [Akka VisualMailbox](https://github.com/ouven/akka-visualmailbox) - Akka traffic patterns visualized in D3
 * [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
