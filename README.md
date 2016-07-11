@@ -197,6 +197,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
+* [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
 
 ### Big Data Storage
 
