@@ -89,6 +89,8 @@ Google Protobuf !!
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
 
+* [Reed-Solomon Erasure Coding Library](https://www.backblaze.com/blog/reed-solomon/) from Backblaze.  Recover or repair from missing chunks of data; a potential alternative to replication
+
 ### Concurrency, Actors
 
 * [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.kifi.com/future-safefuture-timeout-cancelable/) - very useful
