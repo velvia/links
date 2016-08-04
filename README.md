@@ -60,6 +60,8 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   probably better ways of solving the problem, ie via composition.
 * [Preprocessor](https://github.com/speedcom/preprocessor) - combination of different Scala Types like Phantom Types, Recursive Types, Self Types to make pipeline of computation in typesafe manner
 
+* [Scala Native](http://www.scala-native.org) - compile Scala to LLVM native code!  :)
+
 ### Serialization / Off-heap Data Structures / Unsafe
 
 * [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
