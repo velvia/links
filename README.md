@@ -89,7 +89,7 @@ Google Protobuf !!
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
 * [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
-* [Fast-Serialization](https://code.google.com/p/fast-serialization/) - a drop in replacement for Java Serialization but much faster
+* [Fast-Serialization](https://github.com/RuedigerMoeller/fast-serialization) - a drop in replacement for Java Serialization but much faster
 * [LWJGL](https://www.lwjgl.org) - Potentially useful: very fast off heap memory allocators without limitations of allocateDirect;   OpenCL library 
 
 * [Reed-Solomon Erasure Coding Library](https://www.backblaze.com/blog/reed-solomon/) from Backblaze.  Recover or repair from missing chunks of data; a potential alternative to replication
