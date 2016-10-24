@@ -60,6 +60,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   `class Foo[T <: Foo[T]]`, useful for inheritance and proper return types.  Tho if you hit this, there are
   probably better ways of solving the problem, ie via composition.
 * [Preprocessor](https://github.com/speedcom/preprocessor) - combination of different Scala Types like Phantom Types, Recursive Types, Self Types to make pipeline of computation in typesafe manner
+* [ScalaFix](https://scalacenter.github.io/scalafix/) - a tool to rewrite 2.x Scala for the new [Dotty](http://dotty.epfl.ch) compiler
 
 * [Scala Native](http://www.scala-native.org) - compile Scala to LLVM native code!  :)
 
