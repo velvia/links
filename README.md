@@ -176,13 +176,12 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
 * [docker-spark](https://github.com/kushalmangtani/docker-spark) to easily deploy a Spark cluster
 * Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
-* [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark
+* [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark.  Also see [GeoSpark](https://github.com/DataSystemsLab/GeoSpark) and [Spatial Spark](http://simin.me/projects/spatialspark/).
 * [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
 * [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
 * [SparkInternals](https://github.com/JerryLead/SparkInternals) - extremely detailed description of how Spark internals work
 * [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
 * [Salt](https://github.com/unchartedsoftware/salt) - Scala/Spark tile generation/visualization for big datasets.  Cool!
-* [Spatial Spark](http://simin.me/projects/spatialspark/) - spatial joins in Spark
 * [Flinkrock](https://github.com/nchammas/flintrock) - scripts to deploy Spark clusters on AWS
 
 ### Geospatial and Graph
