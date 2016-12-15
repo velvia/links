@@ -7,31 +7,36 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [links](#links)
-  - [Scala](#scala)
-    - [Serialization / Off-heap Data Structures / Unsafe](#serialization--off-heap-data-structures--unsafe)
-    - [Concurrency, Actors](#concurrency-actors)
-    - [Reactive Streams / Streaming](#reactive-streams--streaming)
-    - [Database Libs](#database-libs)
-    - [Caching](#caching)
-  - [Big Data Processing](#big-data-processing)
-    - [Spark](#spark)
-    - [Geospatial and Graph](#geospatial-and-graph)
-    - [Collections, Numeric Processing, Fast Loops](#collections-numeric-processing-fast-loops)
-    - [Big Data Storage](#big-data-storage)
-    - [Distributed Systems](#distributed-systems)
-    - [Web / REST / General](#web--rest--general)
-    - [Build, Tooling](#build-tooling)
-    - [JVM Other](#jvm-other)
-  - [Monitoring / Infrastructure](#monitoring--infrastructure)
-  - [Databases](#databases)
-    - [Indexing and OLAP](#indexing-and-olap)
-    - [ML and Data Science](#ml-and-data-science)
-  - [Distributed Systems](#distributed-systems-1)
-  - [Sublime Text](#sublime-text)
-  - [Best Practices and Design](#best-practices-and-design)
-  - [Other Random Stuff](#other-random-stuff)
-    - [Tips on installing Ruby](#tips-on-installing-ruby)
+- [Scala](#scala)
+  - [Serialization / Off-heap Data Structures / Unsafe](#serialization--off-heap-data-structures--unsafe)
+  - [Web / REST / General](#web--rest--general)
+  - [Build, Tooling](#build-tooling)
+- [Scala and JVM Concurrency](#scala-and-jvm-concurrency)
+  - [Futures and Tasks](#futures-and-tasks)
+  - [Actors](#actors)
+  - [Reactive Streams](#reactive-streams)
+  - [Other Concurrency Libs](#other-concurrency-libs)
+- [HTTP Server Libs You May Not Have Heard Of](#http-server-libs-you-may-not-have-heard-of)
+- [Small Data](#small-data)
+  - [Collections, Numeric Processing, Fast Loops](#collections-numeric-processing-fast-loops)
+  - [Database Libs](#database-libs)
+  - [Caching](#caching)
+- [Big Data Processing](#big-data-processing)
+  - [Big Data Projects - not necessarily Scala](#big-data-projects---not-necessarily-scala)
+  - [Spark](#spark)
+  - [Geospatial and Graph](#geospatial-and-graph)
+  - [Big Data Storage](#big-data-storage)
+  - [Distributed Systems](#distributed-systems)
+- [Databases, ML, Data Science](#databases-ml-data-science)
+  - [Indexing and OLAP](#indexing-and-olap)
+  - [ML and Data Science](#ml-and-data-science)
+- [JVM Other](#jvm-other)
+- 
+- [Monitoring / Infrastructure](#monitoring--infrastructure)
+- [Sublime Text](#sublime-text)
+- [Best Practices and Design](#best-practices-and-design)
+- [Other Random Stuff](#other-random-stuff)
+  - [Tips on installing Ruby](#tips-on-installing-ruby)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -45,6 +50,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   * [Designing Data Types](http://www.lihaoyi.com/post/StrategicScalaStyleDesigningDatatypes.html)
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
 * [SBT Tips and Tricks](http://underscore.io/blog/posts/2015/11/09/sbt-commands.html)
+  - To test only some tests: `testOnly a.b.c.TestName -- -z "word1 word2"` - where word1 word2 is a phrase from test description.  Use double quotes.
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
 * [Better Type Classes](http://aakashns.github.io/better-type-class.html) - also see one of first links for good intro to type classes
 * [Type classes and generic derivation](https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/) - How to avoid common boilerplate for type classes and case classes using Shapeless HLists
@@ -97,150 +103,9 @@ Google Protobuf !!
 * [Reed-Solomon Erasure Coding Library](https://www.backblaze.com/blog/reed-solomon/) from Backblaze.  Recover or repair from missing chunks of data; a potential alternative to replication
   - Great paper on [Erasure Coding vs Replication](http://oceanstore.cs.berkeley.edu/publications/papers/pdf/erasure_iptps.pdf)
 
-### Concurrency, Actors
-
-* [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.kifi.com/future-safefuture-timeout-cancelable/) - very useful
-* [Throttling Scala Futures](http://quantifind.com/blog/2015/06/throttling-instantiations-of-scala-futures-1/) - using a custom executor
-* [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, retries, converting between Try, timeouts, etc.
-* [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
-* [Monifu](https://github.com/alexandru/monifu) - a nice set of wrappers around j.u.c.Atomic, as well as super-lightweight cancellable tasks and futures utilities.  Accompanying [blog post](https://www.bionicspirit.com/blog/2013/05/07/towards-better-atomicreference-scala.html).
-* [Scala Coroutines](http://storm-enroute.com/coroutines/) - really neat, coroutines with yield.
-* [Demystifying the blocking construct in Scala Futures](http://www.cakesolutions.net/teamblogs/demystifying-the-blocking-construct-in-scala-futures) - great blog explaining not only about the default global ExecutionContext, but choice of thread pool types, and more
-
-* [Colossus](http://tumblr.github.io/colossus/) - an extremely fast, NIO and Akka-based microservice framework. Read [their blog post](http://engineering.tumblr.com/post/102906359034/colossus-a-new-service-framework-from-tumblr).
-* [Socko](http://sockoweb.org/) and [Xitrum](http://xitrum-framework.github.io/) - Two very fast web frameworks built on Akka and Netty
-
-* [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
-* [akka-tracing](https://github.com/levkhomich/akka-tracing) - A distributed tracing Akka extension based on Twitter's Zipkin, which can be used as performance diagnostics and debugging tool. Supports Spray!
-* [DI in Akka](http://di-in-scala.github.io/#akka) - great guide to using MacWire with Akka for DI
-* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
-* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
-* [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
-* [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
-* [Akka mock scheduler](https://github.com/miguno/akka-mock-scheduler) - great for testing!
-* [Akka VisualMailbox](https://github.com/ouven/akka-visualmailbox) - Akka traffic patterns visualized in D3
-* [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
-* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
-* Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
-
-* [Why Async](http://www.slideshare.net/ktoso/need-for-async-hot-pursuit-for-scalable-internetscale-applications?from_m_app=ios) - An excellent overview of async architecture from Async I/O all the way up to application layer.
-* [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
-
-* [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
-
-* [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
-* [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
-* [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
-* (JAVA) [JCTools](https://github.com/JCTools/JCTools) - very high performance concurrent queues, used by Netty and other projects
-* (JAVA) [Windmill](https://github.com/xedin/windmill) - a library for efficient IO/Network processing, Futures based.  Has per-CPU network/IO sockets.
-
-### Reactive Streams / Streaming
-
-* [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
-* [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
-* [Zoom](https://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
-* [Akka Streams vs Scalaz Stream](https://softwaremill.com/comparing-akka-stream-scalaz-stream/)
-
-### Database Libs
-
-* [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
-* [Postgresql-Async](https://github.com/mauricio/postgresql-async) - Netty-based async drivers for PostgreSQL and MySQL
-
-* [Relate](https://github.com/lucidsoftware/relate) - a very lightweight, fast Scala wrapper on top of JDBC
-
-### Caching
-
-* [Cacheable](https://github.com/cb372/scalacache) - a clever memoization / caching library (with Guava, Redis,
-Memcached or EHCache backends) using Scala 2.10 macros to remember function parameters
-
-## Big Data Processing
-
-* Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
-* List of [Database Papers](https://github.com/rxin/db-readings)
-* List of free [big data sources](http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A244056) - includes some Socrata datasets, climate data, data from Google, tweets, etc.
-* Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
-* [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
-* [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
-* [Aesop](https://github.com/Flipkart/aesop) - a scalable pub-sub / change propagation system, esp between different datastores, with reliability. Based on LinkedIn DataBus, suports pull or push producers.
-* [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
-* [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
-* [Calcite](http://calcite.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
-* [redash.io](http://redash.io/) - data visualization / collaboration.  TODO: integrate this with Spark SQL / Hive...
-
-* [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
-* [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
-* [stringmetric](https://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
-* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing based on factor graphs
-
-### Spark
-* [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
-* [docker-spark](https://github.com/kushalmangtani/docker-spark) to easily deploy a Spark cluster
-* Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
-* [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark.  Also see [GeoSpark](https://github.com/DataSystemsLab/GeoSpark) and [Spatial Spark](http://simin.me/projects/spatialspark/).
-* [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
-* [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
-* [SparkInternals](https://github.com/JerryLead/SparkInternals) - extremely detailed description of how Spark internals work
-* [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
-* [Salt](https://github.com/unchartedsoftware/salt) - Scala/Spark tile generation/visualization for big datasets.  Cool!
-* [Flinkrock](https://github.com/nchammas/flintrock) - scripts to deploy Spark clusters on AWS
-
-### Geospatial and Graph
-* [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://www.geomesa.org/) - distributed vector database + feature filtering
-* [ApertureTiles](http://aperturetiles.com/) - system using Spark to generate a tile pyramid for interactive analytical geo exploration
-* [Twofishes](http://twofishes.net/) - Foursquare's Scala-based coarse forward and reverse geocoder
-
-* [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
-* [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
-
-### Collections, Numeric Processing, Fast Loops
-
-* [Breeze](https://github.com/dlwh/breeze/), [Spire](https://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
-  * [spire-ops](https://github.com/typelevel/machinist) - a set of macros for no-overhead implicit operator enrichment
-* [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
-* [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
-* [ScalaXY](https://github.com/nativelibs4java/Scalaxy) - collection of macros for performant for loops, extension methods etc
-* [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
-* An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
-* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
-* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
-* [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
-* [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
-* [bloom-filter-scala](https://github.com/alexandrnikitin/bloom-filter-scala) - and accompanying [blog post](https://alexandrnikitin.github.io/blog/bloom-filter-for-scala/?platform=hootsuite) explaining why it's the fastest bloom filter in the JVM
-
-### Big Data Storage
-
-* [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
-
-* [Phantom](http://websudos.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
-* [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
-* [CCM](https://github.com/pcmanus/ccm) - easily build local Cassandra clusters for testing!
-* [SSTableAttachedSecondaryIndex](https://github.com/xedin/sasi) - Improved Cassandra 2i, OR and many other enhancements.  Requires modified C* build.
-* [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
-* [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
-* [Doradus](https://github.com/dell-oss/Doradus) - A Graph / OLAP store on top of Cassandra
-* [Khronus](https://github.com/Searchlight/khronus) - Time series DB built on Cassandra + Akka Cluster
-* [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support (see the [blog](http://www.openstratio.org/blog/advanced-search-in-cassandra/)).  Also see [Stargate](http://tuplejump.github.io/stargate/).
-* [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
-* [Cassandra Compaction and Tombstoning](http://engblog.polyvore.com/2015/03/cassandra-compaction-and-tombstone.html)
-
-* [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
-* [CurioDB](https://github.com/stephenmcd/curiodb/blob/master/README.md) - distributed persistent Redis built on Akka cluster, etc.  :)
-* [Ivory](https://github.com/ambiata/ivory) - An immutable, versioned, RDF-triple / fact store for feature extraction / machine learning
-* [Hibari](https://github.com/hibari/hibari) - ordered key-value store using chain replicaton for strong consistency
-* [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
-* [ArDB](https://github.com/yinqiwen/ardb) - like Redis, but with spatial indexes, and pluggable storage engines
-* [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
-* [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
-
-* [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
-
-### Distributed Systems
-
-* An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
-
 ### Web / REST / General
 
-* [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST API.  Although, the latest Spray-client has been vastly simplified as well.
+* [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST client API.  Although, the latest Spray-client has been vastly simplified as well.
 * [Quick Start to Twitter Finagle](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) - though one should really look into [Finatra](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
 * [Enumeratum](https://github.com/lloydmeta/enumeratum/blob/master/README.md) - a Scala Enum library, much better than built in Enumeration
@@ -288,7 +153,200 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [SBuild Example](https://github.com/lefou/domino/blob/master/SBuild.scala)
 * [SBuild Home Page](http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Wiki)
 
-### JVM Other
+## Scala and JVM Concurrency
+
+There are multiple paradigms for concurrency in Scala and it is vital to be familiar with all of them.  Java-style low-level shared-mutable-state concurrency won't be covered here much -- we focus on the Scala paradigms that produce safe, easy-to-use concurrency.
+
+* [Why Async](http://www.slideshare.net/ktoso/need-for-async-hot-pursuit-for-scalable-internetscale-applications?from_m_app=ios) - An excellent overview of async architecture from Async I/O all the way up to application layer.
+
+### Futures and Tasks
+
+Scala has built-in [Futures](http://docs.scala-lang.org/overviews/core/futures.html) which are good for eager, memoized, asynchronous, one-shot computations.  They run in a thread pool and their results are stored in the Future object for multiple consumers.  The really nice thing about Futures is that they are strongly typed and composable - you can use `map`, `flatMap`, `filter` etc. to easily chain together asynchronous computation.  Many libraries supplement the built-in functionality, and most Scala [database](#database-libs) libs rely on Future to deliver non-blocking, async I/O.
+
+* [Daniel Westheide's Guide to Futures](http://danielwestheide.com/blog/2013/01/09/the-neophytes-guide-to-scala-part-8-welcome-to-the-future.html)
+* [Retry for futures](https://github.com/softprops/retry).  Also, [SafeFuture CancellableFuture etc](http://eng.kifi.com/future-safefuture-timeout-cancelable/) - very useful
+* [Throttling Scala Futures](http://quantifind.com/blog/2015/06/throttling-instantiations-of-scala-futures-1/) - using a custom executor
+* [Futiles](https://github.com/johanandren/futiles) - really useful set of utilities for working with and sequencing Futures, retries, converting between Try, timeouts, etc.
+* [Demystifying the blocking construct in Scala Futures](http://www.cakesolutions.net/teamblogs/demystifying-the-blocking-construct-in-scala-futures) - great blog explaining not only about the default global ExecutionContext, but choice of thread pool types, and more
+
+There are alternatives which offer lazy, non-memoized versions.
+
+* [Monix Task](https://monix.io/docs/2x/eval/task.html) - not only is it lazy but you can control execution - it can run synchronously or async
+
+### Actors
+
+[Akka](http://akka.io) is one of the most famous Scala libraries and where Scala Futures came from.  It is known for Actors, a paradigm for always-running distributed resilient code popularized by the Erlang language in the 70's.  Actors are great for safe stateful and distributed computation, based on a shared-nothing, message passing paradigm.
+
+* [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
+* [akka-tracing](https://github.com/levkhomich/akka-tracing) - A distributed tracing Akka extension based on Twitter's Zipkin, which can be used as performance diagnostics and debugging tool. Supports Spray!
+* [DI in Akka](http://di-in-scala.github.io/#akka) - great guide to using MacWire with Akka for DI
+* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
+* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
+* [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
+* [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
+* [Akka mock scheduler](https://github.com/miguno/akka-mock-scheduler) - great for testing!
+* [Akka VisualMailbox](https://github.com/ouven/akka-visualmailbox) - Akka traffic patterns visualized in D3
+* [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
+* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
+* Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
+
+* [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
+
+* [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
+
+### Reactive Streams
+
+What if you want to stream multiple values and use up multiple threads or async I/O?  Futures are great only for one-shot or single value.  This is where [reactive streams](http://www.reactive-streams.org) comes in - a standard for asynchronous streaming computation.
+
+The best Scala API for pure reactive streams I have found is [Monix Observables](https://monix.io/docs/2x/reactive/observable.html).  It is lightweight, designed for performance, and have a high degree of control over concurrency. There is also Akka Streams which is built on actors.
+
+* [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
+* [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
+* [Zoom](https://blog.midonet.org/zoom-reactive-programming-zookeeper/) - reactive programming with ZK, in Scala using ReactiveX
+* [Akka Streams vs Scalaz Stream](https://softwaremill.com/comparing-akka-stream-scalaz-stream/)
+
+Other possiblities:
+* [RxScala](http://reactivex.io/rxscala/) - a Scala API on top of RxJava
+* [Reactor](http://projectreactor.io) - Java only, from the SpringSource guys, but has IPC/networking
+
+### Other Concurrency Libs
+
+* [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
+* [Scala Coroutines](http://storm-enroute.com/coroutines/) - really neat, coroutines with yield. They are more general than reactive streams, but if streaming data is your focus you are probably better off with one of the reactive streams libs.
+* [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
+
+Non-Scala:
+
+* [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
+* (JAVA) [JCTools](https://github.com/JCTools/JCTools) - very high performance concurrent queues, used by Netty and other projects
+* (JAVA) [Windmill](https://github.com/xedin/windmill) - a library for efficient IO/Network processing, Futures based.  Has per-CPU network/IO sockets.
+
+## HTTP Server Libs You May Not Have Heard Of
+
+* [Colossus](http://tumblr.github.io/colossus/) - an extremely fast, NIO and Akka-based microservice framework. Read [their blog post](http://engineering.tumblr.com/post/102906359034/colossus-a-new-service-framework-from-tumblr).
+* [Socko](http://sockoweb.org/) and [Xitrum](http://xitrum-framework.github.io/) - Two very fast web frameworks built on Akka and Netty
+
+## Small Data
+
+### Collections, Numeric Processing, Fast Loops
+
+* [Breeze](https://github.com/dlwh/breeze/), [Spire](https://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
+  * [spire-ops](https://github.com/typelevel/machinist) - a set of macros for no-overhead implicit operator enrichment
+* [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
+* [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
+* [ScalaXY](https://github.com/nativelibs4java/Scalaxy) - collection of macros for performant for loops, extension methods etc
+* [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
+* An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
+* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+* [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
+* [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
+* [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
+* [bloom-filter-scala](https://github.com/alexandrnikitin/bloom-filter-scala) - and accompanying [blog post](https://alexandrnikitin.github.io/blog/bloom-filter-for-scala/?platform=hootsuite) explaining why it's the fastest bloom filter in the JVM
+
+### Database Libs
+
+* [Asyncpools](https://github.com/privateblue/asyncpools) - Akka-based async connection pool for Slick.  Akka 2.2 / Scala 2.10.
+* [Postgresql-Async](https://github.com/mauricio/postgresql-async) - Netty-based async drivers for PostgreSQL and MySQL
+
+* [Relate](https://github.com/lucidsoftware/relate) - a very lightweight, fast Scala wrapper on top of JDBC
+
+### Caching
+
+* [Cacheable](https://github.com/cb372/scalacache) - a clever memoization / caching library (with Guava, Redis,
+Memcached or EHCache backends) using Scala 2.10 macros to remember function parameters
+
+## Big Data Processing
+
+* [Fast SQL Query Parser in Scala](http://scala-lms.github.io/tutorials/query.html) - based on the Scala-LMS project, compiles a query down to C!
+* [Probability Monad](https://github.com/jliszka/probability-monad) - super useful for stats or random data generation
+* [stringmetric](https://rockymadden.com/stringmetric/) - Approximate string matching and phonetic algorithms
+* [Factorie](https://github.com/factorie/factorie) - a Scala library for Natural Language Processing based on factor graphs
+
+### Big Data Projects - not necessarily Scala
+
+* Great list of [Big Data Projects](http://blog.andreamostosi.name/big-data/)
+* List of [Database Papers](https://github.com/rxin/db-readings)
+* List of free [big data sources](http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A244056) - includes some Socrata datasets, climate data, data from Google, tweets, etc.
+* Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
+* [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
+* [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
+* [Aesop](https://github.com/Flipkart/aesop) - a scalable pub-sub / change propagation system, esp between different datastores, with reliability. Based on LinkedIn DataBus, suports pull or push producers.
+* [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
+* [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
+* [Calcite](http://calcite.apache.org/) - new Apache project, offers ANSI SQL syntax over regular files and other input sources
+* [redash.io](http://redash.io/) - data visualization / collaboration.  TODO: integrate this with Spark SQL / Hive...
+
+### Spark
+* [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) - REST Job Server for Spark jobs; low-latency query server
+* [docker-spark](https://github.com/kushalmangtani/docker-spark) to easily deploy a Spark cluster
+* Andy's [Spark Notebook](https://github.com/andypetrella/spark-notebook/)
+* [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics on Spark.  Also see [GeoSpark](https://github.com/DataSystemsLab/GeoSpark) and [Spatial Spark](http://simin.me/projects/spatialspark/).
+* [Kafka Spark Consumer](https://github.com/dibbhatt/kafka-spark-consumer) - a low-level consumer which avoids the data loss issues with the high level consumer built into Spark Streaming
+* [Tuning Spark Streaming](http://www.virdata.com/tuning-spark/) for throughput
+* [SparkInternals](https://github.com/JerryLead/SparkInternals) - extremely detailed description of how Spark internals work
+* [Supplemental Spark Projects](https://cwiki.apache.org/confluence/display/SPARK/Supplemental+Spark+Projects) - lots of other interesting projects, including IPython notebooks, dataframe stuff, stream + historical data processing, and more.
+* [Salt](https://github.com/unchartedsoftware/salt) - Scala/Spark tile generation/visualization for big datasets.  Cool!
+* [Flinkrock](https://github.com/nchammas/flintrock) - scripts to deploy Spark clusters on AWS
+
+### Geospatial and Graph
+* [GeoTrellis](http://geotrellis.io) - distributed raster processing on Spark. Also see [GeoMesa](http://www.geomesa.org/) - distributed vector database + feature filtering
+* [ApertureTiles](http://aperturetiles.com/) - system using Spark to generate a tile pyramid for interactive analytical geo exploration
+* [Twofishes](http://twofishes.net/) - Foursquare's Scala-based coarse forward and reverse geocoder
+
+* [trails](https://github.com/danielkroeni/trails/blob/master/README.md) - parser combinators for graph traversal.  Supports Tinker/Blueprints/Neo4j APIs.
+* [scala-graph](http://www.scala-graph.org/) - in-memory graph API based on scala collections. Work in progress.
+
+### Big Data Storage
+
+* [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
+
+* [Phantom](http://websudos.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver
+* [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
+* [CCM](https://github.com/pcmanus/ccm) - easily build local Cassandra clusters for testing!
+* [SSTableAttachedSecondaryIndex](https://github.com/xedin/sasi) - Improved Cassandra 2i, OR and many other enhancements.  Requires modified C* build.
+* [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
+* [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
+* [Doradus](https://github.com/dell-oss/Doradus) - A Graph / OLAP store on top of Cassandra
+* [Khronus](https://github.com/Searchlight/khronus) - Time series DB built on Cassandra + Akka Cluster
+* [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support (see the [blog](http://www.openstratio.org/blog/advanced-search-in-cassandra/)).  Also see [Stargate](http://tuplejump.github.io/stargate/).
+* [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
+* [Cassandra Compaction and Tombstoning](http://engblog.polyvore.com/2015/03/cassandra-compaction-and-tombstone.html)
+
+* [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
+* [CurioDB](https://github.com/stephenmcd/curiodb/blob/master/README.md) - distributed persistent Redis built on Akka cluster, etc.  :)
+* [Ivory](https://github.com/ambiata/ivory) - An immutable, versioned, RDF-triple / fact store for feature extraction / machine learning
+* [Hibari](https://github.com/hibari/hibari) - ordered key-value store using chain replicaton for strong consistency
+* [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
+* [ArDB](https://github.com/yinqiwen/ardb) - like Redis, but with spatial indexes, and pluggable storage engines
+* [MapDB](http://www.mapdb.org/) - Not a database, but rather a database engine with tunable consistency / ACIDness; support for off-heap memory;  fast performance;  indexing and other features.
+* [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
+
+* [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
+
+### Distributed Systems
+
+* [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
+* An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
+* [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
+* [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
+
+## Databases, ML, Data Science
+
+### Indexing and OLAP
+
+* [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
+* [Nanocubes](http://getprismatic.com/story/1413038758684?share=MzAxNDE.MTQxMzAzODc1ODY4NA.QfCHBvwG6MuLbubytTgXqm0gn4w) - Fast visualization of large spatiotemporal datasets.  Amazing stuff.  [Paper](http://nanocubes.net/assets/pdf/nanocubes_paper.pdf) and [Github repo](https://github.com/laurolins/nanocube).
+* [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
+* [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
+* [Scalable In-memory Aggregation](http://www.doc.ic.ac.uk/teaching/distinguished-projects/2011/r.kopaczyk.pdf) - column-oriented, in memory with bitmap indexing and memoization
+
+### ML and Data Science
+
+* [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
+* [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
+* [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
+
+## JVM Other
 
 * [HotSwapAgent](http://www.hotswapagent.org/) - dynamic reload for standard Java frameworks, needs some plugin
 * [Swiss Java Knife](https://github.com/aragozin/jvm-tools) - super handy collection of JVM tools.  Try `java -jar sjk.jar ttop -p PID -o CPU -n 10` for regular reporting of the top 10 threads by CPU usage!
@@ -316,27 +374,6 @@ SBuild seems like a promising replacement for SBT.  Still Scala, but much much s
 * [Grafana](http://grafana.org/) and [Graphene](http://jondot.github.io/graphene/) - great replacement UIs for the clunky default Graphite UI
 * [Elastic Mesos](https://elastic.mesosphere.io/) - create Mesos clusters on AWS with ZK, HDFS
 * [Clustering Graphite](http://grey-boundary.com/the-architecture-of-clustering-graphite/) - in depth look at how to scale out Graphite clusters
-
-## Databases
-
-### Indexing and OLAP
-
-* [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
-* [Nanocubes](http://getprismatic.com/story/1413038758684?share=MzAxNDE.MTQxMzAzODc1ODY4NA.QfCHBvwG6MuLbubytTgXqm0gn4w) - Fast visualization of large spatiotemporal datasets.  Amazing stuff.  [Paper](http://nanocubes.net/assets/pdf/nanocubes_paper.pdf) and [Github repo](https://github.com/laurolins/nanocube).
-* [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
-* [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
-* [Scalable In-memory Aggregation](http://www.doc.ic.ac.uk/teaching/distinguished-projects/2011/r.kopaczyk.pdf) - column-oriented, in memory with bitmap indexing and memoization
-
-### ML and Data Science
-
-* [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
-* [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
-* [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
-
-## Distributed Systems
-
-* [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
-* [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
 
 ## Sublime Text
 
