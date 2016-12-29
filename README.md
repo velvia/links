@@ -130,6 +130,7 @@ Google Protobuf !!
 * sbt-assembly [0.10.2](http://notes.implicit.ly/post/72263234118/sbt-assembly-0-10-2) supports adding a shell script to your jar to make it executable!  No more "java ...." to start your Scala program, and no more `ps ax | grep java | grep ....`
 * [acyclic](https://github.com/lihaoyi/acyclic) - a Compiler plugin to detect cylical dependencies between source files.  Eliminate them for faster builds!
 * Other useful SBT plugins - [sbt-sonatype](https://github.com/xerial/sbt-sonatype), [sbt-pom-reader](https://github.com/sbt/sbt-pom-reader), [sbt-sound](https://github.com/orrsella/sbt-sound), [plugins page](http://www.scala-sbt.org/release/docs/Community/Community-Plugins.html)
+* [Jitpack](https://jitpack.io) - jar packaging for Github repos with no jar publishing (or for non-released versions)
 * [sbt-big-project](https://github.com/fommil/sbt-big-project/tree/v1.0.0) - a plugin to speed up compilation when there are hundreds of projects
 * [Coursier](https://github.com/alexarchambault/coursier) - a much improved jar dependency fetcher, written in pure Scala.  Has SBT plugin, programmatic API
 * [SCoverage](https://github.com/scoverage) - *statement* coverage tool, much more useful than line-based or branch-based tools.  Has SBT plugin.  [Blog post](https://coderwall.com/p/_l-zhw) on why it's an improvement.
