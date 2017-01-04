@@ -200,6 +200,8 @@ There are alternatives which offer lazy, non-memoized versions.
 
 What if you want to stream multiple values and use up multiple threads or async I/O?  Futures are great only for one-shot or single value.  This is where [reactive streams](http://www.reactive-streams.org) comes in - a standard for asynchronous streaming computation.
 
+Here is a [great intro to reactive streams](https://blog.redelastic.com/a-journey-into-reactive-streams-5ee2a9cd7e29#.hq660vnqt) covering why, why backpressure, how it compares to other paradigms.
+
 The best Scala API for pure reactive streams I have found is [Monix Observables](https://monix.io/docs/2x/reactive/observable.html).  It is lightweight, designed for performance, and have a high degree of control over concurrency. There is also Akka Streams which is built on actors.
 
 * [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
