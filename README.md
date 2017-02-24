@@ -246,6 +246,7 @@ Non-Scala:
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 * [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
+* [Squash compression benchmarks](https://quixdb.github.io/squash-benchmark/unstable/)
 * [bloom-filter-scala](https://github.com/alexandrnikitin/bloom-filter-scala) - and accompanying [blog post](https://alexandrnikitin.github.io/blog/bloom-filter-for-scala/?platform=hootsuite) explaining why it's the fastest bloom filter in the JVM
 
 ### Database Libs
