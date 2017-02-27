@@ -219,6 +219,7 @@ Other possiblities:
 * [Scala.Rx](https://github.com/lihaoyi/scala.rx/blob/master/readme.md) - "Reactive variables" - smart variables who auto-update themselves when the values they depend on change
 * [Scala Coroutines](http://storm-enroute.com/coroutines/) - really neat, coroutines with yield. They are more general than reactive streams, but if streaming data is your focus you are probably better off with one of the reactive streams libs.
 * [Scala-gopher](https://github.com/rssh/scala-gopher) - a #golang-style CSP / channels implementation for Scala.  Other niceties: defer()
+* [LChannels](http://alcestes.github.io/lchannels/) - sessions/protocol programming using continuations, both local and distributed.  Kind of neat.
 
 Non-Scala:
 
@@ -386,6 +387,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ## Sublime Text
 
 I love Sublime and use it for everything, even Scala!  Going to put my Sublime stuff in a [separate page](sublime.md).
+
+* [Slap](https://github.com/slap-editor/slap) - a Sublime-inspired terminal editor!
 
 ## Best Practices and Design
 

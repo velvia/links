@@ -167,8 +167,9 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
 }
 ```
 
+NOTE: it seems latest SublimeHighlight is broken.  Need to now export and view in MS Word and then copy and paste.
 
 ## Blogs and Articles
 
 * A collection of [favorite enhancements](http://webdesign.tutsplus.com/articles/simple-visual-enhancements-for-better-coding-in-sublime-text--webdesign-18052)
-
+* [Slap](https://github.com/slap-editor/slap) - a Sublime-inspired terminal editor!
