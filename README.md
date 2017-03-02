@@ -240,7 +240,7 @@ Non-Scala:
   * [spire-ops](https://github.com/typelevel/machinist) - a set of macros for no-overhead implicit operator enrichment
 * [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
 * [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
-* [ScalaXY](https://github.com/nativelibs4java/Scalaxy) - collection of macros for performant for loops, extension methods etc
+* [Scalaxy-streams](https://github.com/nativelibs4java/scalaxy-streams) - collection of macros for performant for loops, foreach etc.  The old project [scalaxy](https://github.com/nativelibs4java/Scalaxy).
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
