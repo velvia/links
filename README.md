@@ -356,6 +356,8 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ## JVM Other
 
+* [Norman Maurer's Talk on JVM Performance Tips](https://speakerdeck.com/normanmaurer/writing-highly-performant-network-frameworks-on-the-jvm-a-love-hate-relationship) - definitely worth a read!
+
 * [jvm-mon](https://github.com/ajermakovics/jvm-mon) - command line tool for JVM monitoring
 * [HotSwapAgent](http://www.hotswapagent.org/) - dynamic reload for standard Java frameworks, needs some plugin
 * [Swiss Java Knife](https://github.com/aragozin/jvm-tools) - super handy collection of JVM tools.  Try `java -jar sjk.jar ttop -p PID -o CPU -n 10` for regular reporting of the top 10 threads by CPU usage!
