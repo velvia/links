@@ -71,6 +71,8 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 * [Scala Native](http://www.scala-native.org) - compile Scala to LLVM native code!  :)
 
+A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scala](hi-perf-notes.md)
+
 ### Serialization / Off-heap Data Structures / Unsafe
 
 * [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
