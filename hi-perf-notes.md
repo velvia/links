@@ -67,3 +67,11 @@ Here's some more inlining output:
 ```
 
 Here you see lots of `inlining too deep`'s. What's up with that?  It turns out that by default the JVM will only inline 9 levels.  For certain code this is probably nowhere near enough.   In this case, adding a simple `-XX:MaxInlineLevel=20` boosted the speed by like 30%.
+
+### Other Inlining Tips
+
+- `MaxInlineSize` and `FreqInlineSize` might be good to tune too.  First check the `PrintInlining` output.
+
+## Other Perf Tips
+
+- In critical sections and tight inner loops, don't use tuples.  They have an allocation cost and sometimes boxing cost as well.  
