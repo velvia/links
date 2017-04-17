@@ -279,6 +279,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * Debasish G's list of [streaming papers and algorithms](https://gist.github.com//debasishg/8172796) - esp stuff on CountMinSketch and HyperLogLog
 * [Cubert](http://linkedin.github.io/Cubert/) - CUBE operator + fast "cost-based" block storage on Hadoop / Tez/ Spark
 * [Kylin](http://www.kylin.io/) - OLAP CUBEs from HIVE tables, includes query layer
+* [MacroBase](https://github.com/stanford-futuredata/macrobase) - a Stanford / Peter Bailis project to find anomalies in real time/over streaming data
 * [Aesop](https://github.com/Flipkart/aesop) - a scalable pub-sub / change propagation system, esp between different datastores, with reliability. Based on LinkedIn DataBus, suports pull or push producers.
 * [Making Zookeeper Resilient](http://blog.cloudera.com/blog/2014/03/zookeeper-resilience-at-pinterest/), an excellent blog post from Pinterest
 * [ImpalaToGo](https://github.com/ImpalaToGo/ImpalaToGo) - run Cloudera Impala directly on S3 files without HDFS!
