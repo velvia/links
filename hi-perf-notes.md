@@ -1,5 +1,9 @@
 # High-Performance Scala Notes
 
+Some overall notes on JVM performance optimization techniques:
+
+* [JVM Optimization Techniques](https://advancedweb.hu/2016/05/27/jvm_jit_optimization_techniques/)
+
 ## Specialization and Boxing
 
 ### How scalac conmpiles traits
