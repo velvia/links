@@ -360,7 +360,10 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ## JVM Other
 
+A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scala](hi-perf-notes.md)
+
 * [Norman Maurer's Talk on JVM Performance Tips](https://speakerdeck.com/normanmaurer/writing-highly-performant-network-frameworks-on-the-jvm-a-love-hate-relationship) - definitely worth a read!
+* [JVM Optimization Techniques](https://advancedweb.hu/2016/05/27/jvm_jit_optimization_techniques/)
 
 * [jvm-mon](https://github.com/ajermakovics/jvm-mon) - command line tool for JVM monitoring
 * [HotSwapAgent](http://www.hotswapagent.org/) - dynamic reload for standard Java frameworks, needs some plugin
