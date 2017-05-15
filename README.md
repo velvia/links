@@ -113,6 +113,7 @@ Google Protobuf !!
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
 * [Enumeratum](https://github.com/lloydmeta/enumeratum/blob/master/README.md) - a Scala Enum library, much better than built in Enumeration
 * [Ammonite](https://github.com/lihaoyi/Ammonite) - Scala DSL for easy BASH-like filesystem operations
+* [Better-Files](https://github.com/pathikrit/better-files) - Great library for easy file operations / NIO utils
 * [IScala](https://github.com/mattpap/IScala) - Scala backend for IPython.  Looks promising.  There is also [Scala Notebook](http://technically.us/sketchbook/Sketching+with+Scala+Notebook.html) but it's more of a research project.
 * [Scaposer](https://github.com/xitrum-framework/scaposer) - i18n / .po file library
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
