@@ -103,6 +103,8 @@ Google Protobuf !!
 * [Fast-Serialization](https://github.com/RuedigerMoeller/fast-serialization) - a drop in replacement for Java Serialization but much faster
 * [LWJGL](https://www.lwjgl.org) - Potentially useful: very fast off heap memory allocators without limitations of allocateDirect;   OpenCL library 
 
+* [jnr-ffi](https://github.com/jnr/jnr-ffi) - Java Foreign Function Interface, used by JRuby to provide MUCH simpler interface to C code than JNI
+
 * [Reed-Solomon Erasure Coding Library](https://www.backblaze.com/blog/reed-solomon/) from Backblaze.  Recover or repair from missing chunks of data; a potential alternative to replication
   - Great paper on [Erasure Coding vs Replication](http://oceanstore.cs.berkeley.edu/publications/papers/pdf/erasure_iptps.pdf)
 
