@@ -203,6 +203,7 @@ There are alternatives which offer lazy, non-memoized versions.
 
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
 * [Akka Anti-Patterns: Hardware](https://manuel.bernhardt.io/2016/11/21/akka-anti-patterns-being-out-of-touch-with-the-hardware/) - and many other related good posts on anti-patterns
+* [Akka Typed Protocols](http://akka.io/blog/2017/05/12/typed-protocols?platform=hootsuite) - Patrik's blog series on Akka typed - a more functional, type safe actors API  :)
 
 ### Reactive Streams
 
