@@ -69,6 +69,10 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 * [Preprocessor](https://github.com/speedcom/preprocessor) - combination of different Scala Types like Phantom Types, Recursive Types, Self Types to make pipeline of computation in typesafe manner
 * [ScalaFix](https://scalacenter.github.io/scalafix/) - a tool to rewrite 2.x Scala for the new [Dotty](http://dotty.epfl.ch) compiler
 
+* [ScalaMeta and Macro Annotations](http://scalameta.org/tutorial/#Macroannotations) - a much more compact way of defining macros
+  - Macro annotations needs the [Macro Paradise](http://docs.scala-lang.org/overviews/macros/paradise.html) compiler plugin.
+* [Scalamacros](https://github.com/scalamacros/scalamacros) - this is the future for Scala Macros, 2.12 and later, support for Dotty, etc.  Coming end of 2017.
+
 * [Scala Native](http://www.scala-native.org) - compile Scala to LLVM native code!  :)
 
 A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scala](hi-perf-notes.md)
