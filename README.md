@@ -225,6 +225,7 @@ The best Scala API for pure reactive streams I have found is [Monix Observables]
 Other possiblities:
 * [RxScala](http://reactivex.io/rxscala/) - a Scala API on top of RxJava
 * [Reactor](http://projectreactor.io) - Java only, from the SpringSource guys, but has IPC/networking
+* [RSocket](http://rsocket.io) - Cross-platform network protocol providing Rx semantics, works on top of Aeron, TCP, WebSockets, HTTP/2
 
 ### Other Concurrency Libs
 
