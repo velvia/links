@@ -247,6 +247,10 @@ Non-Scala:
 
 ## Small Data
 
+Sort of orthogonal to small vs big, but more query language related:
+
+* [http://sangria-graphql.org/getting-started/](Sangria-GraphQL) - a Scala [GraphQL](https://dev-blog.apollodata.com/the-basics-of-graphql-in-5-links-9e1dc4cac055) library
+
 ### Collections, Numeric Processing, Fast Loops
 
 * [Breeze](https://github.com/dlwh/breeze/), [Spire](https://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
@@ -358,6 +362,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ### Indexing and OLAP
 
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
+* [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
 * [Nanocubes](http://getprismatic.com/story/1413038758684?share=MzAxNDE.MTQxMzAzODc1ODY4NA.QfCHBvwG6MuLbubytTgXqm0gn4w) - Fast visualization of large spatiotemporal datasets.  Amazing stuff.  [Paper](http://nanocubes.net/assets/pdf/nanocubes_paper.pdf) and [Github repo](https://github.com/laurolins/nanocube).
 * [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
 * [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
@@ -435,6 +440,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Scala 2.11 vs Swift](https://github.com/densh/talks/raw/master/swift-vs-scala-211-2014-06-03/Swift%20vs%20Scala%202.11.pdf) - Apple's new iOS language is often compared to Scala.
 * [Real World OCaml](https://realworldocaml.org/v1/en/html/prologue.html)
 * [Gherkin](https://github.com/alandipert/gherkin) - a Lisp implemented in bash !!
+* [Futhark](http://futhark-lang.org) - "High-performance purely functional data-parallel array programming on the GPU" - a language for efficient GPU computation
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
 * [Pony](http://www.ponylang.org/) - A capabilities-based Actor-centric static language, deadlock-free, null-free, data-race-free!
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
