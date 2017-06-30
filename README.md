@@ -42,11 +42,17 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 ## Scala
 
+Good resources for starting out:
+
+* [UnderscoreIO's free Scala books](http://underscore.io/books/)
+* [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Scala Design Patterns](https://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
+
+Great general Scala knowledge:
+
 * [Implicit Design Patterns in Scala](http://www.lihaoyi.com/post/ImplicitDesignPatternsinScala.html) - great overview from LiHaoYi on all the different uses of implicits
 * [The Human Side of Scala](http://tech.gilt.com/post/53274999512/the-human-side-of-scala/) - great post on styling Scala for readability
 * [Sneaking Scala Through the Back Door](http://www.slideshare.net/diannemarsh/sneaking-scala-through-the-back-door) - how to promote Scala in an organization
-* [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
 * [Strategic Scala Style: Principle of Least Power](https://lihaoyi.github.io/post/StrategicScalaStylePrincipleofLeastPower.html) - an excellent read about how to choose the path of less complexity and higher readability in the huge landscape that is Scala programming
   * [Designing Data Types](http://www.lihaoyi.com/post/StrategicScalaStyleDesigningDatatypes.html)
 * [SBT - a declarative DSL](https://jazzy.id.au/2015/03/04/sbt-declarative-dsl.html) - an excellent guide to SBT tasks and settings
