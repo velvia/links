@@ -59,6 +59,7 @@ Great general Scala knowledge:
 * [SBT Tips and Tricks](http://underscore.io/blog/posts/2015/11/09/sbt-commands.html)
   - To test only some tests: `testOnly a.b.c.TestName -- -z "word1 word2"` - where word1 word2 is a phrase from test description.  Use double quotes.
 * [Between Zero & Hero](https://speakerdeck.com/agemooij/between-zero-and-hero-scala-tips-and-tricks-for-the-intermediate-scala-developer) - tips and tricks for the intermediate Scala developer
+* [Functors, Applicatives, and Monads in Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) - great guide to three potentially confusing terms in FP
 * [Better Type Classes](http://aakashns.github.io/better-type-class.html) - also see one of first links for good intro to type classes
 * [Type classes and generic derivation](https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/) - How to avoid common boilerplate for type classes and case classes using Shapeless HLists
 * [Type of Types](http://ktoso.github.io/scala-types-of-types/) - an unfinished tutorial on the Scala type system
