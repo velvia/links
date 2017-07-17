@@ -3,6 +3,7 @@
 Some overall notes on JVM performance optimization techniques:
 
 * [JVM Optimization Techniques](https://advancedweb.hu/2016/05/27/jvm_jit_optimization_techniques/)
+* [Hybrid JVM Perf Profiling](http://blogs.microsoft.co.il/sasha/2017/07/07/profiling-the-jvm-on-linux-a-hybrid-approach/) - using AGTC and perf on Linux
 
 ## Specialization and Boxing
 
