@@ -90,7 +90,8 @@ A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scal
 * [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
 * [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 * [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
-* [Filo](https://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences
+* [Filo](https://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences and columnar encoding
+* [PBDirect](https://github.com/btlines/pbdirect) - automatic serialization to/from Protobufs from Scala case classes with no need for writing .proto's.  Perfect for Akka.
 
 Java, not Scala
 
