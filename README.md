@@ -210,6 +210,7 @@ There are alternatives which offer lazy, non-memoized versions.
 * [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
+* New [Adaptive Failure Detector](https://manuel.bernhardt.io/2017/07/26/a-new-adaptive-accrual-failure-detector-for-akka/) for Akka Cluster.  Awesome research and hints too about massive clusters.
 
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
@@ -224,6 +225,7 @@ What if you want to stream multiple values and use up multiple threads or async 
 Here is a [great intro to reactive streams](https://blog.redelastic.com/a-journey-into-reactive-streams-5ee2a9cd7e29#.hq660vnqt) covering why, why backpressure, how it compares to other paradigms.
 
 The best Scala API for pure reactive streams I have found is [Monix Observables](https://monix.io/docs/2x/reactive/observable.html).  It is lightweight, designed for performance, and have a high degree of control over concurrency. There is also Akka Streams which is built on actors.
+* [Parallelism in Monix](https://monix.io/docs/2x/tutorials/parallelism.html) - a great tutorial
 
 * [Akka Streams Extensions](http://mfglabs.github.io/akka-stream-extensions/) - helpers, connectors with PostGres, and more.
 * [Reactive Kafka](https://softwaremill.com/reactive-kafka/)
