@@ -444,6 +444,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Mermaid](https://github.com/knsv/mermaid) - think of it as Markdown for diagrams.  Would be awesome to integrate this into reveal.js!
 * [Markdeep](http://casual-effects.com/markdeep/) - Markdown++ with diagrams, add single line at bottom to convert to HTML!
 * [How To Be a Great Developer](http://funkatron.com/posts/how-to-be-a-great-developer.html) - a reminder to be empathetic, humble, and make lives around us better. Awesome list.
+* [Choosing a Model for your Open Source Business](https://steemit.com/open-source/@snipe/choosing-a-model-for-your-open-source-business)
 
 * [JQ](http://stedolan.github.io/jq/) - JSON processor for the shell.  Super useful with RESTful servers.
 * [Hub](https://hub.github.com) - CLI for Github :)
