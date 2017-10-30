@@ -44,8 +44,11 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 Good resources for starting out:
 
+* [Scala for the Impatient](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf) - [Amazon link]() - overall my favorite book for starting out and ramping up quickly
 * [UnderscoreIO's free Scala books](http://underscore.io/books/)
 * [Effective Scala](http://twitter.github.io/effectivescala/) - Twitter's guide to writing good Scala code
+* [Building a Minecraft Mod with Scala](http://www.schoox.com/13698/building-a-minecraft-mod-with-scala/about) and [Kojo](http://www.kogics.net/sf:kojo), a graphical discovery/play environment for kids to learn Scala
+* [ScalaQuest](https://www.kickstarter.com/projects/andanthor/scalaquest-a-game-to-learn-scala) - a Kickstarter game for learning Scala
 * [Scala Design Patterns](https://pavelfatin.com/design-patterns-in-scala/) - great stuff, how you do (or don't) traditional Java / OOP patterns in Scala
 
 Great general Scala knowledge:
