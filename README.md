@@ -367,6 +367,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 ### Distributed Systems
 
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
+* [CASPaxos](https://arxiv.org/pdf/1802.07000.pdf) - Replicated State Machines without logs - simpler than RAFT since it doesn't use leader election or log replication
 * An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
 * [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
 * [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
@@ -389,6 +390,7 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
+* [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
 
 ## JVM Other
 
