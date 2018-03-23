@@ -272,6 +272,8 @@ Sort of orthogonal to small vs big, but more query language related:
 * [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
 * [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
 * [Scalaxy-streams](https://github.com/nativelibs4java/scalaxy-streams) - collection of macros for performant for loops, foreach etc.  The old project [scalaxy](https://github.com/nativelibs4java/Scalaxy).
+* [Inliner](https://github.com/johnynek/inliner) - macros to inline collections, Option, Try, for comprehensions
+* [SIMD in Scala](https://astojanov.github.io/blog/2017/12/20/scala-simd.html) blog post and the [LMS Intrinsics](https://astojanov.github.io/projects/lms-intrinsics/) library - access to Intel SIMD/SSE/etc instructions!!
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
