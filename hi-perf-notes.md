@@ -5,6 +5,14 @@ Some overall notes on JVM performance optimization techniques:
 * [JVM Optimization Techniques](https://advancedweb.hu/2016/05/27/jvm_jit_optimization_techniques/)
 * [Hybrid JVM Perf Profiling](http://blogs.microsoft.co.il/sasha/2017/07/07/profiling-the-jvm-on-linux-a-hybrid-approach/) - using AGTC and perf on Linux
 
+## Avoiding Exceptions
+
+Throwing exceptions is way too common, especially in Java and Java-ish Scala code.  The problem is that unless it is truly exceptional, exceptions are VERY expensive, in terms of both heap and runtime cost.  
+
+For example, our `BinaryVector` classes originally could throw if trying to add an element beyond the available space for a vector.  The problem is that this is not really exceptional.  Exceeding space is a fairly common use case.  
+
+Redesigning APIs to return proper values is not only more performant, but more functional and easier to test as well.
+
 ## Specialization and Boxing
 
 ### How scalac conmpiles traits
