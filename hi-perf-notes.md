@@ -85,6 +85,43 @@ Here you see lots of `inlining too deep`'s. What's up with that?  It turns out t
 
 - `MaxInlineSize` and `FreqInlineSize` might be good to tune too.  First check the `PrintInlining` output.
 
+## Memory Management
+
+"What resource are you constrained by?"  This is a great question when designing and architecting systems.  You may find, especially for a JVM-based in-memory processing system, that memory, specifically heap memory, is the most precious resource.
+
+- GC is in general much more efficient at clearing lots of temporary objects than lots of permanent objects
+- Offheap is much better for long-lived data whose lifecycle you want to control anyways
+- Beware of object graphs. This can very easily bloat on heap usage, especially when you have millions of copies of something
+- Offheap (fully native) and direct buffer memory are not moved around, so you can obtain C-like pointers and use them safely in code
+- Onheap objects are moved around by the JVM GC.  It *is* in theory possible to obtain a native pointer to heap memory, but not worth the cost (see below).  It is not possible to pin onheap objects.
+- Possible to use Scala value classes with offheap data to minimize onheap object allocation and usage.  Value classes have their own pain points though.
+
+### Can I Obtain a Pointer for On-Heap Objects?
+
+In short, you can but shouldn't, because on-heap objects get moved around.
+
+TO do so:
+
+```scala
+scala> Array("foo", "bah", "blaz")
+res0: Array[String] = Array(foo, bah, blaz)
+
+scala> filodb.memory.format.UnsafeUtils.getLong(res0, 16)
+res1: Long = -3370045110338506547
+```
+
+From here it gets tricky.
+
+- Due to default JDK8 `+UseCompressedOops`, the JVM actually fits TWO object pointers into that 64-bit space.  However this is only true if the JVM can fit everything into a 32GB heap space.
+- With CompressedOops, you take the 32-bit half that you want, then `<< 3`.  Note that objects are usually 8-byte aligned, but there is an option to change that.
+- You might also have to add a heap virtual address start number.  I didn't when I tested it, but this can be changed (see `-XX:HeapBaseMinAddress=8g`)
+- The JVM doesn't always use bit shifting though
+- A [StackOverflow review of all the subtleties](https://stackoverflow.com/questions/35411754/java8-xxusecompressedoops-xxobjectalignmentinbytes-16)
+
+There is also having to deal with the address moving around.  I found that if you write the object to an object array, then the JVM will actually update the array when the physical address moves.  I suppose if you check it often enough you can always get the newest location.
+
+However, to get code that works reliably, with all the different possible JVM configuration options, and accommodate moving memory - this is just too tricky.
+
 ## Other Perf Tips
 
-- In critical sections and tight inner loops, don't use tuples.  They have an allocation cost and sometimes boxing cost as well.  
+- In critical sections and tight inner loops, don't use tuples.  They have an allocation cost and boxing cost too.
