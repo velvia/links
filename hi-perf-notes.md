@@ -113,14 +113,14 @@ res1: Long = -3370045110338506547
 From here it gets tricky.
 
 - Due to default JDK8 `+UseCompressedOops`, the JVM actually fits TWO object pointers into that 64-bit space.  However this is only true if the JVM can fit everything into a 32GB heap space.
-- With CompressedOops, you take the 32-bit half that you want, then `<< 3`.  Note that objects are usually 8-byte aligned, but there is an option to change that.
-- You might also have to add a heap virtual address start number.  I didn't when I tested it, but this can be changed (see `-XX:HeapBaseMinAddress=8g`)
-- The JVM doesn't always use bit shifting though
+- In general the formula for decompressing is like: `<wide_oop> = <narrow-oop-base> + (<narrow-oop> << 3)`
+- This article on [CompressedOops](https://wiki.openjdk.java.net/display/HotSpot/CompressedOops) goes into much more fantastic detail
+- The `narrow-oop-base` can be configured (see `-XX:HeapBaseMinAddress=8g`)
 - A [StackOverflow review of all the subtleties](https://stackoverflow.com/questions/35411754/java8-xxusecompressedoops-xxobjectalignmentinbytes-16)
+- Also see this StackOverflow question on using the sa-jdi.jar Hotspot Serviceability Agent to [programmatically determine the narrow-oop-base and other info](https://stackoverflow.com/questions/46597668/how-to-determine-if-java-heap-is-using-compressed-pointers-and-whether-or-not-re)
+- 64 vs 32-bit pointers can very easily be determined from `unsafe.arrayIndexScale(classOf[Array[String]])` - this is 4 if pointer compression is enabled
 
 There is also having to deal with the address moving around.  I found that if you write the object to an object array, then the JVM will actually update the array when the physical address moves.  I suppose if you check it often enough you can always get the newest location.
-
-However, to get code that works reliably, with all the different possible JVM configuration options, and accommodate moving memory - this is just too tricky.
 
 ## Other Perf Tips
 
