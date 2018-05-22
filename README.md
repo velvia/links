@@ -16,6 +16,7 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   - [Actors](#actors)
   - [Reactive Streams](#reactive-streams)
   - [Other Concurrency Libs](#other-concurrency-libs)
+  - [Akka Cluster and Distributed Systems](#akka-cluster-and-distributed-systems)
 - [HTTP Server Libs You May Not Have Heard Of](#http-server-libs-you-may-not-have-heard-of)
 - [Small Data](#small-data)
   - [Collections, Numeric Processing, Fast Loops](#collections-numeric-processing-fast-loops)
@@ -26,15 +27,14 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   - [Spark](#spark)
   - [Geospatial and Graph](#geospatial-and-graph)
   - [Big Data Storage](#big-data-storage)
-  - [Distributed Systems](#distributed-systems)
 - [Databases, ML, Data Science](#databases-ml-data-science)
   - [Indexing and OLAP](#indexing-and-olap)
   - [ML and Data Science](#ml-and-data-science)
 - [JVM Other](#jvm-other)
-- 
 - [Monitoring / Infrastructure](#monitoring--infrastructure)
 - [Sublime Text](#sublime-text)
 - [Best Practices and Design](#best-practices-and-design)
+- [Swift](#swift)
 - [Other Random Stuff](#other-random-stuff)
   - [Tips on installing Ruby](#tips-on-installing-ruby)
 
@@ -202,19 +202,15 @@ There are alternatives which offer lazy, non-memoized versions.
 
 [Akka](http://akka.io) is one of the most famous Scala libraries and where Scala Futures came from.  It is known for Actors, a paradigm for always-running distributed resilient code popularized by the Erlang language in the 70's.  Actors are great for safe stateful and distributed computation, based on a shared-nothing, message passing paradigm.
 
+One of the coolest things built on top of Akka actors, which support remote messaging, is Akka Cluster. There is a separate section for that.
+
 * [Kamon](http://kamon.io/) - great looking Actor monitoring using bytecode weaving?  no code change required.
 * [akka-tracing](https://github.com/levkhomich/akka-tracing) - A distributed tracing Akka extension based on Twitter's Zipkin, which can be used as performance diagnostics and debugging tool. Supports Spray!
 * [DI in Akka](http://di-in-scala.github.io/#akka) - great guide to using MacWire with Akka for DI
-* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
-* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
-* [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
 * [Actor Provisioning pattern](https://gist.github.com/helena/6250995) - if you have a long, failure-prone initialization procedure for an actor, this trait splits out the work, to say another actor and dispatcher
 * [Akka mock scheduler](https://github.com/miguno/akka-mock-scheduler) - great for testing!
 * [Akka VisualMailbox](https://github.com/ouven/akka-visualmailbox) - Akka traffic patterns visualized in D3
 * [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
-* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
-* Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
-* New [Adaptive Failure Detector](https://manuel.bernhardt.io/2017/07/26/a-new-adaptive-accrual-failure-detector-for-akka/) for Akka Cluster.  Awesome research and hints too about massive clusters.
 
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
@@ -253,6 +249,30 @@ Non-Scala:
 * [Dirigiste](https://github.com/ztellman/dirigiste/blob/master/README.md) - dynamic scalable / smarter Threadpools
 * (JAVA) [JCTools](https://github.com/JCTools/JCTools) - very high performance concurrent queues, used by Netty and other projects
 * (JAVA) [Windmill](https://github.com/xedin/windmill) - a library for efficient IO/Network processing, Futures based.  Has per-CPU network/IO sockets.
+
+### Akka Cluster and Distributed Systems
+
+If you are building a distributed system, you should seriously consider using [Akka Cluster](https://doc.akka.io/docs/akka/2.5.2/scala/common/cluster.html).
+
+* [Intro to Akka Distributed Data](https://manuel.bernhardt.io/2018/01/03/tour-akka-cluster-akka-distributed-data/) - definitely one of the coolest Akka cluster modules, has great potential for distributed system state.
+* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
+* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
+* [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
+
+* [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
+* [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
+* Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
+* New [Adaptive Failure Detector](https://manuel.bernhardt.io/2017/07/26/a-new-adaptive-accrual-failure-detector-for-akka/) for Akka Cluster.  Awesome research and hints too about massive clusters.
+
+Other non-Akka (and some non-Scala) distribution libs:
+
+* [Suuchi](https://ashwanthkumar.github.io/suuchi/) is a toolkit for distributed synchronous replication and data partitioning/routing, used in production in a really neat company in India.
+* [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
+* [CASPaxos](https://arxiv.org/pdf/1802.07000.pdf) - Replicated State Machines without logs - simpler than RAFT since it doesn't use leader election or log replication
+* An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
+* [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
+* [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
+
 
 ## HTTP Server Libs You May Not Have Heard Of
 
@@ -340,8 +360,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 
 ### Big Data Storage
 
-* [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
-
 * [Phantom](http://websudos.github.io/phantom/) - Scala DSL for Cassandra, supports CQL3 collections, CQL generation from data models, async API based on Datastax driver.  A bit heavyweight though.
 * [Troy](https://github.com/schemasafe/troy) - A lightweight type safe wrapper around CQL/Cassandra client.  Focused on CQL type safety.
 * [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
@@ -365,14 +383,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
 
 * [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
-
-### Distributed Systems
-
-* [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
-* [CASPaxos](https://arxiv.org/pdf/1802.07000.pdf) - Replicated State Machines without logs - simpler than RAFT since it doesn't use leader election or log replication
-* An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
-* [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
-* [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
 
 ## Databases, ML, Data Science
 
@@ -444,6 +454,11 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [How to Pair with Jr Devs](https://devmynd.com/blog/2015-1-pairing-with-junior-developers/) - really good advice.  Make them type.  Listen and be on the same level.
 * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
 * [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
+
+## Swift
+
+* [Swift Tutorial](https://swift.org/getting-started/#using-the-repl)
+* [10000 times faster Swift](https://medium.com/@icex33/10-thousand-times-faster-swift-737b1accd973) - notes on high performance, C-speed Swift
 
 ## Other Random Stuff
 
