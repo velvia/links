@@ -255,11 +255,12 @@ Non-Scala:
 If you are building a distributed system, you should seriously consider using [Akka Cluster](https://doc.akka.io/docs/akka/2.5.2/scala/common/cluster.html).
 
 * [Intro to Akka Distributed Data](https://manuel.bernhardt.io/2018/01/03/tour-akka-cluster-akka-distributed-data/) - definitely one of the coolest Akka cluster modules, has great potential for distributed system state.
-* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
-* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
 * [Akka Data Replication](https://github.com/patriknw/akka-data-replication) - replicated low-latency in memory datastore built using Akka cluster and CRDTs
+* [Akka Management & Discovery](https://developer.lightbend.com/docs/akka-management/current/bootstrap.html) - Lightbend's Cluster Extension for auto cluster self discovery using DNS, replaces
+  * [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
+* [Akka Cluster Inventory](http://blog.eigengo.com/2014/12/13/akka-cluster-inventory/) extension - very useful.  All the other blog posts in the series are also excellent reads.
 
-* [Constructr](https://github.com/hseeberger/constructr) - coordinated cluster construction / bootstrapping using etcd/consul as discovery service, for Akka, Cassandra (takes care of registration/CAS/discovery protocol)
+* [Akka ZK cluster seed](https://github.com/sclasen/akka-zk-cluster-seed) - another Akka extension to automatically register seed nodes with ZK
 * [Akka cluster ordered provisioning and shutdown](https://gist.github.com/helena/6220788)
 * Running an [Akka cluster with Docker Containers](http://blog.michaelhamrah.com/2014/03/running-an-akka-cluster-with-docker-containers/)
 * New [Adaptive Failure Detector](https://manuel.bernhardt.io/2017/07/26/a-new-adaptive-accrual-failure-detector-for-akka/) for Akka Cluster.  Awesome research and hints too about massive clusters.
