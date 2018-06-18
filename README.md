@@ -161,6 +161,7 @@ Google Protobuf !!
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
 * [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
+* [Clouseau](https://github.com/non/clouseau) - SBT and runtime plugin to get size of object graphs
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 * [CharybdeFS](https://github.com/scylladb/charybdefs) - FUSE layer to inject filesystem faults for testing
 
