@@ -8,8 +8,9 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Scala](#scala)
-  - [Serialization / Off-heap Data Structures / Unsafe](#serialization--off-heap-data-structures--unsafe)
-  - [Web / REST / General](#web--rest--general)
+  - [Serialization](#serialization)
+  - [Configuration](#configuration)
+  - [General](#general)
   - [Build, Tooling](#build-tooling)
 - [Scala and JVM Concurrency](#scala-and-jvm-concurrency)
   - [Futures and Tasks](#futures-and-tasks)
@@ -17,9 +18,11 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   - [Reactive Streams](#reactive-streams)
   - [Other Concurrency Libs](#other-concurrency-libs)
   - [Akka Cluster and Distributed Systems](#akka-cluster-and-distributed-systems)
-- [HTTP Server Libs You May Not Have Heard Of](#http-server-libs-you-may-not-have-heard-of)
+- [HTTP / REST](#http--rest)
 - [Small Data](#small-data)
-  - [Collections, Numeric Processing, Fast Loops](#collections-numeric-processing-fast-loops)
+  - [High performance code / Unboxed processing / Macros](#high-performance-code--unboxed-processing--macros)
+  - [Off-heap Data Structures / Unsafe](#off-heap-data-structures--unsafe)
+  - [Better collections, Numeric Processing](#better-collections-numeric-processing)
   - [Database Libs](#database-libs)
   - [Caching](#caching)
 - [Big Data Processing](#big-data-processing)
@@ -88,14 +91,12 @@ Great general Scala knowledge:
 
 A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scala](hi-perf-notes.md)
 
-### Serialization / Off-heap Data Structures / Unsafe
+### Serialization
 
-* [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
-* [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
-* [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
-* [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
 * [Filo](https://github.com/velvia/filo) - my own library for extremely fast, serialized Scala sequences and columnar encoding
 * [PBDirect](https://github.com/btlines/pbdirect) - automatic serialization to/from Protobufs from Scala case classes with no need for writing .proto's.  Perfect for Akka.
+* [Grisu-scala](https://github.com/rjmac/grisu-scala) - much faster double to string conversion
+* [Extracting case class param names](http://tysonjh.com/blog/2014/02/09/scala-macros-accessing-case-class-parameters/) using Macros
 
 Java, not Scala
 
@@ -105,30 +106,20 @@ Google Protobuf !!
     - Cap'n Proto [native layout](https://kentonv.github.io/capnproto/encoding.html#) uses 64-bit words, relies on separate packing/unpacking to achieve efficient wire representation.  Has RPC (but not for Java).   Bitset support.  Java is third party support.
     - [Flatbuffers](http://google.github.io/flatbuffers/index.html) is from Google. 32-bit word size, more compact native representation, native Java support.
     - Both Cap'n Proto and Flatbuffers allows random access of lists, whereas SBE is really only for streaming access
-* [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
-    - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
-* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
-    - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
-* [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
-* [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
-* [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/2015/Apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
-* [Byte-buddy](https://github.com/raphw/byte-buddy), a Java class generation library
 * [Sidney](https://github.com/JasonRuckman/sidney) - an experimental columnar nested struct serializer, with Parquet-like repetition counts
-* [OHC](https://github.com/snazy/ohc) - Java off-heap cache
 * [Boon ByteBuf](https://github.com/boonproject/boon/wiki/Auto-Growable-Byte-Buffer-like-a-ByteBuilder) and the [JavaDoc](http://richardhightower.github.io/site/javadocs/index.html) - a very easy to use, auto-growable ByteBuffer replacement, good for efficient IO
 * [Fast-Serialization](https://github.com/RuedigerMoeller/fast-serialization) - a drop in replacement for Java Serialization but much faster
-* [LWJGL](https://www.lwjgl.org) - Potentially useful: very fast off heap memory allocators without limitations of allocateDirect;   OpenCL library 
-
-* [jnr-ffi](https://github.com/jnr/jnr-ffi) - Java Foreign Function Interface, used by JRuby to provide MUCH simpler interface to C code than JNI.  Has native memory allocators and utilities for Struct types.
-  - Also see [jnr-ffi-examples](https://github.com/jnr/jnr-ffi-examples) and [jnr-posix](https://github.com/jnr/jnr-posix)
 
 * [Reed-Solomon Erasure Coding Library](https://www.backblaze.com/blog/reed-solomon/) from Backblaze.  Recover or repair from missing chunks of data; a potential alternative to replication
   - Great paper on [Erasure Coding vs Replication](http://oceanstore.cs.berkeley.edu/publications/papers/pdf/erasure_iptps.pdf)
 
-### Web / REST / General
+### Configuration
 
-* [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST client API.  Although, the latest Spray-client has been vastly simplified as well.
-* [Quick Start to Twitter Finagle](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) - though one should really look into [Finatra](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+* [Knobs](http://oncue.github.io/knobs/) - Scala config library with reactive change detection, env var substitution, can read from Typesafe Config/HOCON, ZK, AWS
+* How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
+
+### General
+
 * [REPL as a service](https://github.com/mergeconflict/consolation) - would be kick ass if integrated into Spark
 * [Enumeratum](https://github.com/lloydmeta/enumeratum/blob/master/README.md) - a Scala Enum library, much better than built in Enumeration
 * [Ammonite](https://github.com/lihaoyi/Ammonite) - Scala DSL for easy BASH-like filesystem operations
@@ -138,9 +129,6 @@ Google Protobuf !!
 * [Adding Reflection to Scala Macros](http://imranrashid.com/posts/scala-reflection/) - example of using reflection in an annotation macro to add automatic ByteBuffer serialization to case classes :)
 * [Scaldi](http://scaldi.github.io/scaldi/Scaldi.html) - A lightweight dependency injection library, with
   [Akka integration](http://hacking-scala.org/post/79931102837/dependency-injection-in-akka-with-scaldi)
-* [Knobs](http://oncue.github.io/knobs/) - Scala config library with reactive change detection, env var substitution, can read from Typesafe Config/HOCON, ZK, AWS
-
-* How to use [Typesafe Config](http://blog.michaelhamrah.com/2014/02/leveraging-typesafes-config-library-across-environments/) across multiple environments
 
 * [lamma.io](http://www.lamma.io/) - the easiest date generation library
 * [Pimpathon](https://github.com/stacycurl/pimpathon) - a set of useful pimp-my-library extensions
@@ -277,10 +265,13 @@ Other non-Akka (and some non-Scala) distribution libs:
 * [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
 
 
-## HTTP Server Libs You May Not Have Heard Of
+## HTTP / REST
 
 * [Colossus](http://tumblr.github.io/colossus/) - an extremely fast, NIO and Akka-based microservice framework. Read [their blog post](http://engineering.tumblr.com/post/102906359034/colossus-a-new-service-framework-from-tumblr).
 * [Socko](http://sockoweb.org/) and [Xitrum](http://xitrum-framework.github.io/) - Two very fast web frameworks built on Akka and Netty
+* [Quick Start to Twitter Finagle](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) - though one should really look into [Finatra](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+
+* [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST client API.  Although, the latest Spray-client has been vastly simplified as well.
 
 ## Small Data
 
@@ -288,18 +279,41 @@ Sort of orthogonal to small vs big, but more query language related:
 
 * [http://sangria-graphql.org/getting-started/](Sangria-GraphQL) - a Scala [GraphQL](https://dev-blog.apollodata.com/the-basics-of-graphql-in-5-links-9e1dc4cac055) library
 
-### Collections, Numeric Processing, Fast Loops
+### High performance code / Unboxed processing / Macros
+
+* [Inliner](https://github.com/johnynek/inliner) - macros to inline collections, Option, Try, for comprehensions
+* [SIMD in Scala](https://astojanov.github.io/blog/2017/12/20/scala-simd.html) blog post and the [LMS Intrinsics](https://astojanov.github.io/projects/lms-intrinsics/) library - access to Intel SIMD/SSE/etc instructions!!
+* [scala-newtype](https://github.com/estatico/scala-newtype) - Newtypes for Scala.  Wrap other types and even primitives with no runtime overhead
+* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
+* [Scalaxy-streams](https://github.com/nativelibs4java/scalaxy-streams) - collection of macros for performant for loops, foreach etc.  The old project [scalaxy](https://github.com/nativelibs4java/Scalaxy).
+* [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
+
+### Off-heap Data Structures / Unsafe
+
+* [Scala-offheap](https://github.com/densh/scala-offheap) - fast, safe off heap objects
+
+* [Using Unsafe for C-like memory access speeds](http://mechanical-sympathy.blogspot.com/2012/07/native-cc-like-performance-for-java.html) - a great guide.  Many Unsafe operations turn into Java intrinsics - which translate to direct machine code
+    - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
+* [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
+    - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
+* [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
+* [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
+* [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/2015/Apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
+* [Byte-buddy](https://github.com/raphw/byte-buddy), a Java class generation library
+* [OHC](https://github.com/snazy/ohc) - Java off-heap cache
+* [LWJGL](https://www.lwjgl.org) - Potentially useful: very fast off heap memory allocators without limitations of allocateDirect;   OpenCL library 
+
+* [jnr-ffi](https://github.com/jnr/jnr-ffi) - Java Foreign Function Interface, used by JRuby to provide MUCH simpler interface to C code than JNI.  Has native memory allocators and utilities for Struct types.
+  - Also see [jnr-ffi-examples](https://github.com/jnr/jnr-ffi-examples) and [jnr-posix](https://github.com/jnr/jnr-posix)
+
+### Better collections, Numeric Processing
 
 * [Breeze](https://github.com/dlwh/breeze/), [Spire](https://github.com/non/spire), and [Saddle](http://saddle.github.io/) - Scala numeric libraries
   * [spire-ops](https://github.com/typelevel/machinist) - a set of macros for no-overhead implicit operator enrichment
 * [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
 * [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
-* [Scalaxy-streams](https://github.com/nativelibs4java/scalaxy-streams) - collection of macros for performant for loops, foreach etc.  The old project [scalaxy](https://github.com/nativelibs4java/Scalaxy).
-* [Inliner](https://github.com/johnynek/inliner) - macros to inline collections, Option, Try, for comprehensions
-* [SIMD in Scala](https://astojanov.github.io/blog/2017/12/20/scala-simd.html) blog post and the [LMS Intrinsics](https://astojanov.github.io/projects/lms-intrinsics/) library - access to Intel SIMD/SSE/etc instructions!!
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
-* [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 * [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
