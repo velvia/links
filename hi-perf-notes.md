@@ -17,6 +17,8 @@ Redesigning APIs to return proper values is not only more performant, but more f
 
 Of course as Scala programmers you learn that vars are evil, except sometimes for performance reasons you really need them.  However, beware that the default implementation for a class instance var adds a check for both reads and writes to make sure that the var is initialized already, otherwise the bytecode throws an `UninitializedException`.  For vars that you are counting on to change quickly, this means vars might not get inlined and might be very slow.  To skip this logic, put your vars inside the class constructors as `private var`s instead.  This guarantees that they are initialized, causes scalac to skip the initialization check (Scala 2.11), and gives you a 2x performance boost!
 
+Another idea worth considering:  use unsafe.getAndAddInt() when adding.  Much cheaper (one instruction) than the default bytecode.
+
 ## Specialization and Boxing
 
 ### How scalac conmpiles traits
@@ -24,6 +26,109 @@ Of course as Scala programmers you learn that vars are evil, except sometimes fo
 ### Specialized Traits and Classes
 
 ### How to Know When Boxing Occurs
+
+### Primitives, boxing, and type safety
+
+The most efficient interface is to directly work with each primitive type of course, which guarantees minimal bytecode.  To make the code a little more readable, we can type alias the primitive into something more readable:
+
+```scala
+scala> type BinPtr = Long
+defined type alias BinPtr
+
+scala> class Bar
+defined class Bar
+
+scala> class Bar {
+     |   def getWireFormat(p: BinPtr): BinPtr = p + 4
+     | }
+defined class Bar
+
+scala> :javap Bar
+...
+{
+  public long getWireFormat(long);
+    descriptor: (J)J
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=3, args_size=2
+         0: lload_1
+         1: ldc2_w        #8                  // long 4l
+         4: ladd
+         5: lreturn
+```
+
+Long argument, Long return result, minimal bytecode.
+
+The problem though is that a type alias does not make our new type unique.  For example in the code above, any Long can be passed in as a BinPtr.  How can we have a little more protection?
+
+```scala
+scala> trait Pointer
+defined trait Pointer
+
+scala> trait WordLengthRegion
+defined trait WordLengthRegion
+
+scala> type BinaryVectPtr = Long with Pointer with WordLengthRegion
+defined type alias BinaryVectPtr
+
+scala> class Foo {
+     |   def getWireFormat(p: BinaryVectPtr): BinaryVectPtr = (p + 4).asInstanceOf[BinaryVectPtr]
+     | }
+defined class Foo
+
+scala> :javap Foo
+...
+{
+  public long getWireFormat(long);
+    descriptor: (J)J
+    flags: ACC_PUBLIC
+    Code:
+      stack=4, locals=3, args_size=2
+         0: lload_1
+         1: ldc2_w        #8                  // long 4l
+         4: ladd
+         5: invokestatic  #15                 // Method scala/runtime/BoxesRunTime.boxToLong:(J)Ljava/lang/Long;
+         8: invokestatic  #19                 // Method scala/runtime/BoxesRunTime.unboxToLong:(Ljava/lang/Object;)J
+        11: lreturn
+```
+
+This is nearly as good, still a primitive return value and argument, but there are two extra mysterious back to back `invokestatic`s which call boxing and unboxing, which seem unnecessary and may be optimized out in the final bytecode/assembly after JIT.
+
+You can test it yourself but the above definition prevents regular Longs from being passed in as a `BinaryVectPtr`.  The disadvantage is that we need casts in the code to make it work.  Those can be hidden behind some apply magic I guess.  Also, the above definition can be put into arrays and result in a 
+
+Another possible solution is to use [scala-newtype](https://github.com/estatico/scala-newtype).  There is a `@newsubtype` macro which can wrap primitives with no runtime cost around a new "type".  For this raw code:
+
+```scala
+object Test {
+  @newsubtype case class VectorPointer(addr: Long)
+
+  class Foo {
+    def add4(p1: VectorPointer): VectorPointer = VectorPointer(p1.addr + 4)
+  }
+}
+```
+
+This produces this bytecode:
+
+```
+  public long add4(long);
+    descriptor: (J)J
+    flags: ACC_PUBLIC
+    Code:
+      stack=5, locals=3, args_size=2
+         0: getstatic     #13                 // Field filodb/akkabootstrapper/Test$VectorPointer$.MODULE$:Lfilodb/akkabootstrapper/Test$VectorPointer$;
+         3: getstatic     #18                 // Field filodb/akkabootstrapper/Test$VectorPointer$Ops$newtype$.MODULE$:Lfilodb/akkabootstrapper/Test$VectorPointer$Ops$newtype$;
+         6: getstatic     #13                 // Field filodb/akkabootstrapper/Test$VectorPointer$.MODULE$:Lfilodb/akkabootstrapper/Test$VectorPointer$;
+         9: lload_1
+        10: invokevirtual #21                 // Method filodb/akkabootstrapper/Test$VectorPointer$.Ops$newtype:(J)J
+        13: invokevirtual #24                 // Method filodb/akkabootstrapper/Test$VectorPointer$Ops$newtype$.addr$extension:(J)J
+        16: ldc2_w        #25                 // long 4l
+        19: ladd
+        20: invokevirtual #29                 // Method filodb/akkabootstrapper/Test$VectorPointer$.apply:(J)J
+        23: lreturn
+```
+
+The bytecode looks ugly, but you still have primitive arguments and return values, and I think most of the bytecode above can be JITted out, but will have to verify that.
 
 ### Tips
 
