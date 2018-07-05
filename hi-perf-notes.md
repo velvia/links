@@ -130,6 +130,63 @@ This produces this bytecode:
 
 The bytecode looks ugly, but you still have primitive arguments and return values, and I think most of the bytecode above can be JITted out, but will have to verify that.
 
+#### A performance comparison test
+
+Adding some testing code and changing the adder used to each type, we get the following results:
+
+```scala
+object Test {
+  @newsubtype case class VectorPointer(addr: Long)
+
+  class VectorPointerAdder {
+    def add4(p1: VectorPointer): VectorPointer = VectorPointer(p1.addr + 4)
+  }
+
+  trait Pointer
+  trait BinVector
+  type VectorPtrWith = Long with BinVector with Pointer
+
+  object VectorPtrWith {
+    def apply(l: Long): VectorPtrWith = l.asInstanceOf[VectorPtrWith]
+  }
+
+  class VectorPtrWithAdder {
+    def add4(p1: VectorPtrWith): VectorPtrWith = VectorPtrWith(p1 + 4)
+  }
+
+  type VectorPtrLong = Long
+
+  class VectorPtrLongAdder {
+    def add4(p1: VectorPtrLong): VectorPtrLong = p1 + 4
+  }
+
+  val subTypeAdder = new VectorPointerAdder
+  val withAdder    = new VectorPtrWithAdder
+  val regAdder     = new VectorPtrLongAdder
+
+  def time: Unit = {
+    var longVal = 1000L
+    val endLong = startLong + 4 * 1000000
+    val startTime = System.nanoTime
+    while (longVal < endLong) {
+      longVal = regAdder.addr(longVal)
+    }
+    val endTime = System.nanoTime
+    //scalstyle:off
+    println(s"One million iterations took ${endTime - startTime} ns or ${(endTime-startTime)/1000000.0} ns per")
+  }
+}
+```
+
+(All measurements taken after a few warmup cycles to allow JIT to work)
+
+* VectorPtrLongAdder - One million iterations took 501270 ns or 0.50127 ns per
+* VectorPointerAdder - 9 - 97ns per call, averaging around 50  :(
+* VectorPtrWithAdder - 2.4 to 70ns per call.  Pretty big variance.
+* VectorValAdder (value class) - One million iterations took 487316 ns or 0.487316 ns per
+
+Unfortunately the only alternative which can consistently even come close to matching the performance of a raw Long (or thinly veiled typedef'd one) are Scala value classes, with all of their warts and all.  The problem is that value classes box rather easily.
+
 ### Tips
 
 ## Debugging JVM Inlining
