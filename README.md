@@ -262,6 +262,7 @@ Other non-Akka (and some non-Scala) distribution libs:
 * [CKite](https://github.com/pablosmedina/ckite) - Raft Scala implementation, Finagle, MapDB etc.
 * [CASPaxos](https://arxiv.org/pdf/1802.07000.pdf) - Replicated State Machines without logs - simpler than RAFT since it doesn't use leader election or log replication
 * An excellent [talk on Akka Cluster and distributed systems](http://www.slideshare.net/jboner/the-road-to-akka-cluster-and-beyond) from Jonas Boner, including summary of lots of distributed systems theory
+* [Strong Eventual Consistency and CRDTs](https://www.youtube.com/watch?v=ebWVLVhiaiY) - a must watch by Mark Shapiro on what eventual consistency really means and the role CRDTs play
 * [Achieving Great Response Times in Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/Berkeley-Latency-Mar2012.pdf) - an excellent talk on how the 99%-tile latency can kill, and techniques to tame it
 * [Raft Visualization](http://thesecretlivesofdata.com/raft/) - great 5-min visualization of the distributed consensus protocol
 
