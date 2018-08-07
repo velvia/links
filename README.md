@@ -205,6 +205,7 @@ One of the coolest things built on top of Akka actors, which support remote mess
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
+* [Understanding Akka's Quarantine State](https://livingston.io/understanding-akkas-quarantine-state/) - another great blog post on how quarantine happens and how to avoid it
 * [Akka Anti-Patterns: Hardware](https://manuel.bernhardt.io/2016/11/21/akka-anti-patterns-being-out-of-touch-with-the-hardware/) - and many other related good posts on anti-patterns
 * [Akka Typed Protocols](http://akka.io/blog/2017/05/12/typed-protocols?platform=hootsuite) - Patrik's blog series on Akka typed - a more functional, type safe actors API  :)
 
