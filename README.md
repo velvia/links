@@ -147,6 +147,7 @@ Google Protobuf !!
 * [SCoverage](https://github.com/scoverage) - *statement* coverage tool, much more useful than line-based or branch-based tools.  Has SBT plugin.  [Blog post](https://coderwall.com/p/_l-zhw) on why it's an improvement.
 * [sbt-jmh](https://github.com/ktoso/sbt-jmh/blob/master/README.md) - Plugin for running SBT projects with the JMH microbench profiling tool.  Also see [jmh-profilers](https://github.com/biboudis/jmh-profilers) project.
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
+  - A great [JMH Tutorial](http://tutorials.jenkov.com/java-performance/jmh.html) - the rest of this writeup is also an excellent resource on Java and JVM performance
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
 * [jmh-visualizer](https://github.com/jzillmann/jmh-visualizer) for visualizing JMH result runs
 * [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
@@ -431,6 +432,7 @@ A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scal
 
 * [Norman Maurer's Talk on JVM Performance Tips](https://speakerdeck.com/normanmaurer/writing-highly-performant-network-frameworks-on-the-jvm-a-love-hate-relationship) - definitely worth a read!
 * [JVM Optimization Techniques](https://advancedweb.hu/2016/05/27/jvm_jit_optimization_techniques/)
+* [JVM Intrinsics/Options list](https://chriswhocodes.com/hotspot_intrinsics_jdk9.html) - super useful
 
 * [jvm-mon](https://github.com/ajermakovics/jvm-mon) - command line tool for JVM monitoring
 * [HotSwapAgent](http://www.hotswapagent.org/) - dynamic reload for standard Java frameworks, needs some plugin
