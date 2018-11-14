@@ -41,3 +41,12 @@ For example, to backup to iCloud Drive, just change the destination folder above
 
     rsync -avz --list-only --include-from=photo-backup-dirlist --exclude '*' /Volumes/MyPhotos/Photos/ ~/Library/Mobile\ Documents/com~apple~CloudDocs/PhotoBackup/
 
+## RClone
+
+[RClone](https://rclone.org/) is even more convenient than rsync in that it can directly back up to multiple cloud places without using a FUSE/local sync folder, which takes up extra space.   In theory it can even upload to Amazon Cloud Drive, but unfortunately Amazon revoked third party API privileges, so you have to use the Amazon Photos app now and a local sync dir.
+
+For example, to upload all selects and albums to the Amazon Photos sync dir:
+
+    rclone sync --include '*/*/*/select/**' --include '*/*/ALBUMS/**' /Volumes/ChanPhotos1/Photos/ ~/amazondrive/Amazon\ Drive/PhotoBackup/
+
+Unfortunately including all your years and dirs in your Amazon sync dir would probably take up too much space, so you might want to restrict the list of years to back up via more specialized `--include` directives.
