@@ -53,3 +53,5 @@ set -gx RBENV_ROOT /usr/local/Cellar/rbenv/0.4.0
 
 # Aliases
 # alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias java8="set -x JAVA_HOME /Users/evan/.jenv/versions/1.8"
+alias java11="set -x JAVA_HOME /Users/evan/.jenv/versions/11.0"
