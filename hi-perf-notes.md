@@ -15,7 +15,7 @@ Redesigning APIs to return proper values is not only more performant, but more f
 
 ## Beware of vars
 
-Of course as Scala programmers you learn that vars are evil, except sometimes for performance reasons you really need them.  However, beware that the default implementation for a class instance var adds a check for both reads and writes to make sure that the var is initialized already, otherwise the bytecode throws an `UninitializedException`.  For vars that you are counting on to change quickly, this means vars might not get inlined and might be very slow.  To skip this logic, put your vars inside the class constructors as `private var`s instead.  This guarantees that they are initialized, causes scalac to skip the initialization check (Scala 2.11), and gives you a 2x performance boost!
+Of course as Scala programmers you learn that vars are evil, except sometimes for performance reasons you really need them.  However, beware that the default implementation for a class instance var adds a check for both reads and writes to make sure that the var is initialized already, otherwise the bytecode throws an `UninitializedException`.  For vars that you are counting on to change quickly, this means vars might not get inlined and might be very slow.  To skip this logic, put your vars inside the class constructors as `private var`s instead.  This guarantees that they are initialized, causes scalac to skip the initialization check (Scala 2.11), and gives you a 2x to 5x performance boost!
 
 Another idea worth considering:  use unsafe.getAndAddInt() when adding.  Much cheaper (one instruction) than the default bytecode.
 
