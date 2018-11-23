@@ -204,6 +204,8 @@ One of the coolest things built on top of Akka actors, which support remote mess
 * [Akka VisualMailbox](https://github.com/ouven/akka-visualmailbox) - Akka traffic patterns visualized in D3
 * [Reactive Visualization](https://github.com/timcharper/reactive-viz) for Akka streams!!
 
+* [Chymyst](http://chemist.io/chymyst-actor.html) - Chymyst is a framework for "chemical reactions" on top of Akka - for distributed, concurrent, functional, declarative computing, much higher level than Akka but built on Akka.  Kind of a neat paradigm, check it out.
+
 * [Ask, Tell, and Per-Request Actors](http://techblog.net-a-porter.com/2013/12/ask-tell-and-per-request-actors/) - why one company moved from Ask/Futures to per-request
 
 * [Dos and Donts deploying Akka in Production](http://boldradius.com/blog-post/U-jexSsAACwA_8nr/dos-and-donts-when-deploying-akka-in-production) - an excellent read, full of advice even for non-Akka JVM apps
