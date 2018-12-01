@@ -15,6 +15,8 @@ learning curve of ownership.
 
 See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
+* [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
+
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
@@ -26,5 +28,14 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 
-Rust-Java Integration
+Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
+* [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
+
+### Performance and Low-Level Stuff
+
+A big part of the appeal of Rust for me is super fast, SAFE low-level serialization and working with raw memory.  
+
+* [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
+
+

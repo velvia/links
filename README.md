@@ -152,6 +152,7 @@ Google Protobuf !!
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
 * [jmh-visualizer](https://github.com/jzillmann/jmh-visualizer) for visualizing JMH result runs
 * [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
+* [Airframe Surface](https://wvlet.org/airframe/docs/airframe-surface.html) - a great small library to determine type and class param info
 * [Clouseau](https://github.com/non/clouseau) - SBT and runtime plugin to get size of object graphs
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 * [CharybdeFS](https://github.com/scylladb/charybdefs) - FUSE layer to inject filesystem faults for testing
@@ -165,10 +166,12 @@ Google Protobuf !!
 * [utest](https://github.com/lihaoyi/utest) - a small micro test framework
 * [lions share](https://t.co/QD6SrK4d4u) - a neat JVM heap and GC analysis tool, with charts and SBT integration.
 
-SBuild seems like a promising replacement for SBT.  Still Scala, but much much simpler, more like Scala version of Make.  With MVN dependency and ScalaTest support.
+**SBT Alternatives**
 
-* [SBuild Example](https://github.com/lefou/domino/blob/master/SBuild.scala)
-* [SBuild Home Page](http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Wiki)
+* [Pants](https://www.pantsbuild.org/index.html) - Twitter's production build system, supports Scala and many other languages
+* [CBT](https://github.com/cvogt/cbt) - Much simpler build language using methods and classes instead of a DSL.
+* [Fury](https://fury.build) - Jon Petty's new experimental build tool
+* [SBuild](http://sbuild.org) - really old, not updated since 2014.
 
 ## Scala and JVM Concurrency
 
@@ -276,6 +279,7 @@ Other non-Akka (and some non-Scala) distribution libs:
 * [Colossus](http://tumblr.github.io/colossus/) - an extremely fast, NIO and Akka-based microservice framework. Read [their blog post](http://engineering.tumblr.com/post/102906359034/colossus-a-new-service-framework-from-tumblr).
 * [Socko](http://sockoweb.org/) and [Xitrum](http://xitrum-framework.github.io/) - Two very fast web frameworks built on Akka and Netty
 * [Quick Start to Twitter Finagle](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) - though one should really look into [Finatra](http://reactive.xploregroup.be/blog/11/Building-a-Microservice-with-Twitter's-Finagle-Quick-Start?utm_content=buffera8cc3&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
+* [Airframe](https://wvlet.org/airframe/) - whole bunch of building blocks for Scala apps including server/HTTP/metrics/logging
 
 * [Scalaj-http](https://github.com/scalaj/scalaj-http) - really simple REST client API.  Although, the latest Spray-client has been vastly simplified as well.
 
@@ -319,6 +323,7 @@ Sort of orthogonal to small vs big, but more query language related:
 * [Framian](https://github.com/tixxit/framian) - a new data frame implementation from the authors of Spire
 * [Scala DataTable](https://github.com/martincooper/scala-datatable) - An immutable, updatable table with heterogenous types of columns. Easily add columns or rows, and have easy Scala collection APIs for iteration.
 * [Squants](http://www.squants.com/) - The Scala API for Quantities, Units of Measure and Dimensional Analysis
+* [Airframe Metrics](https://wvlet.org/airframe/docs/airframe-metrics.html) - human-readable representations of time, data byte size, etc.
 * An immutable [priority map](http://www.ummels.de/2014/12/14/priority-maps-in-scala/) for Scala
 * [product-collections](https://github.com/marklister/product-collections) - useful library for working with collections of tuples. Also, great strongly-typed CSV parser.
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
