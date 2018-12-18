@@ -478,6 +478,7 @@ A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scal
 I love Sublime and use it for everything, even Scala!  Going to put my Sublime stuff in a [separate page](sublime.md).
 
 * [Slap](https://github.com/slap-editor/slap) - a Sublime-inspired terminal editor!
+* [Metals for Sublime](https://scalameta.org/metals/docs/editors/sublime.html) - IDE like features for Scala and Sublime 3!
 
 ## Best Practices and Design
 
