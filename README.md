@@ -150,6 +150,7 @@ Google Protobuf !!
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
   - A great [JMH Tutorial](http://tutorials.jenkov.com/java-performance/jmh.html) - the rest of this writeup is also an excellent resource on Java and JVM performance
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
+* [Profiling JVM Applications](https://developer.lightbend.com/blog/2018-04-09-profiling-JVM-applications/) -  a great guide to FlameGraphs and other tools
 * [jmh-visualizer](https://github.com/jzillmann/jmh-visualizer) for visualizing JMH result runs
 * [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
 * [Airframe Surface](https://wvlet.org/airframe/docs/airframe-surface.html) - a great small library to determine type and class param info
@@ -297,6 +298,7 @@ Sort of orthogonal to small vs big, but more query language related:
 * [Unboxing, Runtime Specialization](http://pchiusano.blogspot.com/2013/07/runtime-specialization-unboxing-and.html?utm_source=twitterfeed&utm_medium=twitter&m=1) - a cool post on how to do really fast aggregations using unboxed integers
 * [Scalaxy-streams](https://github.com/nativelibs4java/scalaxy-streams) - collection of macros for performant for loops, foreach etc.  The old project [scalaxy](https://github.com/nativelibs4java/Scalaxy).
 * [Metal](https://github.com/denisrosset/metal) - fast unboxed Scala data structures.  Includes a fast no-allocation Pointer type that replaces Iterator.
+* [OptionVal](https://github.com/akka/akka/blob/master/akka-actor/src/main/scala/akka/util/OptionVal.scala) - no-allocation but type safe replacement for `Option`
 
 ### Off-heap Data Structures / Unsafe
 
