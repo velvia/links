@@ -82,6 +82,7 @@ Great general Scala knowledge:
   probably better ways of solving the problem, ie via composition.
 * [Preprocessor](https://github.com/speedcom/preprocessor) - combination of different Scala Types like Phantom Types, Recursive Types, Self Types to make pipeline of computation in typesafe manner
 * [ScalaFix](https://scalacenter.github.io/scalafix/) - a tool to rewrite 2.x Scala for the new [Dotty](http://dotty.epfl.ch) compiler
+* [MDoc](https://scalameta.org/mdoc/) - type checking for ScalaDoc
 
 * [ScalaMeta and Macro Annotations](http://scalameta.org/tutorial/#Macroannotations) - a much more compact way of defining macros
   - Macro annotations needs the [Macro Paradise](http://docs.scala-lang.org/overviews/macros/paradise.html) compiler plugin.
