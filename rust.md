@@ -58,6 +58,17 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 
+How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques:
+* Allocate a `Vec::<u8>` or raw memory and use [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods to get at various portions of the memory region;
+* Get a raw pointer to a specific struct from the calculated pointer for higher level interaction; though this involves unsafe.  Ex:
+        let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
+        unsafe {
+          (*foobar).foo = 17;
+          (*foobar).bar = -1;
+        }
+* Get a fat slice pointer using `std::slice::from_raw_parts` to work with slices with range checking goodness and all the rich APIs   
+* Use a crate such as [bytes](https://crates.io/crates/bytes)
+
 Also check out the crazy number of crates available under [compression](https://crates.io/search?q=compression&sort=recent-downloads) - including various interesting radix and trie data structures, and more compression algorithms that one has never heard of.
 
 #### SIMD
