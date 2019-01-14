@@ -40,6 +40,7 @@ Rust-Java Integration / Rust FFI
 ### Cool Data Structures
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
+* [radix-trie](https://crates.io/crates/radix_trie)
 
 ### Performance and Low-Level Stuff
 
@@ -48,26 +49,38 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
+    - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
 * Rust uses jemalloc by default for apps and system malloc for libraries. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
     - Or use the [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
-#### Bitpacking and Data Processing
+#### Bitpacking, Binary Structures, Serialization
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
+* [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
+
+The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
 
 How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques:
-* Allocate a `Vec::<u8>` or raw memory and use [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods to get at various portions of the memory region;
-* Get a raw pointer to a specific struct from the calculated pointer for higher level interaction; though this involves unsafe.  Ex:
-        let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
-        unsafe {
-          (*foobar).foo = 17;
-          (*foobar).bar = -1;
-        }
-* Get a fat slice pointer using `std::slice::from_raw_parts` to work with slices with range checking goodness and all the rich APIs   
-* Use a crate such as [bytes](https://crates.io/crates/bytes)
+* Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
+```rust
+    let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
+    let &mut Foobar = (unsafe { foobar.as_ref() }).expect("Cannot convert foobar to ref");
+```
+* Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. No need for unsafe! [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
+* A simpler version of pod is [plain](https://github.com/randomites/plain) - only helps with size and alignment, not endianness
+* Or [structview](https://crates.io/crates/structview) which offers types for unaligned integers etc.
+* Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers
+* As a last resort, work with [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods, but this is REALLY UNSAFE.
+```rust
+    let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
+    unsafe {
+      (*foobar).foo = 17;
+      (*foobar).bar = -1;
+    }
+```
 
 Also check out the crazy number of crates available under [compression](https://crates.io/search?q=compression&sort=recent-downloads) - including various interesting radix and trie data structures, and more compression algorithms that one has never heard of.
 
