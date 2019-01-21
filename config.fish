@@ -39,6 +39,9 @@ set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx5g -XX:MaxMetaspaceSize=512m"
 # relies on setting up host-only networking with static IP in Linux VM
 set -x DOCKER_HOST tcp://192.168.56.10:2375
 set -x EDITOR /usr/bin/vim
+set -x JAVA_HOME (jenv javahome)
+set -x ASYNC_PROFILER_DIR "$HOME/src/github/async-profiler"
+set -x FLAME_GRAPH_DIR "$HOME/src/github/FlameGraph"
 
 # set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/lib/rustlib/x86_64-apple-darwin/lib/
 
