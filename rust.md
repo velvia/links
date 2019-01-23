@@ -16,6 +16,7 @@ learning curve of ownership.
 See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
+* [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
@@ -55,6 +56,18 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
+
+Perf profiling:
+* [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
+* [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
+* [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - includes possible FlameGraph integration
+* [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX
+
+#### Fast String Parsing
+
+* [nom](https://docs.rs/nom/4.1.1/nom/) - a direct parser using macros, commonly accepted as fastest generic parser
+* [pest](https://pest.rs/#editor) is a PEG parser using an external, easy to understand syntax file. Not quite as fast but might be easier to understand and debug.  There is also a [book](https://pest.rs/book/intro.html).
+* [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly easier
 
 #### Bitpacking, Binary Structures, Serialization
 
