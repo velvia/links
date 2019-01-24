@@ -58,10 +58,16 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
 Perf profiling:
-* [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
+* [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
+    - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
+* [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX.  It does compile.  The cpuprofiler crate requires surrounding blocks of your code though.
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
-* [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - includes possible FlameGraph integration
-* [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX
+* [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
+* [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
+* [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
+
+```sh
+```
 
 #### Fast String Parsing
 
