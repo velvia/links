@@ -66,8 +66,14 @@ Perf profiling:
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
 
+What I've found that works:
 ```sh
+sudo dtrace -c './target/release/bench-2022f41cf9c87baf --profile-time 120' -o out.stacks -n 'profile-997 /pid == $target/ { @[ustack(100)] = count(); }'
+~/src/github/FlameGraph/stackcollapse.pl out.stacks | ~/src/github/FlameGraph/flamegraph.pl >rust-bench.svg
+open -a Safari rust-bench.svg
 ```
+
+where -c bench.... is the executable output of cargo bench.
 
 #### Fast String Parsing
 

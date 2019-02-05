@@ -309,6 +309,7 @@ Sort of orthogonal to small vs big, but more query language related:
     - Also see [Which Memory is Faster - Heap ByteBuffer or Direct](http://www.javacodegeeks.com/2013/08/which-memory-is-faster-heap-or-bytebuffer-or-direct.html)
 * [FastTuple](https://github.com/boundary/fasttuple) - a dynamic (runtime-defined) C-style struct library, with support for off-heap storage.  Only works for primitives right now  :(
     - and the excellent [blog](http://boundary.com/blog/2014/05/15/dynamic-tuple-performance-on-the-jvm/) covers all of the on- and off-heap access and allocation patterns on the JVM very thoroughly.
++ [mysafe](https://github.com/serkan-ozal/mysafe) - Unsafe memory access/leak checker
 * [ObjectLayout](http://objectlayout.org/) - efficient struct-within-array data structures
 * [jvm-unsafe-utils](https://github.com/rxin/jvm-unsafe-utils) - @rxin of Spark/Shark fame library for working with Unsafe.
 * [Agrona](https://github.com/real-logic/Agrona) and [blog post](http://www.insightfullogic.com/2015/Apr/18/agronas-threadsafe-offheap-buffers/) - a ByteBuffer wrapper, off-heap, with atomic / thread-safe update operations. Good for building off heap data structures.
