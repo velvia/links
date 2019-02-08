@@ -60,6 +60,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 Perf profiling:
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
+    - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
 * [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX.  It does compile.  The cpuprofiler crate requires surrounding blocks of your code though.
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
@@ -74,6 +75,8 @@ open -a Safari rust-bench.svg
 ```
 
 where -c bench.... is the executable output of cargo bench.
+
+NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
 
 #### Fast String Parsing
 
@@ -97,7 +100,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. No need for unsafe! [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
 * A simpler version of pod is [plain](https://github.com/randomites/plain) - only helps with size and alignment, not endianness
 * Or [structview](https://crates.io/crates/structview) which offers types for unaligned integers etc.
-* Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers
+* Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers.  Also see [iobuf](https://crates.io/crates/iobuf)
 * As a last resort, work with [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods, but this is REALLY UNSAFE.
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
@@ -118,4 +121,4 @@ Another great article: [learning simd with rust by finding planets](https://medi
 * [faster](https://github.com/AdamNiederer/faster) - "SIMD for Humans" -- probably my favorite one, very high level translation of numeric map loops into SIMD
 * [fearless_simd](https://github.com/raphlinus/fearless_simd), the blog post author's crate.  Runtime CPU detection and use of the most optimal code, no need for unsafe, but only focused on f32.
 * [SIMDeez](https://github.com/jackmott/simdeez) - abstracts intrinsic SIMD instructions over different instruction sets & vector widths, runtime detection
-* [simd_aligned](https://crates.io/crates/simd_aligned) - 
+* [simd_aligned](https://crates.io/crates/simd_aligned) and [simd_aligned_rust](https://github.com/ralfbiedert/simd_aligned_rust) - work with SIMD and packed_simd using vectors which have guaranteed alignment
