@@ -26,6 +26,9 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Columnarization in Rust](http://www.frankmcsherry.org/columnarization/serialization/rust/2014/12/15/Columnarization-in-Rust.html)
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 
+* [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
+* [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
+
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
@@ -42,6 +45,10 @@ Rust-Java Integration / Rust FFI
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
+
+### Testing
+
+The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
 
 ### Performance and Low-Level Stuff
 
