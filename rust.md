@@ -74,6 +74,7 @@ Perf profiling:
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
+* [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.
 
 What I've found that works:
 ```sh
