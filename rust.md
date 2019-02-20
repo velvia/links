@@ -16,13 +16,14 @@ learning curve of ownership.
 See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
+* [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
+* [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - great supplement about Rust ownership from angle of unique access
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
-* [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [Columnarization in Rust](http://www.frankmcsherry.org/columnarization/serialization/rust/2014/12/15/Columnarization-in-Rust.html)
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 
@@ -37,7 +38,7 @@ Cool Rust Projects
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
 * [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
-* [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using JDK11/GraalVM to embed and run LLVM bitcode!!
+* [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
 
@@ -82,6 +83,8 @@ open -a Safari rust-bench.svg
 ```
 
 where -c bench.... is the executable output of cargo bench.
+
+I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us to run above dtrace command with the name of the bench output, but alas it doesn't seem to work with bench.
 
 NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
 
