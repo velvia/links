@@ -149,11 +149,14 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
     [
         { "keys": ["super+alt+s"], "command": "sort_lines", "args": {"case_sensitive": false} },
         { "keys": ["super+alt+r"], "command": "reveal_in_side_bar" },
+        { "keys": ["f12"], "command": "lsp_symbol_definition" },
         // Without these lines Home/End moves to beg/end of doc!  Not acceptable!
         { "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
         { "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
         { "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
-        { "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } }
+        { "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } },
+        { "keys": ["super+alt+left"], "command": "jump_back" },
+        { "keys": ["super+alt+right"], "command": "jump_forward" }
     ]
 
 ### SublimeHighlight config

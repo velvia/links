@@ -56,6 +56,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 string processing, access to detailed memory layout, things like SIMD.  Basically, to be able to idiomatically, safely, and beautifully (functionally?) do super fast and efficient data processing.
 
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
+* [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
     - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
@@ -74,7 +75,8 @@ Perf profiling:
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
-* [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.
+
+[cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 
 What I've found that works:
 ```sh
@@ -85,7 +87,7 @@ open -a Safari rust-bench.svg
 
 where -c bench.... is the executable output of cargo bench.
 
-I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us to run above dtrace command with the name of the bench output, but alas it doesn't seem to work with bench.
+I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us to run above dtrace command with the name of the bench output, but alas it doesn't seem to work with bench.  (NOTE: they are working on a PR to fix this! :)
 
 NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
 
