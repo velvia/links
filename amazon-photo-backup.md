@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Amazing, Easy and Cheap Photo Backup using Amazon Drive](#amazing-easy-and-cheap-photo-backup-using-amazon-drive)
+  - [Prerequisites](#prerequisites)
+  - [Procedure](#procedure)
+  - [Non-Amazon Cloud Backups](#non-amazon-cloud-backups)
+  - [RClone](#rclone)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Amazing, Easy and Cheap Photo Backup using Amazon Drive
 
 ## Prerequisites

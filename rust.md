@@ -3,6 +3,13 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
+  - [Cool Data Structures](#cool-data-structures)
+  - [Testing and CI/CD](#testing-and-cicd)
+  - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
+    - [Perf profiling:](#perf-profiling)
+    - [Fast String Parsing](#fast-string-parsing)
+    - [Bitpacking, Binary Structures, Serialization](#bitpacking-binary-structures-serialization)
+    - [SIMD](#simd)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -18,8 +25,10 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - great supplement about Rust ownership from angle of unique access
+* [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 
+* The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
@@ -29,6 +38,7 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
+* [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
@@ -38,6 +48,8 @@ Cool Rust Projects
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
 * [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
+* It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
+* [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
 * [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
@@ -47,9 +59,10 @@ Rust-Java Integration / Rust FFI
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
 
-### Testing
+### Testing and CI/CD
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
+
 
 ### Performance and Low-Level Stuff
 
@@ -66,11 +79,13 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
-Perf profiling:
+#### Perf profiling:
+
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
 * [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX.  It does compile.  The cpuprofiler crate requires surrounding blocks of your code though.
+* [Rust Performance Profiling on Travis CI](https://beachape.com/blog/2016/11/02/rust-performance-testing-on-travis-ci/)
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
@@ -104,16 +119,17 @@ NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stabl
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
 
-How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques:
+How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques.  In order of preference:
+* I have found [plain](https://github.com/randomites/plain) works really well.  Mark your structs with `#[repr(C)]`.  It only helps with size and alignment, not endianness - so maybe more for in-memory structures or when you are sure you don't need code to work across endianness platforms.  If your structures are not aligned then use `#[repr(C, packed)]` or `#[align(1)]`.
+* Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
+* [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
+* Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. However pod seems to no longer be maintained. [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
     let &mut Foobar = (unsafe { foobar.as_ref() }).expect("Cannot convert foobar to ref");
 ```
-* Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. No need for unsafe! [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
-* A simpler version of pod is [plain](https://github.com/randomites/plain) - only helps with size and alignment, not endianness
 * Or [structview](https://crates.io/crates/structview) which offers types for unaligned integers etc.
-* Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers.  Also see [iobuf](https://crates.io/crates/iobuf)
 * As a last resort, work with [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods, but this is REALLY UNSAFE.
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;

@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [High-Performance Scala Notes](#high-performance-scala-notes)
+  - [Avoiding Exceptions](#avoiding-exceptions)
+  - [Beware of vars](#beware-of-vars)
+  - [Specialization and Boxing](#specialization-and-boxing)
+    - [How scalac conmpiles traits](#how-scalac-conmpiles-traits)
+    - [Specialized Traits and Classes](#specialized-traits-and-classes)
+    - [How to Know When Boxing Occurs](#how-to-know-when-boxing-occurs)
+    - [Primitives, boxing, and type safety](#primitives-boxing-and-type-safety)
+      - [A performance comparison test](#a-performance-comparison-test)
+    - [Tips](#tips)
+  - [Debugging JVM Inlining](#debugging-jvm-inlining)
+    - [-XX:+PrintInlining](#-xxprintinlining)
+    - [+XX:MaxInlineLevel and Fixing Inlining Depth](#xxmaxinlinelevel-and-fixing-inlining-depth)
+    - [Other Inlining Tips](#other-inlining-tips)
+  - [Memory Management](#memory-management)
+    - [Can I Obtain a Pointer for On-Heap Objects?](#can-i-obtain-a-pointer-for-on-heap-objects)
+  - [Other Perf Tips](#other-perf-tips)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # High-Performance Scala Notes
 
 Some overall notes on JVM performance optimization techniques:
