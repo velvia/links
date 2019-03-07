@@ -3,13 +3,14 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
-  - [Cool Data Structures](#cool-data-structures)
-  - [Testing and CI/CD](#testing-and-cicd)
-  - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
-    - [Perf profiling:](#perf-profiling)
-    - [Fast String Parsing](#fast-string-parsing)
-    - [Bitpacking, Binary Structures, Serialization](#bitpacking-binary-structures-serialization)
-    - [SIMD](#simd)
+- [Cool Data Structures](#cool-data-structures)
+- [Rust vs Scala/Java](#rust-vs-scalajava)
+- [Testing and CI/CD](#testing-and-cicd)
+- [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
+  - [Perf profiling:](#perf-profiling)
+  - [Fast String Parsing](#fast-string-parsing)
+  - [Bitpacking, Binary Structures, Serialization](#bitpacking-binary-structures-serialization)
+  - [SIMD](#simd)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -54,17 +55,26 @@ Rust-Java Integration / Rust FFI
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
 
-### Cool Data Structures
+## Cool Data Structures
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
 
-### Testing and CI/CD
+## Rust vs Scala/Java
+
+* The presence of true unsigned types is really nice for low-level work.  I hit a bug in Scala where I used >> instead of >>>.  In Rust you declare a type as unsigned and don't have to worry about this.
+* Immutable byte slices and reference types again are awesome for low-level work.
+* Trait monomorphisation is awesome for ensuring trait methods can be inlined.  JVM cannot do this when there is more than one implementation of a trait.
+* Being able to examine assembly directly from compiler output is super nice for low level perf work (compared to examining bytecode and not knowing the final output until runtime)
+
+* OTOH, rustc is definitely much much stricter (IMO) compared to scalac.  Much of this is for good reason though, for example lack of integer/primitive coercion, ownership, etc. gives safety guarantees.
+ 
+## Testing and CI/CD
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
 
 
-### Performance and Low-Level Stuff
+## Performance and Low-Level Stuff
 
 A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 string processing, access to detailed memory layout, things like SIMD.  Basically, to be able to idiomatically, safely, and beautifully (functionally?) do super fast and efficient data processing.
 
@@ -79,7 +89,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
-#### Perf profiling:
+### Perf profiling:
 
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
@@ -106,13 +116,13 @@ I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us
 
 NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
 
-#### Fast String Parsing
+### Fast String Parsing
 
 * [nom](https://docs.rs/nom/4.1.1/nom/) - a direct parser using macros, commonly accepted as fastest generic parser
 * [pest](https://pest.rs/#editor) is a PEG parser using an external, easy to understand syntax file. Not quite as fast but might be easier to understand and debug.  There is also a [book](https://pest.rs/book/intro.html).
 * [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly easier
 
-#### Bitpacking, Binary Structures, Serialization
+### Bitpacking, Binary Structures, Serialization
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
@@ -141,7 +151,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 
 Also check out the crazy number of crates available under [compression](https://crates.io/search?q=compression&sort=recent-downloads) - including various interesting radix and trie data structures, and more compression algorithms that one has never heard of.
 
-#### SIMD
+### SIMD
 
 There is this great article on [Towards fearless SIMD](https://raphlinus.github.io/rust/simd/2018/10/19/fearless-simd.html), about why SIMD is hard, and how to make it easier.   Along with pointers to many interesting crates doing SIMD.  (There is a built in crate, `std::simd` but it is really lacking) (However, [packed_simd](https://crates.io/crates/packed_simd) will soon be merged into it)
 
