@@ -100,6 +100,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
+* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph)  :)
 
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 
