@@ -432,6 +432,7 @@ Not a Scala library section, more like interesting papers, ideas, algorithms, da
 * [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
 * [Counting Quotient Filters](https://blog.acolyer.org/2017/08/08/a-general-purpose-counting-filter-making-every-bit-count/) - much faster at updating and search than Bloom filters, and can count too!  An [implementation in C](https://github.com/vedantk/quotient-filter) exists.
 * [Lucene: The Good Parts](https://blog.parse.ly/post/1691/lucene/) - a great introduction to Lucene, terminology, indexing technology, search vs aggregations, etc.
+* [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
 
 ### OLAP, Aggregation
 

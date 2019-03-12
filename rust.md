@@ -91,6 +91,10 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 
 ### Perf profiling:
 
+* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- this is now the easiest way to get a FlameGraph on OSX and profile your Rust binaries.  To make it work with bench:
+    - First run `cargo bench` to build your bench executable
+    - If you haven't already, `cargo install flamegraph` (must be at least version 0.1.6 to work on OSX)
+    - `sudo cargo flamegraph --exec="target/release/bench-aba573ea464f3f67"` (replace bench-aba* with the name of your bench executable)
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
@@ -100,11 +104,10 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
-* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph)  :)
 
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 
-What I've found that works:
+What I've found that works (but see cargo flamegraph above for easier way):
 ```sh
 sudo dtrace -c './target/release/bench-2022f41cf9c87baf --profile-time 120' -o out.stacks -n 'profile-997 /pid == $target/ { @[ustack(100)] = count(); }'
 ~/src/github/FlameGraph/stackcollapse.pl out.stacks | ~/src/github/FlameGraph/flamegraph.pl >rust-bench.svg
