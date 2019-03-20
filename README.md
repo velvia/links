@@ -337,6 +337,9 @@ Sort of orthogonal to small vs big, but more query language related:
 
 * [bloom-filter-scala](https://github.com/alexandrnikitin/bloom-filter-scala) - and accompanying [blog post](https://alexandrnikitin.github.io/blog/bloom-filter-for-scala/?platform=hootsuite) explaining why it's the fastest bloom filter in the JVM
 * [Moment Sketches](https://github.com/stanford-futuredata/msketch) - moment-based quantile sketches for summarizing quantile/histogram/latency data
+* [Histogrammar](https://github.com/histogrammar/histogrammar-scala) - library for creating and plotting histograms
+
+Relevant: [Histogram - the Ultimate Guide of Binning](https://www.answerminer.com/blog/binning-guide-ideal-histogram)
 
 ### Database Libs
 
