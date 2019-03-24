@@ -27,7 +27,9 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - great supplement about Rust ownership from angle of unique access
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
+* [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
+* [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
 
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
@@ -88,6 +90,8 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
+
+NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
 
 ### Perf profiling:
 
