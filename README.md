@@ -143,6 +143,7 @@ Google Protobuf !!
 * [acyclic](https://github.com/lihaoyi/acyclic) - a Compiler plugin to detect cylical dependencies between source files.  Eliminate them for faster builds!
 * [Splain](https://github.com/tek/splain) - a compiler plugin for better more descriptive error messages!
 * [sbt-view](https://github.com/nestorpersist/sbt-view) - an SBT plugin to make it easy to view JavaDoc/ScalaDoc of dependencies or your own project
+* [sbt-alldocs](https://github.com/glngn/sbt-alldocs) - SBT plugin (1.0.0+) to generate docs for ALL dependent jars!
 * Other useful SBT plugins - [sbt-sonatype](https://github.com/xerial/sbt-sonatype), [sbt-pom-reader](https://github.com/sbt/sbt-pom-reader), [sbt-sound](https://github.com/orrsella/sbt-sound), [plugins page](http://www.scala-sbt.org/release/docs/Community/Community-Plugins.html)
 * [Jitpack](https://jitpack.io) - jar packaging for Github repos with no jar publishing (or for non-released versions)
 * [sbt-big-project](https://github.com/fommil/sbt-big-project/tree/v1.0.0) - a plugin to speed up compilation when there are hundreds of projects

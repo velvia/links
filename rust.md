@@ -97,8 +97,9 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
 
 * [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- this is now the easiest way to get a FlameGraph on OSX and profile your Rust binaries.  To make it work with bench:
     - First run `cargo bench` to build your bench executable
-    - If you haven't already, `cargo install flamegraph` (must be at least version 0.1.6 to work on OSX)
-    - `sudo cargo flamegraph --exec="target/release/bench-aba573ea464f3f67"` (replace bench-aba* with the name of your bench executable)
+    - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
+    - `sudo flamegraph target/release/bench-aba573ea464f3f67` (replace bench-aba* with the name of your bench executable)
+    - `open -a Safari flamegraph.svg`
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
