@@ -37,7 +37,8 @@ end
 # NOTE: below is for JDK 8
 set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx5g -XX:MaxMetaspaceSize=512m"
 # relies on setting up host-only networking with static IP in Linux VM
-set -x DOCKER_HOST tcp://192.168.56.10:2375
+# Below is not needed anymore with newer versions of Docker for Mac
+# set -x DOCKER_HOST tcp://192.168.56.10:2375
 set -x EDITOR /usr/bin/vim
 set -x JAVA_HOME (jenv javahome)
 set -x ASYNC_PROFILER_DIR "$HOME/src/github/async-profiler"
