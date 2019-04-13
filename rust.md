@@ -82,6 +82,8 @@ A common concern - how do I build different versions of my Rust lib/app for say 
 - On OSX, not too hard to use a Linux build VM to do it
 - For automation, maybe better to create a single Docker image which combines [crossbuild](https://hub.docker.com/r/multiarch/crossbuild/dockerfile) (which has a recipe for OSXCross + other targets) with a rustup container like [abronan/rust-circleci](https://hub.docker.com/r/abronan/rust-circleci) which allows building both nightly and stable.  Use Docker [multi-stage builds](https://stackoverflow.com/questions/39626579/is-there-a-way-to-combine-docker-images-into-1-container) to make combining multiple images easier
 
+Finally, the [Taking Rust everywhere with Rustup](https://blog.rust-lang.org/2016/05/13/rustup.html) blog has good guide on how to use rustup to install cross toolchains, but the above steps to install OS specific linkers are still important.
+
 ## Performance and Low-Level Stuff
 
 A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 string processing, access to detailed memory layout, things like SIMD.  Basically, to be able to idiomatically, safely, and beautifully (functionally?) do super fast and efficient data processing.
