@@ -42,6 +42,7 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
+* [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
