@@ -30,6 +30,7 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
+* [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
 
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
