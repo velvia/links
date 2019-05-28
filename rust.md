@@ -30,20 +30,22 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
-* [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
+* [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 
+Online resources and help:
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
-* [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
-* [Columnarization in Rust](http://www.frankmcsherry.org/columnarization/serialization/rust/2014/12/15/Columnarization-in-Rust.html)
-* [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 
+Specific topics:
+* [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
+* [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
+* [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
