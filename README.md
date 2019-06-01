@@ -451,6 +451,7 @@ Not a Scala library section, more like interesting papers, ideas, algorithms, da
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
 * [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
+* [Useful Resources for DS](https://community.ibm.com/community/user/datascience/blogs/paco-nathan/2019/05/09/useful-resources-for-data-science) by Paco Nathan.  Good list!
 
 ## JVM Other
 
