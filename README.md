@@ -1,6 +1,8 @@
 links
 =====
 
+NOTE: [Data Engineering / ML / DS / Data Structures](data_eng.md) is now a separate section.
+
 Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -30,10 +32,6 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
   - [Spark](#spark)
   - [Geospatial and Graph](#geospatial-and-graph)
   - [Big Data Storage](#big-data-storage)
-- [Databases, ML, Data Science](#databases-ml-data-science)
-  - [Indexing, Pagecache, Storage Engines, Data Structures](#indexing-pagecache-storage-engines-data-structures)
-  - [OLAP, Aggregation](#olap-aggregation)
-  - [ML and Data Science](#ml-and-data-science)
 - [JVM Other](#jvm-other)
 - [Monitoring / Infrastructure](#monitoring--infrastructure)
 - [Sublime Text](#sublime-text)
@@ -403,17 +401,11 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [Troy](https://github.com/schemasafe/troy) - A lightweight type safe wrapper around CQL/Cassandra client.  Focused on CQL type safety.
 * [Athena](https://github.com/vast-engineering/athena/) - Asynchronous Cassandra client built on Akka-IO
 * [CCM](https://github.com/pcmanus/ccm) - easily build local Cassandra clusters for testing!
-* [SSTableAttachedSecondaryIndex](https://github.com/xedin/sasi) - Improved Cassandra 2i, OR and many other enhancements.  Requires modified C* build.
 * [Stubbed Cassandra](http://www.scassandra.org/) - super useful for testing C* apps
 * [Pithos](https://github.com/exoscale/pithos) - an S3-API-compatible object store for Cassandra
-* [Doradus](https://github.com/dell-oss/Doradus) - A Graph / OLAP store on top of Cassandra
-* [Khronus](https://github.com/Searchlight/khronus) - Time series DB built on Cassandra + Akka Cluster
-* [Stratio-Cassandra](https://github.com/Stratio/stratio-cassandra) - a fork with Lucene full-text search and CQL support (see the [blog](http://www.openstratio.org/blog/advanced-search-in-cassandra/)).  Also see [Stargate](http://tuplejump.github.io/stargate/).
-* [How CQL maps to Cassandra Internal Storage](http://www.slideshare.net/DataStax/understanding-how-cql3-maps-to-cassandras-internal-data-structure)
 * [Cassandra Compaction and Tombstoning](http://engblog.polyvore.com/2015/03/cassandra-compaction-and-tombstone.html)
 
 * [Sirius](http://comcast.github.io/sirius/overview.html?attempt=2) - Akka-based in-memory fast key-value store for JVM objects, with Paxos consistency, persistence/txn logs, HA recovery
-* [CurioDB](https://github.com/stephenmcd/curiodb/blob/master/README.md) - distributed persistent Redis built on Akka cluster, etc.  :)
 * [Ivory](https://github.com/ambiata/ivory) - An immutable, versioned, RDF-triple / fact store for feature extraction / machine learning
 * [Hibari](https://github.com/hibari/hibari) - ordered key-value store using chain replicaton for strong consistency
 * [Storehaus](https://github.com/twitter/storehaus) - Twitter's key-value wrapper around Redis, MySql, and other stores. Has a neat merge() functionality for aggregation of values, lists, etc.
@@ -422,39 +414,6 @@ Memcached or EHCache backends) using Scala 2.10 macros to remember function para
 * [HPaste](https://github.com/GravityLabs/HPaste) - a nice Scala client for HBase
 
 * [OctopusDB paper](http://www.cidrdb.org/cidr2011/Papers/CIDR11_Paper25.pdf) - interesting idea of using a WAL of RDF triples as the primary storage, with secondary views of row or column orientation
-
-## Databases, ML, Data Science
-
-Not a Scala library section, more like interesting papers, ideas, algorithms, data structures, etc.
-
-### Indexing, Pagecache, Storage Engines, Data Structures
-
-* [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
-* [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
-* [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
-
-* [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
-* [Counting Quotient Filters](https://blog.acolyer.org/2017/08/08/a-general-purpose-counting-filter-making-every-bit-count/) - much faster at updating and search than Bloom filters, and can count too!  An [implementation in C](https://github.com/vedantk/quotient-filter) exists.
-* [Lucene: The Good Parts](https://blog.parse.ly/post/1691/lucene/) - a great introduction to Lucene, terminology, indexing technology, search vs aggregations, etc.
-* [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
-* [Moment-based Quantile Sketches](http://www.bailis.org/papers/moments-vldb2018.pdf) - a paper out of Stanford offering highly efficient alternative to T-Digests for quantile sketches.  Also [repo](https://github.com/stanford-futuredata/momentsketch)
-
-### OLAP, Aggregation
-
-* [Scalable In-memory Aggregation](http://www.doc.ic.ac.uk/teaching/distinguished-projects/2011/r.kopaczyk.pdf) - column-oriented, in memory with bitmap indexing and memoization
-* [Nanocubes](http://getprismatic.com/story/1413038758684?share=MzAxNDE.MTQxMzAzODc1ODY4NA.QfCHBvwG6MuLbubytTgXqm0gn4w) - Fast visualization of large spatiotemporal datasets.  Amazing stuff.  [Paper](http://nanocubes.net/assets/pdf/nanocubes_paper.pdf) and [Github repo](https://github.com/laurolins/nanocube).
-* [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
-* [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
-
-### ML and Data Science
-
-* [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
-* [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
-* [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
-* [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
-* [Useful Resources for DS](https://community.ibm.com/community/user/datascience/blogs/paco-nathan/2019/05/09/useful-resources-for-data-science) by Paco Nathan.  Good list!
-
-* [Hastic](https://hastic.io) - Anomaly detection plugin for Grafana/TSDBs
 
 ## JVM Other
 

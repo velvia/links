@@ -6,6 +6,7 @@
 - [Cool Data Structures](#cool-data-structures)
 - [Rust vs Scala/Java](#rust-vs-scalajava)
 - [Testing and CI/CD](#testing-and-cicd)
+  - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
   - [Perf profiling:](#perf-profiling)
   - [Fast String Parsing](#fast-string-parsing)
