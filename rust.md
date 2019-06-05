@@ -65,6 +65,7 @@ Rust-Java Integration / Rust FFI
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
+* Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 
 ## Rust vs Scala/Java
 
