@@ -55,6 +55,7 @@ Cool Rust Projects
 
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
+* There is also [j4rs](https://astonbitecode.github.io/blog/post/j4rs_0.6.0/) for calling Java from Rust
 * [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
 * It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
 * [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
