@@ -52,3 +52,7 @@
 
 * [Box of Pain](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - injection of faults and delays together with tracing for evolved insights
 * [Hastic](https://hastic.io) - Anomaly detection plugin for Grafana/TSDBs
+
+## Logging
+
+* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
