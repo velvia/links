@@ -30,6 +30,7 @@
 * [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
 * SublimeREPL
+* [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 
 Themes:
 
