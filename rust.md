@@ -47,6 +47,8 @@ Specific topics:
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
+* [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
+* [Tracing with Tokio and Rust](https://tokio.rs/blog/2019-08-tracing/)
 
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
@@ -54,6 +56,7 @@ Cool Rust Projects
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
+* [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
