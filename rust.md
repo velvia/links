@@ -49,6 +49,7 @@ Specific topics:
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
 * [Tracing with Tokio and Rust](https://tokio.rs/blog/2019-08-tracing/)
+* [Async stacktraces](http://fitzgeraldnick.com/2019/08/27/async-stacks-in-rust.html) - this is SUPER COOL!!!
 
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
