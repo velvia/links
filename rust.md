@@ -58,6 +58,7 @@ Cool Rust Projects
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
+* [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
 
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
