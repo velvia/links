@@ -4,11 +4,13 @@
 
 - [Data Engineering, Databases, Data Structures, ML/DS](#data-engineering-databases-data-structures-mlds)
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
+  - [Data Processing Systems](#data-processing-systems)
   - [Distributed Systems General](#distributed-systems-general)
   - [Data Structures](#data-structures)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
+  - [Logging](#logging)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -23,6 +25,10 @@
 * [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
 * [Lucene: The Good Parts](https://blog.parse.ly/post/1691/lucene/) - a great introduction to Lucene, terminology, indexing technology, search vs aggregations, etc.
 * [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
+
+## Data Processing Systems
+
+* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the NAIAD paper
 
 ## Distributed Systems General
 
@@ -54,6 +60,7 @@ Time Series ML
 * [LSTM Neural Networks for Anomaly Detection](https://medium.com/datadriveninvestor/lstm-neural-networks-for-anomaly-detection-4328cb9b6e27) - really relevant to time series analysis
 * [Machine Learning for Predictive Maintenance](https://medium.com/bigdatarepublic/machine-learning-for-predictive-maintenance-where-to-start-5f3b7586acfb)
 * [Autoencoders for Stock-Market Time Series Compression](https://towardsdatascience.com/autoencoders-for-the-compression-of-stock-market-data-28e8c1a2da3e)
+* [Beginner's Guide to LSTMs and RNNs](https://skymind.ai/wiki/lstm) from Skymind
 
 ## Telemetry, Time Series, Tracing
 

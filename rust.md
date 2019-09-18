@@ -4,6 +4,7 @@
 
 - [Some links on Rust](#some-links-on-rust)
 - [Cool Data Structures](#cool-data-structures)
+- [Rust Data Processing](#rust-data-processing)
 - [Rust vs Scala/Java](#rust-vs-scalajava)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
@@ -59,6 +60,7 @@ Cool Rust Projects
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
+* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 
 Rust-Java Integration / Rust FFI
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
@@ -75,6 +77,11 @@ Rust-Java Integration / Rust FFI
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+
+## Rust Data Processing
+
+* [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
+* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 
 ## Rust vs Scala/Java
 
