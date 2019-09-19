@@ -55,6 +55,7 @@ Specific topics:
 Cool Rust Projects
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
+* [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
