@@ -66,6 +66,7 @@ Time Series ML
 
 * [Box of Pain](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - injection of faults and delays together with tracing for evolved insights
 * [Hastic](https://hastic.io) - Anomaly detection plugin for Grafana/TSDBs
+* [Static Code Analysis for Log Parsing](https://medium.com/palantir/using-static-code-analysis-to-improve-log-parsing-18f0d1843965) - turning unstructured to structured logs
 
 ## Logging
 

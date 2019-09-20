@@ -83,6 +83,7 @@ Rust-Java Integration / Rust FFI
 
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
+* [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
 
 ## Rust vs Scala/Java
 
