@@ -84,7 +84,8 @@ Rust-Java Integration / Rust FFI
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
-
+* [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
+ 
 ## Rust vs Scala/Java
 
 * The presence of true unsigned types is really nice for low-level work.  I hit a bug in Scala where I used >> instead of >>>.  In Rust you declare a type as unsigned and don't have to worry about this.
