@@ -3,9 +3,13 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
+- [Cool Rust Projects](#cool-rust-projects)
 - [Cool Data Structures](#cool-data-structures)
+- [Rust Concurrency](#rust-concurrency)
+  - [Shared Data Across Multiple Threads](#shared-data-across-multiple-threads)
 - [Rust Data Processing](#rust-data-processing)
-- [Rust vs Scala/Java](#rust-vs-scalajava)
+- [Rust and Scala/Java](#rust-and-scalajava)
+  - [Rust-Java Integration / Rust FFI](#rust-java-integration--rust-ffi)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
@@ -27,12 +31,15 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
-* [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - great supplement about Rust ownership from angle of unique access
+* [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
+* [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
+
+[Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
 
 Online resources and help:
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
@@ -41,18 +48,16 @@ Online resources and help:
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
 
 Specific topics:
-* [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
-* [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
-* [Tracing with Tokio and Rust](https://tokio.rs/blog/2019-08-tracing/)
-* [Async stacktraces](http://fitzgeraldnick.com/2019/08/27/async-stacks-in-rust.html) - this is SUPER COOL!!!
+* [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 
-Cool Rust Projects
+## Cool Rust Projects
+
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
@@ -62,22 +67,33 @@ Cool Rust Projects
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
-
-Rust-Java Integration / Rust FFI
-* [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
-* There is also [j4rs](https://astonbitecode.github.io/blog/post/j4rs_0.6.0/) for calling Java from Rust
-* [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
-* It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
-* [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
-* [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
-
-[Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
+* [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
 
 ## Cool Data Structures
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+
+## Rust Concurrency
+
+* [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
+* [Tracing with Tokio and Rust](https://tokio.rs/blog/2019-08-tracing/)
+* [Async stacktraces](http://fitzgeraldnick.com/2019/08/27/async-stacks-in-rust.html) - this is SUPER COOL!!!
+* [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
+* [Coping with Mutable State in Multiple Threads](https://medium.com/@KevinHoffman/coping-with-mutable-state-in-multiple-threads-with-rust-9059c83b6c01)
+
+### Shared Data Across Multiple Threads
+
+Sometimes one needs to share a large data structure across threads and several of them must access it.
+
+The most general way to share a data structure is to use `Arc<RwLock<...>>` or `Arc<Mutex<...>>`.  The `Arc` keeps track of lifetimes and lets different threads exist for different lengths of time, and is inexpensive since it is usually only accessed once at thread spawn.  The `Mutex` or `RwLock` lets different threads mutate it safely, assuming the data structure is not thread-safe.
+
+A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
+
+[Scoped threads](https://docs.rs/crossbeam/0.7.2/crossbeam/thread/index.html) could be used if only one owner will mutate the data structure, and one wants to share immutable refs with other threads for reading.  However, the special threads in Crossbeam crate are still needed as Rustc by itself has no way of proving the lifetime of a thread or when it will be joined, thus any immutable refs created from the owner thread still cannot compile or be shared due to rustc lifetime checks.  Scoped threads are a way around that as it gives rustc a guarantee that the threads will be joined before the owner goes away.
+
+[Arc-swap](https://github.com/vorner/arc-swap) could potentially help too.
 
 ## Rust Data Processing
 
@@ -86,7 +102,7 @@ Rust-Java Integration / Rust FFI
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
  
-## Rust vs Scala/Java
+## Rust and Scala/Java
 
 * The presence of true unsigned types is really nice for low-level work.  I hit a bug in Scala where I used >> instead of >>>.  In Rust you declare a type as unsigned and don't have to worry about this.
 * Immutable byte slices and reference types again are awesome for low-level work.
@@ -94,6 +110,15 @@ Rust-Java Integration / Rust FFI
 * Being able to examine assembly directly from compiler output is super nice for low level perf work (compared to examining bytecode and not knowing the final output until runtime)
 
 * OTOH, rustc is definitely much much stricter (IMO) compared to scalac.  Much of this is for good reason though, for example lack of integer/primitive coercion, ownership, etc. gives safety guarantees.
+
+### Rust-Java Integration / Rust FFI
+
+* [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
+* There is also [j4rs](https://astonbitecode.github.io/blog/post/j4rs_0.6.0/) for calling Java from Rust
+* [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
+* It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
+* [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
+* [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
  
 ## Testing and CI/CD
 

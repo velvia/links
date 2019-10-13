@@ -334,6 +334,8 @@ Sort of orthogonal to small vs big, but more query language related:
 * [SuperFastHash](http://www.azillionmonkeys.com/qed/hash.html) - also see Murmur3
 * [LZ4-Java](https://github.com/jpountz/lz4-java) - very fast compression, but also has version of XXHash - much faster than even Murmur3
 * [Squash compression benchmarks](https://quixdb.github.io/squash-benchmark/unstable/)
+* [SmoothieMap2](https://medium.com/@leventov/smoothiemap-2-the-lowest-memory-hash-table-ever-6bebd06780a3) - a low-memory implementation of Google SwissTable for the JVM
+
 
 * [bloom-filter-scala](https://github.com/alexandrnikitin/bloom-filter-scala) - and accompanying [blog post](https://alexandrnikitin.github.io/blog/bloom-filter-for-scala/?platform=hootsuite) explaining why it's the fastest bloom filter in the JVM
 * [Moment Sketches](https://github.com/stanford-futuredata/msketch) - moment-based quantile sketches for summarizing quantile/histogram/latency data
