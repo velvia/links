@@ -70,6 +70,7 @@ Specific topics:
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
+* [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 
 ## Cool Data Structures
 
@@ -103,8 +104,13 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
+* [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
+* [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
+* [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
  
 ## Rust and Scala/Java
+
+[Rust for Java Developers](https://github.com/andyrbell/rust-for-java-developers)
 
 * The presence of true unsigned types is really nice for low-level work.  I hit a bug in Scala where I used >> instead of >>>.  In Rust you declare a type as unsigned and don't have to worry about this.
 * Immutable byte slices and reference types again are awesome for low-level work.

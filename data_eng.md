@@ -62,6 +62,8 @@ Time Series ML
 * [Machine Learning for Predictive Maintenance](https://medium.com/bigdatarepublic/machine-learning-for-predictive-maintenance-where-to-start-5f3b7586acfb)
 * [Autoencoders for Stock-Market Time Series Compression](https://towardsdatascience.com/autoencoders-for-the-compression-of-stock-market-data-28e8c1a2da3e)
 * [Beginner's Guide to LSTMs and RNNs](https://skymind.ai/wiki/lstm) from Skymind
+* [Anomaly Detection with Prometheus](http://events19.linuxfoundation.org/wp-content/uploads/2017/12/AIOps-Anomaly-Detection-with-Prometheus-Marcel-Hild-Red-Hat.pdf)
+* [Intro to Isolation Forests](https://ruivieira.github.io/introduction-to-isolation-forests.html)
 
 ## Telemetry, Time Series, Tracing
 
