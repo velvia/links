@@ -5,6 +5,7 @@
 - [Some links on Rust](#some-links-on-rust)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Cool Data Structures](#cool-data-structures)
+- [Rust Error Handling](#rust-error-handling)
 - [Rust Concurrency](#rust-concurrency)
   - [Shared Data Across Multiple Threads](#shared-data-across-multiple-threads)
 - [Rust Data Processing](#rust-data-processing)
@@ -82,6 +83,10 @@ Specific topics:
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+
+## Rust Error Handling
+
+* [Anyhow](https://docs.rs/anyhow/1.0.26/anyhow/) - streamlined error handling with context....
 
 ## Rust Concurrency
 
