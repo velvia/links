@@ -97,6 +97,8 @@ Specific topics:
 * [Coping with Mutable State in Multiple Threads](https://medium.com/@KevinHoffman/coping-with-mutable-state-in-multiple-threads-with-rust-9059c83b6c01)
 * [Fearless Concurrency with Hazard Pointers](http://ticki.github.io/blog/fearless-concurrency-with-hazard-pointers/) - using the `conc` crate and `Atomic` which implements hazard pointers for fine-grained and safe protection of readers and garbage
 
+* [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework     
+
 ### Shared Data Across Multiple Threads
 
 Sometimes one needs to share a large data structure across threads and several of them must access it.
@@ -219,6 +221,7 @@ The ideal performance-wise is to not need serialization at all; ie be able to re
 How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques.  In order of preference:
 * I have found [plain](https://github.com/randomites/plain) works really well.  Mark your structs with `#[repr(C)]`.  It only helps with size and alignment, not endianness - so maybe more for in-memory structures or when you are sure you don't need code to work across endianness platforms.  If your structures are not aligned then use `#[repr(C, packed)]` or `#[align(1)]`.
 * Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
+* [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. However pod seems to no longer be maintained. [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
