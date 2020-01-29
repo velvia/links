@@ -231,6 +231,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
 * [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
+* [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
 * Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. However pod seems to no longer be maintained. [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
