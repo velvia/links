@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
+- [IDE/Editor Stuff](#ideeditor-stuff)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Cool Data Structures](#cool-data-structures)
 - [Rust Error Handling](#rust-error-handling)
@@ -23,15 +24,11 @@
 
 ## Some links on Rust
 
-Dealing with strings are confusing in Rust, because there are two types: a heap-
-allocated `String` and a pointer to a slice of String bytes: `&str`.  Knowing
-what to use, and defining structures on them, immediately exposes the steep
-learning curve of ownership.
-
-See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
+[cheats.rs](https://cheats.rs) - Awesome quick ref.
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
+* [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
@@ -45,6 +42,13 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
+
+Dealing with strings are confusing in rust, because there are two types: a heap-
+allocated `String` and a pointer to a slice of String bytes: `&str`.  Knowing
+what to use, and defining structures on them, immediately exposes the steep
+learning curve of ownership.
+
+See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
 Online resources and help:
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
@@ -63,6 +67,10 @@ Specific topics:
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
+
+## IDE/Editor Stuff
+
+* [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 
 ## Cool Rust Projects
 
