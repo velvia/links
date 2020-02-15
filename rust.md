@@ -3,7 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
-- [IDE/Editor Stuff](#ideeditor-stuff)
+- [IDE/Editor/Utilities](#ideeditorutilities)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Cool Data Structures](#cool-data-structures)
 - [Rust Error Handling](#rust-error-handling)
@@ -68,9 +68,10 @@ Specific topics:
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 
-## IDE/Editor Stuff
+## IDE/Editor/Utilities
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
+* [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
 
 ## Cool Rust Projects
 
@@ -90,7 +91,10 @@ Specific topics:
 
 * [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
 * [radix-trie](https://crates.io/crates/radix_trie)
+* [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+
+* [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
 
 ## Rust Error Handling
 
