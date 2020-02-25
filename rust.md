@@ -133,6 +133,7 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
+* [simdjson-rs](https://github.com/simd-lite/simdjson-rs) - SIMD-enabled JSON parser
  
 ## Rust and Scala/Java
 
@@ -178,6 +179,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
 * Rust uses jemalloc by default for apps and system malloc for libraries. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
     - Or use the [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.
+    - Also see [MiMalloc](https://crates.io/crates/mimalloc) - a high perf allocator from Microsoft
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
@@ -239,12 +241,14 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
 * Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. However pod seems to no longer be maintained. [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
+  - Also see [zero](https://docs.rs/zero/0.1.2/zero/)
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
     let &mut Foobar = (unsafe { foobar.as_ref() }).expect("Cannot convert foobar to ref");
 ```
 * Or [structview](https://crates.io/crates/structview) which offers types for unaligned integers etc.
+* There are some DST crates worth checking out: [slice-dst](https://crates.io/crates/slice-dst), [thin-dst](https://crates.io/crates/thin-dst)
 * As a last resort, work with [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods, but this is REALLY UNSAFE.
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
