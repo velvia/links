@@ -133,6 +133,7 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
+* [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [simdjson-rs](https://github.com/simd-lite/simdjson-rs) - SIMD-enabled JSON parser
  
 ## Rust and Scala/Java
