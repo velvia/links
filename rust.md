@@ -134,6 +134,11 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
+
+### JSON Processing
+
+For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x speedup with serde-json.  Then, switching to [json-rust](https://github.com/maciejhirsz/json-rust) provided another 1.8x speedup.  The speedup is completely unreal.
+
 * [simdjson-rs](https://github.com/simd-lite/simdjson-rs) - SIMD-enabled JSON parser
  
 ## Rust and Scala/Java
@@ -180,7 +185,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
 * Rust uses jemalloc by default for apps and system malloc for libraries. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
     - Or use the [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.
-    - Also see [MiMalloc](https://crates.io/crates/mimalloc) - a high perf allocator from Microsoft
+    - Also see [MiMalloc](https://crates.io/crates/mimalloc) - a high perf allocator from Microsoft.  I got 2x improvement for JSON workloads!
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
@@ -194,6 +199,7 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
     - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
     - `sudo flamegraph target/release/bench-aba573ea464f3f67` (replace bench-aba* with the name of your bench executable)
     - `open -a Safari flamegraph.svg`
+    - NOTE: you need to turn on `debug = true` in release profile for symbols
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
