@@ -170,8 +170,8 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 A common concern - how do I build different versions of my Rust lib/app for say OSX and also Linux?  
 - Easiest way now seems to be to use [cross](https://github.com/rust-embedded/cross) - I tried it and literally as easy as `cargo install cross` and `cross build --target ...` as long as you have Docker.  
   + NOTE: crates with non-Rust code (eg jemalloc, mimalloc) often have trouble
-- I would start with [Cross compilation to OSX with Rust](http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/) which uses the OSXCross project along with some Cargo config.  This is for building for OSX from a Linux (say CircleCI or Travis) build container.
-- On OSX, not too hard to use a Linux build VM to do it
+- Also see [rust-musl-builder](https://github.com/emk/rust-musl-builder), another Docker-based solution
+- musl is the best target for Linux as it removes need for G/LIBC dependencies and versioning.  Musl creates a single static binary for super easy deploys.
 - For automation, maybe better to create a single Docker image which combines [crossbuild](https://hub.docker.com/r/multiarch/crossbuild/dockerfile) (which has a recipe for OSXCross + other targets) with a rustup container like [abronan/rust-circleci](https://hub.docker.com/r/abronan/rust-circleci) which allows building both nightly and stable.  Use Docker [multi-stage builds](https://stackoverflow.com/questions/39626579/is-there-a-way-to-combine-docker-images-into-1-container) to make combining multiple images easier
 
 Finally, the [Taking Rust everywhere with Rustup](https://blog.rust-lang.org/2016/05/13/rustup.html) blog has good guide on how to use rustup to install cross toolchains, but the above steps to install OS specific linkers are still important.
