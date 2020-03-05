@@ -168,6 +168,8 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 ### Cross-compilation
 
 A common concern - how do I build different versions of my Rust lib/app for say OSX and also Linux?  
+- Easiest way now seems to be to use [cross](https://github.com/rust-embedded/cross) - I tried it and literally as easy as `cargo install cross` and `cross build --target ...` as long as you have Docker.  
+  + NOTE: crates with non-Rust code (eg jemalloc, mimalloc) often have trouble
 - I would start with [Cross compilation to OSX with Rust](http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/) which uses the OSXCross project along with some Cargo config.  This is for building for OSX from a Linux (say CircleCI or Travis) build container.
 - On OSX, not too hard to use a Linux build VM to do it
 - For automation, maybe better to create a single Docker image which combines [crossbuild](https://hub.docker.com/r/multiarch/crossbuild/dockerfile) (which has a recipe for OSXCross + other targets) with a rustup container like [abronan/rust-circleci](https://hub.docker.com/r/abronan/rust-circleci) which allows building both nightly and stable.  Use Docker [multi-stage builds](https://stackoverflow.com/questions/39626579/is-there-a-way-to-combine-docker-images-into-1-container) to make combining multiple images easier
@@ -183,11 +185,12 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
     - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
-* Rust uses jemalloc by default for apps and system malloc for libraries. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
-    - Or use the [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.
+* Rust uses system malloc by default. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
+    - Use [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.  Jemalloc from Facebook supposed to be fast.
     - Also see [MiMalloc](https://crates.io/crates/mimalloc) - a high perf allocator from Microsoft.  I got 2x improvement for JSON workloads!
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
+    - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
