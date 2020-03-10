@@ -68,6 +68,7 @@ Specific topics:
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
+* [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
 
 ## IDE/Editor/Utilities
 
@@ -87,6 +88,8 @@ Specific topics:
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
+* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
+* [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 
 ## Cool Data Structures
 
@@ -180,6 +183,9 @@ Finally, the [Taking Rust everywhere with Rustup](https://blog.rust-lang.org/201
 
 A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 string processing, access to detailed memory layout, things like SIMD.  Basically, to be able to idiomatically, safely, and beautifully (functionally?) do super fast and efficient data processing.
 
+* [Cheap Tricks - Rust Performance](https://deterministic.space/high-performance-rust.html) - set of quick Cargo settings to try
+* [How to Write Fast Rust Code](https://likebike.com/posts/How_To_Write_Fast_Rust_Code.html) - really good guide
+* [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
@@ -191,7 +197,6 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
-* [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
 
@@ -206,6 +211,7 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
+* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX.  It does compile.  The cpuprofiler crate requires surrounding blocks of your code though.
 * [Rust Performance Profiling on Travis CI](https://beachape.com/blog/2016/11/02/rust-performance-testing-on-travis-ci/)
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)

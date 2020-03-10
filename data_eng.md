@@ -10,6 +10,7 @@
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
+  - [Compression](#compression)
   - [Logging](#logging)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -79,6 +80,10 @@ Time Series ML
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
+
+## Compression
+
+* [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
 
 ## Logging
 
