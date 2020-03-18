@@ -69,6 +69,7 @@ Specific topics:
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
+* [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 
 ## IDE/Editor/Utilities
 
@@ -90,6 +91,7 @@ Specific topics:
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
+* [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 
 ## Cool Data Structures
 
@@ -103,6 +105,7 @@ Specific topics:
 ## Rust Error Handling
 
 * [Anyhow](https://docs.rs/anyhow/1.0.26/anyhow/) - streamlined error handling with context....
+* [Snafu](https://docs.rs/snafu/0.4.1/snafu/index.html) - adding context to errors
 
 ## Rust Concurrency
 
@@ -126,6 +129,8 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 [Scoped threads](https://docs.rs/crossbeam/0.7.2/crossbeam/thread/index.html) could be used if only one owner will mutate the data structure, and one wants to share immutable refs with other threads for reading.  However, the special threads in Crossbeam crate are still needed as Rustc by itself has no way of proving the lifetime of a thread or when it will be joined, thus any immutable refs created from the owner thread still cannot compile or be shared due to rustc lifetime checks.  Scoped threads are a way around that as it gives rustc a guarantee that the threads will be joined before the owner goes away.
 
 [Arc-swap](https://github.com/vorner/arc-swap) could potentially help too.
+
+Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
 ## Rust Data Processing
 
