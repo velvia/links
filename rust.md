@@ -226,6 +226,8 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
 
+For heap profiling try [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
+
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 
 What I've found that works (but see cargo flamegraph above for easier way):
