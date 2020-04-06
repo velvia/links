@@ -5,11 +5,13 @@
 - [Some links on Rust](#some-links-on-rust)
 - [IDE/Editor/Utilities](#ideeditorutilities)
 - [Cool Rust Projects](#cool-rust-projects)
-- [Cool Data Structures](#cool-data-structures)
 - [Rust Error Handling](#rust-error-handling)
 - [Rust Concurrency](#rust-concurrency)
   - [Shared Data Across Multiple Threads](#shared-data-across-multiple-threads)
-- [Rust Data Processing](#rust-data-processing)
+- [Data Processing and Data Structures](#data-processing-and-data-structures)
+  - [JSON Processing](#json-processing)
+  - [Cool Data Structures](#cool-data-structures)
+  - [String Performance](#string-performance)
 - [Rust and Scala/Java](#rust-and-scalajava)
   - [Rust-Java Integration / Rust FFI](#rust-java-integration--rust-ffi)
 - [Testing and CI/CD](#testing-and-cicd)
@@ -92,15 +94,7 @@ Specific topics:
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
-
-## Cool Data Structures
-
-* [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint
-* [radix-trie](https://crates.io/crates/radix_trie)
-* [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
-* Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
-
-* [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
+* [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
 
 ## Rust Error Handling
 
@@ -132,7 +126,7 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 
 Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
-## Rust Data Processing
+## Data Processing and Data Structures
 
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
@@ -145,9 +139,35 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
 ### JSON Processing
 
-For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x speedup with serde-json.  Then, switching to [json-rust](https://github.com/maciejhirsz/json-rust) provided another 1.8x speedup.  The speedup is completely unreal.
+For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x speedup with serde-json.  Then, switching to [json-rust](https://github.com/maciejhirsz/json-rust) provided another 1.8x speedup.  The speedup is completely unreal, much faster than JVM.  The main reason I guess is that json-rust has a `Short` DOM class for short strings, which requires no heap allocation.
 
-* [simdjson-rs](https://github.com/simd-lite/simdjson-rs) - SIMD-enabled JSON parser
+* [simdjson-rs](https://github.com/simd-lite/simdjson) - SIMD-enabled JSON parser.  NOTE: no writing of JSON.
+
+### Cool Data Structures
+
+* [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint.  NOTE: I think this is now the design of the standard library's HashMap!
+* [radix-trie](https://crates.io/crates/radix_trie)
+* [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
+* Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+* [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
+* [IndexMap](https://docs.rs/indexmap/1.3.2/indexmap/index.html) - O(1) obtain by index, iteration by index order
+
+* [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
+* [VecMap](https://contain-rs.github.io/vec-map/vec_map/) - map for small integer keys, may use less space
+
+### String Performance
+
+Rust has native UTF8 string processing, which is AWESOME for performance.  However, there are two concerns usually:
+
+1. Small string memory efficiency.  The native `String` type uses at least two words just for pointer and length/cap, which might be longer than the string itself;
+2. Minimizing number of heap allocations
+
+Here are some solutions:
+* [String](https://docs.rs/string/0.2.1/string/) - string type with configurable byte storage, including stack byte arrays!
+* [Inlinable String](http://fitzgen.github.io/inlinable_string/inlinable_string/index.html) - stores strings up to 30 chars inline, automatic promotion to heap string if needed.
+* [kstring](https://docs.rs/kstring/0.1.0/kstring/) - intended for map keys: immutable, inlined for small keys, and have Ref/Cow types to allow efficient sharing.  :)
+* [nested](https://crates.io/crates/nested) - reduce Vec<String> type structures to just two allocations, probably more memory efficient too.
+* [bumpalo](https://docs.rs/bumpalo/3.2.1/bumpalo/collections/index.html) can do really cheap group allocations in a `Bump` and has custom `String` and `Vec` versions.  At least lowers allocation overhead.
  
 ## Rust and Scala/Java
 
@@ -202,8 +222,11 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
+* Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
 
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
+
+NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 ### Perf profiling:
 
@@ -289,7 +312,12 @@ There is this great article on [Towards fearless SIMD](https://raphlinus.github.
 
 Another great article: [learning simd with rust by finding planets](https://medium.com/@razican/learning-simd-with-rust-by-finding-planets-b85ccfb724c3) is great too. simd is really about parallelism.  it is better to do multiple operations in a parallel (vertical) fashion, vector on vector, than to do horizontal operations where the different components of a wide register depend on one another.
 
+* [ssimd](https://crates.io/crates/ssimd) - an effort to bring std::simd/packed_simd to Rust stable, with auto vectorization (meaning auto detect and implement code paths and fallbacks for when SIMD not available!)
 * [faster](https://github.com/AdamNiederer/faster) - "SIMD for Humans" -- probably my favorite one, very high level translation of numeric map loops into SIMD
 * [fearless_simd](https://github.com/raphlinus/fearless_simd), the blog post author's crate.  Runtime CPU detection and use of the most optimal code, no need for unsafe, but only focused on f32.
 * [SIMDeez](https://github.com/jackmott/simdeez) - abstracts intrinsic SIMD instructions over different instruction sets & vector widths, runtime detection
 * [simd_aligned](https://crates.io/crates/simd_aligned) and [simd_aligned_rust](https://github.com/ralfbiedert/simd_aligned_rust) - work with SIMD and packed_simd using vectors which have guaranteed alignment
+
+* https://www.rustsim.org/blog/2020/03/23/simd-aosoa-in-nalgebra/
+
+NOTE: `shuffle` in `packed_simd` is not very fast.  Replace with native instructions if possible.
