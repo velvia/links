@@ -31,6 +31,7 @@
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
+* [explaine.rs](https://jrvidal.github.io/explaine.rs/) - paste Rust code into the window and hover over keywords to get explanations. Great for learning.
 * [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
@@ -98,6 +99,8 @@ Specific topics:
 
 ## Rust Error Handling
 
+[Error handling survey](https://blog.yoshuawuyts.com/error-handling-survey/) - really good summary of the Rust error library landscape as of late 2019.
+
 * [Anyhow](https://docs.rs/anyhow/1.0.26/anyhow/) - streamlined error handling with context....
 * [Snafu](https://docs.rs/snafu/0.4.1/snafu/index.html) - adding context to errors
 
@@ -145,10 +148,11 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 ### Cool Data Structures
 
-* [hashbrown](https://crates.io/crates/hashbrown) - This crate is a Rust port of Google's high-performance SwissTable hash map, about 8x faster than built in hash map, with lower memory footprint.  NOTE: I think this is now the design of the standard library's HashMap!
+* [dashmap](https://github.com/xacrimon/dashmap) - "Blazing fast concurrent HashMap for Rust"
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
+* [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
 * [IndexMap](https://docs.rs/indexmap/1.3.2/indexmap/index.html) - O(1) obtain by index, iteration by index order
 
@@ -165,8 +169,10 @@ Rust has native UTF8 string processing, which is AWESOME for performance.  Howev
 Here are some solutions:
 * [String](https://docs.rs/string/0.2.1/string/) - string type with configurable byte storage, including stack byte arrays!
 * [Inlinable String](http://fitzgen.github.io/inlinable_string/inlinable_string/index.html) - stores strings up to 30 chars inline, automatic promotion to heap string if needed.
+* Also see [smallstr](https://docs.rs/smallstr/0.2.0/smallstr/)
 * [kstring](https://docs.rs/kstring/0.1.0/kstring/) - intended for map keys: immutable, inlined for small keys, and have Ref/Cow types to allow efficient sharing.  :)
 * [nested](https://crates.io/crates/nested) - reduce Vec<String> type structures to just two allocations, probably more memory efficient too.
+* [tinyset](https://docs.rs/tinyset/0.4.2/tinyset/) - space efficient sets and maps, can be combined with nested perhaps
 * [bumpalo](https://docs.rs/bumpalo/3.2.1/bumpalo/collections/index.html) can do really cheap group allocations in a `Bump` and has custom `String` and `Vec` versions.  At least lowers allocation overhead.
  
 ## Rust and Scala/Java
@@ -251,7 +257,12 @@ NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 For heap profiling try [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
 
+* [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
+* [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
+
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
+* What I like to do with asm output: check if rustc has inlined certain methods.  Also you can clearly see where dynamic dispatch happens and how complicated generated code seems.  More complicated code usually == slower.
+* [llvm-mca](https://www.llvm.org/docs/CommandGuide/llvm-mca.html) - really detailed static analysis and runtime prediction at the machine instruction level
 
 What I've found that works (but see cargo flamegraph above for easier way):
 ```sh

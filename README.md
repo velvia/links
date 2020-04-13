@@ -471,6 +471,8 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.
 * [Pull Requests and other good Github Practices](http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/)
 
+* [On Naming a Database System](http://www.cs.cmu.edu/~pavlo/blog/2020/03/on-naming-a-database-management-system.html) - pretty awesome.
+
 ## Swift
 
 * [Swift Tutorial](https://swift.org/getting-started/#using-the-repl)
