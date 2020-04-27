@@ -68,8 +68,12 @@ Time Series ML
 * [Machine Learning for Predictive Maintenance](https://medium.com/bigdatarepublic/machine-learning-for-predictive-maintenance-where-to-start-5f3b7586acfb)
 * [Autoencoders for Stock-Market Time Series Compression](https://towardsdatascience.com/autoencoders-for-the-compression-of-stock-market-data-28e8c1a2da3e)
 * [Beginner's Guide to LSTMs and RNNs](https://skymind.ai/wiki/lstm) from Skymind
+* [Quantifying Time-Series Synchrony](https://towardsdatascience.com/four-ways-to-quantify-synchrony-between-time-series-data-b99136c4a9c9) - using Pearson correlation, Time-Lagged Cross-Correlation (TLCC), Dynamic Time Warping....
+* [Complete Guide to Time Series Forecasting](https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775)
 * [Anomaly Detection with Prometheus](http://events19.linuxfoundation.org/wp-content/uploads/2017/12/AIOps-Anomaly-Detection-with-Prometheus-Marcel-Hild-Red-Hat.pdf)
 * [Intro to Isolation Forests](https://ruivieira.github.io/introduction-to-isolation-forests.html)
+
+* [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
 
 ## Telemetry, Time Series, Tracing
 
