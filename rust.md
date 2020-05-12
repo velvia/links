@@ -72,6 +72,7 @@ Specific topics:
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
+* [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 
@@ -97,6 +98,7 @@ Specific topics:
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
+* [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 
 ## Rust Error Handling
 
@@ -230,6 +232,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
 * Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
+  - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
 
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
 
@@ -316,6 +319,8 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
     }
 ```
 
+Want to zero memory quickly?  Use [slice_fill](https://docs.rs/slice-fill/1.0.1/slice_fill/) for memset optimization, since there is no memory filling for slices in Rust yet.
+
 Also check out the crazy number of crates available under [compression](https://crates.io/search?q=compression&sort=recent-downloads) - including various interesting radix and trie data structures, and more compression algorithms that one has never heard of.
 
 ### SIMD
@@ -329,6 +334,7 @@ Another great article: [learning simd with rust by finding planets](https://medi
 * [fearless_simd](https://github.com/raphlinus/fearless_simd), the blog post author's crate.  Runtime CPU detection and use of the most optimal code, no need for unsafe, but only focused on f32.
 * [SIMDeez](https://github.com/jackmott/simdeez) - abstracts intrinsic SIMD instructions over different instruction sets & vector widths, runtime detection
 * [simd_aligned](https://crates.io/crates/simd_aligned) and [simd_aligned_rust](https://github.com/ralfbiedert/simd_aligned_rust) - work with SIMD and packed_simd using vectors which have guaranteed alignment
+* [aligned](https://docs.rs/aligned/0.3.2/aligned/) - newtype with byte alignment, for stack or heap!
 
 * https://www.rustsim.org/blog/2020/03/23/simd-aosoa-in-nalgebra/
 

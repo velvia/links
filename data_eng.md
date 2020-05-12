@@ -11,7 +11,7 @@
   - [ML and Data Science](#ml-and-data-science)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression](#compression)
-  - [Logging](#logging)
+  - [Logging and String Processing](#logging-and-string-processing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -89,7 +89,10 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
 
-## Logging
+## Logging and String Processing
+
+* [Smart String Processing Algos in Clickhouse](https://geeks-world.github.io/articles/466183/index.html) - def worth a read for string/substr search
+    - Somebody's Java experiment on above https://gist.github.com/jexp/825280
 
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
