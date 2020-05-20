@@ -152,7 +152,7 @@ Google Protobuf !!
   - A list of [JMH Resources](http://psy-lob-saw.blogspot.com/p/jmh-related-posts.html)
   - A great [JMH Tutorial](http://tutorials.jenkov.com/java-performance/jmh.html) - the rest of this writeup is also an excellent resource on Java and JVM performance
   - [JMH Scala vs Java](http://shipilev.net/blog/2014/java-scala-divided-we-fail/#_java_stack_profilers) - Shipilev analyzes Java vs Scala tail recursion
-* [Profiling JVM Applications](https://developer.lightbend.com/blog/2018-04-09-profiling-JVM-applications/) -  a great guide to FlameGraphs and other tools
+* [Profiling JVM Applications](https://www.lightbend.com/blog/profiling-jvm-applications) -  a great guide to FlameGraphs and other tools
 * [jmh-visualizer](https://github.com/jzillmann/jmh-visualizer) for visualizing JMH result runs
 * [sbt-jol](https://github.com/ktoso/sbt-jol) - inspect Scala/Java object memory layout
 * [Airframe Surface](https://wvlet.org/airframe/docs/airframe-surface.html) - a great small library to determine type and class param info
