@@ -466,6 +466,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 
 * [Semver](http://semver.org/) - Semantic versioning, how to deal with dev workflows and corner cases -- a must read
 * [Pragmatic RESTful API Design](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - really good stuff
+* [Complexity Has to Live Somewhere](https://ferd.ca/complexity-has-to-live-somewhere.html)
 * [Blameless Post-Mortems](http://www.paperplanes.de/2014/6/20/what-blameless-postmortem-taught-me.html) - why they are crucial to good culture
 * [How to Pair with Jr Devs](https://devmynd.com/blog/2015-1-pairing-with-junior-developers/) - really good advice.  Make them type.  Listen and be on the same level.
 * [GitHub Flow](http://scottchacon.com/2011/08/31/github-flow.html) - how github.com does continuous deploys, uses pull requests for an automated, process-free development workflow.  Some gems include naming branches descriptively and using github.com to browse the work currently in progress by looking at active branches.

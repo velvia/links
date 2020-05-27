@@ -38,8 +38,10 @@
 * [A Java Programmer Understanding Rust Ownership](https://medium.com/@rotc21/rust-adventures-a-java-programmer-understanding-rust-ownership-edbeb6b8001)
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
+
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 * [Fireflowers: Rust in the words of its Practitioners](https://brson.github.io/fireflowers/) - just brilliant commentary on what Rust is.
+* [Oxidizing the Interview](https://blog.mgattozzi.dev/oxidizing-the-technical-interview/) - hilarious read on a Rust technical interview
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
 * [Prefer Rust over C/C++](http://cliffle.com/blog/prefer-rust/) - when to and when not to prefer Rust
 * [Moving from C to Rust](https://www.flocknetworks.com/moving-from-c-to-rust/)
@@ -88,6 +90,8 @@ Specific topics:
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+* [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
@@ -181,7 +185,8 @@ Here are some solutions:
  
 ## Rust and Scala/Java
 
-[Rust for Java Developers](https://github.com/andyrbell/rust-for-java-developers)
+* [Rust for Java Developers](https://github.com/andyrbell/rust-for-java-developers)
+* [5 Rust Reflections from Java](https://aliceevebob.com/2020/05/05/5-rust-reflections-from-java/)
 
 * The presence of true unsigned types is really nice for low-level work.  I hit a bug in Scala where I used >> instead of >>>.  In Rust you declare a type as unsigned and don't have to worry about this.
 * Immutable byte slices and reference types again are awesome for low-level work.
