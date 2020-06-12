@@ -28,6 +28,8 @@
 
 [cheats.rs](https://cheats.rs) - Awesome quick ref.
 
+[Why the developers who use Rust love it so much](https://stackoverflow.blog/2020/06/05/why-the-developers-who-use-rust-love-it-so-much/) - from StackOverflow survey, really good quotes
+
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
@@ -202,6 +204,7 @@ Here are some solutions:
 
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
 * There is also [j4rs](https://astonbitecode.github.io/blog/post/j4rs_0.6.0/) for calling Java from Rust
+* [SaferFFI](https://www.ditto.live/blog/posts/introducing-safer-ffi) - a neat library to make exposing C-like APIs much safer esp dealing with pointers, nulls, borrowing etc.
 * [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
 * It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
 * [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
