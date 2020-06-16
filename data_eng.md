@@ -30,6 +30,7 @@
 
 ## Data Processing Systems
 
+* [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the NAIAD paper
 
 ## Distributed Systems General
@@ -77,6 +78,9 @@ Time Series ML
 * [Intro to Isolation Forests](https://ruivieira.github.io/introduction-to-isolation-forests.html)
 
 * [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
+
+Other:
+* [Swarm Intelligence](https://appliednetsci.springeropen.com/articles/10.1007/s41109-020-00260-8)
 
 ## Telemetry, Time Series, Tracing
 
