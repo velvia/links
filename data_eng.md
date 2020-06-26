@@ -6,6 +6,7 @@
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
   - [Data Processing Systems](#data-processing-systems)
   - [Distributed Systems General](#distributed-systems-general)
+  - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
   - [Data Structures](#data-structures)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
@@ -37,6 +38,12 @@
 
 * [Viewstamped Replication](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - classic paper by Barbara Liskov
 * [CRUSH](https://ceph.com/wp-content/uploads/2016/08/weil-crush-sc06.pdf) - Controlled Replication Under Scalable Hashing - Ceph's algorithm for balancing decentralized object placement with minimal data movement in a storage cluster
+
+* [10000 Akka Cluster Nodes and RAPID](https://manuel.bernhardt.io/2020/04/30/10000-node-cluster-with-akka-and-rapid/) - interesting view into the new RAPID cluster membership protocol and how it can scale out peer to peer clusters
+
+## Cloud, Kubernetes, Deployment
+
+* [Kubernetes Liveness and Readiness Probes](https://blog.colinbreck.com/kubernetes-liveness-and-readiness-probes-how-to-avoid-shooting-yourself-in-the-foot/) - how to avoid shooting yourself in the foot
 
 ## Data Structures
 

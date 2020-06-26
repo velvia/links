@@ -89,24 +89,28 @@ Specific topics:
 
 ## Cool Rust Projects
 
+CLI tools:
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
-* [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
-* [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
-
-* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
-* [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
-* [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
-* [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
-* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
-* [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
-* [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
-* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
-* [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
+* [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
+* [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
+* [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
+* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
+* [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
+* [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
+
+Others:
+* [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+* [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+* [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
+* [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
+* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
+* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
+* [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 
 ## Rust Error Handling
 
@@ -118,6 +122,7 @@ Specific topics:
 ## Rust Concurrency
 
 * [Rust Concurrency: Five Easy Pieces](https://medium.com/@polyglot_factotum/rust-concurrency-five-easy-pieces-871f1c62906a) - a great intro to threads, using message queues, determinism, and more
+* [A practical guide to Async in Rust](https://blog.logrocket.com/a-practical-guide-to-async-in-rust/)
 * [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
 * [Tracing with Tokio and Rust](https://tokio.rs/blog/2019-08-tracing/)
 * [Async stacktraces](http://fitzgeraldnick.com/2019/08/27/async-stacks-in-rust.html) - this is SUPER COOL!!!
