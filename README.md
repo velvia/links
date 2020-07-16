@@ -160,6 +160,8 @@ Google Protobuf !!
 * [Comcast](https://github.com/tylertreat/Comcast) - a tool to inject network latency, and less-severe issues
 * [CharybdeFS](https://github.com/scylladb/charybdefs) - FUSE layer to inject filesystem faults for testing
 
+* [Blindsight](https://tersesystems.github.io/blindsight/) - structured logging library for Scala
+
 * [Adaptive microbenchmarking of big data](http://www.autoletics.com/posts/microbenchmarking-big-data-solutions-on-the-jvm-part-1) - really neat JVM agent which allows turning benchmarking code on and off for better benchmarking
 * [SBT updates](https://github.com/rtimush/sbt-updates) - Tool for discovering updated versions of SBT dependencies
 * [Twitter Iago](https://github.com/twitter/iago) - Perf load test tool based on replaying logs.  Compare vs [Gatling](http://gatling.io) for example.

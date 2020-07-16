@@ -173,6 +173,8 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
 * [IndexMap](https://docs.rs/indexmap/1.3.2/indexmap/index.html) - O(1) obtain by index, iteration by index order
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
+* [Rstar](https://crates.io/crates/rstar) - n-dimensional R*-Tree for geospatial indexing and nearest-neighbor
+* [Heapless](https://docs.rs/heapless/0.5.5/heapless/) - static data structures with fixed size; Vec, heap, map, set, queues
 
 * [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
 * [VecMap](https://contain-rs.github.io/vec-map/vec_map/) - map for small integer keys, may use less space
