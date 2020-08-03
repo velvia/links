@@ -49,6 +49,7 @@
 * [Prefer Rust over C/C++](http://cliffle.com/blog/prefer-rust/) - when to and when not to prefer Rust
 * [Moving from C to Rust](https://www.flocknetworks.com/moving-from-c-to-rust/)
   - [C2Rust and Quake](https://immunant.com/blog/2020/01/quake3/) - a tool to auto translate C to Rust!
+* [Clear Explanation of Rust's Module System](http://www.sheshbabu.com/posts/rust-module-system/) - easy intro guide
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
