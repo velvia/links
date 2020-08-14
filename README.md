@@ -480,6 +480,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 
 * [Swift Tutorial](https://swift.org/getting-started/#using-the-repl)
 * [10000 times faster Swift](https://medium.com/@icex33/10-thousand-times-faster-swift-737b1accd973) - notes on high performance, C-speed Swift
+* [Swift for Good](https://www.swiftforgood.com)
 
 ## Other Random Stuff
 
