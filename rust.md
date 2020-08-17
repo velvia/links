@@ -262,7 +262,7 @@ NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 ### Perf profiling:
 
-NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.
+NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
 * [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- this is now the easiest way to get a FlameGraph on OSX and profile your Rust binaries.  To make it work with bench and Criterion:
     - First run `cargo bench` to build your bench executable
@@ -272,12 +272,13 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
     - `open -a Safari flamegraph.svg`
     - NOTE: you need to turn on `debug = true` in release profile for symbols
     - This method works better for apps than small benchmarks btw, as inlined methods won't show up in the graph.
+* [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
+* [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
     - [DTrace Guide](http://dtrace.org/guide/chp-profile.html) is probably pretty useful here
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Tools for Profiling Rust](http://athemathmo.github.io/2016/09/14/tools-for-profiling-rust.html) - cpuprofiler might possibly work on OSX.  It does compile.  The cpuprofiler crate requires surrounding blocks of your code though.
-* [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
 * [Rust Performance Profiling on Travis CI](https://beachape.com/blog/2016/11/02/rust-performance-testing-on-travis-ci/)
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
 * [2017 RustConf - Improving Rust Performance through Profiling](https://www.youtube.com/watch?v=hTHp0gjWMLQ)

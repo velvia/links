@@ -7,6 +7,7 @@
   - [Procedure](#procedure)
   - [Non-Amazon Cloud Backups](#non-amazon-cloud-backups)
   - [RClone](#rclone)
+  - [B2](#b2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -62,3 +63,9 @@ For example, to upload all selects and albums to the Amazon Photos sync dir:
     rclone sync --include '*/*/*/select/**' --include '*/*/ALBUMS/**' /Volumes/ChanPhotos1/Photos/ ~/amazondrive/Amazon\ Drive/PhotoBackup/
 
 Unfortunately including all your years and dirs in your Amazon sync dir would probably take up too much space, so you might want to restrict the list of years to back up via more specialized `--include` directives.
+
+## B2
+
+BackBlaze B2 is a great cloud object store service with incredibly cost-effective storage, cheaper than S3.  RClone has built-in support, so you can just configure and setup your B2 storage bucket and do:
+
+    rclone sync -v --include '2020/*/*/select/**' --include '2020/*/ALBUMS/**' --include '2020*' --transfers 32 /Volumes/ChanPhotos1/Photos/ b2-evan:Velvia-PhotosPrivate/
