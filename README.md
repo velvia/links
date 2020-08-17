@@ -452,6 +452,7 @@ A separate section with notes on [Specialization, Boxing, Inlining, Hi-Perf Scal
 * [Keywhiz](https://corner.squareup.com/2015/04/keywhiz.html) - a store for infrastructure secrets
 * [Ranwhen](https://github.com/p-e-w/ranwhen) - Visualize when your system was running, graphs in Terminal
 * [HTrace](http://htrace.org/) - distributed tracing library, can dump data to Zipkin or HBase
+* [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) - Cloud native (ie Kubernetes-integrated) chaos engineering/injection system!
 * [cass_top](http://www.jebriggs.com/blog/2014/09/top-utility-for-cassandra-clusters-cass_top/) - simple top utility for cass clusters
 * [Grafana](http://grafana.org/) and [Graphene](http://jondot.github.io/graphene/) - great replacement UIs for the clunky default Graphite UI
 * [Elastic Mesos](https://elastic.mesosphere.io/) - create Mesos clusters on AWS with ZK, HDFS
