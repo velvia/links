@@ -61,6 +61,6 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # Aliases
 alias git=hub
-alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias subl3="'/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'"
 alias java8="set -x JAVA_HOME /Users/evan/.jenv/versions/1.8"
 alias java11="set -x JAVA_HOME /Users/evan/.jenv/versions/11.0"
