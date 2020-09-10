@@ -14,6 +14,7 @@
   - [String Performance](#string-performance)
 - [Rust and Scala/Java](#rust-and-scalajava)
   - [Rust-Java Integration / Rust FFI](#rust-java-integration--rust-ffi)
+- [CLI and Misc](#cli-and-misc)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
@@ -218,6 +219,10 @@ Here are some solutions:
 * [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
 * [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
  
+## CLI and Misc
+
+* [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
+
 ## Testing and CI/CD
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
