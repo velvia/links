@@ -2,13 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Git aliases](#git-aliases)
+- [Git Config](#git-config)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Git aliases
+## Git Config
 
 ```
+[commit]
+        verbose = true
 [alias]
     webui = !/Users/evan/.git-webui/release/libexec/git-core/git-webui
     co = checkout
