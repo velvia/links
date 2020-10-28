@@ -5,6 +5,7 @@
 - [Sublime Text packages](#sublime-text-packages)
 - [Favorite Shortcuts](#favorite-shortcuts)
 - [Sublime Text config](#sublime-text-config)
+  - [Python Setup](#python-setup)
   - [Key bindings - user](#key-bindings---user)
   - [SublimeHighlight config](#sublimehighlight-config)
 - [Blogs and Articles](#blogs-and-articles)
@@ -26,6 +27,7 @@
 * BracketHighlighter - shows current brackets, bracketing utils
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * [Sublimall](http://sublimall.org/#) - sync your SublimeText config to cloud, all your machines
+* [SublimeLinter](http://www.sublimelinter.com/en/stable/) - various linters for different languages. 
 * [SublimeSBT](https://github.com/jarhart/SublimeSBT) - SBT REPL integration with compile error highlighting
 * [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
@@ -144,6 +146,90 @@ Note: `indent_to_bracket` means when you break up lines of long arguments it wil
       "trim_trailing_white_space_on_save": true,
       "use_tab_stops": false
     }
+
+### Python Setup
+
+Install the following packages:
+* Anaconda
+* SublimeLinter
+
+`brew install mypy` for Python3 type checking, then add following to SublimeLinter config:
+
+```
+    "linters": {
+        // The name of the linter you installed
+        "mypy": {
+            // Disables the linter. The default here is 'not set'
+            "disable": false,
+            // Additional arguments for the command line. Either a string
+            // or an array. If set to a string, we 'shlex.split' it*.
+            // E.g. '--ignore D112' or ['--config', './.config/foo.ini']
+            //
+            // * Note: Use proper quoting around paths esp. on Windows!
+            "args": ["--ignore-missing-imports"],
+            // Path to the executable to be used. Either a string or an
+            // array. E.g. ['nvm', 'exec', '8.6', 'eslint']
+            "executable": "/usr/local/bin/mypy",
+            // A modified runtime environment for the lint job. Settings here
+            // override the default, inherited ENV.
+            "env": {},
+            // Exclude files that match the given pattern(s).
+            "excludes": ["!*/*.py"],
+            // Suppress errors that match the the given pattern(s).
+            // Either a 'string' or an 'array'. Each input string is handled as
+            // a case-insensitive regex pattern and matched against the
+            // error_type, code, and message. If it matches, the error will be
+            // thrown away.
+            // E.g. ["warning: ", "W3\d\d: ", "missing <!DOCTYPE> declaration"]
+            "filter_errors": [],
+            // Lint mode determines when the linter is run. The linter setting
+            // will take precedence over the global setting.
+            "lint_mode": "save",
+            // Determines for which views this linter will run.
+            "selector": "",
+            // A list of additional style definition blocks.
+            "styles": [
+                {
+                    // Instead of 'types' you can specify error 'codes' for
+                    // a style definition block
+                    "codes": [""]
+                }
+            ],
+            // The current working dir the lint job will run in.
+            "working_dir": "",
+            // **Only valid for PythonLinter**
+            // Specify which python to use. Either a number or full path
+            // to a python binary. SL will then basically use 'python -m'
+            // to run the linter.
+            "python": 3,
+            // **Only valid for NodeLinter**
+            // If true, will *not* use a globally installed binary
+            "disable_if_not_dependency": false
+        }
+    },
+
+```
+
+Also, custom Anaconda language-specific settings for Python3:
+
+```
+// These settings override both User and Default settings for the Python syntax
+{
+   "tab_size": 4,
+   "pep8_max_line_length": 120,
+   "python_interpreter": "/Users/evan/.pyenv/shims/python3",
+   "pep8_ignore":
+    [
+        "E309",
+        "E251"
+    ],
+    "anaconda_linting_behaviour": "load-save",
+    "anaconda_linter_phantoms": true,
+    "mypy": true,
+}
+```
+
+Actually, one might want to just forget SublimeLinter and just use [Anaconda with MyPy](https://blog.vikborges.com/articles/python-static-type-checking-on-sublime-text-3-with-mypy).
 
 ### Key bindings - user
 
