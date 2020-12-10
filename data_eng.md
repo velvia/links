@@ -10,6 +10,7 @@
   - [Data Structures](#data-structures)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
+    - [Python/Pandas](#pythonpandas)
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression](#compression)
@@ -95,10 +96,19 @@ Time Series ML
 * [Anomaly Detection with Prometheus](http://events19.linuxfoundation.org/wp-content/uploads/2017/12/AIOps-Anomaly-Detection-with-Prometheus-Marcel-Hild-Red-Hat.pdf)
 * [Intro to Isolation Forests](https://ruivieira.github.io/introduction-to-isolation-forests.html)
 
-* [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
 
 Other:
 * [Swarm Intelligence](https://appliednetsci.springeropen.com/articles/10.1007/s41109-020-00260-8)
+
+### Python/Pandas
+
+* [Vaex](https://github.com/vaexio/vaex) - "out of core" Pandas for big data, using memory mapping, zero-copy, volume visualization
+* [PySpark vs Dask vs Vaex etc](https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13) - interesting comparison of diff frameworks for big data analysis via Pandas API.
+
+* [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
+* [ADTs in Python](http://blog.ezyang.com/2020/10/idiomatic-algebraic-data-types-in-python-with-dataclasses-and-union/)
+
+* [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
 
 ## Interesting Datasets, Public Data
 
@@ -127,6 +137,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
     - Somebody's Java experiment on above https://gist.github.com/jexp/825280
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
 * [Beating Textbook Algorithms in String Search](https://medium.com/wix-engineering/beating-textbook-algorithms-in-string-search-5d24b2f1bbd0) - great discussion of Knuth-Morris-Pratt, Aho-Corasick, and other basic string search algorithms
+
+* [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
