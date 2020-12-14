@@ -112,6 +112,7 @@ Other:
 
 ## Interesting Datasets, Public Data
 
+* [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
 * [Our World in Data / COVID](https://ourworldindata.org/coronavirus) - Really neat site with stats tracking COVID cases, you can custom select countries to compare etc.
 * [Global COVID Index](https://covid19.pemandu.org/) - comparative map showing different COVID measurements globally
 
