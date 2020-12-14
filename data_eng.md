@@ -11,6 +11,7 @@
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
     - [Python/Pandas](#pythonpandas)
+    - [Data Engineering](#data-engineering)
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression](#compression)
@@ -105,10 +106,17 @@ Other:
 * [Vaex](https://github.com/vaexio/vaex) - "out of core" Pandas for big data, using memory mapping, zero-copy, volume visualization
 * [PySpark vs Dask vs Vaex etc](https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13) - interesting comparison of diff frameworks for big data analysis via Pandas API.
 
+Kedro is a good framework for standardizing processing pipelines.
+
 * [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
 * [ADTs in Python](http://blog.ezyang.com/2020/10/idiomatic-algebraic-data-types-in-python-with-dataclasses-and-union/)
 
 * [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
+
+### Data Engineering
+
+* [dvc](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial) is a library and CLI for git-like versioning of datasets, models, etc. - but can leverage cloud storage like S3
+* [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
 
 ## Interesting Datasets, Public Data
 
