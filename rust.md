@@ -47,6 +47,7 @@
 * [Fireflowers: Rust in the words of its Practitioners](https://brson.github.io/fireflowers/) - just brilliant commentary on what Rust is.
 * [Oxidizing the Interview](https://blog.mgattozzi.dev/oxidizing-the-technical-interview/) - hilarious read on a Rust technical interview
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
+* [Why Scientists are turning to Rust](https://www.nature.com/articles/d41586-020-03382-2) - from Nature mag
 * [Prefer Rust over C/C++](http://cliffle.com/blog/prefer-rust/) - when to and when not to prefer Rust
 * [Moving from C to Rust](https://www.flocknetworks.com/moving-from-c-to-rust/)
   - [C2Rust and Quake](https://immunant.com/blog/2020/01/quake3/) - a tool to auto translate C to Rust!
