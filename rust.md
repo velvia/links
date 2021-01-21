@@ -3,7 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Some links on Rust](#some-links-on-rust)
-- [IDE/Editor/Utilities](#ideeditorutilities)
+- [IDE/Editor/Tooling](#ideeditortooling)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Rust Error Handling](#rust-error-handling)
 - [Rust Concurrency](#rust-concurrency)
@@ -13,7 +13,7 @@
   - [Cool Data Structures](#cool-data-structures)
   - [String Performance](#string-performance)
 - [Rust and Scala/Java](#rust-and-scalajava)
-  - [Rust-Java Integration / Rust FFI](#rust-java-integration--rust-ffi)
+  - [Rust-OtherLanguage Integration / Rust FFI](#rust-otherlanguage-integration--rust-ffi)
 - [CLI and Misc](#cli-and-misc)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
@@ -85,10 +85,13 @@ Specific topics:
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 
-## IDE/Editor/Utilities
+## IDE/Editor/Tooling
+
+* [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
+  - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
 
 ## Cool Rust Projects
 
