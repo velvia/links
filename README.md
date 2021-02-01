@@ -506,6 +506,8 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Pony](http://www.ponylang.org/) - A capabilities-based Actor-centric static language, deadlock-free, null-free, data-race-free!
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
 
+* [George Mack's Razors](https://twitter.com/george__mack/status/1350513143387189248) - a compilation of razors to make decisions by
+
 ### Tips on installing Ruby
 
 becoz it's so darn painful.

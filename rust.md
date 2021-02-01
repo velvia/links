@@ -88,6 +88,7 @@ Specific topics:
 ## IDE/Editor/Tooling
 
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
+* [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project

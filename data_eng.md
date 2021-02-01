@@ -5,6 +5,7 @@
 - [Data Engineering, Databases, Data Structures, ML/DS](#data-engineering-databases-data-structures-mlds)
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
   - [Data Processing Systems](#data-processing-systems)
+  - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
   - [Data Structures](#data-structures)
@@ -39,12 +40,19 @@
 
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 
+## Graph Processing and storage
+
+* [SQLGraph](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43287.pdf) - An efficient Relational-Based Property Graph Store
+* [Graph Processing in Main-Memory Column Stores](https://tud.qucosa.de/api/qucosa%3A30306/attachment/ATT-0/)
+
 ## Distributed Systems General
 
 * [Viewstamped Replication](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - classic paper by Barbara Liskov
 * [CRUSH](https://ceph.com/wp-content/uploads/2016/08/weil-crush-sc06.pdf) - Controlled Replication Under Scalable Hashing - Ceph's algorithm for balancing decentralized object placement with minimal data movement in a storage cluster
 * [CALM](https://arxiv.org/abs/1901.01930) - "Consistency as Logical Monotonicity" theorem proves when distributed systems can have consistent, coordination-free behavior.
+* [Don't Get Stuck in the CON game](https://pathelland.substack.com/p/dont-get-stuck-in-the-con-game-v2?utm_medium=email&utm_campaign=cta) - Excellent Pat Helland post about CONsistency, CONvergence, CONfluence, why "consistency" is so meaningless, and where things are going
 * [Fast, Flexible PAXOS](https://hh360.user.srcf.net/blog/2020/11/fast-flexible-paxos/) - how to get around the leader bottleneck and exchange leader election consensus for less replication
+* [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
 
 * [10000 Akka Cluster Nodes and RAPID](https://manuel.bernhardt.io/2020/04/30/10000-node-cluster-with-akka-and-rapid/) - interesting view into the new RAPID cluster membership protocol and how it can scale out peer to peer clusters
 
@@ -52,9 +60,13 @@
 
 ## Cloud, Kubernetes, Deployment
 
+* [OpenEBS](https://openebs.io) - fast, configurable, elastic block/local storage on any cloud platform running Kube
 * [Kubernetes Liveness and Readiness Probes](https://blog.colinbreck.com/kubernetes-liveness-and-readiness-probes-how-to-avoid-shooting-yourself-in-the-foot/) - how to avoid shooting yourself in the foot
+* [Armada - Running Millions of Batch Jobs on K8s](https://www.gresearch.co.uk/article/armada-how-to-run-millions-of-batch-jobs-over-thousands-of-compute-nodes-using-kubernetes/)
 
 * [Storage is the Achilles Heel of Containers](https://blog.usejournal.com/storage-is-the-achilles-heel-of-containers-97d0341e8d87) - a good overview of the storage landscape for containerized cloud applications
+
+* [POSH](https://github.com/deeptir18/posh) - a shell for running awk/grep/sed etc on remote cloud storage
 
 ## Data Structures
 
@@ -87,6 +99,9 @@
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
 * [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
 * [Useful Resources for DS](https://community.ibm.com/community/user/datascience/blogs/paco-nathan/2019/05/09/useful-resources-for-data-science) by Paco Nathan.  Good list!
+
+* [Getting Started in Data Science](https://gumroad.com/l/getting-started-in-data-science) book with great math intro
+* [Teach Your Kids To Code](http://teachyourkidstocode.com) - learning Python for kids
 
 Time Series ML
 
