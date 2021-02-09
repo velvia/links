@@ -2,8 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Getting Started with Rust](#getting-started-with-rust)
 - [Some links on Rust](#some-links-on-rust)
-- [IDE/Editor/Tooling](#ideeditortooling)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Rust Error Handling](#rust-error-handling)
 - [Rust Concurrency](#rust-concurrency)
@@ -15,6 +15,7 @@
 - [Rust and Scala/Java](#rust-and-scalajava)
   - [Rust-OtherLanguage Integration / Rust FFI](#rust-otherlanguage-integration--rust-ffi)
 - [CLI and Misc](#cli-and-misc)
+- [IDE/Editor/Tooling](#ideeditortooling)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
@@ -25,9 +26,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Some links on Rust
-
-[cheats.rs](https://cheats.rs) - Awesome quick ref.
+## Getting Started with Rust
 
 [Why the developers who use Rust love it so much](https://stackoverflow.blog/2020/06/05/why-the-developers-who-use-rust-love-it-so-much/) - from StackOverflow survey, really good quotes
 
@@ -36,9 +35,15 @@
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [explaine.rs](https://jrvidal.github.io/explaine.rs/) - paste Rust code into the window and hover over keywords to get explanations. Great for learning.
 * [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
-* [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [A Java Programmer Understanding Rust Ownership](https://medium.com/@rotc21/rust-adventures-a-java-programmer-understanding-rust-ownership-edbeb6b8001)
+* [Rust Error Handling for Pythonistas](https://theomn.com/rust-error-handling-for-pythonistas/)
+
+## Some links on Rust
+
+[cheats.rs](https://cheats.rs) - Awesome quick ref.
+
+* [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
@@ -48,6 +53,7 @@
 * [Oxidizing the Interview](https://blog.mgattozzi.dev/oxidizing-the-technical-interview/) - hilarious read on a Rust technical interview
 * [Rust and the Three Laws of Informatics](https://blog.usejournal.com/rust-and-the-three-laws-of-informatics-4324062b322b) - great detailed guide to how Rust allows developers to uncompromisingly achieve correctness, maintainability, AND efficiency
 * [Why Scientists are turning to Rust](https://www.nature.com/articles/d41586-020-03382-2) - from Nature mag
+* [Rust After the Honeymoon](http://dtrace.org/blogs/bmc/2020/10/11/rust-after-the-honeymoon/) - by Bryan Cantrill, a list of top favorite Rust tricks/properties.  Did you know that `{:#x?}` will pretty-print structs in HEX??
 * [Prefer Rust over C/C++](http://cliffle.com/blog/prefer-rust/) - when to and when not to prefer Rust
 * [Moving from C to Rust](https://www.flocknetworks.com/moving-from-c-to-rust/)
   - [C2Rust and Quake](https://immunant.com/blog/2020/01/quake3/) - a tool to auto translate C to Rust!
@@ -85,15 +91,6 @@ Specific topics:
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 
-## IDE/Editor/Tooling
-
-* [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
-* [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
-
-* [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
-* [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
-  - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
-
 ## Cool Rust Projects
 
 CLI tools:
@@ -101,6 +98,7 @@ CLI tools:
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
+* [ht](https://github.com/ducaale/ht) - HTTPie clone / much better `curl` alternative
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
@@ -110,10 +108,14 @@ CLI tools:
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 
-Others:
+Wasm:
+* [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
+* [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+
+Data/Others:
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
-* [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+* [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
@@ -236,11 +238,22 @@ Here are some solutions:
 
 * [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
 
+## IDE/Editor/Tooling
+
+* [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
+* [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
+* [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
+
+* [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
+* [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
+  - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
+
 ## Testing and CI/CD
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
 
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
+* [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 
 ### Cross-compilation
 
