@@ -30,6 +30,8 @@
 
 [Why the developers who use Rust love it so much](https://stackoverflow.blog/2020/06/05/why-the-developers-who-use-rust-love-it-so-much/) - from StackOverflow survey, really good quotes
 
+If you want a Rust REPL, check out [evcxr](https://github.com/google/evcxr/tree/master/evcxr_repl).
+
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
@@ -38,6 +40,13 @@
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [A Java Programmer Understanding Rust Ownership](https://medium.com/@rotc21/rust-adventures-a-java-programmer-understanding-rust-ownership-edbeb6b8001)
 * [Rust Error Handling for Pythonistas](https://theomn.com/rust-error-handling-for-pythonistas/)
+
+Online resources and help:
+* The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
+* [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
+* [Rust for Rubyists](http://www.rustforrubyists.com/)
+* [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
+* [makepad](http://makepad.nl) - Web-based Rust + WebASM multimedia playground
 
 ## Some links on Rust
 
@@ -69,18 +78,13 @@ learning curve of ownership.
 
 See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
-Online resources and help:
-* The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
-* [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
-* [Rust for Rubyists](http://www.rustforrubyists.com/)
-* [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
-* [makepad](http://makepad.nl) - Web-based Rust + WebASM multimedia playground
-
 Specific topics:
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
+* [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
+* [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
@@ -116,6 +120,8 @@ Data/Others:
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
+* [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
+* [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
@@ -276,6 +282,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
+  - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
 
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
@@ -296,6 +303,8 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
 NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 ### Perf profiling:
+
+Note: this section is mostly about profiling tools, as opposed to benchmarking (which is repeatable, systematic profiling).  The two benchmarking tools I recommend are [criterion](https://github.com/bheisler/criterion.rs) and [Iai](https://github.com/bheisler/iai) for benchmarking.
 
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 

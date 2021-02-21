@@ -16,7 +16,9 @@
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression](#compression)
+  - [I/O and Performance](#io-and-performance)
   - [Logging and String Processing](#logging-and-string-processing)
+  - [Data Justice](#data-justice)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -76,6 +78,7 @@
 * [DDSketch](https://blog.acolyer.org/2019/09/06/ddsketch/) - "a fast and fully-mergeable quantile sketch with relative-error guarantees"
     - Our research shows DDSketch may use many more buckets than TDigest, but merges much much faster and provides stricter error guarantees.  Memory diff might not be that big in reality as TDigest needs a tree structure.
 * [SmoothieMap2](https://medium.com/@leventov/smoothiemap-2-the-lowest-memory-hash-table-ever-6bebd06780a3) - a low-memory implementation of Google SwissTable for the JVM
+* [Column Sketches](https://stratos.seas.harvard.edu/files/stratos/files/sketches.pdf) - using histogram and approximate/lossy encodings for really fast indexing/scanning.  Neat.  Does not require data clustering.
 
 * [Efficient Computation of Frequent and Top-K Elements in Data Streams](https://www.cs.ucsb.edu/sites/default/files/docs/reports/2005-23.pdf) - a great overview of techniques, including sketches
 
@@ -136,6 +139,8 @@ Kedro is a good framework for standardizing processing pipelines.
 * [dvc](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial) is a library and CLI for git-like versioning of datasets, models, etc. - but can leverage cloud storage like S3
 * [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
 
+* [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
+
 ## Interesting Datasets, Public Data
 
 * [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
@@ -174,3 +179,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [Graph coloring for Machine Learning](https://sisu.ai/blog/graph-coloring-for-machine-learning) - column reduction using approximate coloring techniques
+
+## Data Justice
+
+https://journals.sagepub.com/doi/10.1177/2053951717736335
+
