@@ -129,6 +129,9 @@ Data/Others:
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
 
+Languages etc.
+* [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
+
 ## Rust Error Handling
 
 [Error handling survey](https://blog.yoshuawuyts.com/error-handling-survey/) - really good summary of the Rust error library landscape as of late 2019.
@@ -173,6 +176,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
+* [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
 
@@ -181,6 +185,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x speedup with serde-json.  Then, switching to [json-rust](https://github.com/maciejhirsz/json-rust) provided another 1.8x speedup.  The speedup is completely unreal, much faster than JVM.  The main reason I guess is that json-rust has a `Short` DOM class for short strings, which requires no heap allocation.
 
 * [simdjson-rs](https://github.com/simd-lite/simdjson) - SIMD-enabled JSON parser.  NOTE: no writing of JSON.
+* [pjson](https://github.com/tidwall/pjson.rs) - JSON streaming parser
 
 ### Cool Data Structures
 
