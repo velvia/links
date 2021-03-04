@@ -47,6 +47,7 @@ Online resources and help:
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
 * [Rust Playpen](http://play.rust-lang.org/) - closest thing to a REPL  :(
 * [makepad](http://makepad.nl) - Web-based Rust + WebASM multimedia playground
+* [Awesome Rust Mentors](https://rustbeginners.github.io/awesome-rust-mentors/)
 
 ## Some links on Rust
 
@@ -85,6 +86,8 @@ Specific topics:
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
+  - [Recursive Iterators in Rust](https://fasterthanli.me/articles/recursive-iterators-rust) - yelch, using Box
+  - [Internal-iterator](https://docs.rs/internal-iterator/0.1.1/internal_iterator/) - a potentially better solution for easily implementing some iterators
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
@@ -151,6 +154,7 @@ Languages etc.
 * [Fearless Concurrency with Hazard Pointers](http://ticki.github.io/blog/fearless-concurrency-with-hazard-pointers/) - using the `conc` crate and `Atomic` which implements hazard pointers for fine-grained and safe protection of readers and garbage
 
 * [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework     
+* [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
 
 ### Shared Data Across Multiple Threads
 
@@ -169,6 +173,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 ## Data Processing and Data Structures
 
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
+  - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics

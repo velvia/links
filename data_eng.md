@@ -8,7 +8,7 @@
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
-  - [Data Structures](#data-structures)
+  - [Data Structures/Indexing](#data-structuresindexing)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
     - [Python/Pandas](#pythonpandas)
@@ -71,7 +71,7 @@
 
 * [POSH](https://github.com/deeptir18/posh) - a shell for running awk/grep/sed etc on remote cloud storage
 
-## Data Structures
+## Data Structures/Indexing
 
 * [Counting Quotient Filters](https://blog.acolyer.org/2017/08/08/a-general-purpose-counting-filter-making-every-bit-count/) - much faster at updating and search than Bloom filters, and can count too!  An [implementation in C](https://github.com/vedantk/quotient-filter) exists.
 * [Moment-based Quantile Sketches](http://www.bailis.org/papers/moments-vldb2018.pdf) - a paper out of Stanford offering highly efficient alternative to T-Digests for quantile sketches.  Also [repo](https://github.com/stanford-futuredata/momentsketch)
@@ -86,6 +86,7 @@
 * [usort](https://github.com/sisudata/coloring/tree/master/usort) - fast radix/bucket sorting for integers, O(n) compared to quicksort-based O(n log n)
 
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
+* [S2](http://s2geometry.io) - Geometry/spatial index library
 
 * [XXH3 - a Speed-Optimized Hashing Algo](http://fastcompression.blogspot.com/2019/03/presenting-xxh3.html) - neat insights into the evolution of hashing, improvements using vectorization, and more!
 
@@ -138,6 +139,7 @@ Kedro is a good framework for standardizing processing pipelines.
 
 * [dvc](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial) is a library and CLI for git-like versioning of datasets, models, etc. - but can leverage cloud storage like S3
 * [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
+* [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
