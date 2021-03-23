@@ -53,6 +53,7 @@ Online resources and help:
 
 [cheats.rs](https://cheats.rs) - Awesome quick ref.
 
+* [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.

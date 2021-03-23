@@ -104,6 +104,7 @@
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
 * [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
 * [Useful Resources for DS](https://community.ibm.com/community/user/datascience/blogs/paco-nathan/2019/05/09/useful-resources-for-data-science) by Paco Nathan.  Good list!
+* [Applied ML in Production](https://github.com/eugeneyan/applied-ml) - a great list of projects, blogs, etc. by actual companies
 
 * [Getting Started in Data Science](https://gumroad.com/l/getting-started-in-data-science) book with great math intro
 * [Teach Your Kids To Code](http://teachyourkidstocode.com) - learning Python for kids
@@ -126,6 +127,7 @@ Other:
 ### Python/Pandas
 
 * [Vaex](https://github.com/vaexio/vaex) - "out of core" Pandas for big data, using memory mapping, zero-copy, volume visualization
+* [Modin](https://github.com/modin-project/modin) - wrapper for Pandas to transparently wrap Ray/Dask and other more scalable backends to speed things up
 * [PySpark vs Dask vs Vaex etc](https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13) - interesting comparison of diff frameworks for big data analysis via Pandas API.
 
 Kedro is a good framework for standardizing processing pipelines.
@@ -142,6 +144,8 @@ Kedro is a good framework for standardizing processing pipelines.
 * [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
+
+* [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
 
 ## Interesting Datasets, Public Data
 
