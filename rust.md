@@ -382,6 +382,7 @@ NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stabl
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
+* [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
 
@@ -394,7 +395,6 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
-* Or use the [pod](http://arcnmx.github.io/nue/pod/index.html) crate to help with some of the above conversions. However pod seems to no longer be maintained. [nue](http://arcnmx.github.io/nue/nue/index.html) and its macros can also help with struct alignment.
   - Also see [zero](https://docs.rs/zero/0.1.2/zero/)
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
 ```rust
