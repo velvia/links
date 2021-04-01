@@ -260,6 +260,7 @@ Here are some solutions:
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
 * [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
+* [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
@@ -307,6 +308,8 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
   - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
 
+If small binary size is what you're after, check out [Min-sized-Rust](https://github.com/johnthagen/min-sized-rust).
+
 Rust nightly now has a super slick [asm!](https://blog.rust-lang.org/inside-rust/2020/06/08/new-inline-asm.html) inline assembly feature.  The way that it integrates Rust variables/expressions with auto register assignment is super awesome.
 
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
@@ -342,9 +345,12 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
+* [Rust Perf Book Profiling Page](https://nnethercote.github.io/perf-book/profiling.html) - lots of good links
 
 For heap profiling try [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
 
+* [dhat](https://docs.rs/dhat/0.2.2/dhat/) - Swap out the global allocator, will profile your allocations & max heap usage
+* [Heaptrack](https://github.com/KDE/heaptrack) and [working with Rust](https://gist.github.com/HenningTimm/ab1e5c05867e9c528b38599693d70b35) works for Rust, but only on Linux.
 * [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
 * [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
 * [Measuring Memory Usage in Rust](https://rust-analyzer.github.io//blog/2020/12/04/measuring-memory-usage-in-rust.html) - thoughts on working around the fact we don't have a GC to track deep memory usage
