@@ -34,6 +34,7 @@ If you want a Rust REPL, check out [evcxr](https://github.com/google/evcxr/tree/
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
+* [Easy Rust Youtube Channel](https://www.youtube.com/watch?v=-lYeJeQ11OI&list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) - great videos
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [explaine.rs](https://jrvidal.github.io/explaine.rs/) - paste Rust code into the window and hover over keywords to get explanations. Great for learning.
 * [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
@@ -97,7 +98,9 @@ Specific topics:
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
+* [Rc and RefCell tricks](http://i.hsfzxjy.site/2019-06-23-rc-refcell-pattern/) - good explanations of the two
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
+* [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 
 ## Cool Rust Projects
 
@@ -132,6 +135,7 @@ Data/Others:
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
+* [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
@@ -261,10 +265,17 @@ Here are some solutions:
 * [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
+* [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
   - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
+
+BTW for Rust 1.51+ you can speed up MacOS builds with this in your Cargo.toml (see the [release notes](https://blog.rust-lang.org/2021/03/25/Rust-1.51.0.html)):
+```toml
+[profile.dev]
+split-debuginfo = "unpacked"
+```
 
 ## Testing and CI/CD
 
@@ -299,6 +310,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
     - Or just use the [memoffset](https://crates.io/crates/memoffset) crate
+* [MemFlow](https://memflow.github.io/#/home) - framework to inspect machine memory.  Think about DMA/IO, debugger, or Plasma-type memory/DB applications.
 * Rust uses system malloc by default. How to [switch the default allocator](https://github.com/rust-lang/jemalloc).
     - Use [jemallocator](https://crates.io/crates/jemallocator) and [jemalloc-ctl](https://crates.io/crates/jemalloc-ctl) crates for stats, deep dives, etc.  Jemalloc from Facebook supposed to be fast.
     - Also see [MiMalloc](https://crates.io/crates/mimalloc) - a high perf allocator from Microsoft.  I got 2x improvement for JSON workloads!
