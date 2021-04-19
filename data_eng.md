@@ -45,8 +45,11 @@
 
 ## Graph Processing and storage
 
+* [YearOfTheGraph](https://yearofthegraph.xyz) - great resources site / newsletter about graph processing, graph ML, graph DBs, etc.
+
 * [SQLGraph](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43287.pdf) - An efficient Relational-Based Property Graph Store
 * [Graph Processing in Main-Memory Column Stores](https://tud.qucosa.de/api/qucosa%3A30306/attachment/ATT-0/)
+* [AgensGraph](https://github.com/bitnine-oss/agensgraph) - PostGres-based graph DB, integrates both relational model (SQL) and graphs (openCypher) queries.
 
 ## Distributed Systems General
 
@@ -55,6 +58,8 @@
 * [CALM](https://arxiv.org/abs/1901.01930) - "Consistency as Logical Monotonicity" theorem proves when distributed systems can have consistent, coordination-free behavior.
 * [Don't Get Stuck in the CON game](https://pathelland.substack.com/p/dont-get-stuck-in-the-con-game-v2?utm_medium=email&utm_campaign=cta) - Excellent Pat Helland post about CONsistency, CONvergence, CONfluence, why "consistency" is so meaningless, and where things are going
 * [Fast, Flexible PAXOS](https://hh360.user.srcf.net/blog/2020/11/fast-flexible-paxos/) - how to get around the leader bottleneck and exchange leader election consensus for less replication
+* [Hermes Protocol](https://hermes-protocol.com) - "A fast, fault-tolerant & linearizable replication protocol"
+* [Read-Write Quorum Systems Made Practical](https://mwhittaker.github.io/publications/quoracle.pdf) - is majority quorum always needed? Tradeoffs and how to achieve lower latency with different quorum configs
 * [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
 
 * [10000 Akka Cluster Nodes and RAPID](https://manuel.bernhardt.io/2020/04/30/10000-node-cluster-with-akka-and-rapid/) - interesting view into the new RAPID cluster membership protocol and how it can scale out peer to peer clusters
@@ -70,6 +75,8 @@
 * [Storage is the Achilles Heel of Containers](https://blog.usejournal.com/storage-is-the-achilles-heel-of-containers-97d0341e8d87) - a good overview of the storage landscape for containerized cloud applications
 
 * [POSH](https://github.com/deeptir18/posh) - a shell for running awk/grep/sed etc on remote cloud storage
+
+If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - a utility to ensure keepalive of Azure Kube Service credentials.
 
 ## Data Structures/Indexing
 
@@ -132,6 +139,8 @@ Other:
 
 Kedro is a good framework for standardizing processing pipelines.
 
+* [PyOxidizer](https://pyoxidizer.readthedocs.io/en/stable/) - a Rust tool to package Python apps, interpreter, and all dependencies as a single binary, by wrapping app in a Rust program with a custom Rust Py module importer.  Also helps embed Python code in Rust apps.
+
 * [PyOD](https://github.com/yzhao062/Pyod#implemented-algorithms) - outlier detection library
 * [ADTs in Python](http://blog.ezyang.com/2020/10/idiomatic-algebraic-data-types-in-python-with-dataclasses-and-union/)
 
@@ -146,6 +155,10 @@ Kedro is a good framework for standardizing processing pipelines.
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
 * [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
+* [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
+
+Interesting development:
+* [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 
 ## Interesting Datasets, Public Data
 

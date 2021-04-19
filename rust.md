@@ -13,6 +13,7 @@
   - [Cool Data Structures](#cool-data-structures)
   - [String Performance](#string-performance)
 - [Rust and Scala/Java](#rust-and-scalajava)
+  - [Rust and Python](#rust-and-python)
   - [Rust-OtherLanguage Integration / Rust FFI](#rust-otherlanguage-integration--rust-ffi)
 - [CLI and Misc](#cli-and-misc)
 - [IDE/Editor/Tooling](#ideeditortooling)
@@ -56,7 +57,10 @@ Online resources and help:
 
 * [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
+* [Rust is for Professionals](https://gregoryszorc.com/blog/2021/04/13/rust-is-for-professionals/) - great perspective on what makes Rust unique and so appealing
+* [Tour of Rust's Standard Library Traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md) - really great detailed guide with an explanation about traits, generics, associated types, etc.
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
+  - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) -- a great detailed dive into nuances
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
 * [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
 
@@ -85,6 +89,7 @@ Specific topics:
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
+* [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
@@ -118,22 +123,15 @@ CLI tools:
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
+* [Kubesql](https://github.com/Dentrax/kubesql) - SQL queries for Kube metadata!
 
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
 * [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
 
-Data/Others:
-* [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
-* [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
-* [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
-* [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
-* [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
+Others:
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
-* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
-* [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
-* [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
 * [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
 
@@ -182,11 +180,19 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
+* [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
+
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
+* [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
+* [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+* [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
+* [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
+* [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
+
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
-* [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
+* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
 
@@ -243,6 +249,14 @@ Here are some solutions:
 
 * OTOH, rustc is definitely much much stricter (IMO) compared to scalac.  Much of this is for good reason though, for example lack of integer/primitive coercion, ownership, etc. gives safety guarantees.
 
+### Rust and Python
+
+* [PyO3](https://github.com/PyO3/pyo3) seems to be a gold standard of Rust-based Python module development.
+  - [Maturin](https://github.com/PyO3/maturin) - for building and publishing PyO3-based/Rust Python modules, or mixed Rust/Python projects
+  - There are older posts too: [Wrapping Rust Types as Python classes](https://depth-first.com/articles/2020/08/03/wrapping-rust-types-as-python-classes/) and [RustyPy](https://github.com/iduartgomez/rustypy/wiki/Rust-in-Python) but they are much more work than PyO3
+* [PyOxidizer](https://pyoxidizer.readthedocs.io/en/stable/) - a Rust tool to package Python apps, interpreter, and all dependencies as a single binary, by wrapping app in a Rust program with a custom Rust Py module importer.  Also helps embed Python code in Rust apps.
+* [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
+ 
 ### Rust-OtherLanguage Integration / Rust FFI
 
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
@@ -253,8 +267,6 @@ Here are some solutions:
 * [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
 * [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
 
-* [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
- 
 ## CLI and Misc
 
 * [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
