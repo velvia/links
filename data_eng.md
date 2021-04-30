@@ -15,7 +15,7 @@
     - [Data Engineering](#data-engineering)
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
-  - [Compression](#compression)
+  - [Compression, Data Storage](#compression-data-storage)
   - [I/O and Performance](#io-and-performance)
   - [Logging and String Processing](#logging-and-string-processing)
   - [Data Justice](#data-justice)
@@ -45,11 +45,24 @@
 
 ## Graph Processing and storage
 
+[Neo4J](https://neo4j.com) is the community leader of graph databases.  The amount of [visualization tools](https://neo4j.com/developer-blog/15-tools-for-visualizing-your-neo4j-graph-database/), plugins, and extras like [Graph Data Science](https://neo4j.com/developer/graph-data-science/) is really impressive.  However it costs $$.
+* [neodash](https://github.com/nielsdejong/neodash) - build dashboards with Neo4J data
+* [neomap](https://github.com/stellasia/neomap) for visualizing map data with x and y / lat/long points.  It's not very mature.
+* [popoto](https://github.com/Nhogs/popoto/wiki/Getting-started) is a JS visualization framework specifically for Neo4J graph data and looks really slick.
+* The built in neo4j-spatial OSM importer doesn't seem to work.  Might want to try [osm2graph Loader](https://github.com/Nhogs/popoto/wiki/Getting-started). Or just follow this Neo [blog post on neomap/GDS and OSM](https://medium.com/neo4j/visualizing-shortest-paths-with-neomap-0-4-0-and-the-neo4j-graph-data-science-plugin-18db92f680de).
+
+Neo4J can be classified as an OLTP property graph database.  How we categorize graph DBs:
+* Property graph (Neo4J, [ArangoDB](https://www.arangodb.com)) vs RDF triple (GraphDB, many others)
+* OLTP (Neo4J, [ArangoDB](https://www.arangodb.com)) vs OLAP (AnzoGraph)
+* OpenCypher (Neo4J, AgensGraph, [MemGraph](https://docs.memgraph.com), [NebulaGraph](https://nebula-graph.io)) vs SparQL([dgraph](https://dgraph.io)) vs other query languages ([ArangoDB](https://www.arangodb.com), Anzo, etc.)
+* Geospatial support varies
+* Tinkerpop and Gremlin is an old, mostly JVM-based standard for graph traversals but seems to be out of fashion and not much ongoing development, especially lacking is ML/AI support.
+* There are also solutions that aren't quite databases like [DataWalk](https://datawalk.com/neo4jalternative/)
+
 * [YearOfTheGraph](https://yearofthegraph.xyz) - great resources site / newsletter about graph processing, graph ML, graph DBs, etc.
 
 * [SQLGraph](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43287.pdf) - An efficient Relational-Based Property Graph Store
 * [Graph Processing in Main-Memory Column Stores](https://tud.qucosa.de/api/qucosa%3A30306/attachment/ATT-0/)
-* [AgensGraph](https://github.com/bitnine-oss/agensgraph) - PostGres-based graph DB, integrates both relational model (SQL) and graphs (openCypher) queries.
 
 ## Distributed Systems General
 
@@ -148,9 +161,15 @@ Kedro is a good framework for standardizing processing pipelines.
 
 ### Data Engineering
 
+Data organization, versioning, abstractions, frameworks, workflow/process tools
+
+[Kedro](https://github.com/quantumblacklabs/kedro) is a great framework for writing DS and DE pipelines.
+* [knowledge-repo](https://github.com/airbnb/knowledge-repo) - AirBNB's example of a "knowledge repo", sharing common scripts and modules for handling data, promoting reuse and reducing tech debt for DS/DE
 * [dvc](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial) is a library and CLI for git-like versioning of datasets, models, etc. - but can leverage cloud storage like S3
 * [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
 * [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
+
+* [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data). 
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
@@ -178,9 +197,11 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
 
-## Compression
+## Compression, Data Storage
 
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
+
+* [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 
 ## I/O and Performance
 
