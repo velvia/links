@@ -176,6 +176,9 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 * [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
 * [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
 
+Sometimes it's about how you organize data teams.  
+* [Data Mesh](https://www.bigdatarepublic.nl/articles/two-steps-towards-modern-data-platform/) is a really good concept.  Have embedded data engineers in each team plus a data platform team to provide common infra/tools/services.
+
 Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 

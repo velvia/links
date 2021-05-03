@@ -56,8 +56,16 @@ set PATH ~/bin $PATH
 # rbenv rehash >/dev/null ^&1
 set -gx RBENV_ROOT /usr/local/Cellar/rbenv/0.4.0
 # . (rbenv init -|psub)
+# status --is-interactive; and source (rbenv init -|psub)
 
-status --is-interactive; and source (rbenv init -|psub)
+# Python set
+# pyenv init - | source
+if command -v pyenv 1>/dev/null 2>&1
+  pyenv init - | source
+end
+status --is-interactive; and pyenv virtualenv-init - | source
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -Ux fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
 # Aliases
 alias git=hub

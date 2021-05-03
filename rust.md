@@ -134,6 +134,7 @@ Others:
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
 * [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
+* [Parsec](https://github.com/parallaxsecond/parsec) - abstraction layer for hardware security and cryptography
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
@@ -179,8 +180,12 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
   - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
+  - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
+* [Node crunch](https://github.com/willi-kappler/node_crunch) - simple lightweight distributed compute framework
+* [Project Midas](https://github.com/ray33ee/Project-Midas) - distributed compute framework and terminal UI using Lua as scripting language
+* [Cube Store](https://cube.dev/blog/introducing-cubestore/) - Rust and Arrow/DataFusion-based rollup/aggregation/cache layer for SQL datastores, too bad it's mostly for JS
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
@@ -194,6 +199,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 
+* [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
 
 ### JSON Processing
@@ -278,6 +284,7 @@ Here are some solutions:
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
+* [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust
 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
@@ -400,7 +407,9 @@ NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stabl
 
 * [nom](https://docs.rs/nom/4.1.1/nom/) - a direct parser using macros, commonly accepted as fastest generic parser
 * [pest](https://pest.rs/#editor) is a PEG parser using an external, easy to understand syntax file. Not quite as fast but might be easier to understand and debug.  There is also a [book](https://pest.rs/book/intro.html).
-* [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly easier
+* [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly 
+
+* [simdutf8](https://github.com/rusticstuff/simdutf8) - SIMD lightning fast UTF-8 validation
 
 ### Bitpacking, Binary Structures, Serialization
 
