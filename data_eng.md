@@ -36,6 +36,8 @@
 * [ALEX](https://dl.acm.org/doi/abs/10.1145/3318464.3389711) - an updatable learned index structure
 * [usort](https://github.com/sisudata/coloring/tree/master/usort) - fast radix/bucket sorting for integers, O(n) compared to quicksort-based O(n log n)
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
+* [Pilosa](https://www.pilosa.com/docs/latest/data-model/) - A matrix bitmap index that can quickly answer queries about relationships between two dimensions, or billions of objects with millions of attributes.  “What attributes are the most common?”, “Which objects have these specific attributes?”, “What groups of attributes often appear together?” 
+  - Could be used for graph indexing for example
 * [A+ Indexes: Tunable and Space-Efficient Adjacency Lists in Graph DBMS](https://arxiv.org/pdf/2004.00130.pdf) - could be super useful for building a Graph DBMS
 
 * [S2](http://s2geometry.io) - Geometry/spatial index library
@@ -45,6 +47,8 @@
 * [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
 
 ## Data Processing Systems
+
+A good [Map of incremental and streaming systems](https://scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems/) - organizing different systems in an ontology.
 
 * [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the NAIAD paper
@@ -94,6 +98,8 @@ Overall what the graph world really needs is, instead of sticking everything int
 * [OpenEBS](https://openebs.io) - fast, configurable, elastic block/local storage on any cloud platform running Kube
 * [Kubernetes Liveness and Readiness Probes](https://blog.colinbreck.com/kubernetes-liveness-and-readiness-probes-how-to-avoid-shooting-yourself-in-the-foot/) - how to avoid shooting yourself in the foot
 * [Armada - Running Millions of Batch Jobs on K8s](https://www.gresearch.co.uk/article/armada-how-to-run-millions-of-batch-jobs-over-thousands-of-compute-nodes-using-kubernetes/)
+
+* [Scaphandre](https://github.com/hubblo-org/scaphandre) - Metrics agent for collecting power consumption metrics!
 
 * [Storage is the Achilles Heel of Containers](https://blog.usejournal.com/storage-is-the-achilles-heel-of-containers-97d0341e8d87) - a good overview of the storage landscape for containerized cloud applications
 
@@ -177,6 +183,8 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
+* [owl-data-sanitizer](https://towardsdatascience.com/introducing-a-new-pysparks-library-owl-data-sanitizer-bcc46e1583e6) - PySpark based data quality/validation library, featuring YAML/SQL-based configurable data rules and error/data comparison reports generation
+
 * [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
 * [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
 
@@ -185,6 +193,8 @@ Sometimes it's about how you organize data teams.
 
 Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
+
+* [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 
 ## Interesting Datasets, Public Data
 

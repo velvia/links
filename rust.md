@@ -56,6 +56,7 @@ Online resources and help:
 [cheats.rs](https://cheats.rs) - Awesome quick ref.
 
 * [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
+* [What you Can't Do in Rust and What To Do Instead](https://blog.logrocket.com/what-you-cant-do-in-rust-and-what-to-do-instead/) - great guide for anti-patterns
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Rust is for Professionals](https://gregoryszorc.com/blog/2021/04/13/rust-is-for-professionals/) - great perspective on what makes Rust unique and so appealing
 * [Tour of Rust's Standard Library Traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md) - really great detailed guide with an explanation about traits, generics, associated types, etc.
@@ -109,21 +110,31 @@ Specific topics:
 
 ## Cool Rust Projects
 
+NOTE: there's a separate section for Data-related projects.
+
 CLI tools:
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
+* [zoxide](https://github.com/ajeetdsouza/zoxide) - a supercharged, AI-based replacement for cd with rank-based search of your most frequently used dirs
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
+* [gitui](https://github.com/Extrawurst/gitui) - awesome, fast Git terminal UI.  It will change your life!
 * [ht](https://github.com/ducaale/ht) - HTTPie clone / much better `curl` alternative
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
+* [rustscan](https://github.com/RustScan/RustScan) - Really fast port scanner, this should easily replace lsof / netstat
+* [sd](https://github.com/chmln/sd) - Easier to use sed.  You can search and replace in like all files under subdir with `sd old_str new_str **`.
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
+* [delta](https://github.com/dandavison/delta) - git-delta: colorful git diff viewer
 * [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 * [Kubesql](https://github.com/Dentrax/kubesql) - SQL queries for Kube metadata!
+* [grex](https://github.com/pemistahl/grex) - CLI tool to create regexes given a set of strings to match!
+* [Scaphandre](https://github.com/hubblo-org/scaphandre) - Metrics agent for collecting power consumption metrics!
+* [kdash](https://github.com/kdash-rs/kdash) - Text UI Kubernetes dashboard
 
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
@@ -131,6 +142,8 @@ Wasm:
 
 Others:
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
+* [kiro](https://github.com/rhysd/kiro-editor) - a CLI text editor with syntax highlighting, like a friendlier vim
+* [ox](https://github.com/curlpipe/ox) - another CLI/Text UI lightweight text editor
 * [async-std](https://async.rs/blog/announcing-async-std/) - the standard library with async APIs
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
 * [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
@@ -187,9 +200,11 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Node crunch](https://github.com/willi-kappler/node_crunch) - simple lightweight distributed compute framework
 * [Project Midas](https://github.com/ray33ee/Project-Midas) - distributed compute framework and terminal UI using Lua as scripting language
 * [Cube Store](https://cube.dev/blog/introducing-cubestore/) - Rust and Arrow/DataFusion-based rollup/aggregation/cache layer for SQL datastores, too bad it's mostly for JS
+* [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
+* [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store. 
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
@@ -209,6 +224,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 * [simdjson-rs](https://github.com/simd-lite/simdjson) - SIMD-enabled JSON parser.  NOTE: no writing of JSON.
 * [pjson](https://github.com/tidwall/pjson.rs) - JSON streaming parser
+* [streamson](https://github.com/shenek/streamson) - efficient JSON processing for large documents
 
 ### Cool Data Structures
 
@@ -270,6 +286,7 @@ Here are some solutions:
 * There is also [j4rs](https://astonbitecode.github.io/blog/post/j4rs_0.6.0/) for calling Java from Rust
 * [SaferFFI](https://www.ditto.live/blog/posts/introducing-safer-ffi) - a neat library to make exposing C-like APIs much safer esp dealing with pointers, nulls, borrowing etc.
 * [Exposing a Rust library to C](https://www.greyblake.com/blog/2017-08-10-exposing-rust-library-to-c/) - has some great tips on creating .so's and working with strings
+* [cc-rs](https://github.com/alexcrichton/cc-rs) - C/C++ build integration with Cargo
 * It seems to me Circle CI's support for multiple docker images and explicit manifest style makes it very easy to set up multiple language and dependency support
 * [Supporting multiple languages in Travis CI](https://stackoverflow.com/questions/27644586/how-to-set-up-travis-ci-with-multiple-languages)
 * [Running LLVM on GraalVM](https://www.graalvm.org/docs/reference-manual/languages/llvm/) - using GraalVM to embed and run LLVM bitcode!  Too bad GraalVM is commercial/Oracle only
