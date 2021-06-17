@@ -42,6 +42,7 @@ If you want a Rust REPL, check out [evcxr](https://github.com/google/evcxr/tree/
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [A Java Programmer Understanding Rust Ownership](https://medium.com/@rotc21/rust-adventures-a-java-programmer-understanding-rust-ownership-edbeb6b8001)
 * [Rust Error Handling for Pythonistas](https://theomn.com/rust-error-handling-for-pythonistas/)
+* [Zero to Production in Rust](https://www.zero2prod.com)
 
 Online resources and help:
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
@@ -93,6 +94,7 @@ Specific topics:
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
+* [Generics and Associated Types](https://blog.thomasheartman.com/posts/on-generics-and-associated-types) - when to use each one
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
   - [Recursive Iterators in Rust](https://fasterthanli.me/articles/recursive-iterators-rust) - yelch, using Box
   - [Internal-iterator](https://docs.rs/internal-iterator/0.1.1/internal_iterator/) - a potentially better solution for easily implementing some iterators
@@ -107,6 +109,9 @@ Specific topics:
 * [Rc and RefCell tricks](http://i.hsfzxjy.site/2019-06-23-rc-refcell-pattern/) - good explanations of the two
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
+* [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
+
+* [Cacao: Building macOS/iOS Apps in Rust](https://rymc.io/blog/2021/cacao-rs-macos-ios-rust/)
 
 ## Cool Rust Projects
 
@@ -119,7 +124,8 @@ CLI tools:
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
 * [gitui](https://github.com/Extrawurst/gitui) - awesome, fast Git terminal UI.  It will change your life!
-* [ht](https://github.com/ducaale/ht) - HTTPie clone / much better `curl` alternative
+* [zellij](https://zellij.dev) - terminal mux/session detach like tmux/screen, but with a pretty UI and plugins
+* [xh](https://github.com/ducaale/xh) - HTTPie clone / much better `curl` alternative
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
 * [rustscan](https://github.com/RustScan/RustScan) - Really fast port scanner, this should easily replace lsof / netstat
@@ -130,6 +136,7 @@ CLI tools:
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
+* [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other 
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 * [Kubesql](https://github.com/Dentrax/kubesql) - SQL queries for Kube metadata!
 * [grex](https://github.com/pemistahl/grex) - CLI tool to create regexes given a set of strings to match!
@@ -231,6 +238,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [dashmap](https://github.com/xacrimon/dashmap) - "Blazing fast concurrent HashMap for Rust"
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
+* [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 * [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm

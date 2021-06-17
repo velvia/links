@@ -46,6 +46,8 @@
 * [Lucene: The Good Parts](https://blog.parse.ly/post/1691/lucene/) - a great introduction to Lucene, terminology, indexing technology, search vs aggregations, etc.
 * [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
 
+* [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
+
 ## Data Processing Systems
 
 A good [Map of incremental and streaming systems](https://scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems/) - organizing different systems in an ontology.
@@ -137,6 +139,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [Applied ML in Production](https://github.com/eugeneyan/applied-ml) - a great list of projects, blogs, etc. by actual companies
 
 * [Getting Started in Data Science](https://gumroad.com/l/getting-started-in-data-science) book with great math intro
+* [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
 * [Teach Your Kids To Code](http://teachyourkidstocode.com) - learning Python for kids
 
 Time Series ML

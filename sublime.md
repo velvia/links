@@ -17,7 +17,7 @@
 * Git - essential, esp quickly select what to check in, commit
 * GitGutter - highlights lines changed since last commit
 * DocBlockr - very useful for JavaDoc/ScalaDoc/etc.
-* iOpener - open files with autocomplete search box, Emacs style.  Also lets you create new files! (Cmd-O)
+* iOpener - open files with autocomplete search box, Emacs style.  Also lets you create new files! (Cmd-O). NOTE: doesn't work with SublimeText4. Use AdvancedNewFile instead.
     * AdvancedNewFile - pretty similar, creates dirs too - Cmd-Opt-N
 * PlainTasks - an awesome TODO list manager
 * Highlight - lets you export selected region as RDF text (w syntax highlighting) for Keynote presos
