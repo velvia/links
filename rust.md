@@ -11,6 +11,7 @@
 - [Data Processing and Data Structures](#data-processing-and-data-structures)
   - [JSON Processing](#json-processing)
   - [Cool Data Structures](#cool-data-structures)
+  - [Geospatial and Graph](#geospatial-and-graph)
   - [String Performance](#string-performance)
 - [Rust and Scala/Java](#rust-and-scalajava)
   - [Rust and Python](#rust-and-python)
@@ -120,11 +121,14 @@ NOTE: there's a separate section for Data-related projects.
 CLI tools:
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
 * [zoxide](https://github.com/ajeetdsouza/zoxide) - a supercharged, AI-based replacement for cd with rank-based search of your most frequently used dirs
+  - [mcfly](https://github.com/cantino/mcfly) - Upgraded, smarter Ctrl-R for bash etc.  (note: fish users already have this built in, basically)
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
 * [gitui](https://github.com/Extrawurst/gitui) - awesome, fast Git terminal UI.  It will change your life!
+* [skim](https://github.com/lotabout/skim) - `sk` is a general purpose fuzzy-finder; it can work with ripgrep and other utils too
 * [zellij](https://zellij.dev) - terminal mux/session detach like tmux/screen, but with a pretty UI and plugins
+* [pueue](https://github.com/Nukesor/pueue) - instead of using tmux, queue and manage your background tasks
 * [xh](https://github.com/ducaale/xh) - HTTPie clone / much better `curl` alternative
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
@@ -146,6 +150,7 @@ CLI tools:
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
 * [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+* [lunatic](https://github.com/lunatic-solutions/lunatic) - Erlang-like server side WASM runtime with supervision and channel-based message passing, plus hot reloading!
 
 Others:
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
@@ -158,6 +163,7 @@ Others:
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
+* [RustPython](https://github.com/RustPython/RustPython)
 
 ## Rust Error Handling
 
@@ -207,6 +213,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Node crunch](https://github.com/willi-kappler/node_crunch) - simple lightweight distributed compute framework
 * [Project Midas](https://github.com/ray33ee/Project-Midas) - distributed compute framework and terminal UI using Lua as scripting language
 * [Cube Store](https://cube.dev/blog/introducing-cubestore/) - Rust and Arrow/DataFusion-based rollup/aggregation/cache layer for SQL datastores, too bad it's mostly for JS
+* [Noria](https://github.com/mit-pdos/noria) - "data-flow for high-performance web apps" - basically a materialized view cache that updates in real time as database data updates
 * [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
@@ -244,13 +251,21 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
 * [IndexMap](https://docs.rs/indexmap/1.3.2/indexmap/index.html) - O(1) obtain by index, iteration by index order
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
-* [Rstar](https://crates.io/crates/rstar) - n-dimensional R*-Tree for geospatial indexing and nearest-neighbor
 * [Heapless](https://docs.rs/heapless/0.5.5/heapless/) - static data structures with fixed size; Vec, heap, map, set, queues
-
-* [Petgraph](https://docs.rs/petgraph/0.5.0/petgraph/) - Graph data structure for Rust, considered perhaps most mature right now
 
 * [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
 * [VecMap](https://contain-rs.github.io/vec-map/vec_map/) - map for small integer keys, may use less space
+
+### Geospatial and Graph
+
+* The base Geometry processing crate is [geo](https://docs.rs/geo/0.18.0/geo/).
+  - Geo does not (as of 0.18) handle intersections, difference, XOR etc.  Try [geo-booleanop](https://crates.io/crates/geo-booleanop) for a Rust-only implementation using Martinez-Rueda algorithm
+  - Or use [geos](https://github.com/georust/geos) based on the C library
+* [spatial-join](https://crates.io/crates/spatial-join) - Spatial joins and proximity maps!
+* [Rstar](https://crates.io/crates/rstar) - n-dimensional R*-Tree for geospatial indexing and nearest-neighbor
+* [spade](https://crates.io/crates/spade) - R-trees and Delaunay triangulations
+
+* [Petgraph](https://docs.rs/petgraph/0.5.0/petgraph/) - Graph data structure for Rust, considered perhaps most mature right now
 
 ### String Performance
 
@@ -302,6 +317,7 @@ Here are some solutions:
 ## CLI and Misc
 
 * [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
+* [tui-rs](https://github.com/fdehau/tui-rs) - Rust terminal UI for CLI apps.  Check out list of projects it refers to also.  Lots of options!
 
 ## IDE/Editor/Tooling
 
@@ -313,6 +329,8 @@ Here are some solutions:
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
 
+Dependency conflicts?  Use `cargo tree -i` to lookup reverse dependencies for specific packages (which crates are using which deps). For example, `cargo tree -i arrow:5.0.0-SNAPSHOT`.
+ 
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
   - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects

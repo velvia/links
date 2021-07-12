@@ -142,6 +142,8 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
 * [Teach Your Kids To Code](http://teachyourkidstocode.com) - learning Python for kids
 
+* [StreamLit](https://streamlit.io/gallery) - a visualization/dashboard/data app tool for presenting data
+
 Time Series ML
 
 * [LSTM Neural Networks for Anomaly Detection](https://medium.com/datadriveninvestor/lstm-neural-networks-for-anomaly-detection-4328cb9b6e27) - really relevant to time series analysis
@@ -162,6 +164,7 @@ Other:
 * [Vaex](https://github.com/vaexio/vaex) - "out of core" Pandas for big data, using memory mapping, zero-copy, volume visualization
 * [Modin](https://github.com/modin-project/modin) - wrapper for Pandas to transparently wrap Ray/Dask and other more scalable backends to speed things up
 * [PySpark vs Dask vs Vaex etc](https://towardsdatascience.com/beyond-pandas-spark-dask-vaex-and-other-big-data-technologies-battling-head-to-head-a453a1f8cc13) - interesting comparison of diff frameworks for big data analysis via Pandas API.
+* [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
 
 Kedro is a good framework for standardizing processing pipelines.
 
@@ -220,6 +223,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 ## Compression, Data Storage
 
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
+* [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
 
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 
