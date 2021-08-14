@@ -160,6 +160,7 @@ Others:
 * [Convey](https://github.com/bparli/convey) - Layer 4 load balancer
 * [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
 * [Parsec](https://github.com/parallaxsecond/parsec) - abstraction layer for hardware security and cryptography
+* [Gazebo](https://crates.io/crates/gazebo) - useful utilties for all apps, by the Facebook Rust team.  They also have blog posts such as on [Dupe](https://developers.facebook.com/blog/post/2021/07/06/rust-nibbles-gazebo-dupe/)
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
@@ -208,6 +209,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
+* [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
 * [Node crunch](https://github.com/willi-kappler/node_crunch) - simple lightweight distributed compute framework
@@ -215,9 +217,11 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Cube Store](https://cube.dev/blog/introducing-cubestore/) - Rust and Arrow/DataFusion-based rollup/aggregation/cache layer for SQL datastores, too bad it's mostly for JS
 * [Noria](https://github.com/mit-pdos/noria) - "data-flow for high-performance web apps" - basically a materialized view cache that updates in real time as database data updates
 * [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
+* [Bagua](https://github.com/BaguaSys/bagua) - distributed learning/training framework, the very fast communication core is written in Rust
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
+* [Datafuse](https://github.com/datafuselabs/datafuse) - distributed "Real-Time Data Processing & Analytics DBMS", similar to Clickhouse "but faster"
 * [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store. 
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
@@ -228,6 +232,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
+* [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 
 * [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
@@ -370,6 +375,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
+  - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
 
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
@@ -461,6 +467,7 @@ NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stabl
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
+* [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
 

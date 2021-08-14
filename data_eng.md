@@ -13,6 +13,7 @@
   - [ML and Data Science](#ml-and-data-science)
     - [Python/Pandas](#pythonpandas)
     - [Data Engineering](#data-engineering)
+    - [Geospatial](#geospatial)
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression, Data Storage](#compression-data-storage)
@@ -158,6 +159,7 @@ Time Series ML
 
 Other:
 * [Swarm Intelligence](https://appliednetsci.springeropen.com/articles/10.1007/s41109-020-00260-8)
+* [Learning to Fly](https://pwy.io/en/posts/learning-to-fly-pt1/) - blog on simulating evolution using genetic algorithms in Rust, with a great explanation of the use of neural networks and deep learning to model brains
 
 ### Python/Pandas
 
@@ -191,8 +193,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 
 * [owl-data-sanitizer](https://towardsdatascience.com/introducing-a-new-pysparks-library-owl-data-sanitizer-bcc46e1583e6) - PySpark based data quality/validation library, featuring YAML/SQL-based configurable data rules and error/data comparison reports generation
 
-* [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
-* [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
+* [Herbie](https://herbie.uwplse.org) is a tool to help find/fix inaccurate floating point expressions
 
 Sometimes it's about how you organize data teams.  
 * [Data Mesh](https://www.bigdatarepublic.nl/articles/two-steps-towards-modern-data-platform/) is a really good concept.  Have embedded data engineers in each team plus a data platform team to provide common infra/tools/services.
@@ -201,6 +202,14 @@ Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
+
+### Geospatial
+* [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
+* [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
+* Speaking of hexagons, [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/) is a great writeup on hexagonal grid systems and many many details
+  - [Efficient, self-mapping Algorithm for Hexagon-Based Gridding](http://www.jatit.org/volumes/Vol98No17/9Vol98No17.pdf)
+* [Sedona](http://sedona.apache.org/tutorial/rdd/) - Apache project providing first class spatial processing for Spark, including SQL operators such as ST_Contains() etc.!
+* [Fast Map Matching](https://fmm-wiki.github.io)
 
 ## Interesting Datasets, Public Data
 
@@ -230,6 +239,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 ## I/O and Performance
 
 * [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
+* [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
+
 
 ## Logging and String Processing
 
@@ -240,6 +251,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 
+* [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [Graph coloring for Machine Learning](https://sisu.ai/blog/graph-coloring-for-machine-learning) - column reduction using approximate coloring techniques
