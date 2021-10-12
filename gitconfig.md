@@ -16,6 +16,7 @@
     co = checkout
     st = status
     log15 = log --oneline --pretty=format:'%h %ad | %s%d [%an]' --date=short -15
+    logme = log --author=Evan --oneline --pretty=format:'%h %ad | %s%d [%an]' --date=short -15
     log30 = log --oneline --pretty=format:'%h %ad | %s%d [%an]' --date=short -30
         audit30 = log --oneline --pretty=format:'%h|%ad|%an|%ae|%s' --date=short -30
         smerge = submodule update --remote --merge

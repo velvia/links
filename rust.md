@@ -141,11 +141,13 @@ CLI tools:
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 * [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other 
+* [htmlq](https://github.com/mgdm/htmlq) - like jq but for HTML
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 * [Kubesql](https://github.com/Dentrax/kubesql) - SQL queries for Kube metadata!
 * [grex](https://github.com/pemistahl/grex) - CLI tool to create regexes given a set of strings to match!
 * [Scaphandre](https://github.com/hubblo-org/scaphandre) - Metrics agent for collecting power consumption metrics!
 * [kdash](https://github.com/kdash-rs/kdash) - Text UI Kubernetes dashboard
+* [Josh](https://github.com/josh-project/josh) - Cool git proxy allows you to treat part of a large monorepo like its own smaller git repo!
 
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
@@ -161,6 +163,8 @@ Others:
 * [Ockam](https://github.com/ockam-network/ockam) - End to end secure messaging lib/platform between cloud and IoT devices
 * [Parsec](https://github.com/parallaxsecond/parsec) - abstraction layer for hardware security and cryptography
 * [Gazebo](https://crates.io/crates/gazebo) - useful utilties for all apps, by the Facebook Rust team.  They also have blog posts such as on [Dupe](https://developers.facebook.com/blog/post/2021/07/06/rust-nibbles-gazebo-dupe/)
+
+Do Rust in [Turkish](https://github.com/ekimb/pas) and other languages!  :)
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
@@ -269,6 +273,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [spatial-join](https://crates.io/crates/spatial-join) - Spatial joins and proximity maps!
 * [Rstar](https://crates.io/crates/rstar) - n-dimensional R*-Tree for geospatial indexing and nearest-neighbor
 * [spade](https://crates.io/crates/spade) - R-trees and Delaunay triangulations
+* [Hora Search](https://horasearch.com) - Nearest-Neighbor (NN) / geo search library that includes multiple algorithms including HNSW, SSG, PQIVF, etc.
 
 * [Petgraph](https://docs.rs/petgraph/0.5.0/petgraph/) - Graph data structure for Rust, considered perhaps most mature right now
 
@@ -331,12 +336,15 @@ Here are some solutions:
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
+* [mutagen](https://github.com/llogiq/mutagen) - mutation testing tool for Rust programs.  Generates "mutations" in your code to try to break test coverage!
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
+* [cargo_hakari](https://docs.rs/cargo-hakari/0.9.4/cargo_hakari/about/index.html) - A crate to speed up builds of workspace-hack packages ... for when you have multiple crates or complex builds, and you have duplicate dependencies
 
 Dependency conflicts?  Use `cargo tree -i` to lookup reverse dependencies for specific packages (which crates are using which deps). For example, `cargo tree -i arrow:5.0.0-SNAPSHOT`.
  
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
+* [Godbolt](https://godbolt.org) - A "compiler explorer", not Rust specific but neat to play with compiler settings and diff targets.
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
   - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
 

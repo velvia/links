@@ -80,6 +80,7 @@ Overall what the graph world really needs is, instead of sticking everything int
 
 * [SQLGraph](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43287.pdf) - An efficient Relational-Based Property Graph Store
 * [Graph Processing in Main-Memory Column Stores](https://tud.qucosa.de/api/qucosa%3A30306/attachment/ATT-0/)
+* [LevelGraph](https://www.vldb.org/pvldb/vol9/p1469-maccioni.pdf) - Graph database in the browser
 
 ## Distributed Systems General
 
@@ -188,6 +189,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 * [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
 
 * [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data). 
+* [AirByte](https://airbyte.io) - Open-source data integration/easy ELT pipelines
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
@@ -203,7 +205,7 @@ Interesting development:
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 
-### Geospatial
+### Geospatial / NearestNeighbor
 * [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
 * [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
 * Speaking of hexagons, [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/) is a great writeup on hexagonal grid systems and many many details
@@ -211,11 +213,15 @@ Interesting development:
 * [Sedona](http://sedona.apache.org/tutorial/rdd/) - Apache project providing first class spatial processing for Spark, including SQL operators such as ST_Contains() etc.!
 * [Fast Map Matching](https://fmm-wiki.github.io)
 
+Usually, geospatial and NN indexing is done with tree-based structures such as R-trees.  However, there are a spate of new algorithms. Here is a good [overview of HNSWG](https://www.arxiv-vanity.com/papers/1904.02077/) or "Hierarchical Navigable Small-World Graphs", using multi layered graphs to answer the k-NN problem -- as well as related algorithms.  There is also a [github repo](https://github.com/nmslib/hnswlib).
+
 ## Interesting Datasets, Public Data
 
 * [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
 * [Our World in Data / COVID](https://ourworldindata.org/coronavirus) - Really neat site with stats tracking COVID cases, you can custom select countries to compare etc.
 * [Global COVID Index](https://covid19.pemandu.org/) - comparative map showing different COVID measurements globally
+
+* [Public Policy Analysis: Data Science in Government](https://urbanspatial.github.io/PublicPolicyAnalytics/) - free book on geospatial analysis and DS in government planning
 
 ## Telemetry, Time Series, Tracing
 
@@ -236,11 +242,14 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 
+* [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
+
 ## I/O and Performance
 
 * [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
 * [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
 
+[Conbench](https://conbench.ursa.dev) is a Continuous Benchmarking tool.
 
 ## Logging and String Processing
 
