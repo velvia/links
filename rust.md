@@ -333,6 +333,7 @@ Here are some solutions:
 
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
 * [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
+* [rustviz](https://github.com/rustviz/rustviz) - Visualize borrowing and ownership!
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
