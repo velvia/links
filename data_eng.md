@@ -7,13 +7,14 @@
   - [Data Processing Systems](#data-processing-systems)
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
+    - [BlockChain Systems](#blockchain-systems)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
   - [Data Structures/Sketches](#data-structuressketches)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
     - [Python/Pandas](#pythonpandas)
     - [Data Engineering](#data-engineering)
-    - [Geospatial](#geospatial)
+    - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
   - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression, Data Storage](#compression-data-storage)
@@ -32,6 +33,7 @@
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
 * [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
 * [Memory Layouts for Binary Search](http://cglab.ca/~morin/misc/arraylayout/) shows that using BTrees might be faster than arrays due to CPU caching effects.
+* [WiscKey](https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf) - Splitting key and value storage for better efficiency/perf
 
 * [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
 * [ALEX](https://dl.acm.org/doi/abs/10.1145/3318464.3389711) - an updatable learned index structure
@@ -74,6 +76,10 @@ Neo4J can be classified as an OLTP property graph database.  How we categorize g
 * Tinkerpop and Gremlin is an old, mostly JVM-based standard for graph traversals but seems to be out of fashion and not much ongoing development, especially lacking is ML/AI support.
 * There are also solutions that aren't quite databases like [DataWalk](https://datawalk.com/neo4jalternative/)
 
+A good [summary of Graph DBs](https://docs.google.com/spreadsheets/d/1ribZq24cEzjVR0M3ZU0Tp2nKzkIpdwNSVPAtTsIvuUM/edit#gid=0).
+
+* [PathQuery](https://arxiv.org/pdf/2106.09799.pdf) - Google's Graph Query Language
+
 Overall what the graph world really needs is, instead of sticking everything into a giant GDBMS system, partitioning and federation, and composability -- think of it as a giant graph composed of subgraphs and even other DBMSes, Parquet files, data lakes/warehouses.
 
 * [YearOfTheGraph](https://yearofthegraph.xyz) - great resources site / newsletter about graph processing, graph ML, graph DBs, etc.
@@ -96,6 +102,15 @@ Overall what the graph world really needs is, instead of sticking everything int
 * [10000 Akka Cluster Nodes and RAPID](https://manuel.bernhardt.io/2020/04/30/10000-node-cluster-with-akka-and-rapid/) - interesting view into the new RAPID cluster membership protocol and how it can scale out peer to peer clusters
 
 * [Local-first Cooperation](https://local-first-cooperation.github.io/website/#relationship-with-other-architectural-building-blocks) - a pattern of distributed resilience by having local groups cooperate without centralized coordination.  Also talks about Reactive.
+
+### BlockChain Systems
+
+* [GossipSub](https://arxiv.org/pdf/2007.02754.pdf) - Attack-resistant peer-to-peer message propagation in ETH2.0 etc
+* [Narwhal and Tusk](https://arxiv.org/pdf/2105.11827.pdf) - DAG-based MemPool and Efficient BFT Consensus
+* [FastPay](https://arxiv.org/pdf/2003.11506.pdf) - High-performance byzantine Fault-Tolerant Settlement
+* [Move](https://diem-developers-components.netlify.app/papers/diem-move-a-language-with-programmable-resources/2020-05-26.pdf) - Smart contract language with notion of non-copyable resources (such as money)
+
+* [Lifecycle of a Transaction](https://hackmd.io/@huitseeker/rJG_kA0LK) - great summary from @huitseeker on blockchain transaction dataflow
 
 ## Cloud, Kubernetes, Deployment
 
@@ -220,6 +235,7 @@ Usually, geospatial and NN indexing is done with tree-based structures such as R
 * [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
 * [Our World in Data / COVID](https://ourworldindata.org/coronavirus) - Really neat site with stats tracking COVID cases, you can custom select countries to compare etc.
 * [Global COVID Index](https://covid19.pemandu.org/) - comparative map showing different COVID measurements globally
+* [Earth Science Information Partners](https://www.esipfed.org/about)
 
 * [Public Policy Analysis: Data Science in Government](https://urbanspatial.github.io/PublicPolicyAnalytics/) - free book on geospatial analysis and DS in government planning
 
