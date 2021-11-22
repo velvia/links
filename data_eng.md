@@ -83,6 +83,7 @@ A good [summary of Graph DBs](https://docs.google.com/spreadsheets/d/1ribZq24cEz
 Overall what the graph world really needs is, instead of sticking everything into a giant GDBMS system, partitioning and federation, and composability -- think of it as a giant graph composed of subgraphs and even other DBMSes, Parquet files, data lakes/warehouses.
 
 * [YearOfTheGraph](https://yearofthegraph.xyz) - great resources site / newsletter about graph processing, graph ML, graph DBs, etc.
+* [Graph Thinking](https://medium.com/knowledge-technologies/graph-thinking-5e9c85134ab0) - Paco's overview of how AI and learning systems interact with graphs and why graph thinking is key to the future of AI.
 
 * [SQLGraph](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43287.pdf) - An efficient Relational-Based Property Graph Store
 * [Graph Processing in Main-Memory Column Stores](https://tud.qucosa.de/api/qucosa%3A30306/attachment/ATT-0/)
