@@ -113,6 +113,11 @@ Overall what the graph world really needs is, instead of sticking everything int
 
 * [Lifecycle of a Transaction](https://hackmd.io/@huitseeker/rJG_kA0LK) - great summary from @huitseeker on blockchain transaction dataflow
 
+Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsstyle.medium.com/why-nfts-are-bad-the-long-version-2c16dae145e2#c79c) has very high-level overviews of how blockchains and NFTs work, and sketches of why they don't work.  It's good for understanding many of the arguments against.  Responses from Francois:
+- On security and 51% problem: PoS is not less secure (?), and getting a majority (67% in newer systems) does not just let you control the blockchain.  Consensus = ordering and selection of transactions, not validation
+- Concentration of wealth and how to incentivize validators (who get more tokens) is the primary problem.  See Fanti's papers on [Compounding of Weath in PoS](https://fc19.ifca.ai/preproceedings/161-preproceedings.pdf) for solutions that avoid concentration of wealth.
+- Sharding does not mean you can take over a shard by controlling a majority of shards nodes.  Still need consensus.
+
 ## Cloud, Kubernetes, Deployment
 
 * [OpenEBS](https://openebs.io) - fast, configurable, elastic block/local storage on any cloud platform running Kube
