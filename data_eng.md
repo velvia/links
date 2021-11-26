@@ -117,6 +117,9 @@ Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsst
 - On security and 51% problem: PoS is not less secure (?), and getting a majority (67% in newer systems) does not just let you control the blockchain.  Consensus = ordering and selection of transactions, not validation
 - Concentration of wealth and how to incentivize validators (who get more tokens) is the primary problem.  See Fanti's papers on [Compounding of Weath in PoS](https://fc19.ifca.ai/preproceedings/161-preproceedings.pdf) for solutions that avoid concentration of wealth.
 - Sharding does not mean you can take over a shard by controlling a majority of shards nodes.  Still need consensus.
+- Having more users who run nodes is the best counterbalance against Pos/PoW concentration.
+
+A really good article on the [scalability limits of blockchains](https://vitalik.ca/general/2021/05/23/scaling.html).
 
 ## Cloud, Kubernetes, Deployment
 
