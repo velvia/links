@@ -106,20 +106,27 @@ Overall what the graph world really needs is, instead of sticking everything int
 
 ### BlockChain Systems
 
+Papers:
 * [GossipSub](https://arxiv.org/pdf/2007.02754.pdf) - Attack-resistant peer-to-peer message propagation in ETH2.0 etc
 * [Narwhal and Tusk](https://arxiv.org/pdf/2105.11827.pdf) - DAG-based MemPool and Efficient BFT Consensus
 * [FastPay](https://arxiv.org/pdf/2003.11506.pdf) - High-performance byzantine Fault-Tolerant Settlement
 * [Move](https://diem-developers-components.netlify.app/papers/diem-move-a-language-with-programmable-resources/2020-05-26.pdf) - Smart contract language with notion of non-copyable resources (such as money)
 
 * [Lifecycle of a Transaction](https://hackmd.io/@huitseeker/rJG_kA0LK) - great summary from @huitseeker on blockchain transaction dataflow
+* [Vitalik Buterin](https://vitalik.ca/index.html) is a leading blockchain person and has a ton of great writings.
+  * [Using Blockchain for Voting](https://vitalik.ca/general/2021/05/25/voting2.html)
+  * [Crypto Cities](https://vitalik.ca/general/2021/10/31/cities.html) - super cool ideas for using blockchain to make government more transparent, efficient, and verifiable
+  * [Limits to Blockchain Scalability](https://vitalik.ca/general/2021/05/23/scaling.html)
+  * [Why Proof of Stake](https://vitalik.ca/general/2020/11/06/pos2020.html)
+
+* [A Normie's Guide to Becoming a Crypto Person](https://nymag.com/intelligencer/article/crypto-nft-twitter-discord-guide.html) - all about lexicon, scenes, coins, who to follow, how to socialize in the Crypto world
+
 
 Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsstyle.medium.com/why-nfts-are-bad-the-long-version-2c16dae145e2#c79c) has very high-level overviews of how blockchains and NFTs work, and sketches of why they don't work.  It's good for understanding many of the arguments against.  Responses from Francois:
 - On security and 51% problem: PoS is not less secure (?), and getting a majority (67% in newer systems) does not just let you control the blockchain.  Consensus = ordering and selection of transactions, not validation
 - Concentration of wealth and how to incentivize validators (who get more tokens) is the primary problem.  See Fanti's papers on [Compounding of Weath in PoS](https://fc19.ifca.ai/preproceedings/161-preproceedings.pdf) for solutions that avoid concentration of wealth.
 - Sharding does not mean you can take over a shard by controlling a majority of shards nodes.  Still need consensus.
 - Having more users who run nodes is the best counterbalance against Pos/PoW concentration.
-
-A really good article on the [scalability limits of blockchains](https://vitalik.ca/general/2021/05/23/scaling.html).
 
 ## Cloud, Kubernetes, Deployment
 
