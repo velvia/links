@@ -246,6 +246,12 @@ Interesting development:
 
 Usually, geospatial and NN indexing is done with tree-based structures such as R-trees.  However, there are a spate of new algorithms. Here is a good [overview of HNSWG](https://www.arxiv-vanity.com/papers/1904.02077/) or "Hierarchical Navigable Small-World Graphs", using multi layered graphs to answer the k-NN problem -- as well as related algorithms.  There is also a [github repo](https://github.com/nmslib/hnswlib).
 
+From Databrick's Spark Geospatial Webinar: reference architecture and data flow for geospatial:
+
+![Spark Geo Reference Architecture](spark_geospatial_architecture.png)
+
+![Spark Geo Analytics Flow](spark_geo_analytics_flow.png)
+
 ## Interesting Datasets, Public Data
 
 * [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
