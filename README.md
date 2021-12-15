@@ -507,6 +507,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
 
 * [George Mack's Razors](https://twitter.com/george__mack/status/1350513143387189248) - a compilation of razors to make decisions by
+* [Clickhouse DB cheat queries](https://onelinerhub.com/clickhouse) - community powered list of queries/solutions for Clickhouse db
 
 ### Tips on installing Ruby
 
