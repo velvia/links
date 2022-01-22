@@ -119,8 +119,8 @@ Papers:
   * [Limits to Blockchain Scalability](https://vitalik.ca/general/2021/05/23/scaling.html)
   * [Why Proof of Stake](https://vitalik.ca/general/2020/11/06/pos2020.html)
 
-* [A Normie's Guide to Becoming a Crypto Person](https://nymag.com/intelligencer/article/crypto-nft-twitter-discord-guide.html) - all about lexicon, scenes, coins, who to follow, how to socialize in the Crypto world
-
+* [A Normie's Guide to Becoming a Crypto Person](https://nymag.com/intelligencer/article/crypto-nft-twitter-discord-guide.html) - all about lexicon, scenes, coins, who to follow, how to socialize in the Crypto world.  Some great links to reading, including [Fat Protocols](https://www.usv.com/writing/2016/08/fat-protocols/), on why tokens inverts financial incentives and breaks the top heavy data centralization mold of the current Internet.
+* [Web3/Crypto: Why Bother?](https://continuations.com/post/671863718643105792/web3crypto-why-bother) - a great read, why web3 and decentralization matters
 
 Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsstyle.medium.com/why-nfts-are-bad-the-long-version-2c16dae145e2#c79c) has very high-level overviews of how blockchains and NFTs work, and sketches of why they don't work.  It's good for understanding many of the arguments against.  Responses from Francois:
 - On security and 51% problem: PoS is not less secure (?), and getting a majority (67% in newer systems) does not just let you control the blockchain.  Consensus = ordering and selection of transactions, not validation
@@ -176,6 +176,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [Teach Your Kids To Code](http://teachyourkidstocode.com) - learning Python for kids
 
 * [StreamLit](https://streamlit.io/gallery) - a visualization/dashboard/data app tool for presenting data
+* [HiPlot](https://github.com/facebookresearch/hiplot) - High-dimensional data plotting
 
 Time Series ML
 
