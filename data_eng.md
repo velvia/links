@@ -12,10 +12,12 @@
   - [Data Structures/Sketches](#data-structuressketches)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
+    - [Graph ML](#graph-ml)
+    - [Time Series ML](#time-series-ml)
     - [Python/Pandas](#pythonpandas)
     - [Data Engineering](#data-engineering)
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
-  - [Interesting Datasets, Public Data](#interesting-datasets-public-data)
+  - [Public Data, Datasets, Data for Good](#public-data-datasets-data-for-good)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression, Data Storage](#compression-data-storage)
   - [I/O and Performance](#io-and-performance)
@@ -170,6 +172,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [Cognitive Database](https://arxiv.org/pdf/1712.07199.pdf) - Using NLP word embedding techniques to add cognitive, ML/AI capabilities to SQL queries of RDBMSes
 * [Useful Resources for DS](https://community.ibm.com/community/user/datascience/blogs/paco-nathan/2019/05/09/useful-resources-for-data-science) by Paco Nathan.  Good list!
 * [Applied ML in Production](https://github.com/eugeneyan/applied-ml) - a great list of projects, blogs, etc. by actual companies
+* [The Illustrated Word2vec](https://jalammar.github.io/illustrated-word2vec/) - an EXCELLENT guide with many illustrations to word2vec, and using vectors to represent, analyze, and compare words, people, and other things
 
 * [Getting Started in Data Science](https://gumroad.com/l/getting-started-in-data-science) book with great math intro
 * [A Tour of Machine Learning Algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/)
@@ -178,7 +181,11 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [StreamLit](https://streamlit.io/gallery) - a visualization/dashboard/data app tool for presenting data
 * [HiPlot](https://github.com/facebookresearch/hiplot) - High-dimensional data plotting
 
-Time Series ML
+### Graph ML
+
+* [Node Embeddings for Beginners](https://towardsdatascience.com/node-embeddings-for-beginners-554ab1625d98#:~:text=Node%20embeddings%20are%20a%20way,in%20machine%20learning%20prediction%20tasks) - How can we do ML on Graphs?  Turning graphs into vectors for ML
+
+### Time Series ML
 
 * [LSTM Neural Networks for Anomaly Detection](https://medium.com/datadriveninvestor/lstm-neural-networks-for-anomaly-detection-4328cb9b6e27) - really relevant to time series analysis
 * [Machine Learning for Predictive Maintenance](https://medium.com/bigdatarepublic/machine-learning-for-predictive-maintenance-where-to-start-5f3b7586acfb)
@@ -222,6 +229,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 
 * [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data). 
 * [AirByte](https://airbyte.io) - Open-source data integration/easy ELT pipelines
+* [Data Discovery - The Future of Data Catalogs for Data Lakes](https://towardsdatascience.com/data-discovery-the-future-of-data-catalogs-for-data-lakes-7b50e2e8cb28) - dynamic discovery using ML and why its better than static catalogs
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
@@ -243,7 +251,9 @@ Interesting development:
 * Speaking of hexagons, [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/) is a great writeup on hexagonal grid systems and many many details
   - [Efficient, self-mapping Algorithm for Hexagon-Based Gridding](http://www.jatit.org/volumes/Vol98No17/9Vol98No17.pdf)
 * [Sedona](http://sedona.apache.org/tutorial/rdd/) - Apache project providing first class spatial processing for Spark, including SQL operators such as ST_Contains() etc.!
-* [Fast Map Matching](https://fmm-wiki.github.io)
+* [Valhalla](https://github.com/valhalla/valhalla) - OpenStreetMap based routing and map-matching engine.  Designed to run as a server and has Docker container, should be easy to get up and running.
+  * Accompanying article on [Map-Matching Done Right using Valhalla Meili](https://towardsdatascience.com/map-matching-done-right-using-valhallas-meili-f635ebd17053)
+* [Fast Map Matching](https://fmm-wiki.github.io) - but it's really hard to compile
 
 Usually, geospatial and NN indexing is done with tree-based structures such as R-trees.  However, there are a spate of new algorithms. Here is a good [overview of HNSWG](https://www.arxiv-vanity.com/papers/1904.02077/) or "Hierarchical Navigable Small-World Graphs", using multi layered graphs to answer the k-NN problem -- as well as related algorithms.  There is also a [github repo](https://github.com/nmslib/hnswlib).
 
@@ -253,7 +263,7 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 
 ![Spark Geo Analytics Flow](spark_geo_analytics_flow.png)
 
-## Interesting Datasets, Public Data
+## Public Data, Datasets, Data for Good
 
 * [Best free, open data sources](https://www.freecodecamp.org/news/https-medium-freecodecamp-org-best-free-open-data-sources-anyone-can-use-a65b514b0f2d/)
 * [Our World in Data / COVID](https://ourworldindata.org/coronavirus) - Really neat site with stats tracking COVID cases, you can custom select countries to compare etc.
@@ -261,6 +271,7 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 * [Earth Science Information Partners](https://www.esipfed.org/about)
 
 * [Public Policy Analysis: Data Science in Government](https://urbanspatial.github.io/PublicPolicyAnalytics/) - free book on geospatial analysis and DS in government planning
+* [Finding Clusters of NYPD Officers in CCRB Compliant Data](https://ejfox.com/blog/nypd-ccrb-complaint-clusters/?mkt_tok=NzEwLVJSQy0zMzUAAAF-bcHIkeWlkYopqQVlTiQ2HCpocRBU6_ipCAMiQ18l1yLcadDLh83QErIBjTWRX163QbqtqNupfJC4AQqMHBGp4H1r0i1C-wnpAyz7WprlYFgK) - an AWESOME study using graphs, Neo4J, and public data to analyze NYPD officers complicity in the light of George Floyd police brutality.  Excellent visualizations too.
 
 ## Telemetry, Time Series, Tracing
 
