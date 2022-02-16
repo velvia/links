@@ -33,6 +33,7 @@
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
     - [Java implementation](https://github.com/rohansuri/adaptive-radix-tree/blob/master/README.md)
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
+* [CasAB](https://www.researchgate.net/publication/232645611_CasAB_Building_Precise_Bitmap_Indices_via_Cascaded_Bloom_Filters) - using Cascaded Bloom Filters for space efficient bitmap indexing
 * [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
 * [Memory Layouts for Binary Search](http://cglab.ca/~morin/misc/arraylayout/) shows that using BTrees might be faster than arrays due to CPU caching effects.
 * [WiscKey](https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf) - Splitting key and value storage for better efficiency/perf

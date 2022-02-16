@@ -137,7 +137,7 @@ CLI tools:
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
 * [delta](https://github.com/dandavison/delta) - git-delta: colorful git diff viewer
 * [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
-* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performnace benchmarking CLI
+* [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performance benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
 * [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other 
