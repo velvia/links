@@ -32,7 +32,9 @@
 * [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
 * SublimeREPL
-* [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
+* [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust.
+
+NOTE: for the best Rust support use [rust-analyzer](https://rust-analyzer.github.io) instead.  Follow the install instructions under Sublime Text, it works for Sublime Text 4 build 4126.  You need to install rust-analyzer first, then LSP package, then lsp-rust-analyzer.
 
 Themes:
 

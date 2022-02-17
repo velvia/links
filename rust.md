@@ -34,6 +34,8 @@
 
 If you want a Rust REPL, check out [evcxr](https://github.com/google/evcxr/tree/master/evcxr_repl).
 
+I highly recommend [rust-analyzer](https://rust-analyzer.github.io) to support fast compile checks, references, refactorings, etc. in your editor.
+
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Easy Rust Youtube Channel](https://www.youtube.com/watch?v=-lYeJeQ11OI&list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) - great videos
