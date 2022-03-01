@@ -138,6 +138,7 @@ CLI tools:
 * [sd](https://github.com/chmln/sd) - Easier to use sed.  You can search and replace in like all files under subdir with `sd old_str new_str **`.
 * [Nushell](http://www.jonathanturner.org/2019/08/introducing-nushell.html) - Rust shell that turns all output into tabular data.  Pretty cool!
 * [delta](https://github.com/dandavison/delta) - git-delta: colorful git diff viewer
+* [ruplacer](https://github.com/dmerejkowsky/ruplacer) - Source code search and replace tool
 * [imagecli](https://github.com/theotherphil/imagecli/blob/master/README.md) - CLI for image batch processing
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performance benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator

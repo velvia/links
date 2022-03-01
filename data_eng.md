@@ -33,6 +33,7 @@
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
     - [Java implementation](https://github.com/rohansuri/adaptive-radix-tree/blob/master/README.md)
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
+* [PH-Tree](https://github.com/tzaeschke/phtree/raw/master/PH-Tree-v1.1-2014-06-28.pdf) - A (spatial?) Patricia-trie combined with Hypercubes for multidimensional indexing and efficient data storage
 * [CasAB](https://www.researchgate.net/publication/232645611_CasAB_Building_Precise_Bitmap_Indices_via_Cascaded_Bloom_Filters) - using Cascaded Bloom Filters for space efficient bitmap indexing
 * [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
 * [Memory Layouts for Binary Search](http://cglab.ca/~morin/misc/arraylayout/) shows that using BTrees might be faster than arrays due to CPU caching effects.
@@ -125,6 +126,7 @@ Papers:
 
 * [Lifecycle of a Transaction](https://hackmd.io/@huitseeker/rJG_kA0LK) - great summary from @huitseeker on blockchain transaction dataflow
 * [Increasing Scalability of the EVM](https://forum.celestia.org/t/increasing-scalability-of-the-evm-for-rollups-by-restricting-state-and-contract-set/78) - summary of potential performance improvements
+* [The AMM Test](https://medium.com/dragonfly-research/the-amm-test-a-no-bs-look-at-l1-performance-4c8c2129d581) - "A No BS Look at L1 Performance" good discussion on L1 performance for serialized swap transactions
 * [Vitalik Buterin](https://vitalik.ca/index.html) is a leading blockchain person and has a ton of great writings.
   * [Using Blockchain for Voting](https://vitalik.ca/general/2021/05/25/voting2.html)
   * [Crypto Cities](https://vitalik.ca/general/2021/10/31/cities.html) - super cool ideas for using blockchain to make government more transparent, efficient, and verifiable
@@ -305,6 +307,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
 * [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
+* [Diskplorer](https://github.com/scylladb/diskplorer) - a tool for doing load testing on disks, graphing IOPS vs bandwidth and latency.  With lots of great graphs on different types of hardware and cloud setups.
 
 [Conbench](https://conbench.ursa.dev) is a Continuous Benchmarking tool.
 
