@@ -33,6 +33,7 @@
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
 * SublimeREPL
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust.
+* [TableEditor] - Great for Markdown tables
 
 NOTE: for the best Rust support use [rust-analyzer](https://rust-analyzer.github.io) instead.  Follow the install instructions under Sublime Text, it works for Sublime Text 4 build 4126.  You need to install rust-analyzer first, then LSP package, then lsp-rust-analyzer.
 
@@ -43,23 +44,21 @@ Themes:
 My package control config:
 
     {
-      "installed_packages":
-      [
-        "ApacheConf.tmLanguage",
-        "BracketHighlighter",
-        "DocBlockr",
-        "Dockerfile Syntax Highlighting",
+    "installed_packages":
+    [
         "Git",
         "GitGutter",
         "iOpener",
+        "LSP",
+        "LSP-rust-analyzer",
         "MarkdownEditing",
-        "Package Control",
+        "MarkdownPreview",
         "SideBarEnhancements",
         "SyncedSideBar",
-        "SublimeSBT",
+        "Table Editor",
         "Theme - Afterglow",
-        "Theme - Spacegray"
-      ]
+        "TOML",
+    ],
     }
 
 Other useful packages:
