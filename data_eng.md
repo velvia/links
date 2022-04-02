@@ -38,6 +38,7 @@
 * [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
 * [Memory Layouts for Binary Search](http://cglab.ca/~morin/misc/arraylayout/) shows that using BTrees might be faster than arrays due to CPU caching effects.
 * [WiscKey](https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf) - Splitting key and value storage for better efficiency/perf
+* [Eyros](https://github.com/peermaps/eyros) - multi-dimensional interval database
 
 * [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
 * [ALEX](https://dl.acm.org/doi/abs/10.1145/3318464.3389711) - an updatable learned index structure
@@ -118,11 +119,17 @@ Starting material:
 * ACM's [Core Concepts, Challenges, and Future Directions in Blockchain](https://dl.acm.org/doi/fullHtml/10.1145/3366370) - technical intro for CS folks
 * MIT's [Video Lectures on Blockchain and Money](https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/video-lectures/)
 
+Web3/Interesting Chains:
+* [Arweave](https://www.arweave.org) - Permanent archival data storage based on web3/blockchain principles
+
 Papers:
 * [GossipSub](https://arxiv.org/pdf/2007.02754.pdf) - Attack-resistant peer-to-peer message propagation in ETH2.0 etc
 * [Narwhal and Tusk](https://arxiv.org/pdf/2105.11827.pdf) - DAG-based MemPool and Efficient BFT Consensus
 * [FastPay](https://arxiv.org/pdf/2003.11506.pdf) - High-performance byzantine Fault-Tolerant Settlement
 * [Move](https://diem-developers-components.netlify.app/papers/diem-move-a-language-with-programmable-resources/2020-05-26.pdf) - Smart contract language with notion of non-copyable resources (such as money)
+
+Contracts, Programming, Storage etc.
+* [CosmWasm](https://docs.cosmwasm.com/docs/1.0/) - Rust/WASM for programming smart contract on Cosmos ecosystem
 
 * [Lifecycle of a Transaction](https://hackmd.io/@huitseeker/rJG_kA0LK) - great summary from @huitseeker on blockchain transaction dataflow
 * [Increasing Scalability of the EVM](https://forum.celestia.org/t/increasing-scalability-of-the-evm-for-rollups-by-restricting-state-and-contract-set/78) - summary of potential performance improvements
@@ -144,6 +151,7 @@ Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsst
 * [OpenEBS](https://openebs.io) - fast, configurable, elastic block/local storage on any cloud platform running Kube
 * [Kubernetes Liveness and Readiness Probes](https://blog.colinbreck.com/kubernetes-liveness-and-readiness-probes-how-to-avoid-shooting-yourself-in-the-foot/) - how to avoid shooting yourself in the foot
 * [Armada - Running Millions of Batch Jobs on K8s](https://www.gresearch.co.uk/article/armada-how-to-run-millions-of-batch-jobs-over-thousands-of-compute-nodes-using-kubernetes/)
+* [Garage](https://garagehq.deuxfleurs.fr) - S3 compatible distributed storage solution, like Minio but supposedly faster
 
 * [Scaphandre](https://github.com/hubblo-org/scaphandre) - Metrics agent for collecting power consumption metrics!
 
@@ -255,6 +263,7 @@ Interesting development:
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 
 ### Geospatial / NearestNeighbor
+
 * [Pelias](https://www.pelias.io) - Free geocoder.  Return list of places near lat/long.  Could be super useful for geospatial apps.
 * [H3](https://eng.uber.com/h3/) - Uber's hexagonal hierarchical spatial index.
 * Speaking of hexagons, [Hexagonal Grids](https://www.redblobgames.com/grids/hexagons/) is a great writeup on hexagonal grid systems and many many details
@@ -263,6 +272,7 @@ Interesting development:
 * [Valhalla](https://github.com/valhalla/valhalla) - OpenStreetMap based routing and map-matching engine.  Designed to run as a server and has Docker container, should be easy to get up and running.
   * Accompanying article on [Map-Matching Done Right using Valhalla Meili](https://towardsdatascience.com/map-matching-done-right-using-valhallas-meili-f635ebd17053)
 * [Fast Map Matching](https://fmm-wiki.github.io) - but it's really hard to compile
+* [Eyros](https://github.com/peermaps/eyros) - multi-dimensional interval database
 
 Usually, geospatial and NN indexing is done with tree-based structures such as R-trees.  However, there are a spate of new algorithms. Here is a good [overview of HNSWG](https://www.arxiv-vanity.com/papers/1904.02077/) or "Hierarchical Navigable Small-World Graphs", using multi layered graphs to answer the k-NN problem -- as well as related algorithms.  There is also a [github repo](https://github.com/nmslib/hnswlib).
 
@@ -289,6 +299,7 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 * [Hastic](https://hastic.io) - Anomaly detection plugin for Grafana/TSDBs
 * [Static Code Analysis for Log Parsing](https://medium.com/palantir/using-static-code-analysis-to-improve-log-parsing-18f0d1843965) - turning unstructured to structured logs
 * [Canopy](https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf?) - Facebook's End to End Tracing and Analysis System
+* [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and

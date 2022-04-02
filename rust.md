@@ -47,6 +47,9 @@ I highly recommend [rust-analyzer](https://rust-analyzer.github.io) to support f
 * [Rust Error Handling for Pythonistas](https://theomn.com/rust-error-handling-for-pythonistas/)
 * [Zero to Production in Rust](https://www.zero2prod.com)
 
+Easy short intros:
+* [A Rust Gem: The Rust Map API](https://www.thecodedmessage.com/posts/rust-map-entry/) - comparing C++, Java, and Rust Map APIs and why Option and not having nulls makes the Rust Map API superior
+
 Online resources and help:
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
@@ -96,6 +99,7 @@ Specific topics:
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
+* [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Generics and Associated Types](https://blog.thomasheartman.com/posts/on-generics-and-associated-types) - when to use each one
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
@@ -156,6 +160,7 @@ Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
 * [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
 * [lunatic](https://github.com/lunatic-solutions/lunatic) - Erlang-like server side WASM runtime with supervision and channel-based message passing, plus hot reloading!
+* [CosmWasm](https://docs.cosmwasm.com/docs/1.0/) - Rust/WASM for programming smart contract on Cosmos ecosystem
 
 Others:
 * [TabNine](https://tabnine.com) - an ML-based autocompleter, written in Rust
@@ -167,7 +172,7 @@ Others:
 * [Parsec](https://github.com/parallaxsecond/parsec) - abstraction layer for hardware security and cryptography
 * [Gazebo](https://crates.io/crates/gazebo) - useful utilties for all apps, by the Facebook Rust team.  They also have blog posts such as on [Dupe](https://developers.facebook.com/blog/post/2021/07/06/rust-nibbles-gazebo-dupe/)
 
-Do Rust in [Turkish](https://github.com/ekimb/pas) and other languages!  :)
+Do Rust in [Turkish](https://github.com/ekimb/pas), [Spanish](https://github.com/UltiRequiem/rustico) and other languages!  :)
 
 Languages etc.
 * [BLisp](https://ytakano.github.io/blisp/) - a statically-typed Lisp built on top of Rust
@@ -232,6 +237,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store. 
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+* [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
 * [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
@@ -243,6 +249,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
 * [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
+* [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
 
 ### JSON Processing
 
@@ -255,9 +262,11 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 ### Cool Data Structures
 
 * [dashmap](https://github.com/xacrimon/dashmap) - "Blazing fast concurrent HashMap for Rust"
+* [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
+* [priq](https://github.com/bexxmodd/priq) - "blazing fast" priority queue built using arrays
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 * [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
@@ -291,6 +300,7 @@ Here are some solutions:
 * [String](https://docs.rs/string/0.2.1/string/) - string type with configurable byte storage, including stack byte arrays!
 * [Inlinable String](http://fitzgen.github.io/inlinable_string/inlinable_string/index.html) - stores strings up to 30 chars inline, automatic promotion to heap string if needed.
 * Also see [smallstr](https://docs.rs/smallstr/0.2.0/smallstr/)
+* [flexstr](https://github.com/nu11ptr/flexstr) - Enum String type to unify literals, inlined, and heap strings
 * [kstring](https://docs.rs/kstring/0.1.0/kstring/) - intended for map keys: immutable, inlined for small keys, and have Ref/Cow types to allow efficient sharing.  :)
 * [nested](https://crates.io/crates/nested) - reduce Vec<String> type structures to just two allocations, probably more memory efficient too.
 * [tinyset](https://docs.rs/tinyset/0.4.2/tinyset/) - space efficient sets and maps, can be combined with nested perhaps
