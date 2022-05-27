@@ -33,6 +33,11 @@ function list-ports
   lsof -iTCP -sTCP:LISTEN -P
 end
 
+zoxide init fish | source
+
+alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias rclip="cargo clippy --all --tests -- -D clippy::all -D warnings -D clippy::disallowed_method"
+
 # Environment vars
 # NOTE: below is for JDK 8
 set -x SBT_OPTS "-XX:+CMSClassUnloadingEnabled -Xmx5g -XX:MaxMetaspaceSize=512m"

@@ -8,6 +8,7 @@
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
     - [BlockChain Systems](#blockchain-systems)
+    - [Cryptography](#cryptography)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
   - [Data Structures/Sketches](#data-structuressketches)
   - [OLAP, Aggregation](#olap-aggregation)
@@ -148,6 +149,10 @@ Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsst
 - Sharding does not mean you can take over a shard by controlling a majority of shards nodes.  Still need consensus.
 - Having more users who run nodes is the best counterbalance against Pos/PoW concentration.
 
+### Cryptography
+
+* [BLS Signatures: Better than Schnorr](https://medium.com/cryptoadvance/bls-signatures-better-than-schnorr-5a7fe30ea716) - BLS signatures allow aggregation of multiple signatures into one
+
 ## Cloud, Kubernetes, Deployment
 
 * [OpenEBS](https://openebs.io) - fast, configurable, elastic block/local storage on any cloud platform running Kube
@@ -175,6 +180,9 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [Efficient Computation of Frequent and Top-K Elements in Data Streams](https://www.cs.ucsb.edu/sites/default/files/docs/reports/2005-23.pdf) - a great overview of techniques, including sketches
 
 * [XXH3 - a Speed-Optimized Hashing Algo](http://fastcompression.blogspot.com/2019/03/presenting-xxh3.html) - neat insights into the evolution of hashing, improvements using vectorization, and more!
+
+Interesting data structures from the blockchain world:
+* [Utreexo](https://dci.mit.edu/research/2019/6/6/utreexo-a-dynamic-hash-based-accumulator-optimized-for-the-bitcoin-utxo-set) - a "hash-based accumulator", basically a set of merkle trees that allows fast updating
 
 ## OLAP, Aggregation
 

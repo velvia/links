@@ -60,7 +60,8 @@ Online resources and help:
 
 ## Some links on Rust
 
-[cheats.rs](https://cheats.rs) - Awesome quick ref.
+* [cheats.rs](https://cheats.rs) - Awesome quick ref.
+* [Cheat sheet for Iterator methods](https://danielkeep.github.io/itercheat_baked.html)
 
 * [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
 * [What you Can't Do in Rust and What To Do Instead](https://blog.logrocket.com/what-you-cant-do-in-rust-and-what-to-do-instead/) - great guide for anti-patterns
@@ -374,6 +375,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
+* [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
 
 ### Cross-compilation
 
@@ -435,6 +437,7 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
     - NOTE: you need to turn on `debug = true` in release profile for symbols
     - This method works better for apps than small benchmarks btw, as inlined methods won't show up in the graph.
 * [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
+* [Iai](https://github.com/bheisler/iai) - a one-shot Rust profiler that uses Valgrind underneath
 * [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
     - From `@blaagh`: though the predicate should be `"/pid == $target/"` rather than using execname.
