@@ -242,6 +242,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
 * [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
+* [BonsaiDB](https://bonsaidb.io) - NoSQL document store written in Rust with Rust schemas
 
 * [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
