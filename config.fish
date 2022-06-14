@@ -33,6 +33,11 @@ function list-ports
   lsof -iTCP -sTCP:LISTEN -P
 end
 
+# Disable sleep on Mac temporarily.  Runs in foreground.  Ctrl-C to cancel.
+function mac-no-sleep
+  pmset noidle
+end
+
 zoxide init fish | source
 
 alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
