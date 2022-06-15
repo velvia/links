@@ -200,6 +200,7 @@ Languages etc.
 
 * [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework     
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
+* [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
 
 ### Shared Data Across Multiple Threads
 
@@ -377,6 +378,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
+* [Are We Observable Yet?](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/#5-12-cleaning-up-instrumentation-code-tracing-instrument) - an introduction to Rust telemetry
 
 ### Cross-compilation
 
