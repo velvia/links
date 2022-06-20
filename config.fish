@@ -35,7 +35,8 @@ end
 
 # Disable sleep on Mac temporarily.  Runs in foreground.  Ctrl-C to cancel.
 function mac-no-sleep
-  pmset noidle
+  # On older Mac's, use pmset noidle... but caffeinate works better on newer Macs
+  caffeinate
 end
 
 zoxide init fish | source
