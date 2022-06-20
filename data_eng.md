@@ -140,6 +140,7 @@ Contracts, Programming, Storage etc.
 * [Vitalik Buterin](https://vitalik.ca/index.html) is a leading blockchain person and has a ton of great writings.
   * [Using Blockchain for Voting](https://vitalik.ca/general/2021/05/25/voting2.html)
   * [Crypto Cities](https://vitalik.ca/general/2021/10/31/cities.html) - super cool ideas for using blockchain to make government more transparent, efficient, and verifiable
+  * [An Incomplete Guide to Rollups](https://vitalik.ca/general/2021/01/05/rollup.html)
   * [Limits to Blockchain Scalability](https://vitalik.ca/general/2021/05/23/scaling.html)
   * [Why Proof of Stake](https://vitalik.ca/general/2020/11/06/pos2020.html)
 
@@ -176,6 +177,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
     - Our research shows DDSketch may use many more buckets than TDigest, but merges much much faster and provides stricter error guarantees.  Memory diff might not be that big in reality as TDigest needs a tree structure.
 * [SmoothieMap2](https://medium.com/@leventov/smoothiemap-2-the-lowest-memory-hash-table-ever-6bebd06780a3) - a low-memory implementation of Google SwissTable for the JVM
 * [Column Sketches](https://stratos.seas.harvard.edu/files/stratos/files/sketches.pdf) - using histogram and approximate/lossy encodings for really fast indexing/scanning.  Neat.  Does not require data clustering.
+* [Efficient Set Reconciliation without Prior Context](https://www.ics.uci.edu/~eppstein/pubs/EppGooUye-SIGCOMM-11.pdf) - Invertible Bloom Filters that allow set difference to be computed/exchanged between two parties using only the size of the difference to be exchanged, not the entire set
 
 * [Efficient Computation of Frequent and Top-K Elements in Data Streams](https://www.cs.ucsb.edu/sites/default/files/docs/reports/2005-23.pdf) - a great overview of techniques, including sketches
 
