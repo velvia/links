@@ -223,6 +223,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
+* [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
@@ -235,6 +236,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
+* [Quickwit](https://github.com/quickwit-oss/quickwit) - Log search DB, like Elastic but built on top of Tantivy
 * [Datafuse](https://github.com/datafuselabs/datafuse) - distributed "Real-Time Data Processing & Analytics DBMS", similar to Clickhouse "but faster"
 * [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store. 
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
