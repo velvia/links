@@ -185,6 +185,7 @@ Languages etc.
 
 * [Anyhow](https://docs.rs/anyhow/1.0.26/anyhow/) - streamlined error handling with context....
 * [Snafu](https://docs.rs/snafu/0.4.1/snafu/index.html) - adding context to errors
+* [Error-stack](https://crates.io/crates/error-stack) - I _really_ like the philosophy behind this crate.  It makes it easy to "stack" errors - you get not a backtrace, but stacked detailed errors, with the inner error showing through.
 
 ## Rust Concurrency
 
@@ -233,6 +234,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Noria](https://github.com/mit-pdos/noria) - "data-flow for high-performance web apps" - basically a materialized view cache that updates in real time as database data updates
 * [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
 * [Bagua](https://github.com/BaguaSys/bagua) - distributed learning/training framework, the very fast communication core is written in Rust
+* [Similari](https://crates.io/crates/similari) - similarity search/computation engine for ML in Rust
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
