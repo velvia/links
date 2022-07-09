@@ -22,6 +22,7 @@
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
   - [Perf profiling:](#perf-profiling)
+    - [Memory/Heap Profiling](#memoryheap-profiling)
   - [Fast String Parsing](#fast-string-parsing)
   - [Bitpacking, Binary Structures, Serialization](#bitpacking-binary-structures-serialization)
   - [SIMD](#simd)
@@ -42,6 +43,7 @@ I highly recommend [rust-analyzer](https://rust-analyzer.github.io) to support f
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
 * [explaine.rs](https://jrvidal.github.io/explaine.rs/) - paste Rust code into the window and hover over keywords to get explanations. Great for learning.
 * [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
+* [Mental models for learning Rust](https://kerkour.com/rust-mental-models) - really really short blurb on how to approach learning Rust
 * [Rust Borrowing and Ownership](http://squidarth.com/rc/rust/2018/05/31/rust-borrowing-and-ownership.html) - easy-to-read, short summary of basic ownership, borrowing, and lifetime references
 * [A Java Programmer Understanding Rust Ownership](https://medium.com/@rotc21/rust-adventures-a-java-programmer-understanding-rust-ownership-edbeb6b8001)
 * [Rust Error Handling for Pythonistas](https://theomn.com/rust-error-handling-for-pythonistas/)
@@ -96,6 +98,7 @@ See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some
 
 Specific topics:
 * [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
+* [Default Values for Maintainability](https://cj.rs//blog/rust-default-values-for-maintainability/) - short and easy guide
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
@@ -429,7 +432,7 @@ NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 ### Perf profiling:
 
-Note: this section is mostly about profiling tools, as opposed to benchmarking (which is repeatable, systematic profiling).  The two benchmarking tools I recommend are [criterion](https://github.com/bheisler/criterion.rs) and [Iai](https://github.com/bheisler/iai) for benchmarking.
+Note: this section is mostly about profiling tools -- detailed breakdowns of bottlenecks, as opposed to benchmarking (which is repeatable, systematic measurement).  The two benchmarking tools I recommend are [criterion](https://github.com/bheisler/criterion.rs) and [Iai](https://github.com/bheisler/iai) for benchmarking.
 
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
@@ -454,24 +457,17 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 * [2017 RustConf - Improving Rust Performance through Profiling](https://www.youtube.com/watch?v=hTHp0gjWMLQ)
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
+  - Also useful for heap/memory analysis, including tracking retained vs transient allocations
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
 * [Rust Perf Book Profiling Page](https://nnethercote.github.io/perf-book/profiling.html) - lots of good links
 
-For heap profiling try [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
-
-* [dhat](https://docs.rs/dhat/0.2.2/dhat/) - Swap out the global allocator, will profile your allocations & max heap usage
-* [Heaptrack](https://github.com/KDE/heaptrack) and [working with Rust](https://gist.github.com/HenningTimm/ab1e5c05867e9c528b38599693d70b35) works for Rust, but only on Linux.
-* [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
-* [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
-* [Measuring Memory Usage in Rust](https://rust-analyzer.github.io//blog/2020/12/04/measuring-memory-usage-in-rust.html) - thoughts on working around the fact we don't have a GC to track deep memory usage
-
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 * What I like to do with asm output: check if rustc has inlined certain methods.  Also you can clearly see where dynamic dispatch happens and how complicated generated code seems.  More complicated code usually == slower.
 * [llvm-mca](https://www.llvm.org/docs/CommandGuide/llvm-mca.html) - really detailed static analysis and runtime prediction at the machine instruction level
 
-What I've found that works (but see cargo flamegraph above for easier way):
+What works on a Mac (but see cargo flamegraph above for easier way):
 ```sh
 sudo dtrace -c './target/release/bench-2022f41cf9c87baf --profile-time 120' -o out.stacks -n 'profile-997 /pid == $target/ { @[ustack(100)] = count(); }'
 ~/src/github/FlameGraph/stackcollapse.pl out.stacks | ~/src/github/FlameGraph/flamegraph.pl >rust-bench.svg
@@ -483,6 +479,39 @@ where -c bench.... is the executable output of cargo bench.
 I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us to run above dtrace command with the name of the bench output, but alas it doesn't seem to work with bench.  (NOTE: they are working on a PR to fix this! :)
 
 NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
+
+#### Memory/Heap Profiling
+
+The options I've tried out:
+* [Bytehound](https://github.com/koute/bytehound) - really slick, but only works on Linux (using perf).
+  - No need to modify apps, uses `LD_PRELOAD`
+  - extracts full stack traces plus every alloc/dealloc, but claims it uses custom unwinding code that's much much faster
+  - tracks memory usage over time, as well as leaks explicitly, and memory fragmentation
+  - can give you **flamegraphs** of memory allocations or just leaks! 
+  - Has a really nice UI/webapp that's bundled together
+* jeprof: If you use [jemallocator](https://github.com/tikv/jemallocator) and install jemalloc as your global allocator, you can get some profiling for free.
+  - [Jemalloc Heap Profiling](https://github.com/jemalloc/jemalloc/wiki/Use-Case%3A-Heap-Profiling)
+  - [How to parse jeprof text output](https://www.igorkromin.net/index.php/2018/06/07/post-processing-jemalloc-jeprof-heap-dump-files-for-statistical-analysis/)
+  - Pros: Jemalloc profiling is sampling based and very lightweight.  It can be used in production with minimal perf impact.
+  - The profile files are also very small
+  - Cons: it's, like, really hard to use.  For example, enabling it via environment variable - the instructions are not very clear, and there is no way to write the files to anything other than the current directory
+    + Runtime config: set both environment variables `MALLOC_CONF` and `_RJEM_MALLOC_CONF` (which one works depends on environment)
+    + Compile time config, for jemallocator users: `JEMALLOC_SYS_WITH_MALLOC_CONF`
+  - Con: The stats collected are about total memory allocated, with no differentiation for short/temporal vs long-lived allocations
+  - It is possible to do differential analysis: use one profile as a "base" and then diff vs other profiles.  However, the profile files use sequence numbers, so it's hard to tell which profile to use for what time.
+  - Also there is no way to sort the output and the options for simplifying the output don't work very well
+* [dhat](https://docs.rs/dhat/0.2.2/dhat/) - Swap out the global allocator, will profile your allocations & max heap usage
+  - One advantage DHAT has over jeprof/jemalloc is lifetime / allocation length information.  This can be used to figure out long-held things
+  - DHAT also tracks the entire call graph so it can produce a useful tree
+  - It's online viewer is also much easier to use than `jeprof`
+  - Unfortunately DHAT tracks every allocation so it's not good for production use
+  - DHAT also crashes on some workloads.  This is really annoying.
+* [Heaptrack](https://github.com/KDE/heaptrack) and [working with Rust](https://gist.github.com/HenningTimm/ab1e5c05867e9c528b38599693d70b35) works for Rust, but only on Linux.
+
+* [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
+* [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
+* [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
+* [Measuring Memory Usage in Rust](https://rust-analyzer.github.io//blog/2020/12/04/measuring-memory-usage-in-rust.html) - thoughts on working around the fact we don't have a GC to track deep memory usage
 
 ### Fast String Parsing
 
