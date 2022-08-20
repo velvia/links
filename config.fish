@@ -39,6 +39,8 @@ function mac-no-sleep
   caffeinate
 end
 
+eval (/opt/homebrew/bin/brew shellenv)
+
 zoxide init fish | source
 
 alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"

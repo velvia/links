@@ -491,6 +491,11 @@ The options I've tried out:
   - tracks memory usage over time, as well as leaks explicitly, and memory fragmentation
   - can give you **flamegraphs** of memory allocations or just leaks! 
   - Has a really nice UI/webapp that's bundled together
+  - Has many options to write out profiling data to different locations or over network
+  - Problems:
+    + Creates giant profiling data files.  There are options to slim it down though, such as keeping only allocations that live longer than a particular threshold
+    + Bundled viewer does not seem to be able to load debug symbols when profiling data does not include them :(
+    + It seems the only way to really include full symbols in the profiling info is to run profiling with a debug build.  However this blows up the size of the data file even more...  hundreds of MBs from just a few minutes of run time!
 * jeprof: If you use [jemallocator](https://github.com/tikv/jemallocator) and install jemalloc as your global allocator, you can get some profiling for free.
   - [Jemalloc Heap Profiling](https://github.com/jemalloc/jemalloc/wiki/Use-Case%3A-Heap-Profiling)
   - [How to parse jeprof text output](https://www.igorkromin.net/index.php/2018/06/07/post-processing-jemalloc-jeprof-heap-dump-files-for-statistical-analysis/)
