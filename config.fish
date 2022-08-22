@@ -40,6 +40,7 @@ function mac-no-sleep
 end
 
 eval (/opt/homebrew/bin/brew shellenv)
+set -gx PATH "$HOME/.cargo/bin" $PATH
 
 zoxide init fish | source
 
@@ -72,7 +73,6 @@ set -gx RBENV_ROOT /usr/local/Cellar/rbenv/0.4.0
 # status --is-interactive; and source (rbenv init -|psub)
 
 # Python set
-# pyenv init - | source
 if command -v pyenv 1>/dev/null 2>&1
   pyenv init - | source
 end
