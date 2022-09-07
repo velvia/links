@@ -446,6 +446,9 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
     - `open -a Safari flamegraph.svg`
     - NOTE: you need to turn on `debug = true` in release profile for symbols
     - This method works better for apps than small benchmarks btw, as inlined methods won't show up in the graph.
+* [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
+  - Note that you can now just install [cargo instruments](https://github.com/cmyr/cargo-instruments)
+  - Also useful for heap/memory analysis, including tracking retained vs transient allocations
 * [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
 * [Iai](https://github.com/bheisler/iai) - a one-shot Rust profiler that uses Valgrind underneath
 * [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
@@ -458,8 +461,6 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 * [Rust Profiling talk](https://speakerdeck.com/stevej/improving-rust-performance-through-profiling-and-benchmarking?slide=81) - discusses both OSX and Linux, as well as Instruments and [Intel VTune](https://software.intel.com/en-us/vtune/choose-download)
 * [2017 RustConf - Improving Rust Performance through Profiling](https://www.youtube.com/watch?v=hTHp0gjWMLQ)
 * [Flamer](https://github.com/llogiq/flamer) - an alternative to generating FlameGraphs if one is willing to instrument code.  Warning: might require nightly Rust features.
-* [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
-  - Also useful for heap/memory analysis, including tracking retained vs transient allocations
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
@@ -518,6 +519,7 @@ The options I've tried out:
 * [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
 * [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
 * [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
+* [Parity-util-mem](https://github.com/paritytech/parity-common/tree/master/parity-util-mem) - can find the size of collections as well?
 * [Measuring Memory Usage in Rust](https://rust-analyzer.github.io//blog/2020/12/04/measuring-memory-usage-in-rust.html) - thoughts on working around the fact we don't have a GC to track deep memory usage
 
 ### Fast String Parsing
