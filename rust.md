@@ -141,6 +141,7 @@ CLI tools:
 * [pueue](https://github.com/Nukesor/pueue) - instead of using tmux, queue and manage your background tasks
 * [xh](https://github.com/ducaale/xh) - HTTPie clone / much better `curl` alternative
 * [Dust](https://github.com/bootandy/dust) - Rust graphical-text faster and friendlier version of du
+* [Diskonaut](https://github.com/imsnif/diskonaut) - another Text-UI folder/file space usage and browsing tool
 * [fd](https://github.com/sharkdp/fd) - Rust CLI, friendlier and faster replacement for `find`
 * [rustscan](https://github.com/RustScan/RustScan) - Really fast port scanner, this should easily replace lsof / netstat
 * [sd](https://github.com/chmln/sd) - Easier to use sed.  You can search and replace in like all files under subdir with `sd old_str new_str **`.
@@ -506,6 +507,7 @@ The options I've tried out:
     + Runtime config: set both environment variables `MALLOC_CONF` and `_RJEM_MALLOC_CONF` (which one works depends on environment)
     + Compile time config, for jemallocator users: `JEMALLOC_SYS_WITH_MALLOC_CONF`
   - Con: The stats collected are about total memory allocated, with no differentiation for short/temporal vs long-lived allocations
+  - Con: It's not built for Rust and difficult to infer stacktraces. Many symbols are mangled.
   - It is possible to do differential analysis: use one profile as a "base" and then diff vs other profiles.  However, the profile files use sequence numbers, so it's hard to tell which profile to use for what time.
   - Also there is no way to sort the output and the options for simplifying the output don't work very well
 * [dhat](https://docs.rs/dhat/0.2.2/dhat/) - Swap out the global allocator, will profile your allocations & max heap usage
@@ -547,6 +549,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
+* Also [zerocopy](https://docs.rs/zerocopy/latest/zerocopy/) with `FromBytes` and `AsBytes` traits for easy transmuting
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
   - Also see [zero](https://docs.rs/zero/0.1.2/zero/)
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:

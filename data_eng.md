@@ -98,6 +98,9 @@ Overall what the graph world really needs is, instead of sticking everything int
 
 ## Distributed Systems General
 
+Some good intro resources:
+* [Distributes systems theory for the distributed sys engineer](https://www.the-paper-trail.org/post/2014-08-09-distributed-systems-theory-for-the-distributed-systems-engineer/)
+
 * [Viewstamped Replication](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - classic paper by Barbara Liskov
 * [CRUSH](https://ceph.com/wp-content/uploads/2016/08/weil-crush-sc06.pdf) - Controlled Replication Under Scalable Hashing - Ceph's algorithm for balancing decentralized object placement with minimal data movement in a storage cluster
 * [CALM](https://arxiv.org/abs/1901.01930) - "Consistency as Logical Monotonicity" theorem proves when distributed systems can have consistent, coordination-free behavior.
@@ -110,8 +113,9 @@ Overall what the graph world really needs is, instead of sticking everything int
 * [Making CRDTs Byzantine Fault Tolerant](https://martin.kleppmann.com/papers/bft-crdt-papoc22.pdf) - really interesting
 
 * [10000 Akka Cluster Nodes and RAPID](https://manuel.bernhardt.io/2020/04/30/10000-node-cluster-with-akka-and-rapid/) - interesting view into the new RAPID cluster membership protocol and how it can scale out peer to peer clusters
-
-* [Local-first Cooperation](https://local-first-cooperation.github.io/website/#relationship-with-other-architectural-building-blocks) - a pattern of distributed resilience by having local groups cooperate without centralized coordination.  Also talks about Reactive.
+* [Local-first Cooperation](
+* https://local-first-cooperation.github.io/website/#relationship-with-other-architectural-building-blocks) - a pattern of distributed resilience by having local groups cooperate without centralized coordination.  Also talks about Reactive.
+  - Not strictly about distributed systems, but related (hint: CRDTs are foundational)s: [Local-First Software Development](https://www.inkandswitch.com/local-first/)
 
 ### BlockChain Systems
 
