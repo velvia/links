@@ -318,6 +318,7 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 * [Static Code Analysis for Log Parsing](https://medium.com/palantir/using-static-code-analysis-to-improve-log-parsing-18f0d1843965) - turning unstructured to structured logs
 * [Canopy](https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf?) - Facebook's End to End Tracing and Analysis System
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
+* [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
@@ -329,6 +330,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
 
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
+* [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants
 
 * [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
 
