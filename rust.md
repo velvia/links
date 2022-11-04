@@ -272,11 +272,12 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 ### Cool Data Structures
 
-* [dashmap](https://github.com/xacrimon/dashmap) - "Blazing fast concurrent HashMap for Rust"
-* [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops
+* [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops.
+  - What's neat about its API is that instead of locking at bucket level, and blocking inserts if a reader is taking too long, it never returns references to data and relies on an atomic API
+* [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
+* [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
-* [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
 * [priq](https://github.com/bexxmodd/priq) - "blazing fast" priority queue built using arrays
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 * [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
@@ -284,6 +285,8 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [IndexMap](https://docs.rs/indexmap/1.3.2/indexmap/index.html) - O(1) obtain by index, iteration by index order
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
 * [Heapless](https://docs.rs/heapless/0.5.5/heapless/) - static data structures with fixed size; Vec, heap, map, set, queues
+
+* [dashmap](https://github.com/xacrimon/dashmap) - "Blazing fast concurrent HashMap for Rust". NOTE: I don't recommend this project, I used it in my Ying profiler but it can deadlock in unpredictable ways
 
 * [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
 * [VecMap](https://contain-rs.github.io/vec-map/vec_map/) - map for small integer keys, may use less space
@@ -387,6 +390,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
 * [Are We Observable Yet?](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/#5-12-cleaning-up-instrumentation-code-tracing-instrument) - an introduction to Rust telemetry
+* [Miri](https://github.com/rust-lang/miri) - can run binaries and test suites of cargo projects and detect certain classes of undefined behavior, including memory leaks!!
 
 ### Cross-compilation
 
