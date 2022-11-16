@@ -102,6 +102,7 @@ Specific topics:
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
+* [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
@@ -276,8 +277,11 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
   - What's neat about its API is that instead of locking at bucket level, and blocking inserts if a reader is taking too long, it never returns references to data and relies on an atomic API
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
 * [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
+* [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
+* [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
+* [probabilistic-collections](https://crates.io/crates/probabilistic-collections) - Bloom/Cuckoo/Quotient filters, CountMinSketch, HyperLogLog, streaming approx set membership, etc.
 * [priq](https://github.com/bexxmodd/priq) - "blazing fast" priority queue built using arrays
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 * [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
@@ -455,6 +459,7 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
   - Note that you can now just install [cargo instruments](https://github.com/cmyr/cargo-instruments)
   - Also useful for heap/memory analysis, including tracking retained vs transient allocations
 * [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
+* [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  WIP.
 * [Iai](https://github.com/bheisler/iai) - a one-shot Rust profiler that uses Valgrind underneath
 * [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
@@ -521,6 +526,8 @@ The options I've tried out:
   - Unfortunately DHAT tracks every allocation so it's not good for production use
   - DHAT also crashes on some workloads.  This is really annoying.
 * [Heaptrack](https://github.com/KDE/heaptrack) and [working with Rust](https://gist.github.com/HenningTimm/ab1e5c05867e9c528b38599693d70b35) works for Rust, but only on Linux.
+
+After the above frustrations and investigations, I decided to write my own custom memory profiler - [Ying](https://github.com/velvia/ying-profiler) - a sampling profiler, built for rich Rust stack traces including inlined methods, which tracks retained memory and lifetimes.  Definitely experimental right now.
 
 * [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
 * [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
