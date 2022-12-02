@@ -165,6 +165,7 @@ CLI tools:
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
 * [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+* [Extism](https://extism.org/blog/announcing-extism/) - a universal WASM-based plugin system, multi language, but written in Rust
 * [lunatic](https://github.com/lunatic-solutions/lunatic) - Erlang-like server side WASM runtime with supervision and channel-based message passing, plus hot reloading!
 * [CosmWasm](https://docs.cosmwasm.com/docs/1.0/) - Rust/WASM for programming smart contract on Cosmos ecosystem
 
