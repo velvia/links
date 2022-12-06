@@ -18,6 +18,7 @@
     - [Python/Pandas](#pythonpandas)
     - [Data Engineering](#data-engineering)
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
+    - [Unstructured data](#unstructured-data)
   - [Public Data, Datasets, Data for Good](#public-data-datasets-data-for-good)
   - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
   - [Compression, Data Storage](#compression-data-storage)
@@ -299,6 +300,13 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 ![Spark Geo Reference Architecture](spark_geospatial_architecture.png)
 
 ![Spark Geo Analytics Flow](spark_geo_analytics_flow.png)
+
+### Unstructured data
+
+* [Fastdup](https://github.com/visual-layer/fastdup) - from the Turo team at Apple, a fast Python library for image dedup, anomalies, clustering, and other ML insights and analysis
+* [k2](https://github.com/k2-fsa/k2) - deep learning audio/speech recognition
+* [Lhotse](https://lhotse.readthedocs.io/en/latest/getting-started.html) - speech processing
+* [Whisper](https://towardsdatascience.com/whisper-transcribe-translate-audio-files-with-human-level-performance-df044499877) - transcribe audio files "with human-level performance"
 
 ## Public Data, Datasets, Data for Good
 
