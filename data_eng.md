@@ -222,6 +222,7 @@ Interesting data structures from the blockchain world:
 ### Graph ML
 
 * [Node Embeddings for Beginners](https://towardsdatascience.com/node-embeddings-for-beginners-554ab1625d98#:~:text=Node%20embeddings%20are%20a%20way,in%20machine%20learning%20prediction%20tasks) - How can we do ML on Graphs?  Turning graphs into vectors for ML
+* [Graph Intelligence](https://gradientflow.com/what-is-graph-intelligence/) - a good summary of graph ML stack, technologies, and approaches from Ben Lorica.  It's interesting that companies are leveraging big data platforms and bypassing graph DBs to lower cost and reuse existing investments.
 
 ### Time Series ML
 
