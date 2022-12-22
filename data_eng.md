@@ -59,6 +59,8 @@
 
 * [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
 
+* [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc but for
+
 ## Data Processing Systems
 
 A good [Map of incremental and streaming systems](https://scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems/) - organizing different systems in an ontology.
@@ -307,6 +309,10 @@ From Databrick's Spark Geospatial Webinar: reference architecture and data flow 
 * [k2](https://github.com/k2-fsa/k2) - deep learning audio/speech recognition
 * [Lhotse](https://lhotse.readthedocs.io/en/latest/getting-started.html) - speech processing
 * [Whisper](https://towardsdatascience.com/whisper-transcribe-translate-audio-files-with-human-level-performance-df044499877) - transcribe audio files "with human-level performance"
+
+Note that one of the intersections of ML, unstructured data, and nearest neighbor has to do with vector search and vector databases.  You turn unstrutured data, say images, into a set of vectors.  Then, you can use vector similarity algorithms or databases to look up an image similar to another image.  This is a neat and up-and-coming category of data products for AI/ML.
+
+* [Weaviate](https://github.com/semi-technologies/weaviate) - an open source vector database and similarity search engine
 
 ## Public Data, Datasets, Data for Good
 
