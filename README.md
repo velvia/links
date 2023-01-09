@@ -44,6 +44,11 @@ Just a bunch of useful links.  BTW see [rust](rust.md) links as well.
 
 ## Scala
 
+Two fast ways to get started playing with JDK/Java/Scala:
+
+* [Scala-CLI](https://scala-cli.virtuslab.org) - can easily launch and run single Scala files, get things set up
+* [sdkman](https://sdkmain.io) - easily install, setup, and switch between multiple JDKs, Scala's, and other JVM SDKs like Groovy, etc.
+
 Good resources for starting out:
 
 * [Scala for the Impatient](http://fileadmin.cs.lth.se/scala/scala-impatient.pdf) - [Amazon link]() - overall my favorite book for starting out and ramping up quickly
