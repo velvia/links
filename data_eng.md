@@ -67,6 +67,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 
 * [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the NAIAD paper
+* [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 
@@ -283,6 +284,8 @@ Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
+* [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
+* [YugabyteDB](https://www.yugabyte.com) - Another Postgres compatible distributed SQL database
 
 ### Geospatial / NearestNeighbor
 
