@@ -220,6 +220,8 @@ Interesting data structures from the blockchain world:
 * [StreamLit](https://streamlit.io/gallery) - a visualization/dashboard/data app tool for presenting data
 * [HiPlot](https://github.com/facebookresearch/hiplot) - High-dimensional data plotting
 
+* [The Case for Rho Calculus in AI](https://hackernoon.com/the-case-for-rho-calculus-in-ai) - fascinating look at how Rho Calculus (code vs data vs computation, and the use of computation to morph or alter code, thus altering behavior based on introspection) is important for AI, and how concurrent computation (eg mobile devices) affects things
+
 ### Graph ML
 
 * [Node Embeddings for Beginners](https://towardsdatascience.com/node-embeddings-for-beginners-554ab1625d98#:~:text=Node%20embeddings%20are%20a%20way,in%20machine%20learning%20prediction%20tasks) - How can we do ML on Graphs?  Turning graphs into vectors for ML
