@@ -36,6 +36,7 @@
 If you want a Rust REPL, check out [evcxr](https://github.com/google/evcxr/tree/master/evcxr_repl).
 
 I highly recommend [rust-analyzer](https://rust-analyzer.github.io) to support fast compile checks, references, refactorings, etc. in your editor.
+VSCode works pretty well - install rust-analyzer and the "Even Better TOML" extension and you should be set.
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
