@@ -114,6 +114,7 @@ Specific topics:
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
+* [Macros in Rust - a Tutorial](https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples/) - really easy tutorial
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
@@ -233,6 +234,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
+* [Arroyo](https://github.com/ArroyoSystems/arroyo) - another stream processing framework, streaming SQL and Rust pipelines!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
 * [Node crunch](https://github.com/willi-kappler/node_crunch) - simple lightweight distributed compute framework
@@ -378,6 +380,7 @@ Here are some solutions:
 Dependency conflicts?  Use `cargo tree -i` to lookup reverse dependencies for specific packages (which crates are using which deps). For example, `cargo tree -i arrow:5.0.0-SNAPSHOT`.
  
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
+* [Configuring Rustfmt](https://rust-lang.github.io/rustfmt/?version=v1.5.1&search=)
 * [Godbolt](https://godbolt.org) - A "compiler explorer", not Rust specific but neat to play with compiler settings and diff targets.
 * [Cargo-play](https://crates.io/crates/cargo-play) - run Rust scripts without needing to set up a project
   - Also see [cargo-eval](https://github.com/reitermarkus/cargo-eval) and [runner](https://github.com/stevedonovan/runner) for diff ways of easily running scripts without projects
