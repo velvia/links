@@ -74,6 +74,7 @@ Online resources and help:
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
   - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) -- a great detailed dive into nuances
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
+* [Shared Mutability in Rust: Acyclic Graphs](https://andrewjpritchard.medium.com/shared-mutability-in-rust-3f92155ddbf7) - really good article on mutable child entities, and how to share things which need to be mutable (hint: don't, instead use an "arena" pattern where a single owner mutates things)
 * [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
 
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
