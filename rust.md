@@ -25,6 +25,7 @@
     - [Memory/Heap Profiling](#memoryheap-profiling)
   - [Fast String Parsing](#fast-string-parsing)
   - [Bitpacking, Binary Structures, Serialization](#bitpacking-binary-structures-serialization)
+  - [Enums, Thin Pointers, Type Wrapping](#enums-thin-pointers-type-wrapping)
   - [SIMD](#simd)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -589,6 +590,20 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 Want to zero memory quickly?  Use [slice_fill](https://docs.rs/slice-fill/1.0.1/slice_fill/) for memset optimization, since there is no memory filling for slices in Rust yet.
 
 Also check out the crazy number of crates available under [compression](https://crates.io/search?q=compression&sort=recent-downloads) - including various interesting radix and trie data structures, and more compression algorithms that one has never heard of.
+
+### Enums, Thin Pointers, Type Wrapping
+
+A frequent problem, esp when working with data, is to have a "union" of different types.  Perhaps `Option` will suffice, but sometimes we need to wrap `Vec<A>` and `Vec<B>` together in the same type.  We don't want to just use `Box<dyn MyTrait>` as that allocates and results in dynamic dispatch.   Here are some crates and patterns that may help in working with enums, or alternatives:
+
+* [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html) - macro to implement the `dyn MyTrait` trait object pattern for enums, so we get fast static dispatch.  Basically implements traits for underlying types in enums
+* [enum_delegate](https://lib.rs/crates/enum_delegate) is an alternative that works with associated types in traits - but not generics
+* [strum](https://docs.rs/strum/latest/strum/) - derive strings and discriminant enums using macros
+* You can use [`std::mem::discriminant`](https://doc.rust-lang.org/std/mem/fn.discriminant.html), a built-in function, to find the numeric discriminant for an enum
+* Also enum discriminants can be explicitly specified using `#[repr(..)]`, see [here](https://users.rust-lang.org/t/inconsistencies-in-enum-discriminants/85968) - you can then transmute the enum into something explicit
+
+Some non-enum crates that can also help:
+* [ptr_union](https://docs.rs/ptr-union/latest/ptr_union/index.html) - "Pointer union types the since of a pointer by storing the tag in the alignment bits" :)
+* [erasable](https://crates.io/crates/erasable) - "Type-erased thin pointers" - need to see how this is different from `std::any::Any`
 
 ### SIMD
 
