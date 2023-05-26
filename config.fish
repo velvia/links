@@ -39,6 +39,11 @@ function mac-no-sleep
   caffeinate
 end
 
+function refresh-calendar-agent
+  launchctl stop com.apple.CalendarAgent
+  launchctl start com.apple.CalendarAgent
+end
+
 eval (/opt/homebrew/bin/brew shellenv)
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
@@ -63,6 +68,9 @@ set -x MallocNanoZone 1
 # set -x DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH /usr/local/lib/rustlib/x86_64-apple-darwin/lib/
 
 set PATH ~/bin $PATH
+
+# for jenv
+status --is-interactive; and jenv init - | source
 
 # rbenv support
 # set PATH $HOME/.rbenv/bin $PATH

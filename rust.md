@@ -4,6 +4,7 @@
 
 - [Getting Started with Rust](#getting-started-with-rust)
 - [Some links on Rust](#some-links-on-rust)
+- [Macros](#macros)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Rust Error Handling](#rust-error-handling)
 - [Rust Concurrency](#rust-concurrency)
@@ -43,6 +44,7 @@ VSCode works pretty well - install rust-analyzer and the "Even Better TOML" exte
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Easy Rust Youtube Channel](https://www.youtube.com/watch?v=-lYeJeQ11OI&list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) - great videos
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
+* [Complete(sh) Rust Cheat Sheet](https://katib.moe/the-completesh-rust-cheat-sheet?source=personalized-newsletter&source-id=2023-05-25)
 * [explaine.rs](https://jrvidal.github.io/explaine.rs/) - paste Rust code into the window and hover over keywords to get explanations. Great for learning.
 * [Rustlang in a Nutshell](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/) - great introduction
 * [Mental models for learning Rust](https://kerkour.com/rust-mental-models) - really really short blurb on how to approach learning Rust
@@ -55,6 +57,7 @@ Easy short intros:
 * [A Rust Gem: The Rust Map API](https://www.thecodedmessage.com/posts/rust-map-entry/) - comparing C++, Java, and Rust Map APIs and why Option and not having nulls makes the Rust Map API superior
 
 Online resources and help:
+* [cheats.rs](https://cheats.rs) - Awesome quick ref.
 * The Rust [Discord #beginners](https://discordapp.com/channels/442252698964721669/448238009733742612) channel has been pretty helpful for me
 * [Rust IRC channel](http://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust)
 * [Rust for Rubyists](http://www.rustforrubyists.com/)
@@ -64,7 +67,6 @@ Online resources and help:
 
 ## Some links on Rust
 
-* [cheats.rs](https://cheats.rs) - Awesome quick ref.
 * [Cheat sheet for Iterator methods](https://danielkeep.github.io/itercheat_baked.html)
 
 * [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
@@ -116,9 +118,6 @@ Specific topics:
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
-* [Macros in Rust - a Tutorial](https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples/) - really easy tutorial
-* [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
-* [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
@@ -128,6 +127,18 @@ Specific topics:
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
 
 * [Cacao: Building macOS/iOS Apps in Rust](https://rymc.io/blog/2021/cacao-rs-macos-ios-rust/)
+
+## Macros
+
+I started writing Rust macros and it is not only lots of fun, but pretty essential for writing concise, performant code IMO.  Writing Rust has lots of boilerplate sometimes, especially owing to not having real inheritance.  I recommend starting with `macro_rules!` which are fancy templates and really easy.  Here are some links to help:
+
+* [Macros in Rust - a Tutorial](https://blog.logrocket.com/macros-in-rust-a-tutorial-with-examples/) - really easy tutorial, esp for `macro_rules!`
+* [Macros - a Methodical Introduction](https://danielkeep.github.io/tlborm/book/mbe-README.html) - very detailed book mostly about `macro_rules!` with explanations for the minutae of parsing
+  * [macro_rules](https://danielkeep.github.io/tlborm/book/mbe-macro-rules.html)
+* [How to Write Hygienic Rust Macros](https://gist.github.com/Kestrer/8c05ebd4e0e9347eb05f265dfb7252e1) - important and short.  Read this to ensure your macros work everywhere - so users don't have to worry about imports, etc.
+* [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
+* [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
+
 
 ## Cool Rust Projects
 
@@ -265,6 +276,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 
+* [plotters](https://github.com/plotters-rs/plotters) - Rust data visualization / graphing library
 * [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
 * [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
