@@ -139,6 +139,10 @@ I started writing Rust macros and it is not only lots of fun, but pretty essenti
 * [Rust Macros case studies](https://github.com/dtolnay/case-studies/blob/master/README.md)
 * [Overview of Macros in Rust](https://words.steveklabnik.com/an-overview-of-macros-in-rust) - from Steve Klabnik
 
+Some crates that may help write macros:
+* [spez](https://crates.io/crates/spez) - match and specialize on the type of an expression.  "A trick to do specialization in non-generic contexts on stable Rust"
+* [concat-ident](https://crates.io/crates/concat-idents) - macro to concat multiple identifiers etc. and use the result, perhaps as a struct or method name. Very useful in macros
+
 
 ## Cool Rust Projects
 
@@ -271,7 +275,8 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
 * [BonsaiDB](https://bonsaidb.io) - NoSQL document store written in Rust with Rust schemas
 
-* [Vector](https://github.com/timberio/vector) - unified client side collection agent for logs, metrics, events
+* [Vector](https://github.com/vectordotdev/vector) - high performance observability data pipeline, for transforming, aggregating, routing logs, metrics, traces, etc.
+  - includes a [Vector Remap Language](https://vector.dev/docs/reference/vrl/) for general transformation
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
@@ -296,6 +301,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
 * [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
 * [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
+* [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
@@ -452,6 +458,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
 * Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
   - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
+  - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
 
 If small binary size is what you're after, check out [Min-sized-Rust](https://github.com/johnthagen/min-sized-rust).
 
@@ -568,6 +575,7 @@ After the above frustrations and investigations, I decided to write my own custo
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
+* [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
 * [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.

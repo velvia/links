@@ -510,6 +510,7 @@ I love Sublime and use it for everything, even Scala!  Going to put my Sublime s
 * [Futhark](http://futhark-lang.org) - "High-performance purely functional data-parallel array programming on the GPU" - a language for efficient GPU computation
 * [Nimrod](http://nimrod-lang.org/) - a neat, compile-straight-to-binary, static systems language with beautiful Python-like syntax, union types, generics, macros, first-class functions.  What Go should have been.
 * [Pony](http://www.ponylang.org/) - A capabilities-based Actor-centric static language, deadlock-free, null-free, data-race-free!
+* [ROC](https://www.roc-lang.org) - A statically-typed functional language, with automatic memory management, which aims to be faster than Go and Swift
 * [Bret Victor](http://worrydream.com) - A set of excellent essays and talks from a great visual designer
 
 * [George Mack's Razors](https://twitter.com/george__mack/status/1350513143387189248) - a compilation of razors to make decisions by
