@@ -4,6 +4,7 @@
 
 - [Getting Started with Rust](#getting-started-with-rust)
 - [Some links on Rust](#some-links-on-rust)
+- [Borrowing and Lifetime Tricks](#borrowing-and-lifetime-tricks)
 - [Macros](#macros)
 - [Cool Rust Projects](#cool-rust-projects)
 - [Rust Error Handling](#rust-error-handling)
@@ -91,6 +92,7 @@ Online resources and help:
   - [C2Rust and Quake](https://immunant.com/blog/2020/01/quake3/) - a tool to auto translate C to Rust!
 * [Clear Explanation of Rust's Module System](http://www.sheshbabu.com/posts/rust-module-system/) - easy intro guide
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
+* [Null The Billion Dollar Mistake and how Rust Provides a Solution](https://piyushagarwal.hashnode.dev/null-the-billion-dollar-mistake-and-how-rust-provides-a-solution?source=personalized-newsletter&source-id=2023-07-27)
 
 [Speed without wizardry](http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html) - how using Rust is safer and better than using hacks in Javascript
 
@@ -125,8 +127,20 @@ Specific topics:
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
+* [How Rust Solved Dependency Hell](https://stephencoakley.com/2019/04/24/how-rust-solved-dependency-hell) - neat look at what's underneath Cargo to help solve dep issues.  Rustc can handle multiple versions of a dependency.
 
 * [Cacao: Building macOS/iOS Apps in Rust](https://rymc.io/blog/2021/cacao-rs-macos-ios-rust/)
+
+## Borrowing and Lifetime Tricks
+
+If you need to borrow multiple items mutably from a Vec/array/SmallVec/etc.:
+* The [thread](https://stackoverflow.com/questions/30073684/how-to-get-mutable-references-to-two-array-elements-at-the-same-time) on solutions
+* You can use [split_at_mut()](https://docs.rs/smallvec/1.10.0/smallvec/struct.SmallVec.html#method.split_at_mut) but this is clumsy
+* [Arref](https://docs.rs/arref/latest/arref/) gives a great solution
+* There is a nightly [get_many_mut()](https://doc.rust-lang.org/core/primitive.slice.html#method.get_many_mut) API
+
+If you have a Trait with an associated type that must deal with lifetimes:
+https://stackoverflow.com/questions/33734640/how-do-i-specify-lifetime-parameters-in-an-associated-type
 
 ## Macros
 

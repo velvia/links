@@ -37,7 +37,7 @@
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
 * [PH-Tree](https://github.com/tzaeschke/phtree/raw/master/PH-Tree-v1.1-2014-06-28.pdf) - A (spatial?) Patricia-trie combined with Hypercubes for multidimensional indexing and efficient data storage
 * [CasAB](https://www.researchgate.net/publication/232645611_CasAB_Building_Precise_Bitmap_Indices_via_Cascaded_Bloom_Filters) - using Cascaded Bloom Filters for space efficient bitmap indexing
-* [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine. 
+* [Bw-Tree](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/bw-tree-icde2013-final.pdf) and [LLAMA](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/llama-vldb2013.pdf) - a new latch-free B-Tree design from Microsoft using delta-update / log-structured techniques and a hybrid latch-free page cache for high write throughput.  Really interesting set of papers for DB storage engine.
 * [Memory Layouts for Binary Search](http://cglab.ca/~morin/misc/arraylayout/) shows that using BTrees might be faster than arrays due to CPU caching effects.
 * [WiscKey](https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf) - Splitting key and value storage for better efficiency/perf
 * [Eyros](https://github.com/peermaps/eyros) - multi-dimensional interval database
@@ -47,7 +47,7 @@
 * [PGM-index](https://pgm.di.unipi.it) - "Piecewise Geometric Model", a learned index, really neat.  However only for small keys, not strings
 * [usort](https://github.com/sisudata/coloring/tree/master/usort) - fast radix/bucket sorting for integers, O(n) compared to quicksort-based O(n log n)
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
-* [Pilosa](https://www.pilosa.com/docs/latest/data-model/) - A matrix bitmap index that can quickly answer queries about relationships between two dimensions, or billions of objects with millions of attributes.  “What attributes are the most common?”, “Which objects have these specific attributes?”, “What groups of attributes often appear together?” 
+* [Pilosa](https://www.pilosa.com/docs/latest/data-model/) - A matrix bitmap index that can quickly answer queries about relationships between two dimensions, or billions of objects with millions of attributes.  “What attributes are the most common?”, “Which objects have these specific attributes?”, “What groups of attributes often appear together?”
   - Could be used for graph indexing for example
 * [A+ Indexes: Tunable and Space-Efficient Adjacency Lists in Graph DBMS](https://arxiv.org/pdf/2004.00130.pdf) - could be super useful for building a Graph DBMS
 
@@ -67,6 +67,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 
 * [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the NAIAD paper
+* [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
@@ -239,6 +240,11 @@ Interesting data structures from the blockchain world:
 * [Anomaly Detection with Prometheus](http://events19.linuxfoundation.org/wp-content/uploads/2017/12/AIOps-Anomaly-Detection-with-Prometheus-Marcel-Hild-Red-Hat.pdf)
 * [Intro to Isolation Forests](https://ruivieira.github.io/introduction-to-isolation-forests.html)
 
+### Pattern Matching
+
+* [Pattern Search with Knuth-Morris-Pratt (KMP) Algorithm](https://towardsdatascience.com/pattern-search-with-the-knuth-morris-pratt-kmp-algorithm-8562407dba5b)
+* [Aho-Corasick Algorthm](https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/) for searching multiple words at the same time
+
 
 Other:
 * [Swarm Intelligence](https://appliednetsci.springeropen.com/articles/10.1007/s41109-020-00260-8)
@@ -270,7 +276,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 * [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
 * [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
 
-* [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data). 
+* [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data).
 * [AirByte](https://airbyte.io) - Open-source data integration/easy ELT pipelines
 * [Data Discovery - The Future of Data Catalogs for Data Lakes](https://towardsdatascience.com/data-discovery-the-future-of-data-catalogs-for-data-lakes-7b50e2e8cb28) - dynamic discovery using ML and why its better than static catalogs
 
@@ -280,7 +286,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 
 * [Herbie](https://herbie.uwplse.org) is a tool to help find/fix inaccurate floating point expressions
 
-Sometimes it's about how you organize data teams.  
+Sometimes it's about how you organize data teams.
 * [Data Mesh](https://www.bigdatarepublic.nl/articles/two-steps-towards-modern-data-platform/) is a really good concept.  Have embedded data engineers in each team plus a data platform team to provide common infra/tools/services.
 
 Interesting development:
