@@ -15,6 +15,7 @@
   - [ML and Data Science](#ml-and-data-science)
     - [Graph ML](#graph-ml)
     - [Time Series ML](#time-series-ml)
+    - [Pattern Matching](#pattern-matching)
     - [Python/Pandas](#pythonpandas)
     - [Data Engineering](#data-engineering)
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
@@ -24,6 +25,7 @@
   - [Compression, Data Storage](#compression-data-storage)
   - [I/O and Performance](#io-and-performance)
   - [Logging and String Processing](#logging-and-string-processing)
+  - [Misc, Documentation, Etc](#misc-documentation-etc)
   - [Data Justice](#data-justice)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -72,6 +74,10 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
+
+Interesting domain-specific systems:
+
+* [Lifestream](https://dl.acm.org/doi/pdf/10.1145/3445814.3446725) - a stream-processing system built for single-node, hospital/ICU environments
 
 ## Graph Processing and storage
 
@@ -346,6 +352,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Canopy](https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf?) - Facebook's End to End Tracing and Analysis System
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
+* [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
@@ -382,6 +389,10 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
 * [Graph coloring for Machine Learning](https://sisu.ai/blog/graph-coloring-for-machine-learning) - column reduction using approximate coloring techniques
+
+## Misc, Documentation, Etc
+
+* [manim](https://docs.manim.community/en/stable/examples.html) - Math animation defined easily using Python
 
 ## Data Justice
 

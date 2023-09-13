@@ -186,7 +186,7 @@ CLI tools:
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performance benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
-* [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other 
+* [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other
 * [htmlq](https://github.com/mgdm/htmlq) - like jq but for HTML
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
 * [Kubesql](https://github.com/Dentrax/kubesql) - SQL queries for Kube metadata!
@@ -238,7 +238,7 @@ Languages etc.
 * [Coping with Mutable State in Multiple Threads](https://medium.com/@KevinHoffman/coping-with-mutable-state-in-multiple-threads-with-rust-9059c83b6c01)
 * [Fearless Concurrency with Hazard Pointers](http://ticki.github.io/blog/fearless-concurrency-with-hazard-pointers/) - using the `conc` crate and `Atomic` which implements hazard pointers for fine-grained and safe protection of readers and garbage
 
-* [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework     
+* [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
 * [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
 
@@ -280,7 +280,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Quickwit](https://github.com/quickwit-oss/quickwit) - Log search DB, like Elastic but built on top of Tantivy
 * [Datafuse](https://github.com/datafuselabs/datafuse) - distributed "Real-Time Data Processing & Analytics DBMS", similar to Clickhouse "but faster"
-* [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store. 
+* [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store.
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
@@ -361,7 +361,7 @@ Here are some solutions:
 * [nested](https://crates.io/crates/nested) - reduce Vec<String> type structures to just two allocations, probably more memory efficient too.
 * [tinyset](https://docs.rs/tinyset/0.4.2/tinyset/) - space efficient sets and maps, can be combined with nested perhaps
 * [bumpalo](https://docs.rs/bumpalo/3.2.1/bumpalo/collections/index.html) can do really cheap group allocations in a `Bump` and has custom `String` and `Vec` versions.  At least lowers allocation overhead.
- 
+
 ## Rust and Scala/Java
 
 * [Rust for Java Developers](https://github.com/andyrbell/rust-for-java-developers)
@@ -381,7 +381,7 @@ Here are some solutions:
   - There are older posts too: [Wrapping Rust Types as Python classes](https://depth-first.com/articles/2020/08/03/wrapping-rust-types-as-python-classes/) and [RustyPy](https://github.com/iduartgomez/rustypy/wiki/Rust-in-Python) but they are much more work than PyO3
 * [PyOxidizer](https://pyoxidizer.readthedocs.io/en/stable/) - a Rust tool to package Python apps, interpreter, and all dependencies as a single binary, by wrapping app in a Rust program with a custom Rust Py module importer.  Also helps embed Python code in Rust apps.
 * [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
- 
+
 ### Rust-OtherLanguage Integration / Rust FFI
 
 * [Calling Rust from Java](http://stackoverflow.com/questions/30258427/calling-rust-from-java) - especially see the hint for using jnr-ffi
@@ -398,6 +398,8 @@ Here are some solutions:
 * [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
 * [tui-rs](https://github.com/fdehau/tui-rs) - Rust terminal UI for CLI apps.  Check out list of projects it refers to also.  Lots of options!
 
+* [Hot Reloading in Rust](https://robert.kra.hn/posts/hot-reloading-rust/) - great article on how to hot-reload dynamic linked libraries in Rust, and on the potential pitfalls, with plenty of links.
+
 ## IDE/Editor/Tooling
 
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
@@ -412,7 +414,7 @@ Here are some solutions:
 * [cargo_hakari](https://docs.rs/cargo-hakari/0.9.4/cargo_hakari/about/index.html) - A crate to speed up builds of workspace-hack packages ... for when you have multiple crates or complex builds, and you have duplicate dependencies
 
 Dependency conflicts?  Use `cargo tree -i` to lookup reverse dependencies for specific packages (which crates are using which deps). For example, `cargo tree -i arrow:5.0.0-SNAPSHOT`.
- 
+
 * [RustAnalyzer](https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/README.md) - LSP-based plugin/server for IDE functionality in Sublime/VSCode/EMacs/etc
 * [Configuring Rustfmt](https://rust-lang.github.io/rustfmt/?version=v1.5.1&search=)
 * [Godbolt](https://godbolt.org) - A "compiler explorer", not Rust specific but neat to play with compiler settings and diff targets.
@@ -437,8 +439,8 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 
 ### Cross-compilation
 
-A common concern - how do I build different versions of my Rust lib/app for say OSX and also Linux?  
-- Easiest way now seems to be to use [cross](https://github.com/rust-embedded/cross) - I tried it and literally as easy as `cargo install cross` and `cross build --target ...` as long as you have Docker.  
+A common concern - how do I build different versions of my Rust lib/app for say OSX and also Linux?
+- Easiest way now seems to be to use [cross](https://github.com/rust-embedded/cross) - I tried it and literally as easy as `cargo install cross` and `cross build --target ...` as long as you have Docker.
   + NOTE: crates with non-Rust code (eg jemalloc, mimalloc) often have trouble
 - Also see [rust-musl-builder](https://github.com/emk/rust-musl-builder), another Docker-based solution
 - musl is the best target for Linux as it removes need for G/LIBC dependencies and versioning.  Musl creates a single static binary for super easy deploys.
@@ -541,7 +543,7 @@ The options I've tried out:
   - No need to modify apps, uses `LD_PRELOAD`
   - extracts full stack traces plus every alloc/dealloc, but claims it uses custom unwinding code that's much much faster
   - tracks memory usage over time, as well as leaks explicitly, and memory fragmentation
-  - can give you **flamegraphs** of memory allocations or just leaks! 
+  - can give you **flamegraphs** of memory allocations or just leaks!
   - Has a really nice UI/webapp that's bundled together
   - Has many options to write out profiling data to different locations or over network
   - Problems:
@@ -580,7 +582,7 @@ After the above frustrations and investigations, I decided to write my own custo
 
 * [nom](https://docs.rs/nom/4.1.1/nom/) - a direct parser using macros, commonly accepted as fastest generic parser
 * [pest](https://pest.rs/#editor) is a PEG parser using an external, easy to understand syntax file. Not quite as fast but might be easier to understand and debug.  There is also a [book](https://pest.rs/book/intro.html).
-* [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly 
+* [combine](https://github.com/Marwes/combine) is a parser combinator library, supposedly just as fast as nom, syntax seems slightly
 
 * [simdutf8](https://github.com/rusticstuff/simdutf8) - SIMD lightning fast UTF-8 validation
 
@@ -590,6 +592,7 @@ After the above frustrations and investigations, I decided to write my own custo
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 * [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
+* [zerovec](https://docs.rs/zerovec/latest/zerovec/#Performance) - Clients upgrading to zerovec benefit from zero heap allocations when deserializing read-only data.
 * [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
