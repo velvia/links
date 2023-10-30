@@ -117,6 +117,7 @@ Specific topics:
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
   - [Recursive Iterators in Rust](https://fasterthanli.me/articles/recursive-iterators-rust) - yelch, using Box
   - [Internal-iterator](https://docs.rs/internal-iterator/0.1.1/internal_iterator/) - a potentially better solution for easily implementing some iterators
+  - [propane](https://github.com/withoutboats/propane) - Creating iterators via generator/yield API
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
 * [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
@@ -240,6 +241,7 @@ Languages etc.
 
 * [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
+* [Actyx](https://github.com/Actyx/Actyx) - really cool "decentralized event database, streaming and processing engine" based on event sourcing concepts, built by one of Akka's founders
 * [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
 
 ### Shared Data Across Multiple Threads
@@ -252,7 +254,7 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 
 [Scoped threads](https://docs.rs/crossbeam/0.7.2/crossbeam/thread/index.html) could be used if only one owner will mutate the data structure, and one wants to share immutable refs with other threads for reading.  However, the special threads in Crossbeam crate are still needed as Rustc by itself has no way of proving the lifetime of a thread or when it will be joined, thus any immutable refs created from the owner thread still cannot compile or be shared due to rustc lifetime checks.  Scoped threads are a way around that as it gives rustc a guarantee that the threads will be joined before the owner goes away.
 
-[Arc-swap](https://github.com/vorner/arc-swap) could potentially help too.
+[Arc-swap](https://github.com/vorner/arc-swap) is an alternative to Arc that is designed for occasional updates - enables atomic swapping of the object underneath the Arc, and allows one to read without contention (unlike Mutex/RwLock).
 
 Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 
@@ -412,6 +414,7 @@ Here are some solutions:
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
 * [cargo_hakari](https://docs.rs/cargo-hakari/0.9.4/cargo_hakari/about/index.html) - A crate to speed up builds of workspace-hack packages ... for when you have multiple crates or complex builds, and you have duplicate dependencies
+* [inkwell](https://github.com/TheDan64/inkwell) - LLVM API, including LLVM IR generation and running LLVM JIT to run snippets in your code
 
 Dependency conflicts?  Use `cargo tree -i` to lookup reverse dependencies for specific packages (which crates are using which deps). For example, `cargo tree -i arrow:5.0.0-SNAPSHOT`.
 
@@ -432,6 +435,7 @@ split-debuginfo = "unpacked"
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
 
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
+* [Cargo-nextest](https://nexte.st/index.html) looks like a really good project to help with test organization, test CI, running tests faster, etc.
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
 * [Are We Observable Yet?](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/#5-12-cleaning-up-instrumentation-code-tracing-instrument) - an introduction to Rust telemetry
@@ -458,6 +462,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Deep Dive into Dynamic Dispatch](https://medium.com/digitalfrontiers/rust-dynamic-dispatching-deep-dive-236a5896e49b) - great details and perf comparison
+* [Rust to Assembly](https://www.eventhelix.com/rust/) - great series of blog posts detailing how various parts of Rust compile down to assembly
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
   - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
