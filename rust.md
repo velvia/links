@@ -243,6 +243,7 @@ Languages etc.
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
 * [Actyx](https://github.com/Actyx/Actyx) - really cool "decentralized event database, streaming and processing engine" based on event sourcing concepts, built by one of Akka's founders
 * [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
+* Use [mio](https://crates.io/crates/mio) if you want a lower-level event loop, or [thin_main_loop](https://crates.io/crates/thin_main_loop)
 
 ### Shared Data Across Multiple Threads
 
@@ -263,6 +264,7 @@ Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
   - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
+* [Hydroflow](https://github.com/hydro-project/hydroflow) - a brand new Rust based optimized streaming dataflow engine, relational data, based on very advanced UCBerkeley research on optimization.
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing

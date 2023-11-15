@@ -358,6 +358,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
 
+* [Husky - Datadog's Third Gen Event Store](https://www.datadoghq.com/blog/engineering/introducing-husky/) - really interesting read on how Datadog's event/log storage architecture evolved over the years
+
 ## Compression, Data Storage
 
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.

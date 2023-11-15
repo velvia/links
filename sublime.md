@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Best VSCode plugins](#best-vscode-plugins)
 - [Sublime Text packages](#sublime-text-packages)
 - [Favorite Shortcuts](#favorite-shortcuts)
 - [Sublime Text config](#sublime-text-config)
@@ -11,6 +12,12 @@
 - [Blogs and Articles](#blogs-and-articles)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Best VSCode plugins
+
+* Rewrap - simple word wrapper plugin
+* Live share - collaboratively edit with teammates!  This one is worth price of admission alone to VSCode.
+* Markdown preview mermaid support
 
 ## Sublime Text packages
 
@@ -27,7 +34,7 @@
 * BracketHighlighter - shows current brackets, bracketing utils
 * [MaxPane](https://github.com/jisaacks/MaxPane) and [Origami](https://github.com/SublimeText/Origami) - awesome plugins for working with panes
 * [Sublimall](http://sublimall.org/#) - sync your SublimeText config to cloud, all your machines
-* [SublimeLinter](http://www.sublimelinter.com/en/stable/) - various linters for different languages. 
+* [SublimeLinter](http://www.sublimelinter.com/en/stable/) - various linters for different languages.
 * [SublimeSBT](https://github.com/jarhart/SublimeSBT) - SBT REPL integration with compile error highlighting
 * [Scala Worksheet](https://bitbucket.org/inkytonik/scalaworksheet) - like the feature in the Scala IDE, displaying code and results side by side.  A bit rough.
 * [SublimeTableEditor](https://github.com/vkocubinsky/SublimeTableEditor/blob/master/README.md) - pretty awesome, edit Markdown text tables with ease
