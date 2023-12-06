@@ -170,7 +170,7 @@ CLI tools:
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library
 * [Bat](https://github.com/sharkdp/bat) - A super `cat` with syntax highlighting, git integration, other features
 * [Bottom](https://github.com/ClementTsang/bottom) - Cross-platform fancy `top` in Rust - process/sys mon with graphs, very useful!
-* [exa](https://the.exa.website/?ref=itsfoss.com) - a better `ls` with tree view, git info and color-coding
+* [eza](https://github.com/eza-community/eza) - a better `ls` with tree view, git info and color-coding (ps exa is not maintained anymore)
 * [procs](https://github.com/dalance/procs?ref=itsfoss.com) - a better `ps`
 * [gitui](https://github.com/Extrawurst/gitui) - awesome, fast Git terminal UI.  It will change your life!
 * [skim](https://github.com/lotabout/skim) - `sk` is a general purpose fuzzy-finder; it can work with ripgrep and other utils too
