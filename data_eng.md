@@ -101,6 +101,7 @@ A good [summary of Graph DBs](https://docs.google.com/spreadsheets/d/1ribZq24cEz
 
 Overall what the graph world really needs is, instead of sticking everything into a giant GDBMS system, partitioning and federation, and composability -- think of it as a giant graph composed of subgraphs and even other DBMSes, Parquet files, data lakes/warehouses.
 
+* [Quine.io](https://quine.io) is a streaming graph database, open source project of the year 2022!
 * [YearOfTheGraph](https://yearofthegraph.xyz) - great resources site / newsletter about graph processing, graph ML, graph DBs, etc.
 * [Graph Thinking](https://medium.com/knowledge-technologies/graph-thinking-5e9c85134ab0) - Paco's overview of how AI and learning systems interact with graphs and why graph thinking is key to the future of AI.
 
@@ -359,6 +360,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
 
 * [Husky - Datadog's Third Gen Event Store](https://www.datadoghq.com/blog/engineering/introducing-husky/) - really interesting read on how Datadog's event/log storage architecture evolved over the years
+* [Bitdrift Capture](https://blog.bitdrift.io/post/honey-i-shrunk-the-telemetry) - decentralized telemetry at the edge with "distributed search" - absolutely brilliant.  This is the way!
 
 ## Compression, Data Storage
 
