@@ -406,6 +406,9 @@ Here are some solutions:
 
 * [Hot Reloading in Rust](https://robert.kra.hn/posts/hot-reloading-rust/) - great article on how to hot-reload dynamic linked libraries in Rust, and on the potential pitfalls, with plenty of links.
 
+* [quote]() - the standard way to generate a Rust code TokenStream from quoting rust code.  Great for procedural macros or code generation.
+* [prettyplease](https://crates.io/crates/prettyplease) - Rust TokenStream pretty printer - great for code generation
+
 ## IDE/Editor/Tooling
 
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
@@ -527,6 +530,7 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
 * [Rust Perf Book Profiling Page](https://nnethercote.github.io/perf-book/profiling.html) - lots of good links
+* [Divan](https://crates.io/crates/divan) - easy macro to benchmark functions
 
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 * What I like to do with asm output: check if rustc has inlined certain methods.  Also you can clearly see where dynamic dispatch happens and how complicated generated code seems.  More complicated code usually == slower.
