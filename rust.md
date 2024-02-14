@@ -78,6 +78,7 @@ Online resources and help:
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
   - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) -- a great detailed dive into nuances
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
+* [In Rust, Ordinary Vectors are Values](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/) - about why persistent collections are not quite as useful in Rust, because Rust already prevents shared mutation
 * [Shared Mutability in Rust: Acyclic Graphs](https://andrewjpritchard.medium.com/shared-mutability-in-rust-3f92155ddbf7) - really good article on mutable child entities, and how to share things which need to be mutable (hint: don't, instead use an "arena" pattern where a single owner mutates things)
 * [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
 
@@ -361,12 +362,41 @@ Rust has native UTF8 string processing, which is AWESOME for performance.  Howev
 Here are some solutions:
 * [String](https://docs.rs/string/0.2.1/string/) - string type with configurable byte storage, including stack byte arrays!
 * [Inlinable String](http://fitzgen.github.io/inlinable_string/inlinable_string/index.html) - stores strings up to 30 chars inline, automatic promotion to heap string if needed.
-* Also see [smallstr](https://docs.rs/smallstr/0.2.0/smallstr/)
 * [flexstr](https://github.com/nu11ptr/flexstr) - Enum String type to unify literals, inlined, and heap strings
 * [kstring](https://docs.rs/kstring/0.1.0/kstring/) - intended for map keys: immutable, inlined for small keys, and have Ref/Cow types to allow efficient sharing.  :)
 * [nested](https://crates.io/crates/nested) - reduce Vec<String> type structures to just two allocations, probably more memory efficient too.
 * [tinyset](https://docs.rs/tinyset/0.4.2/tinyset/) - space efficient sets and maps, can be combined with nested perhaps
 * [bumpalo](https://docs.rs/bumpalo/3.2.1/bumpalo/collections/index.html) can do really cheap group allocations in a `Bump` and has custom `String` and `Vec` versions.  At least lowers allocation overhead.
+
+Here is a comparison of inline string libraries:
+
+So picking a good base library to use for string processing is not so simple.
+We avoid the base String type because that always results in an allocation, and ry clone results in further allocs.
+
+Here are some alternative String libraries:
+- smallstr - https://crates.io/crates/smallstr
+- flexstr - https://docs.rs/flexstr/latest/flexstr/
+- kstring - https://docs.rs/kstring/2.0.0/kstring/
+- compact_str - https://crates.io/crates/compact_str
+- smol_str - https://crates.io/crates/smol_str
+- smartstring - https://crates.io/crates/smartstring
+
+They vary based on API and basically on the below two features:
+A. How many bytes can be "inlined" on the stack, in the normal 24 bytes uired for a normal String?  This is one key optimization for small string processing.
+* smallstr - 16
+* flexstr - 22
+* kstring - 15 or 22, depending on max_inline feature
+* compact_str - 24*
+* smol_str - 22
+* smartstirng - 23
+
+B. How expensive is it to clone the heap-based version when the string doesn't  inline on the stack?
+* smallstr - O(n), similar to regular String allocation
+* flexstr - O(1), Arc or Rc (when using LocalStr)
+* kstring - O(1) when using Arc (feature), otherwise O(n) Box<str> same as ing
+* compact_str - O(n), but heap size grows more slowly (1.5x) compared to mal String
+* smol_str - O(1)
+* smartstring - O(n)
 
 ## Rust and Scala/Java
 
