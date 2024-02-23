@@ -391,7 +391,7 @@ A. How many bytes can be "inlined" on the stack, in the normal 24 bytes uired fo
 * smartstirng - 23
 
 B. How expensive is it to clone the heap-based version when the string doesn't  inline on the stack?
-* smallstr - O(n), similar to regular String allocation
+*`` smallstr - O(n), similar to regular String allocation
 * flexstr - O(1), Arc or Rc (when using LocalStr)
 * kstring - O(1) when using Arc (feature), otherwise O(n) Box<str> same as ing
 * compact_str - O(n), but heap size grows more slowly (1.5x) compared to mal String
@@ -635,6 +635,7 @@ After the above frustrations and investigations, I decided to write my own custo
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 * [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
+* [FlexBuffers](https://github.com/google/flatbuffers/tree/master/rust/flexbuffers) - version of FlatBuffers for schema-less data!
 * [zerovec](https://docs.rs/zerovec/latest/zerovec/#Performance) - Clients upgrading to zerovec benefit from zero heap allocations when deserializing read-only data.
 * [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
