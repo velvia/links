@@ -473,6 +473,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
 * [Cargo-nextest](https://nexte.st/index.html) looks like a really good project to help with test organization, test CI, running tests faster, etc.
+* [rstest](https://crates.io/crates/rstest) - Fixture based test framework.  Think of being able to inject arguments into a test function.  Setup and teardown can be built into fixtures.
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
 * [Are We Observable Yet?](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/#5-12-cleaning-up-instrumentation-code-tracing-instrument) - an introduction to Rust telemetry
