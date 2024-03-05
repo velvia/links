@@ -516,8 +516,6 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
 * Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
-  - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
-  - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
 
 If small binary size is what you're after, check out [Min-sized-Rust](https://github.com/johnthagen/min-sized-rust).
 
@@ -526,6 +524,15 @@ Rust nightly now has a super slick [asm!](https://blog.rust-lang.org/inside-rust
 NOTE: simplest way to increase perf may be to enable certain CPU instructions: `set -x RUSTFLAGS "-C target-feature=+sse3,+sse4.2,+lzcnt,+avx,+avx2"`
 
 NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
+
+
+#### Solutions to storing Dynamic objects
+In my experience, if you know all the possible types, using an enum is the fastest, most performant way to store something dynamic.  No allocations in most cases, good data locality.  enum-dispatch is a big big help for enums.  There are other solutions like using `dyn Any` but they are all slower and usually involves dynamic dispatch of some kind.
+  - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
+  - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
+  - See [dynamic](https://crates.io/crates/dynamic) for a faster alternative to `dyn Any`.  However in my usage I didn't see a massive improvement.
+  - Also see [unibox](https://crates.io/crates/unibox) - for another solution to storing dynamic data
+  - [Mopa](https://github.com/chris-morgan/mopa) - allows you to derive Any-like methods like downcasting for your traits.  Pretty useful.
 
 ### Perf profiling:
 
@@ -660,6 +667,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 ```
 * Or [structview](https://crates.io/crates/structview) which offers types for unaligned integers etc.
 * There are some DST crates worth checking out: [slice-dst](https://crates.io/crates/slice-dst), [thin-dst](https://crates.io/crates/thin-dst)
+  - See [dyn_struct](https://crates.io/crates/dyn_struct) - a way to allocate DSTs on the heap using safe Rust
 * As a last resort, work with [raw pointer](https://doc.rust-lang.org/std/primitive.pointer.html) math using the add/sub/offset methods, but this is REALLY UNSAFE.
 ```rust
     let foobar: *mut Foobar = mybytes[..].as_ptr() as *mut Foobar;
