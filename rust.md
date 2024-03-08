@@ -78,6 +78,7 @@ Online resources and help:
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
   - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) -- a great detailed dive into nuances
 * [Learn Rust with Too Many Linked Lists](https://rust-unofficial.github.io/too-many-lists/) - hilarious.
+* [Learning Rust](https://quinedot.github.io/rust-learning/index.html) - a very detailed treatise on borrowing, ownership, `dyn Trait` and trait objects
 * [In Rust, Ordinary Vectors are Values](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/) - about why persistent collections are not quite as useful in Rust, because Rust already prevents shared mutation
 * [Shared Mutability in Rust: Acyclic Graphs](https://andrewjpritchard.medium.com/shared-mutability-in-rust-3f92155ddbf7) - really good article on mutable child entities, and how to share things which need to be mutable (hint: don't, instead use an "arena" pattern where a single owner mutates things)
 * [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
@@ -531,6 +532,8 @@ In my experience, if you know all the possible types, using an enum is the faste
   - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
   - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
   - See [dynamic](https://crates.io/crates/dynamic) for a faster alternative to `dyn Any`.  However in my usage I didn't see a massive improvement.
+  - [box_any](https://github.com/uccidibuti/box_any) is another fast solution which actually keeps `*void` style pointers but still drops properly
+  - [smallbox](https://crates.io/crates/smallbox) - a box that can store smaller values on stack for speed, also has Clone and PartialEq support.  Questionable Any support though.
   - Also see [unibox](https://crates.io/crates/unibox) - for another solution to storing dynamic data
   - [Mopa](https://github.com/chris-morgan/mopa) - allows you to derive Any-like methods like downcasting for your traits.  Pretty useful.
 
@@ -647,7 +650,7 @@ After the above frustrations and investigations, I decided to write my own custo
 * [zerovec](https://docs.rs/zerovec/latest/zerovec/#Performance) - Clients upgrading to zerovec benefit from zero heap allocations when deserializing read-only data.
 * [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
-The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://heremaps.github.io/flatdata/) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
+The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://crates.io/crates/flatdata) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
 
 How do we perform low-level byte/bit twiddling and precise memory access?  Unfortunately, all structs in Rust basically need to have known sizes. There's something called [dynamically sized types](https://doc.rust-lang.org/nomicon/exotic-sizes.html) basically like slices where you can have the last element of a struct be an array of unknown size; however, they are virtually impossible to create and work with, and this only covers some cases anyhow.  So we will unfortunately need a combination of techniques.  In order of preference:
 * Overall [scroll](https://crates.io/crates/scroll) is the best general-purpose struct serialization crate; it helps with reading integers and other fields too, and takes care of endianness.  It generates pretty efficient code.  It is a bit of a pain working with numeric enums however.
@@ -655,6 +658,8 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * I have found [plain](https://github.com/randomites/plain) works really well.  Mark your structs with `#[repr(C)]`.  It only helps with size and alignment, not endianness - so maybe more for in-memory structures or when you are sure you don't need code to work across endianness platforms.  If your structures are not aligned then use `#[repr(C, packed)]` or `#[align(1)]`.
 * Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
 * [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
+* [tagptr](https://crates.io/crates/tagptr) - use a few bits in pointer words for metadata
+* [Erasable](https://crates.io/crates/erasable) - type erased pointers
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
 * Also [zerocopy](https://docs.rs/zerocopy/latest/zerocopy/) with `FromBytes` and `AsBytes` traits for easy transmuting
