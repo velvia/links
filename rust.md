@@ -576,6 +576,9 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 [cargo-asm](https://github.com/gnzlbg/cargo-asm) can dump out assembly or LLVM/IR output from a particular method.  I have found this useful for really low level perf analysis.  NOTE: if the method is generic, you need to give a "monomorphised" or filled out method.  Also, methods declared inline won't show up.
 * What I like to do with asm output: check if rustc has inlined certain methods.  Also you can clearly see where dynamic dispatch happens and how complicated generated code seems.  More complicated code usually == slower.
 * [llvm-mca](https://www.llvm.org/docs/CommandGuide/llvm-mca.html) - really detailed static analysis and runtime prediction at the machine instruction level
+* [Godbolt assembly exploring without crate limitations, in Visual Studio Code](https://saveriomiroddi.github.io/Rust-lulz-godbolt-assembly-exploring-without-crate-limitations-in-visual-studio-code/) - great guide to generating disassembly and visualizing it in VSCode
+
+I have found that `cargo rustc` can often generate more assembly than `cargo asm` where you have to specify a method name.  However, in general one needs to make generic structs concrete, perhaps by adding stub functions in `lib.rs`, in order to view assembly.  Also, LLVM IR might be easier to read.
 
 What works on a Mac (but see cargo flamegraph above for easier way):
 ```sh
