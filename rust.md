@@ -591,7 +591,7 @@ where -c bench.... is the executable output of cargo bench.
 
 I was hoping [cargo-with](https://github.com/cbourjau/cargo-with) would allow us to run above dtrace command with the name of the bench output, but alas it doesn't seem to work with bench.  (NOTE: they are working on a PR to fix this! :)
 
-NOTE: The built in `cargo bench` requires nightly Rust, it doesn't work on stable!  I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
+I highly recommend for benchmarking to use [criterion](https://github.com/bheisler/criterion.rs), which works on stable and has extra features such as gnuplot, parameterized benchmarking and run-to-run comparisons, as well as being able to run for longer time to work with profiling such as dtrace.
 
 #### Memory/Heap Profiling
 
@@ -630,6 +630,8 @@ The options I've tried out:
 After the above frustrations and investigations, I decided to write my own custom memory profiler - [Ying](https://github.com/velvia/ying-profiler) - a sampling profiler, built for rich Rust stack traces including inlined methods, which tracks retained memory and lifetimes.  Definitely experimental right now.
 
 * [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
+* [allocative](https://github.com/facebookexperimental/allocative) - generate runtime memory usage (not allocations) flamegraphs of structs you tag/derive using a custom trait. From Facebook.
+* [memuse](https://docs.rs/memuse/latest/memuse/) - another approach to tag your structs and get dynamic (including heap) memory usage info
 * [stats_alloc](https://crates.io/crates/stats_alloc) can dump out incremental stats about allocation.  Or just use `jemalloc-ctl`.
 * [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
 * [Parity-util-mem](https://github.com/paritytech/parity-common/tree/master/parity-util-mem) - can find the size of collections as well?
