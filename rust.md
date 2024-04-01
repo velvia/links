@@ -23,6 +23,7 @@
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
+  - [Dynamic objects, Box, dyn Any, Trait Objects](#dynamic-objects-box-dyn-any-trait-objects)
   - [Perf profiling:](#perf-profiling)
     - [Memory/Heap Profiling](#memoryheap-profiling)
   - [Fast String Parsing](#fast-string-parsing)
@@ -434,9 +435,12 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 
 * [Structopt](https://crates.io/crates/structopt) - define CLI options using a struct!
 * [tui-rs](https://github.com/fdehau/tui-rs) - Rust terminal UI for CLI apps.  Check out list of projects it refers to also.  Lots of options!
+  * [Ratatui](https://ratatui.rs/showcase/widgets/) is the new project btw
+* [cursive](https://github.com/gyscos/cursive/tree/main) is another text UI library, based on curses
 
 * [Hot Reloading in Rust](https://robert.kra.hn/posts/hot-reloading-rust/) - great article on how to hot-reload dynamic linked libraries in Rust, and on the potential pitfalls, with plenty of links.
 
+* [inventory](https://github.com/dtolnay/inventory) and [ctor](https://github.com/mmastrac/rust-ctor) - static "plugin" registration of different things in your repo, say you need a static list of function implementations, metadata, etc.
 * [quote]() - the standard way to generate a Rust code TokenStream from quoting rust code.  Great for procedural macros or code generation.
 * [prettyplease](https://crates.io/crates/prettyplease) - Rust TokenStream pretty printer - great for code generation
 
@@ -527,8 +531,14 @@ NOTE: simplest way to increase perf may be to enable certain CPU instructions: `
 NOTE2: `lazy_static` accesses are not cheap.  Don't use it in hot code paths.
 
 
-#### Solutions to storing Dynamic objects
-In my experience, if you know all the possible types, using an enum is the fastest, most performant way to store something dynamic.  No allocations in most cases, good data locality.  enum-dispatch is a big big help for enums.  There are other solutions like using `dyn Any` but they are all slower and usually involves dynamic dispatch of some kind.
+### Dynamic objects, Box, dyn Any, Trait Objects
+
+In my experience, if you know all the possible types, using an enum is the fastest, most performant way to store
+something dynamic.  No allocations in most cases, good data locality.  enum-dispatch is a big big help for enums.  There
+are other solutions like using `dyn Any` but they are all slower and usually involves dynamic dispatch of some kind.
+Trait objects also have limitations - mainly around trait safety, so some trait methods are not usable in `dyn`
+situations esp Serde traits.  OTOH, nested enums can cause serious memory bloat when you have large enum variants and
+they are used in collections.  Here are some "better dyn Any" alternatives:
   - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
   - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
   - See [dynamic](https://crates.io/crates/dynamic) for a faster alternative to `dyn Any`.  However in my usage I didn't see a massive improvement.
@@ -536,6 +546,7 @@ In my experience, if you know all the possible types, using an enum is the faste
   - [smallbox](https://crates.io/crates/smallbox) - a box that can store smaller values on stack for speed, also has Clone and PartialEq support.  Questionable Any support though.
   - Also see [unibox](https://crates.io/crates/unibox) - for another solution to storing dynamic data
   - [Mopa](https://github.com/chris-morgan/mopa) - allows you to derive Any-like methods like downcasting for your traits.  Pretty useful.
+  - [typetag](https://github.com/dtolnay/typetag) - Serde serializable trait objects
 
 ### Perf profiling:
 
@@ -693,7 +704,10 @@ Also check out the crazy number of crates available under [compression](https://
 
 ### Enums, Thin Pointers, Type Wrapping
 
-A frequent problem, esp when working with data, is to have a "union" of different types.  Perhaps `Option` will suffice, but sometimes we need to wrap `Vec<A>` and `Vec<B>` together in the same type.  We don't want to just use `Box<dyn MyTrait>` as that allocates and results in dynamic dispatch.   Here are some crates and patterns that may help in working with enums, or alternatives:
+A frequent problem, esp when working with data, is to have a "union" of different types.  Perhaps `Option` will suffice,
+but sometimes we need to wrap `Vec<A>` and `Vec<B>` together in the same type.  We don't want to just use `Box<dyn
+MyTrait>` as that allocates and results in dynamic dispatch.   Here are some crates and patterns that may help in
+working with enums, or alternatives (Do see section on dyn any above):
 
 * [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html) - macro to implement the `dyn MyTrait` trait object pattern for enums, so we get fast static dispatch.  Basically implements traits for underlying types in enums
 * [enum_delegate](https://lib.rs/crates/enum_delegate) is an alternative that works with associated types in traits - but not generics
