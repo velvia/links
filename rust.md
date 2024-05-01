@@ -453,6 +453,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
+* [cargo-readme](https://github.com/webern/cargo-readme) - tool to generate a README based on the RustDoc in lib.rs, to avoid duplicated effort!
 * [mutagen](https://github.com/llogiq/mutagen) - mutation testing tool for Rust programs.  Generates "mutations" in your code to try to break test coverage!
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
@@ -505,6 +506,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
+* [Rust Match vs Lookup](https://kevinlynagh.com/notes/match-vs-lookup/) - remember that rustc heavily optimizes matches.  Just rely on match!
 * [Deep Dive into Dynamic Dispatch](https://medium.com/digitalfrontiers/rust-dynamic-dispatching-deep-dive-236a5896e49b) - great details and perf comparison
 * [Rust to Assembly](https://www.eventhelix.com/rust/) - great series of blog posts detailing how various parts of Rust compile down to assembly
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
