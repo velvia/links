@@ -75,6 +75,7 @@ Online resources and help:
 * [What you Can't Do in Rust and What To Do Instead](https://blog.logrocket.com/what-you-cant-do-in-rust-and-what-to-do-instead/) - great guide for anti-patterns
 * [Rust: A Unique Perspective](https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html) - comprehensive summary about Rust ownership from angle of unique access, covers RC/Arc etc.
 * [Rust is for Professionals](https://gregoryszorc.com/blog/2021/04/13/rust-is-for-professionals/) - great perspective on what makes Rust unique and so appealing
+* [References are like Jumps](https://without.boats/blog/references-are-like-jumps/) - on why Rust's core principle of ensuring one cannot both mutate and alias references at the same time is so brilliant
 * [Tour of Rust's Standard Library Traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md) - really great detailed guide with an explanation about traits, generics, associated types, etc.
 * [Understanding Rust Lifetimes](https://medium.com/nearprotocol/understanding-rust-lifetimes-e813bcd405fa)
   - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md) -- a great detailed dive into nuances
@@ -127,7 +128,6 @@ Specific topics:
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
-* [Rc and RefCell tricks](http://i.hsfzxjy.site/2019-06-23-rc-refcell-pattern/) - good explanations of the two
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
@@ -263,6 +263,8 @@ A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
 [Arc-swap](https://github.com/vorner/arc-swap) is an alternative to Arc that is designed for occasional updates - enables atomic swapping of the object underneath the Arc, and allows one to read without contention (unlike Mutex/RwLock).
 
 Also see [beef](https://github.com/maciejhirsz/beef/) - a leaner version of Cow.
+
+There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which gives a version of Rc which can be switched to an Arc.  Also has some unsized-sized coercion utils, like `[T; N]` to `[T]` etc.
 
 ## Data Processing and Data Structures
 
@@ -717,6 +719,7 @@ working with enums, or alternatives (Do see section on dyn any above):
 * [strum](https://docs.rs/strum/latest/strum/) - derive strings and discriminant enums using macros
 * You can use [`std::mem::discriminant`](https://doc.rust-lang.org/std/mem/fn.discriminant.html), a built-in function, to find the numeric discriminant for an enum
 * Also enum discriminants can be explicitly specified using `#[repr(..)]`, see [here](https://users.rust-lang.org/t/inconsistencies-in-enum-discriminants/85968) - you can then transmute the enum into something explicit
+* [Efficient Memory Layouts using Unsafe and Unions](https://alonely0.github.io/blog/unions/)
 
 Some non-enum crates that can also help:
 * [ptr_union](https://docs.rs/ptr-union/latest/ptr_union/index.html) - "Pointer union types the since of a pointer by storing the tag in the alignment bits" :)
