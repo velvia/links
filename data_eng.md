@@ -11,6 +11,8 @@
     - [Cryptography](#cryptography)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
   - [Data Structures/Sketches](#data-structuressketches)
+  - [Algorithms](#algorithms)
+    - [String Processing](#string-processing)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML and Data Science](#ml-and-data-science)
     - [Graph ML](#graph-ml)
@@ -21,10 +23,9 @@
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
     - [Unstructured data](#unstructured-data)
   - [Public Data, Datasets, Data for Good](#public-data-datasets-data-for-good)
-  - [Telemetry, Time Series, Tracing](#telemetry-time-series-tracing)
+  - [Telemetry, Time Series, Tracing, Logging](#telemetry-time-series-tracing-logging)
   - [Compression, Data Storage](#compression-data-storage)
   - [I/O and Performance](#io-and-performance)
-  - [Logging and String Processing](#logging-and-string-processing)
   - [Misc, Documentation, Etc](#misc-documentation-etc)
   - [Data Justice](#data-justice)
 
@@ -76,6 +77,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 Interesting domain-specific systems:
 
 * [Lifestream](https://dl.acm.org/doi/pdf/10.1145/3445814.3446725) - a stream-processing system built for single-node, hospital/ICU environments
+* [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 
 ## Graph Processing and storage
 
@@ -207,6 +209,13 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 
 Interesting data structures from the blockchain world:
 * [Utreexo](https://dci.mit.edu/research/2019/6/6/utreexo-a-dynamic-hash-based-accumulator-optimized-for-the-bitcoin-utxo-set) - a "hash-based accumulator", basically a set of merkle trees that allows fast updating
+
+## Algorithms
+### String Processing
+
+* [Smart String Processing Algos in Clickhouse](https://geeks-world.github.io/articles/466183/index.html) - def worth a read for string/substr search
+    - Somebody's Java experiment on above https://gist.github.com/jexp/825280
+* [Beating Textbook Algorithms in String Search](https://medium.com/wix-engineering/beating-textbook-algorithms-in-string-search-5d24b2f1bbd0) - great discussion of Knuth-Morris-Pratt, Aho-Corasick, and other basic string search algorithms
 
 ## OLAP, Aggregation
 
@@ -347,7 +356,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Public Policy Analysis: Data Science in Government](https://urbanspatial.github.io/PublicPolicyAnalytics/) - free book on geospatial analysis and DS in government planning
 * [Finding Clusters of NYPD Officers in CCRB Compliant Data](https://ejfox.com/blog/nypd-ccrb-complaint-clusters/?mkt_tok=NzEwLVJSQy0zMzUAAAF-bcHIkeWlkYopqQVlTiQ2HCpocRBU6_ipCAMiQ18l1yLcadDLh83QErIBjTWRX163QbqtqNupfJC4AQqMHBGp4H1r0i1C-wnpAyz7WprlYFgK) - an AWESOME study using graphs, Neo4J, and public data to analyze NYPD officers complicity in the light of George Floyd police brutality.  Excellent visualizations too.
 
-## Telemetry, Time Series, Tracing
+## Telemetry, Time Series, Tracing, Logging
 
 * [Box of Pain](http://pmg.csail.mit.edu/papers/vr-revisited.pdf) - injection of faults and delays together with tracing for evolved insights
 * [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) - Cloud native (ie Kubernetes-integrated) chaos engineering/injection system!
@@ -357,13 +366,19 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
 * [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
+* [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
+* [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
+* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 
 * [Husky - Datadog's Third Gen Event Store](https://www.datadoghq.com/blog/engineering/introducing-husky/) - really interesting read on how Datadog's event/log storage architecture evolved over the years
 * [Bitdrift Capture](https://blog.bitdrift.io/post/honey-i-shrunk-the-telemetry) - decentralized telemetry at the edge with "distributed search" - absolutely brilliant.  This is the way!
+* [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
+* [Graph coloring for Machine Learning](https://sisu.ai/blog/graph-coloring-for-machine-learning) - column reduction using approximate coloring techniques
+
 
 ## Compression, Data Storage
 
@@ -373,6 +388,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants
+* [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
 
 * [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
 
@@ -383,20 +399,6 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [Diskplorer](https://github.com/scylladb/diskplorer) - a tool for doing load testing on disks, graphing IOPS vs bandwidth and latency.  With lots of great graphs on different types of hardware and cloud setups.
 
 [Conbench](https://conbench.ursa.dev) is a Continuous Benchmarking tool.
-
-## Logging and String Processing
-
-* [Smart String Processing Algos in Clickhouse](https://geeks-world.github.io/articles/466183/index.html) - def worth a read for string/substr search
-    - Somebody's Java experiment on above https://gist.github.com/jexp/825280
-* [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
-* [Beating Textbook Algorithms in String Search](https://medium.com/wix-engineering/beating-textbook-algorithms-in-string-search-5d24b2f1bbd0) - great discussion of Knuth-Morris-Pratt, Aho-Corasick, and other basic string search algorithms
-
-* [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
-
-* [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
-* [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
-* [Tremor](https://docs.tremor.rs) - a simple event processing / log and metric processing and forwarding system, with scripting and streaming query support.  Much more capable than Telegraf.
-* [Graph coloring for Machine Learning](https://sisu.ai/blog/graph-coloring-for-machine-learning) - column reduction using approximate coloring techniques
 
 ## Misc, Documentation, Etc
 
