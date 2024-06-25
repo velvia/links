@@ -15,6 +15,7 @@
   - [Cool Data Structures](#cool-data-structures)
   - [Geospatial and Graph](#geospatial-and-graph)
   - [String Performance](#string-performance)
+  - [GPUs](#gpus)
 - [Rust and Scala/Java](#rust-and-scalajava)
   - [Rust and Python](#rust-and-python)
   - [Rust-OtherLanguage Integration / Rust FFI](#rust-otherlanguage-integration--rust-ffi)
@@ -113,7 +114,9 @@ Specific topics:
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
+* Book: [Rust Atomics and Locks](https://marabos.nl/atomics/)
 * [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
+* [Ultimate Guide to Rust NewTypes](https://www.howtocodeit.com/articles/ultimate-guide-rust-newtypes) - great guide to the `struct Foo(InnerType)` pattern
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
 * [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
@@ -127,7 +130,8 @@ Specific topics:
 * [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
-* [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing structs
+* [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing struct
+* [In-place construction Seems Surprisingly Simple?](https://blog.yoshuawuyts.com/in-place-construction-seems-surprisingly-simple/) - avoiding a move when constructing new structs, and using `MaybeUninit` instead
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
@@ -402,6 +406,10 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * compact_str - O(n), but heap size grows more slowly (1.5x) compared to mal String
 * smol_str - O(1)
 * smartstring - O(n)
+
+### GPUs
+
+* [GPU Computing with Rust using CUDA](https://rust-gpu.github.io/Rust-CUDA/guide/getting_started.html)
 
 ## Rust and Scala/Java
 
@@ -680,6 +688,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
 * [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
 * [tagptr](https://crates.io/crates/tagptr) - use a few bits in pointer words for metadata
+* [zerocopy](https://crates.io/crates/zerocopy) - utilities for zero-copy parsing deserialization and auto byteorder flipping/alignment
 * [Erasable](https://crates.io/crates/erasable) - type erased pointers
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
