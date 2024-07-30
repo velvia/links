@@ -131,6 +131,7 @@ Specific topics:
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing struct
+* [How to do named function arguments](https://elastio.github.io/bon/blog/how-to-do-named-function-arguments-in-rust)
 * [In-place construction Seems Surprisingly Simple?](https://blog.yoshuawuyts.com/in-place-construction-seems-surprisingly-simple/) - avoiding a move when constructing new structs, and using `MaybeUninit` instead
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
@@ -247,12 +248,16 @@ Languages etc.
 * [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
 * [Coping with Mutable State in Multiple Threads](https://medium.com/@KevinHoffman/coping-with-mutable-state-in-multiple-threads-with-rust-9059c83b6c01)
 * [Fearless Concurrency with Hazard Pointers](http://ticki.github.io/blog/fearless-concurrency-with-hazard-pointers/) - using the `conc` crate and `Atomic` which implements hazard pointers for fine-grained and safe protection of readers and garbage
+* [Tasks are the Wrong Abstraction](https://blog.yoshuawuyts.com/tasks-are-the-wrong-abstraction/) - on having unified, better APIs for concurrency and parallelism decoupling, by Yoshua Wuyts
+* [Pin](https://without.boats/blog/pin/) - A detailed treatise of `Pin` references in Rust, the history of how Pin came to be, and why its hard to use
 
 * [Bastion](https://bastion.rs) - Erlang/Akka-style, remote supervised actor framework
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
 * [Actyx](https://github.com/Actyx/Actyx) - really cool "decentralized event database, streaming and processing engine" based on event sourcing concepts, built by one of Akka's founders
 * [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
+
 * Use [mio](https://crates.io/crates/mio) if you want a lower-level event loop, or [thin_main_loop](https://crates.io/crates/thin_main_loop)
+* [monoio](https://github.com/bytedance/monoio) - Very fast thread-per-core async I/O Rust runtime, based on io_uring etc.  Much faster at top end than Tokio, for servers
 
 ### Shared Data Across Multiple Threads
 
