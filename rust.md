@@ -44,6 +44,7 @@ I highly recommend [rust-analyzer](https://rust-analyzer.github.io) to support f
 VSCode works pretty well - install rust-analyzer and the "Even Better TOML" extension and you should be set.
 
 * [The Rust Book](https://doc.rust-lang.org/book/2018-edition/ch00-00-introduction.html) - probably the best starting point
+* [Comprehensive Rust](https://google.github.io/comprehensive-rust/) - The Google Android team's guide to learning Rust
 * [Rustlings](https://github.com/rust-lang/rustlings/blob/master/README.md) - small exercises to learn
 * [Easy Rust Youtube Channel](https://www.youtube.com/watch?v=-lYeJeQ11OI&list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk) - great videos
 * [Rust By Example](http://rustbyexample.com/) - also the guide on their site is pretty good.
@@ -303,6 +304,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store.
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+* [SlateDB](https://github.com/slatedb/slatedb) - embedded LSM object storage engine plus caching layer.  Seems pretty promising.
 * [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
@@ -658,6 +660,7 @@ The options I've tried out:
 
 After the above frustrations and investigations, I decided to write my own custom memory profiler - [Ying](https://github.com/velvia/ying-profiler) - a sampling profiler, built for rich Rust stack traces including inlined methods, which tracks retained memory and lifetimes.  Definitely experimental right now.
 
+* [Phantom Menace](https://flakm.com/posts/phantom_leak/) - nice article on a phantom memory leak caused by container measurement problems.  Has nice hints on how to set up jemalloc memory profiling.
 * [memory-profiler](https://github.com/koute/memory-profiler) - written in Rust by the Nokia team!
 * [allocative](https://github.com/facebookexperimental/allocative) - generate runtime memory usage (not allocations) flamegraphs of structs you tag/derive using a custom trait. From Facebook.
 * [memuse](https://docs.rs/memuse/latest/memuse/) - another approach to tag your structs and get dynamic (including heap) memory usage info
