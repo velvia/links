@@ -302,6 +302,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Quickwit](https://github.com/quickwit-oss/quickwit) - Log search DB, like Elastic but built on top of Tantivy
 * [Datafuse](https://github.com/datafuselabs/datafuse) - distributed "Real-Time Data Processing & Analytics DBMS", similar to Clickhouse "but faster"
 * [sonic](https://github.com/valeriansaliou/sonic) - Fast, very lightweight and schemaless search/text index.  NOT a document store, but an index store.
+* [Tonbo](https://github.com/tonbo-io/tonbo) - embedded database based on Arrow and Parquet
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [SlateDB](https://github.com/slatedb/slatedb) - embedded LSM object storage engine plus caching layer.  Seems pretty promising.

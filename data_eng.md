@@ -78,6 +78,7 @@ Interesting domain-specific systems:
 
 * [Lifestream](https://dl.acm.org/doi/pdf/10.1145/3445814.3446725) - a stream-processing system built for single-node, hospital/ICU environments
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
+* [Sneller](https://github.com/SnellerInc/sneller) - SQL for JSON at scale, using Zion as its backing format.  AVX512 assembly based.
 
 ## Graph Processing and storage
 
@@ -367,6 +368,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
 * [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
+* [Zion](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
@@ -387,7 +389,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
-* [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants
+* [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.
+* [Zion - Columnar Compression Without Columns](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
 
 * [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
