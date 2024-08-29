@@ -339,6 +339,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [flashmap](https://docs.rs/flashmap/0.1.0/flashmap/) - lock free, partially wait free, eventually consistent concurrent hash map
 * [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
 * [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
+* [immutable-chunkmap](https://github.com/estokes/immutable-chunkmap) - another immutable persistent map
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [radix-trie](https://crates.io/crates/radix_trie)
