@@ -263,6 +263,8 @@ Interesting data structures from the blockchain world:
 
 ### Pattern Matching
 
+* [Cayuga](https://www.khoury.northeastern.edu/home/mirek/papers/2007-CIDR-CayugaImp.pdf) - a "General Purpose Event Monitoring System" with an algebra for expressing complex event patterns
+
 * [Pattern Search with Knuth-Morris-Pratt (KMP) Algorithm](https://towardsdatascience.com/pattern-search-with-the-knuth-morris-pratt-kmp-algorithm-8562407dba5b)
 * [Aho-Corasick Algorthm](https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/) for searching multiple words at the same time
 
@@ -393,6 +395,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.
 * [Zion - Columnar Compression Without Columns](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
+* [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 
 * [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
 

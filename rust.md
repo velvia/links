@@ -72,6 +72,7 @@ Online resources and help:
 ## Some links on Rust
 
 * [Cheat sheet for Iterator methods](https://danielkeep.github.io/itercheat_baked.html)
+* [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/about.html)
 
 * [Rust Design Patterns](https://rust-unofficial.github.io/patterns/intro.html) - super helpful resource
 * [What you Can't Do in Rust and What To Do Instead](https://blog.logrocket.com/what-you-cant-do-in-rust-and-what-to-do-instead/) - great guide for anti-patterns
@@ -114,6 +115,7 @@ Specific topics:
 * [Default Values for Maintainability](https://cj.rs//blog/rust-default-values-for-maintainability/) - short and easy guide
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
+* [Async Rust can be a Pleasure to Work with](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/) - great post on "structured concurrency" and thread-per-core as alternatives to standard work-stealing tasks
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * Book: [Rust Atomics and Locks](https://marabos.nl/atomics/)
 * [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
@@ -122,6 +124,7 @@ Specific topics:
 * [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
 * [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Generics and Associated Types](https://blog.thomasheartman.com/posts/on-generics-and-associated-types) - when to use each one
+* [Defeating Coherence in Rust Traits](https://willcrichton.net/notes/defeating-coherence-rust/) - How to implement multiple different methods of the same name for traits
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
   - [Recursive Iterators in Rust](https://fasterthanli.me/articles/recursive-iterators-rust) - yelch, using Box
   - [Internal-iterator](https://docs.rs/internal-iterator/0.1.1/internal_iterator/) - a potentially better solution for easily implementing some iterators
@@ -135,6 +138,8 @@ Specific topics:
 * [How to do named function arguments](https://elastio.github.io/bon/blog/how-to-do-named-function-arguments-in-rust)
 * [In-place construction Seems Surprisingly Simple?](https://blog.yoshuawuyts.com/in-place-construction-seems-surprisingly-simple/) - avoiding a move when constructing new structs, and using `MaybeUninit` instead
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
+* [Stacked Borrows](https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html) - a deep dive into the mental model behind Rust's borrow checker and tools like Miri
+* [Unsafe Code Guidelines](https://github.com/rust-lang/unsafe-code-guidelines/tree/master)
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
 * [How Rust Solved Dependency Hell](https://stephencoakley.com/2019/04/24/how-rust-solved-dependency-hell) - neat look at what's underneath Cargo to help solve dep issues.  Rustc can handle multiple versions of a dependency.
@@ -306,6 +311,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
 * [SlateDB](https://github.com/slatedb/slatedb) - embedded LSM object storage engine plus caching layer.  Seems pretty promising.
+* [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 * [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
@@ -339,9 +345,12 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [flashmap](https://docs.rs/flashmap/0.1.0/flashmap/) - lock free, partially wait free, eventually consistent concurrent hash map
 * [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
 * [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
+  - WARNING: `im::HashMap` seems to allocate way too much memory than needed.
 * [immutable-chunkmap](https://github.com/estokes/immutable-chunkmap) - another immutable persistent map
+* [slice_deque](https://docs.rs/slice-deque/0.3.0/slice_deque/) - A really clever Ringbuffer implementation that uses virtual memory maps to allow one to treat ranges of the buffer as slices!
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
+* [orx-split-vec](https://crates.io/crates/orx-split-vec) - vector with dynamic capacity and pinned elements using chunks (ie pointers/refs are stable)
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
 * [probabilistic-collections](https://crates.io/crates/probabilistic-collections) - Bloom/Cuckoo/Quotient filters, CountMinSketch, HyperLogLog, streaming approx set membership, etc.
@@ -504,6 +513,15 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
 * [Are We Observable Yet?](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/#5-12-cleaning-up-instrumentation-code-tracing-instrument) - an introduction to Rust telemetry
 * [Miri](https://github.com/rust-lang/miri) - can run binaries and test suites of cargo projects and detect certain classes of undefined behavior, including memory leaks!!
+
+Notes from a RustConf talk on tracing crate usage:
+
+A few notes from a RustConf talk on the tracing crate:
+1. Consider not using EnvFilter, it's complicated and buggy
+2. Beware of OpenTelemetry, it may not do what you want.
+3. Aggressively filter out spans esp when working with OpenTelemetry as it adds much more $$
+4. Each layer in tracing-subscriber should be a "Filtered"
+5. Use callsite registration to filter out logging that we are not interested in.  Call sites can be dynamically re configured so that we don't have to analyze, with every single call, whether something is logged or not.
 
 ### Cross-compilation
 
@@ -686,7 +704,8 @@ After the above frustrations and investigations, I decided to write my own custo
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 * [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
 * [FlexBuffers](https://github.com/google/flatbuffers/tree/master/rust/flexbuffers) - version of FlatBuffers for schema-less data!
-* [zerovec](https://docs.rs/zerovec/latest/zerovec/#Performance) - Clients upgrading to zerovec benefit from zero heap allocations when deserializing read-only data.
+* [zerovec](https://docs.rs/zerovec/latest/zerovec/#Performance) - zero-copy Vec and Map types for dealing with alignment, endianness, and variable-length str types
+* [aligned-vec](https://crates.io/crates/aligned-vec) - Vecs that are aligned!!
 * [Speeding up incoming message parsing using nom](https://medium.com/tezedge/speeding-up-incoming-message-parsing-by-3-to-10-times-by-switching-from-serde-to-the-nom-library-a74b04391bb4) - a detailed guide to using nom for deserialization, much faster than Serde
 
 The ideal performance-wise is to not need serialization at all; ie be able to read directly from portions of a binary byte slice.  There are some libraries for doing this, such as flatbuffers, or [flatdata](https://crates.io/crates/flatdata) for which there is a Rust crate; or Cap'n Proto.  However, there may be times when you want more control or things like Cap'n Proto are not good enough.
@@ -698,11 +717,10 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * Use a crate such as [bytes](https://crates.io/crates/bytes) or [scroll](https://crates.io/crates/scroll) to help extract and write structs and primitives to/from buffers. Might need extra copying though. Also see [iobuf](https://crates.io/crates/iobuf)
 * [rel-ptr](https://crates.io/crates/rel-ptr) - small library for relative pointers/offsets, should be super useful for custom file formats and binary/persistent data structures
 * [tagptr](https://crates.io/crates/tagptr) - use a few bits in pointer words for metadata
-* [zerocopy](https://crates.io/crates/zerocopy) - utilities for zero-copy parsing deserialization and auto byteorder flipping/alignment
+* [zerocopy](https://crates.io/crates/zerocopy) - utilities for zero-copy parsing deserialization and auto byteorder flipping/alignment, with `FromBytes` and `AsBytes` traits for easy transmuting
 * [Erasable](https://crates.io/crates/erasable) - type erased pointers
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
-* Also [zerocopy](https://docs.rs/zerocopy/latest/zerocopy/) with `FromBytes` and `AsBytes` traits for easy transmuting
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
   - Also see [zero](https://docs.rs/zero/0.1.2/zero/)
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:
@@ -721,6 +739,10 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
       (*foobar).bar = -1;
     }
 ```
+
+Sometimes you want to make independent parts of byte buffers mutable.  Some crates help with this:
+- bytes can be used, but its API is more geared towards network use cases
+- [deferred_reference](https://docs.rs/deferred-reference/latest/deferred_reference/trait.Defer.html#impl-Defer-for-UnsafeCell%3CT%3E) is a clever crate that can return independent mutable slices
 
 Want to zero memory quickly?  Use [slice_fill](https://docs.rs/slice-fill/1.0.1/slice_fill/) for memset optimization, since there is no memory filling for slices in Rust yet.
 
