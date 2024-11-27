@@ -143,6 +143,7 @@ Specific topics:
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
 * [How Rust Solved Dependency Hell](https://stephencoakley.com/2019/04/24/how-rust-solved-dependency-hell) - neat look at what's underneath Cargo to help solve dep issues.  Rustc can handle multiple versions of a dependency.
+* [How to Create a Custom Allocator](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-allocator-in-rust/)
 
 * [Cacao: Building macOS/iOS Apps in Rust](https://rymc.io/blog/2021/cacao-rs-macos-ios-rust/)
 
@@ -215,6 +216,7 @@ CLI tools:
 Wasm:
 * [Wasmer](https://medium.com/wasmer/wasmer-1-0-3f86ca18c043) - general purpose WASM runtime
 * [Krustlet](https://deislabs.io/posts/introducing-krustlet/) - WebAssembly (instead of containers) runtime on Kubernetes!!  Use Rust + wasm + WASI for a truly portable k8s-based deploy!
+* [wasm-gpu](https://github.com/LucentFlux/wasm-gpu) - run WASM containers on GPU! (Interpreted)
 * [Extism](https://extism.org/blog/announcing-extism/) - a universal WASM-based plugin system, multi language, but written in Rust
 * [lunatic](https://github.com/lunatic-solutions/lunatic) - Erlang-like server side WASM runtime with supervision and channel-based message passing, plus hot reloading!
 * [CosmWasm](https://docs.cosmwasm.com/docs/1.0/) - Rust/WASM for programming smart contract on Cosmos ecosystem
@@ -261,6 +263,7 @@ Languages etc.
 * [Kompact](https://github.com/kompics/kompact) - Kompics style message-passing "component system" with actor model and networking built in
 * [Actyx](https://github.com/Actyx/Actyx) - really cool "decentralized event database, streaming and processing engine" based on event sourcing concepts, built by one of Akka's founders
 * [Actors with Tokio](https://ryhl.io/blog/actors-with-tokio/) - not using any Actor framework, just channels
+* [Kameo](https://docs.page/tqwewe/kameo) - new actor library built on Tokio, with supervision
 
 * Use [mio](https://crates.io/crates/mio) if you want a lower-level event loop, or [thin_main_loop](https://crates.io/crates/thin_main_loop)
 * [monoio](https://github.com/bytedance/monoio) - Very fast thread-per-core async I/O Rust runtime, based on io_uring etc.  Much faster at top end than Tokio, for servers
@@ -347,7 +350,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
   - WARNING: `im::HashMap` seems to allocate way too much memory than needed.
 * [immutable-chunkmap](https://github.com/estokes/immutable-chunkmap) - another immutable persistent map
-* [slice_deque](https://docs.rs/slice-deque/0.3.0/slice_deque/) - A really clever Ringbuffer implementation that uses virtual memory maps to allow one to treat ranges of the buffer as slices!
+* [slice_deque](https://docs.rs/slice-deque/0.3.0/slice_deque/) - A really clever Ringbuffer implementation that uses mmap and virtual pages to allow one to treat ranges of the buffer as slices!
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [orx-split-vec](https://crates.io/crates/orx-split-vec) - vector with dynamic capacity and pinned elements using chunks (ie pointers/refs are stable)
@@ -482,6 +485,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
 * [cargo-readme](https://github.com/webern/cargo-readme) - tool to generate a README based on the RustDoc in lib.rs, to avoid duplicated effort!
+* [roxygen](https://github.com/geo-ant/roxygen) - documenting Rust function parameters!
 * [mutagen](https://github.com/llogiq/mutagen) - mutation testing tool for Rust programs.  Generates "mutations" in your code to try to break test coverage!
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
@@ -538,6 +542,10 @@ Finally, the [Taking Rust everywhere with Rustup](https://blog.rust-lang.org/201
 
 A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 string processing, access to detailed memory layout, things like SIMD.  Basically, to be able to idiomatically, safely, and beautifully (functionally?) do super fast and efficient data processing.
 
+Many of the links/crates/techniques in the sections below use unsafe.  Be sure to run the Miri compiler/checker to find and help debug subtle bugs - it is your friend!
+Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which covers many topics in this space and talks about how to limit and reason about unsafe code.
+
+* [Rustonomicon](https://doc.rust-lang.org/nomicon/) - Officially part of Rust-lang, this is a guide to "The Dark Arts of Unsafe Rust"
 * [Cheap Tricks - Rust Performance](https://deterministic.space/high-performance-rust.html) - set of quick Cargo settings to try
 * [How to Write Fast Rust Code](https://likebike.com/posts/How_To_Write_Fast_Rust_Code.html) - really good guide
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
@@ -546,6 +554,8 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
 * [Rust Match vs Lookup](https://kevinlynagh.com/notes/match-vs-lookup/) - remember that rustc heavily optimizes matches.  Just rely on match!
 * [Deep Dive into Dynamic Dispatch](https://medium.com/digitalfrontiers/rust-dynamic-dispatching-deep-dive-236a5896e49b) - great details and perf comparison
 * [Rust to Assembly](https://www.eventhelix.com/rust/) - great series of blog posts detailing how various parts of Rust compile down to assembly
+* [Fast Thread Locals in Rust](https://matklad.github.io/2020/10/03/fast-thread-locals-in-rust.html)
+  - BTW, a super efficient thread local crate is [scoped-tls](https://docs.rs/scoped-tls/latest/scoped_tls/) - basically just storing a mutable pointer.  If it fits your use case, it's awesome!
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
   - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
@@ -560,6 +570,7 @@ A big part of the appeal of Rust for me is super fast, SAFE, built in UTF8 strin
     - There are even [epoch GCs](https://crates.io/crates/crossbeam-epoch) available
     - Also look into the arena and [typed_arena](https://crates.io/crates/typed-arena) crates... very cheap allocations within a region, then free entire region at once.
     - Also see [bumpalo](https://github.com/fitzgen/bumpalo) - bump allocator which includes custom versions of standard collections
+    - Also: [Garbage Collection for System Programmers](https://bitbashing.io/gc-for-systems-programmers.html) - great writeup
 * Watch out for dynamic dispatch (when you need to use `Box<dyn MyTrait>` etc).  One solution is to use [enum_dispatch](https://docs.rs/enum_dispatch/0.2.1/enum_dispatch/index.html).
 
 If small binary size is what you're after, check out [Min-sized-Rust](https://github.com/johnthagen/min-sized-rust).
@@ -688,6 +699,7 @@ After the above frustrations and investigations, I decided to write my own custo
 * [deepsize](https://crates.io/crates/deepsize) - macro to recursively find size of an object
 * [Parity-util-mem](https://github.com/paritytech/parity-common/tree/master/parity-util-mem) - can find the size of collections as well?
 * [Measuring Memory Usage in Rust](https://rust-analyzer.github.io//blog/2020/12/04/measuring-memory-usage-in-rust.html) - thoughts on working around the fact we don't have a GC to track deep memory usage
+* [How to Create a Custom Allocator](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-allocator-in-rust/) - great post on many details, page allocation, multi-threading etc.
 
 ### Fast String Parsing
 
