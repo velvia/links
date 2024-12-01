@@ -592,6 +592,7 @@ situations esp Serde traits.  OTOH, nested enums can cause serious memory bloat 
 they are used in collections.  Here are some "better dyn Any" alternatives:
   - Related: [auto_enum](https://docs.rs/auto_enums/0.7.1/auto_enums/index.html) - a way to return enums when you might need to return `impl A` for some trait A when you might be returning diff implementations
   - Can also use [ambassador](https://crates.io/crates/ambassador) - to delegate trait implementations
+    - [delegate](https://crates.io/crates/delegate) - general purpose method delegation
   - See [dynamic](https://crates.io/crates/dynamic) for a faster alternative to `dyn Any`.  However in my usage I didn't see a massive improvement.
   - [box_any](https://github.com/uccidibuti/box_any) is another fast solution which actually keeps `*void` style pointers but still drops properly
   - [smallbox](https://crates.io/crates/smallbox) - a box that can store smaller values on stack for speed, also has Clone and PartialEq support.  Questionable Any support though.
@@ -712,7 +713,8 @@ After the above frustrations and investigations, I decided to write my own custo
 ### Bitpacking, Binary Structures, Serialization
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
-* [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.
+* [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.  However you have to explicitly pack/unpack.
+  - Similar but easier to use: [bit_field](https://crates.io/crates/bit_field)
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 * [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
 * [FlexBuffers](https://github.com/google/flatbuffers/tree/master/rust/flexbuffers) - version of FlatBuffers for schema-less data!
