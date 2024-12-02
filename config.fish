@@ -93,3 +93,20 @@ alias git=hub
 alias subl3="'/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'"
 alias java8="set -x JAVA_HOME /Users/evan/.jenv/versions/1.8"
 alias java11="set -x JAVA_HOME /Users/evan/.jenv/versions/11.0"
+
+
+### For personal use only
+# Functions for photo backups by year
+function photo-backup-to-cloud -a year -d "Backup SELECT photos in /Volumes/ChanPhotos1 to B2/cloud"
+   if test $year -ge 2024
+      set volume ChanPhotos23
+   else
+      set volume ChanPhotos1
+   end
+   rclone sync -v --include "$year/*/*/select/**" --include "$year/*/ALBUMS/**" --include "$year*" --transfers 32 /Volumes/$volume/Photos/ b2-evan:Velvia-PhotosPrivate/
+end
+
+function photo-backup-to-drive -a year -d "Backup ALL photos in /Volumes/ChanPhotos1 to second drive"
+   rclone sync -v --include "$year/*/**" --include "$year/*/ALBUMS/**" --include "$year*" --transfers 32 /Volumes/ChanPhotos1/Photos/ /Vo
+lumes/ChanPhotosB/Photos/
+end
