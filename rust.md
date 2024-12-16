@@ -140,6 +140,7 @@ Specific topics:
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
 * [Stacked Borrows](https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html) - a deep dive into the mental model behind Rust's borrow checker and tools like Miri
 * [Unsafe Code Guidelines](https://github.com/rust-lang/unsafe-code-guidelines/tree/master)
+* [Tools for Verifying Unsafe Rust Code](https://blog.colinbreck.com/making-unsafe-rust-a-little-safer-tools-for-verifying-unsafe-code/) - covers built in sanitizers, Miri, and even how to lint C/C++ code
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
 * [How Rust Solved Dependency Hell](https://stephencoakley.com/2019/04/24/how-rust-solved-dependency-hell) - neat look at what's underneath Cargo to help solve dep issues.  Rustc can handle multiple versions of a dependency.
@@ -180,6 +181,7 @@ NOTE: there's a separate section for Data-related projects.
 
 CLI tools:
 * [XSV](https://github.com/BurntSushi/xsv) - a fast CSV parsing and analysis tool
+* [QSV](https://crates.io/crates/qsv) - another fast CSV data wrangling tool, even has some AI/LLM integration
 * [zoxide](https://github.com/ajeetdsouza/zoxide) - a supercharged, AI-based replacement for cd with rank-based search of your most frequently used dirs
   - [mcfly](https://github.com/cantino/mcfly) - Upgraded, smarter Ctrl-R for bash etc.  (note: fish users already have this built in, basically)
 * [Ripgrep](https://github.com/BurntSushi/ripgrep) - insanely fast grep utility, great for code searches.  Shows off power of Rust regex library

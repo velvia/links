@@ -70,6 +70,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
+* [Aurora DSQL Architecture](https://brooker.co.za/blog/2024/12/04/inside-dsql.html) - really good look at Amazon's architecture to scale out compute, read and write throughput, and storage independently for an ACID OLTP database.  They push simple compute out to edges!
 
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
@@ -123,6 +124,7 @@ Some good intro resources:
 * [Hermes Protocol](https://hermes-protocol.com) - "A fast, fault-tolerant & linearizable replication protocol"
 * [Read-Write Quorum Systems Made Practical](https://mwhittaker.github.io/publications/quoracle.pdf) - is majority quorum always needed? Tradeoffs and how to achieve lower latency with different quorum configs
 * [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
+* DataDog's article on using [formal modeling and lightweight simulations](https://www.datadoghq.com/blog/engineering/formal-modeling-and-simulation/) to verify the correctness of a new distributed system.  Really neat process.
 
 * [Making CRDTs Byzantine Fault Tolerant](https://martin.kleppmann.com/papers/bft-crdt-papoc22.pdf) - really interesting
 
