@@ -341,6 +341,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [simdjson-rs](https://github.com/simd-lite/simdjson) - SIMD-enabled JSON parser.  NOTE: no writing of JSON.
 * [pjson](https://github.com/tidwall/pjson.rs) - JSON streaming parser
 * [streamson](https://github.com/shenek/streamson) - efficient JSON processing for large documents
+* [sonic_rs](https://docs.rs/sonic-rs/0.3.17/sonic_rs/index.html) - SIMD-enabled JSON parser with an iterator style parser and lazy reference / zero copy `LazyValue` string type.  Good fit for minimal allocation JSON parsing.
 
 ### Cool Data Structures
 
