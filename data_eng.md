@@ -4,6 +4,7 @@
 
 - [Data Engineering, Databases, Data Structures, ML/DS](#data-engineering-databases-data-structures-mlds)
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
+  - [Databases](#databases)
   - [Data Processing Systems](#data-processing-systems)
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
@@ -57,9 +58,12 @@
 * [Lucene: The Good Parts](https://blog.parse.ly/post/1691/lucene/) - a great introduction to Lucene, terminology, indexing technology, search vs aggregations, etc.
 * [Hyperscan](https://www.hyperscan.io) - Intel's high performance multiple regex matching library
 
-* [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
+## Databases
 
-* [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc but for
+* [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
+* [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc.  Super convenient, now used everywhere.
+
+* [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
 
 ## Data Processing Systems
 
@@ -74,6 +78,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
+- [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
 
 Interesting domain-specific systems:
 
