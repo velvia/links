@@ -717,7 +717,8 @@ After the above frustrations and investigations, I decided to write my own custo
 
 * [bitpacking](https://crates.io/crates/bitpacking) - insanely fast integer bitpacking library
 * [packed_struct](https://crates.io/crates/packed_struct) - bitfield packing/unpacking; can also pack arrays of bitfields; mixed endianness, etc.  However you have to explicitly pack/unpack.
-  - Similar but easier to use: [bit_field](https://crates.io/crates/bit_field)
+  - Similar but easier to use: [bit_field](https://crates.io/crates/bit_field) - access bit ranges only
+  - [modular_bitfield](https://docs.rs/modular-bitfield/0.11.2/modular_bitfield/index.html) - macro to make structs with variable width bit fields with accessor methods.  Good mix of struct-like bitfield usability and performance.  No need to pack/unpack.
 * [rkyv](https://crates.io/crates/rkyv) - Zero-copy deserialization, for generic Rust structs, even trait objects. Uses relative pointers.
 * [binary-layout](https://crates.io/crates/binary-layout) - "type-safe, inplace, zero-copy access to structured binary data" including open-ended byte arrays at the end
 * [FlexBuffers](https://github.com/google/flatbuffers/tree/master/rust/flexbuffers) - version of FlatBuffers for schema-less data!
@@ -738,6 +739,7 @@ How do we perform low-level byte/bit twiddling and precise memory access?  Unfor
 * [Erasable](https://crates.io/crates/erasable) - type erased pointers
 * [arrayref](https://docs.rs/arrayref/0.3.5/arrayref/) might help extract fixed size arrays from longer ones.
 * [bytemuck](https://docs.rs/bytemuck/1.1.0/bytemuck/) for casts
+* [byteview](https://fjall-rs.github.io/post/fjall-2-6-byteview/) - a thin, immutable, clonable byte slice - like a better `Arc<[u8]>` - with inline byte sequences
 * [bitmatch](https://crates.io/crates/bitmatch) could be great for bitfield parsing
   - Also see [zero](https://docs.rs/zero/0.1.2/zero/)
 * Allocate a `Vec::<u8>` and [transmute](https://stackoverflow.com/questions/25917260/getting-raw-bytes-from-packed-struct) specific portions to/from structs of known size, or convert pointers within regions back to references:

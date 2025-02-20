@@ -20,7 +20,8 @@
     - [Time Series ML](#time-series-ml)
     - [Pattern Matching](#pattern-matching)
     - [Python/Pandas](#pythonpandas)
-    - [Data Engineering](#data-engineering)
+  - [Data Engineering](#data-engineering)
+    - [Streaming Flows / Data Connectors](#streaming-flows--data-connectors)
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
     - [Unstructured data](#unstructured-data)
   - [Public Data, Datasets, Data for Good](#public-data-datasets-data-for-good)
@@ -63,7 +64,13 @@
 * [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
 * [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc.  Super convenient, now used everywhere.
 
+* [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
+* [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
+* [YugabyteDB](https://www.yugabyte.com) - Another Postgres compatible distributed SQL database
+
 * [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
+
+* [Pessimistic Cardinality Estimation](https://arxiv.org/pdf/2412.00642) - estimating query costs or upper bound on query output
 
 ## Data Processing Systems
 
@@ -137,6 +144,8 @@ Some good intro resources:
 * [Local-first Cooperation](
 * https://local-first-cooperation.github.io/website/#relationship-with-other-architectural-building-blocks) - a pattern of distributed resilience by having local groups cooperate without centralized coordination.  Also talks about Reactive.
   - Not strictly about distributed systems, but related (hint: CRDTs are foundational)s: [Local-First Software Development](https://www.inkandswitch.com/local-first/)
+* [Five-Minute Rule for the Cloud: Caching in Analytics Systems](http://andrew.nerdnetworks.org/other/CIDR_2025_Cloud_5_Minute_Rule.pdf) - summary of cost model for cloud object store based analytics and
+  at what point it is "worth it" to cache
 
 ### BlockChain Systems
 
@@ -296,7 +305,7 @@ Kedro is a good framework for standardizing processing pipelines.
 
 * [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
 
-### Data Engineering
+## Data Engineering
 
 Data organization, versioning, abstractions, frameworks, workflow/process tools
 
@@ -305,9 +314,10 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 * [dvc](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial) is a library and CLI for git-like versioning of datasets, models, etc. - but can leverage cloud storage like S3
 * [Pachyderm](https://www.pachyderm.com/getting-started/) is an entire platform for versioning and DS workflow - like DVC on steroids
 * [FBLearner Flow](https://engineering.fb.com/2016/05/09/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/) - Facebook's ML experimentation and workflow platform.  They have "operators" which can parallelize work.
+* [Dagster](https://dagster.io) - Data Eng and workflow orchestrator, supports streaming
+* [Argo Workflows](https://argo-workflows.readthedocs.io/en/latest/) - K8s native workflow orchestrator
 
 * [Dali](https://github.com/linkedin/dali) - LinkedIn's data access layer, which can present unified views of datasets to consumers and protect against data producer versioning changes.  See the [blog post](https://engineering.linkedin.com/blog/2017/11/dali-views--functions-as-a-service-for-big-data).
-* [AirByte](https://airbyte.io) - Open-source data integration/easy ELT pipelines
 * [Data Discovery - The Future of Data Catalogs for Data Lakes](https://towardsdatascience.com/data-discovery-the-future-of-data-catalogs-for-data-lakes-7b50e2e8cb28) - dynamic discovery using ML and why its better than static catalogs
 
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
@@ -322,9 +332,13 @@ Sometimes it's about how you organize data teams.
 Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 
-* [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
-* [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
-* [YugabyteDB](https://www.yugabyte.com) - Another Postgres compatible distributed SQL database
+### Streaming Flows / Data Connectors
+
+* [AirByte](https://airbyte.io) - Open-source data integration/easy ELT pipelines
+* [Benthos](https://github.com/redpanda-data/benthos/) and [RedPanda connect](https://github.com/redpanda-data/connect) - easy declarative (YAML) stream connectors and processors
+* [FluentBit](https://fluentbit.io) - CNCF standard for observability data connector/processor/forwarder
+* Apache Nifi - but its outdated
+* [Dagster](https://dagster.io) - Data Eng and workflow orchestrator, supports streaming
 
 ### Geospatial / NearestNeighbor
 
@@ -375,6 +389,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Static Code Analysis for Log Parsing](https://medium.com/palantir/using-static-code-analysis-to-improve-log-parsing-18f0d1843965) - turning unstructured to structured logs
 * [Canopy](https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf?) - Facebook's End to End Tracing and Analysis System
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
+* [FluentBit](https://fluentbit.io) - CNCF standard for observability data connector/processor/forwarder
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
 * [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
