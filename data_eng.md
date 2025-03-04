@@ -67,6 +67,7 @@
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
 * [YugabyteDB](https://www.yugabyte.com) - Another Postgres compatible distributed SQL database
+* [EdgeDB](https://www.edgedb.com) - PostGres extension with EdgeQL, a succinct query language for much more concise common query patterns that would otherwise need subqueries
 
 * [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
 
@@ -86,6 +87,8 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 - [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
+
+- [Aqua](https://aqua-language.github.io) - a new streaming dataflow language which compiles to Rust or Flink
 
 Interesting domain-specific systems:
 
@@ -331,6 +334,7 @@ Sometimes it's about how you organize data teams.
 
 Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
+* [PRQL](https://prql-lang.org) - a more modern, pipelined SQL dialect with native Clickhouse and other support
 
 ### Streaming Flows / Data Connectors
 
@@ -429,6 +433,11 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [Are You Sure You Want to Use MMAP?](https://db.cs.cmu.edu/papers/2022/cidr2022-p13-crotty.pdf) - a review of performance and correctness issues with use of MMAP in DBMSes
 
 [Conbench](https://conbench.ursa.dev) is a Continuous Benchmarking tool.
+
+Programming Langauges/DSLs/etc.:
+* Mojo - Chris Lattner's new language for fast AI/ML based on Python
+* [Halide](https://github.com/halide/Halide) is a neat language for image/array processing that has a unique way of specifying how low-level operations should be parallelized and optimized (a spec for How) while separating out the what, without needing users to get into super ugly SIMD/GPU code.  Kind of like faster crate in Rust.
+* [Taichi](https://github.com/taichi-dev/taichi?tab=readme-ov-file) - "parallel programming language for high-performance numerical computation" based on Python
 
 ## Misc, Documentation, Etc
 

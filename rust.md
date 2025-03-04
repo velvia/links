@@ -115,7 +115,7 @@ Specific topics:
 * [Default Values for Maintainability](https://cj.rs//blog/rust-default-values-for-maintainability/) - short and easy guide
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
-* [Async Rust can be a Pleasure to Work with](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/) - great post on "structured concurrency" and thread-per-core as alternatives to standard work-stealing tasks
+* [Async Rust can be a Pleasure to Work with](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/) - or, how to do Async Rust without Send+Sync...  great post on "structured concurrency" and thread-per-core as alternatives to standard work-stealing tasks
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * Book: [Rust Atomics and Locks](https://marabos.nl/atomics/)
 * [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
@@ -258,6 +258,7 @@ Languages etc.
 * [Rust Parallelism for non C/C++ Devs](https://medium.com/nearprotocol/rust-parallelism-for-non-c-c-developers-ec23f48b7e56) - great resource on the low-level primitives like `Mutex` and `RwLock`
 * [Coping with Mutable State in Multiple Threads](https://medium.com/@KevinHoffman/coping-with-mutable-state-in-multiple-threads-with-rust-9059c83b6c01)
 * [Fearless Concurrency with Hazard Pointers](http://ticki.github.io/blog/fearless-concurrency-with-hazard-pointers/) - using the `conc` crate and `Atomic` which implements hazard pointers for fine-grained and safe protection of readers and garbage
+* [Spinlocks Considered Harmful](https://matklad.github.io/2020/01/02/spinlocks-considered-harmful.html) - why OS-based Mutexes are better than spinlocks in almost all scenarios, but especially in the worst case
 * [Tasks are the Wrong Abstraction](https://blog.yoshuawuyts.com/tasks-are-the-wrong-abstraction/) - on having unified, better APIs for concurrency and parallelism decoupling, by Yoshua Wuyts
 * [Pin](https://without.boats/blog/pin/) - A detailed treatise of `Pin` references in Rust, the history of how Pin came to be, and why its hard to use
 
@@ -315,6 +316,8 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Tonbo](https://github.com/tonbo-io/tonbo) - embedded database based on Arrow and Parquet
 * [Sanakirja](https://pijul.org/posts/2021-02-06-rethinking-sanakirja/) - a transactional KV DB engine/local store, claims to be fastest around
 * [Sled](https://github.com/spacejam/sled) - an embedded database engine using latch-free Bw-tree on latch-free page cache techniques for speed
+  * [Marble](https://github.com/komora-io/marble) - Sled's next gen disk-based object store with GC, basis for database storage
+  * [Komora](https://github.com/komora-io) - other related small crates for building databases
 * [SlateDB](https://github.com/slatedb/slatedb) - embedded LSM object storage engine plus caching layer.  Seems pretty promising.
 * [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 * [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
