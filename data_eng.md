@@ -139,6 +139,7 @@ Some good intro resources:
 * [Hermes Protocol](https://hermes-protocol.com) - "A fast, fault-tolerant & linearizable replication protocol"
 * [Read-Write Quorum Systems Made Practical](https://mwhittaker.github.io/publications/quoracle.pdf) - is majority quorum always needed? Tradeoffs and how to achieve lower latency with different quorum configs
 * [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
+* [CRAQ](https://timilearning.com/posts/mit-6.824/lecture-9-craq/) - Chain Replication with Apportioned Queries - allowing reads on multiple replicas along the chain to increase read bandwidth while maintaining advantages of chained replication
 * DataDog's article on using [formal modeling and lightweight simulations](https://www.datadoghq.com/blog/engineering/formal-modeling-and-simulation/) to verify the correctness of a new distributed system.  Really neat process.
 
 * [Making CRDTs Byzantine Fault Tolerant](https://martin.kleppmann.com/papers/bft-crdt-papoc22.pdf) - really interesting
@@ -212,9 +213,11 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 
 * [Adaptive Radix Trees](http://www-db.in.tum.de/~leis/papers/ART.pdf) - cache friendly indexing for in-memory databases
     - [Java implementation](https://github.com/rohansuri/adaptive-radix-tree/blob/master/README.md)
+    - [Rust congee](https://crates.io/crates/congee) - Concurrent ART based on Optimistic Lock Coupling
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
 * [PH-Tree](https://github.com/tzaeschke/phtree/raw/master/PH-Tree-v1.1-2014-06-28.pdf) - A (spatial?) Patricia-trie combined with Hypercubes for multidimensional indexing and efficient data storage
 * [Prolly Trees](https://docs.dolthub.com/architecture/storage-engine/prolly-tree) - "Probabilistic B-Tree" with fast diffs and structural sharing.  Good for versioning and immutable maps where minimizing space across versions is important.
+* [Optimistic Lock Coupling](http://sites.computer.org/debull/A19mar/p73.pdf) - scalable and efficient general-purpose synchronization by using a version counter and checking after reads
 
 * [Counting Quotient Filters](https://blog.acolyer.org/2017/08/08/a-general-purpose-counting-filter-making-every-bit-count/) - much faster at updating and search than Bloom filters, and can count too!  An [implementation in C](https://github.com/vedantk/quotient-filter) exists.
 * [Moment-based Quantile Sketches](http://www.bailis.org/papers/moments-vldb2018.pdf) - a paper out of Stanford offering highly efficient alternative to T-Digests for quantile sketches.  Also [repo](https://github.com/stanford-futuredata/momentsketch)

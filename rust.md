@@ -277,7 +277,7 @@ Sometimes one needs to share a large data structure across threads and several o
 
 The most general way to share a data structure is to use `Arc<RwLock<...>>` or `Arc<Mutex<...>>`.  The `Arc` keeps track of lifetimes and lets different threads exist for different lengths of time, and is inexpensive since it is usually only accessed once at thread spawn.  The `Mutex` or `RwLock` lets different threads mutate it safely, assuming the data structure is not thread-safe.
 
-A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.
+A thread-safe data structure could be used in place of the `RwLock` or `Mutex`.  See the data structures section.
 
 [Scoped threads](https://docs.rs/crossbeam/0.7.2/crossbeam/thread/index.html) could be used if only one owner will mutate the data structure, and one wants to share immutable refs with other threads for reading.  However, the special threads in Crossbeam crate are still needed as Rustc by itself has no way of proving the lifetime of a thread or when it will be joined, thus any immutable refs created from the owner thread still cannot compile or be shared due to rustc lifetime checks.  Scoped threads are a way around that as it gives rustc a guarantee that the threads will be joined before the owner goes away.
 
@@ -352,6 +352,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
   - What's neat about its API is that instead of locking at bucket level, and blocking inserts if a reader is taking too long, it never returns references to data and relies on an atomic API
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
 * [flashmap](https://docs.rs/flashmap/0.1.0/flashmap/) - lock free, partially wait free, eventually consistent concurrent hash map
+* [congee](https://crates.io/crates/congee) - Concurrent Adaptive Radix Tree based on Optimistic Lock Coupling
 * [flurry](https://docs.rs/flurry/0.4.0/flurry/) - Rust impl of Java's ConcurrentHashMap.  Uses seize for ref-count-based GC.
 * [im](https://docs.rs/im/latest/im/) - Immutable data structures for Rust
   - WARNING: `im::HashMap` seems to allocate way too much memory than needed.
