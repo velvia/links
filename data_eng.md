@@ -63,6 +63,7 @@
 
 * [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
 * [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc.  Super convenient, now used everywhere.
+* [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
@@ -78,13 +79,13 @@
 A good [Map of incremental and streaming systems](https://scattered-thoughts.net/writing/an-opinionated-map-of-incremental-and-streaming-systems/) - organizing different systems in an ontology.
 
 * [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
+* [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the [NAIAD](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf) paper
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
 * [Aurora DSQL Architecture](https://brooker.co.za/blog/2024/12/04/inside-dsql.html) - really good look at Amazon's architecture to scale out compute, read and write throughput, and storage independently for an ACID OLTP database.  They push simple compute out to edges!
 
-* [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 - [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
 
@@ -420,6 +421,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
 
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
+* [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.
 * [Zion - Columnar Compression Without Columns](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.

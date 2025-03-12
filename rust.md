@@ -296,6 +296,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
+* [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - another stream processing framework, streaming SQL and Rust pipelines!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
