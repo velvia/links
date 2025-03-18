@@ -69,3 +69,12 @@ Unfortunately including all your years and dirs in your Amazon sync dir would pr
 BackBlaze B2 is a great cloud object store service with incredibly cost-effective storage, cheaper than S3.  RClone has built-in support, so you can just configure and setup your B2 storage bucket and do:
 
     rclone sync -v --include '2020/*/*/select/**' --include '2020/*/ALBUMS/**' --include '2020*' --transfers 32 /Volumes/ChanPhotos1/Photos/ b2-evan:Velvia-PhotosPrivate/
+
+## Other Random Photo Links
+
+Other random photography tech links:
+
+- [CLIfm](https://github.com/leo-arch/clifm?tab=readme-ov-file) - a text CLI for file management with image preview
+- [Better Finder Attribute](https://www.publicspace.net/ABetterFinderAttributes/) - OSX app to make Finder browsing and changing of photo attributes like date metadata easier
+- [LSIX](https://github.com/hackerb9/lsix) - image preview for modern terminals, including iTerm2 for Mac.
+- [nnn](https://github.com/jarun/nnn/tree/master) - very fast Text UI file manager with image preview
