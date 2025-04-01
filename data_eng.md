@@ -71,6 +71,7 @@
 * [EdgeDB](https://www.edgedb.com) - PostGres extension with EdgeQL, a succinct query language for much more concise common query patterns that would otherwise need subqueries
 
 * [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
+* [The Escrow Transaction Method](https://ics.uci.edu/~cs223/papers/p405-o_neil.pdf) - a general method of allowing concurrent accesses alongside long-lived transactions for certain kinds of updates. Has a great summary of similar work.
 
 * [Pessimistic Cardinality Estimation](https://arxiv.org/pdf/2412.00642) - estimating query costs or upper bound on query output
 
@@ -142,6 +143,7 @@ Some good intro resources:
 * [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
 * [CRAQ](https://timilearning.com/posts/mit-6.824/lecture-9-craq/) - Chain Replication with Apportioned Queries - allowing reads on multiple replicas along the chain to increase read bandwidth while maintaining advantages of chained replication
 * DataDog's article on using [formal modeling and lightweight simulations](https://www.datadoghq.com/blog/engineering/formal-modeling-and-simulation/) to verify the correctness of a new distributed system.  Really neat process.
+* [Performal](https://dl.acm.org/doi/10.1145/3591235) - a novel methodology that leverages the recent advances in formal verification to provide rigorous latency guarantees for real, complex distributed systems
 
 * [Making CRDTs Byzantine Fault Tolerant](https://martin.kleppmann.com/papers/bft-crdt-papoc22.pdf) - really interesting
 
@@ -216,6 +218,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
     - [Java implementation](https://github.com/rohansuri/adaptive-radix-tree/blob/master/README.md)
     - [Rust congee](https://crates.io/crates/congee) - Concurrent ART based on Optimistic Lock Coupling
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
+* [Arena-friendly Hash Trie](https://nullprogram.com/blog/2023/09/30/) - hash map design for arenas: easy to implement, good for arenas (based on tries, no need for resizing)
 * [PH-Tree](https://github.com/tzaeschke/phtree/raw/master/PH-Tree-v1.1-2014-06-28.pdf) - A (spatial?) Patricia-trie combined with Hypercubes for multidimensional indexing and efficient data storage
 * [Prolly Trees](https://docs.dolthub.com/architecture/storage-engine/prolly-tree) - "Probabilistic B-Tree" with fast diffs and structural sharing.  Good for versioning and immutable maps where minimizing space across versions is important.
 * [Optimistic Lock Coupling](http://sites.computer.org/debull/A19mar/p73.pdf) - scalable and efficient general-purpose synchronization by using a version counter and checking after reads
@@ -266,11 +269,14 @@ Interesting data structures from the blockchain world:
 * [HiPlot](https://github.com/facebookresearch/hiplot) - High-dimensional data plotting
 
 * [The Case for Rho Calculus in AI](https://hackernoon.com/the-case-for-rho-calculus-in-ai) - fascinating look at how Rho Calculus (code vs data vs computation, and the use of computation to morph or alter code, thus altering behavior based on introspection) is important for AI, and how concurrent computation (eg mobile devices) affects things
+* [The Coming Technological Singularity: How to Survive in the Post-Human Era](https://ntrs.nasa.gov/citations/19940022856) - seminal paper by NASA scientists on the coming of super-human intelligent systems
+* [The TESCREAL Bundle: Eugenics and the Promise of Utopia](https://firstmonday.org/ojs/index.php/fm/article/view/13636/11599) - dire warning from esteemed AI researchers Timnit Gebru about the search for AGi.  Is it ethical?  Should it even be pursued?  What about documented harms, marginalizing people groups, plagiarism, racism, and many other problems?  IMPORTANT read.
 
 ### Graph ML
 
 * [Node Embeddings for Beginners](https://towardsdatascience.com/node-embeddings-for-beginners-554ab1625d98#:~:text=Node%20embeddings%20are%20a%20way,in%20machine%20learning%20prediction%20tasks) - How can we do ML on Graphs?  Turning graphs into vectors for ML
 * [Graph Intelligence](https://gradientflow.com/what-is-graph-intelligence/) - a good summary of graph ML stack, technologies, and approaches from Ben Lorica.  It's interesting that companies are leveraging big data platforms and bypassing graph DBs to lower cost and reuse existing investments.
+* [Graph Outlook 2025](https://blog.derwen.ai/graph-technologies-outlook-in-2025-bea621f394d8) - great summary from Paco Nathan on AI and Graph technologies for 2025
 
 ### Time Series ML
 
