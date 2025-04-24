@@ -439,6 +439,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 ### GPUs
 
 * [GPU Computing with Rust using CUDA](https://rust-gpu.github.io/Rust-CUDA/guide/getting_started.html)
+* [CubeCL](https://github.com/tracel-ai/cubecl) - write GPU kernels in Rust, abstracts over CUDA plus WGPU and others.
 
 ## Rust and Scala/Java
 
