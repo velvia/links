@@ -64,6 +64,7 @@
 * [Immudb](https://github.com/codenotary/immudb?utm_source=gradientflow&utm_medium=newsletter&utm_campaign=issue36) - an "Immutable Database" that tracks every change/transaction ever done, and allows retrieving a history of any key. Like a log + merkle tree.
 * [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc.  Super convenient, now used everywhere.
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
+* [Haystack](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) - Facebook's photo storage object sytem, storing metadata in memory to avoid the infamous metadata bottleneck
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
@@ -81,7 +82,9 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 
 * [Procella](https://blog.acolyer.org/2019/09/11/procella/) - Google's new super-low-latency distributed SQL query engine to conquer all other query systems, using an innovative new columnar format
 * [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
+* [StarRocks](https://github.com/StarRocks/StarRocks) - "Worlds Fastest Open Query Engine" - another Clickhouse like DB, has a "shared mode" to work on top of cloud object storage / Iceberg etc.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the [NAIAD](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf) paper
+  * related [DBSP](https://www.vldb.org/pvldb/vol16/p1601-budiu.pdf) paper also by Frank McSherry.  Precisely defines Incremental View Maintenance (IVM) and a streaming language DBSP for computing IVMs
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
@@ -202,6 +205,7 @@ Blockchain has many detractors and critiques.  [Why NFTs are bad](https://antsst
 * [Kubernetes Liveness and Readiness Probes](https://blog.colinbreck.com/kubernetes-liveness-and-readiness-probes-how-to-avoid-shooting-yourself-in-the-foot/) - how to avoid shooting yourself in the foot
 * [Armada - Running Millions of Batch Jobs on K8s](https://www.gresearch.co.uk/article/armada-how-to-run-millions-of-batch-jobs-over-thousands-of-compute-nodes-using-kubernetes/)
 * [Garage](https://garagehq.deuxfleurs.fr) - S3 compatible distributed storage solution, like Minio but supposedly faster
+* [SeaweedFS](https://github.com/seaweedfs/seaweedfs) - another S3 compatible distributed file system/object store, good for storing tons of large or small files.  Can be used in datacenter with tiering to cloud object stores.  No single point of failure.  Based on Facebook Haystack.
 * [Colima](https://github.com/abiosoft/colima) - MacOS based container runtime, could be a good alternative to Docker runtime
 
 * [Scaphandre](https://github.com/hubblo-org/scaphandre) - Metrics agent for collecting power consumption metrics!
