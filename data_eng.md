@@ -65,6 +65,7 @@
 * [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database.  Like H2/SQLite etc.  Super convenient, now used everywhere.
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Haystack](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) - Facebook's photo storage object sytem, storing metadata in memory to avoid the infamous metadata bottleneck
+* [Monarch](https://research.google/pubs/monarch-googles-planet-scale-in-memory-time-series-database/) - Google's planet-scale availability-first telemetry system
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
@@ -406,6 +407,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Hastic](https://hastic.io) - Anomaly detection plugin for Grafana/TSDBs
 * [Static Code Analysis for Log Parsing](https://medium.com/palantir/using-static-code-analysis-to-improve-log-parsing-18f0d1843965) - turning unstructured to structured logs
 * [Canopy](https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf?) - Facebook's End to End Tracing and Analysis System
+* [Monarch](https://research.google/pubs/monarch-googles-planet-scale-in-memory-time-series-database/) - Google's planet-scale availability-first telemetry system
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
 * [FluentBit](https://fluentbit.io) - CNCF standard for observability data connector/processor/forwarder
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
