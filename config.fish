@@ -47,6 +47,10 @@ end
 eval (/opt/homebrew/bin/brew shellenv)
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
+# export SSH_AUTH_SOCK to LaunchAgents so GUI apps see it
+set -gx SSH_AUTH_SOCK $SSH_AUTH_SOCK
+launchctl setenv SSH_AUTH_SOCK $SSH_AUTH_SOCK
+
 zoxide init fish | source
 
 alias subl3="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
