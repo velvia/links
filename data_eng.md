@@ -69,10 +69,12 @@
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
+* [Mooncake](https://www.mooncake.dev) - PG extension that stores your data on Iceberg and uses DuckDB + PG caching of Parquet metadata to accelerate OLAP queries.
 * [YugabyteDB](https://www.yugabyte.com) - Another Postgres compatible distributed SQL database
 * [EdgeDB](https://www.edgedb.com) - PostGres extension with EdgeQL, a succinct query language for much more concise common query patterns that would otherwise need subqueries
 
 * [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
+* [HTAP is Dead](https://www.mooncake.dev/blog/htap-is-dead) -
 * [The Escrow Transaction Method](https://ics.uci.edu/~cs223/papers/p405-o_neil.pdf) - a general method of allowing concurrent accesses alongside long-lived transactions for certain kinds of updates. Has a great summary of similar work.
 
 * [Pessimistic Cardinality Estimation](https://arxiv.org/pdf/2412.00642) - estimating query costs or upper bound on query output
@@ -86,6 +88,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 * [StarRocks](https://github.com/StarRocks/StarRocks) - "Worlds Fastest Open Query Engine" - another Clickhouse like DB, has a "shared mode" to work on top of cloud object storage / Iceberg etc.
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust, based on the [NAIAD](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf) paper
   * related [DBSP](https://www.vldb.org/pvldb/vol16/p1601-budiu.pdf) paper also by Frank McSherry.  Precisely defines Incremental View Maintenance (IVM) and a streaming language DBSP for computing IVMs
+  * [Pathway](https://toptracing.com/post/cm5awn7q8001l6qz8wdgqom1p/pathway-a-python-etl-framework-for-stream-processing-real-time-analytics-llm-pipelines-and-rag) - Python ETL framework for stream and batch based on differential dataflow
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated

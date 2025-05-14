@@ -292,6 +292,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
   - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
+  * [Pathway](https://toptracing.com/post/cm5awn7q8001l6qz8wdgqom1p/pathway-a-python-etl-framework-for-stream-processing-real-time-analytics-llm-pipelines-and-rag) - Python ETL framework for stream and batch based on differential dataflow
 * [Hydroflow](https://github.com/hydro-project/hydroflow) - a brand new Rust based optimized streaming dataflow engine, relational data, based on very advanced UCBerkeley research on optimization.
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
