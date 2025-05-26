@@ -6,6 +6,7 @@
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
   - [Databases](#databases)
   - [Data Processing Systems](#data-processing-systems)
+    - [DataLakes, Data Warehouses, Lakehouses](#datalakes-data-warehouses-lakehouses)
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
     - [BlockChain Systems](#blockchain-systems)
@@ -104,6 +105,11 @@ Interesting domain-specific systems:
 * [Lifestream](https://dl.acm.org/doi/pdf/10.1145/3445814.3446725) - a stream-processing system built for single-node, hospital/ICU environments
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [Sneller](https://github.com/SnellerInc/sneller) - SQL for JSON at scale, using Zion as its backing format.  AVX512 assembly based.
+
+### DataLakes, Data Warehouses, Lakehouses
+
+* [Amoro](https://github.com/apache/amoro) - "Lakehouse management system" with catalog service, support for mixed streaming and batch modes, Flink, Spark, Hive, Trino, multiple formats
+* [Polaris](https://github.com/apache/polaris) - REST table catalog for Apache Iceberg
 
 ## Graph Processing and storage
 
