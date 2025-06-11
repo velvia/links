@@ -270,6 +270,7 @@ Languages etc.
 
 * Use [mio](https://crates.io/crates/mio) if you want a lower-level event loop, or [thin_main_loop](https://crates.io/crates/thin_main_loop)
 * [monoio](https://github.com/bytedance/monoio) - Very fast thread-per-core async I/O Rust runtime, based on io_uring etc.  Much faster at top end than Tokio, for servers
+* [fork_union](https://github.com/ashvardanian/fork_union?tab=readme-ov-file) - more efficient take on MPP- or SIMT-style concurrency, or SIMD style, where we want many similar tasks done in parallel.
 
 ### Shared Data Across Multiple Threads
 

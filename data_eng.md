@@ -110,6 +110,8 @@ Interesting domain-specific systems:
 
 * [Amoro](https://github.com/apache/amoro) - "Lakehouse management system" with catalog service, support for mixed streaming and batch modes, Flink, Spark, Hive, Trino, multiple formats
 * [Polaris](https://github.com/apache/polaris) - REST table catalog for Apache Iceberg
+* [ice](https://github.com/Altinity/ice/tree/master) - CLI tools for Iceberg from Altinity (Clickhouse community)
+  - Includes a [ice-rest-catalog](https://github.com/Altinity/ice/tree/master/ice-rest-catalog) - really simple catalog based on K8s etcd
 
 ## Graph Processing and storage
 
