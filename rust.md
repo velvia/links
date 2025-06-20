@@ -462,6 +462,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
   - There are older posts too: [Wrapping Rust Types as Python classes](https://depth-first.com/articles/2020/08/03/wrapping-rust-types-as-python-classes/) and [RustyPy](https://github.com/iduartgomez/rustypy/wiki/Rust-in-Python) but they are much more work than PyO3
 * [PyOxidizer](https://pyoxidizer.readthedocs.io/en/stable/) - a Rust tool to package Python apps, interpreter, and all dependencies as a single binary, by wrapping app in a Rust program with a custom Rust Py module importer.  Also helps embed Python code in Rust apps.
 * [Oh no, my data science is getting Rusty!](https://www.crowdstrike.com/blog/data-science-test-drive-of-rust-programming-language/) - neat post from CrowdStrike on integrating Rust with Python for improved performance AND safety
+* [RustPython](https://github.com/RustPython/RustPython) is promising.  Includes a JIT!  Also native Rust/Python integration, without needing PyO3/Maturin.
 
 ### Rust-OtherLanguage Integration / Rust FFI
 
@@ -560,6 +561,7 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [Cheap Tricks - Rust Performance](https://deterministic.space/high-performance-rust.html) - set of quick Cargo settings to try
 * [How to Write Fast Rust Code](https://likebike.com/posts/How_To_Write_Fast_Rust_Code.html) - really good guide
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
+* [Hard Mode Rust](https://matklad.github.io/2022/10/06/hard-mode-rust.html) - writing a ray-tracer with pre-allocated chunk of memory.  Really neat, may be useful.
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Rust Match vs Lookup](https://kevinlynagh.com/notes/match-vs-lookup/) - remember that rustc heavily optimizes matches.  Just rely on match!

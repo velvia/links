@@ -112,6 +112,7 @@ Interesting domain-specific systems:
 * [Polaris](https://github.com/apache/polaris) - REST table catalog for Apache Iceberg
 * [ice](https://github.com/Altinity/ice/tree/master) - CLI tools for Iceberg from Altinity (Clickhouse community)
   - Includes a [ice-rest-catalog](https://github.com/Altinity/ice/tree/master/ice-rest-catalog) - really simple catalog based on K8s etcd
+* [DuckLake](https://duckdb.org/2025/05/27/ducklake.html) - idea from DuckDB to put both Iceberg table metadata AND the catalog metadata all into the SQL database.  Very early stage, something to watch.
 
 ## Graph Processing and storage
 
@@ -158,7 +159,9 @@ Some good intro resources:
 * [Compartmentalized MultiPaxos](https://mwhittaker.github.io/publications/compartmentalized_paxos.pdf)
 * [CRAQ](https://timilearning.com/posts/mit-6.824/lecture-9-craq/) - Chain Replication with Apportioned Queries - allowing reads on multiple replicas along the chain to increase read bandwidth while maintaining advantages of chained replication
 * DataDog's article on using [formal modeling and lightweight simulations](https://www.datadoghq.com/blog/engineering/formal-modeling-and-simulation/) to verify the correctness of a new distributed system.  Really neat process.
+
 * [Performal](https://dl.acm.org/doi/10.1145/3591235) - a novel methodology that leverages the recent advances in formal verification to provide rigorous latency guarantees for real, complex distributed systems
+* [P-language](https://p-org.github.io/P/whatisP/) - language for distributed systems formal verification, kind of like TLA+
 
 * [Making CRDTs Byzantine Fault Tolerant](https://martin.kleppmann.com/papers/bft-crdt-papoc22.pdf) - really interesting
 
