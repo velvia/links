@@ -355,6 +355,7 @@ Data organization, versioning, abstractions, frameworks, workflow/process tools
 * [kube-batch](https://github.com/kubernetes-sigs/kube-batch) - advanced batch job scheduler for Kubernetes, multi-tenant
 
 * [owl-data-sanitizer](https://towardsdatascience.com/introducing-a-new-pysparks-library-owl-data-sanitizer-bcc46e1583e6) - PySpark based data quality/validation library, featuring YAML/SQL-based configurable data rules and error/data comparison reports generation
+* [Locust](https://locust.io) - Python-based load testing tool
 
 * [Herbie](https://herbie.uwplse.org) is a tool to help find/fix inaccurate floating point expressions
 
@@ -364,6 +365,11 @@ Sometimes it's about how you organize data teams.
 Interesting development:
 * [Enso](https://enso.org/language) -- a new graphical language running on GraalVM tying together data workflows, Python, R, Java?
 * [PRQL](https://prql-lang.org) - a more modern, pipelined SQL dialect with native Clickhouse and other support
+
+### Synthetic data generation tools
+
+* [SDV](https://docs.sdv.dev/sdv) - Python library, "one-stop shop" for creating synthetic data
+* [dbldatagen](https://github.com/databrickslabs/dbldatagen) - Databricks Labs project for Spark/DataBricks based synthetic data generation
 
 ### Streaming Flows / Data Connectors
 

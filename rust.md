@@ -4,6 +4,9 @@
 
 - [Getting Started with Rust](#getting-started-with-rust)
 - [Some links on Rust](#some-links-on-rust)
+  - [Async Links](#async-links)
+  - [Types, Traits, Iterators, Structs](#types-traits-iterators-structs)
+  - [Other random Rust Links](#other-random-rust-links)
 - [Borrowing and Lifetime Tricks](#borrowing-and-lifetime-tricks)
 - [Macros](#macros)
 - [Cool Rust Projects](#cool-rust-projects)
@@ -86,7 +89,8 @@ Online resources and help:
 * [Learning Rust](https://quinedot.github.io/rust-learning/index.html) - a very detailed treatise on borrowing, ownership, `dyn Trait` and trait objects
 * [In Rust, Ordinary Vectors are Values](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/) - about why persistent collections are not quite as useful in Rust, because Rust already prevents shared mutation
 * [Shared Mutability in Rust: Acyclic Graphs](https://andrewjpritchard.medium.com/shared-mutability-in-rust-3f92155ddbf7) - really good article on mutable child entities, and how to share things which need to be mutable (hint: don't, instead use an "arena" pattern where a single owner mutates things)
-* [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
+* [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
+
 
 * [The Evolution of Rust Programmers](http://antoyo.ml/evolution-rust-programmer) - hilarious look at different coding styles
 * [Fireflowers: Rust in the words of its Practitioners](https://brson.github.io/fireflowers/) - just brilliant commentary on what Rust is.
@@ -97,6 +101,7 @@ Online resources and help:
 * [Prefer Rust over C/C++](http://cliffle.com/blog/prefer-rust/) - when to and when not to prefer Rust
 * [Moving from C to Rust](https://www.flocknetworks.com/moving-from-c-to-rust/)
   - [C2Rust and Quake](https://immunant.com/blog/2020/01/quake3/) - a tool to auto translate C to Rust!
+* [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
 * [Clear Explanation of Rust's Module System](http://www.sheshbabu.com/posts/rust-module-system/) - easy intro guide
 * [On Rusts Module System](https://gist.github.com/DanielKeep/470f4e114d28cd0c8d43) - good explanation of paths, naming, modules -- see this when compiler complains about cannot find symbols
 * [Null The Billion Dollar Mistake and how Rust Provides a Solution](https://piyushagarwal.hashnode.dev/null-the-billion-dollar-mistake-and-how-rust-provides-a-solution?source=personalized-newsletter&source-id=2023-07-27)
@@ -110,41 +115,44 @@ learning curve of ownership.
 
 See the [Guide to Strings](http://doc.rust-lang.org/guide-strings.html) for some help.
 
-Specific topics:
-* [Rust conversion reference](http://carols10cents.github.io/rust-conversion-reference/)
-* [Default Values for Maintainability](https://cj.rs//blog/rust-default-values-for-maintainability/) - short and easy guide
+### Async Links
 * [Async Rust](https://thomashartmann.dev/blog/async-rust/) - A really concise and great intro to async/await
 * [Async Rust: Futures, Tasks, Wakers; Oh My!](https://msarmi9.github.io/posts/async-rust/) - another great concise intro, starting with basic async concepts/syntax and diving into details about Wakers and the Future mechanism
 * [Async Rust can be a Pleasure to Work with](https://emschwartz.me/async-rust-can-be-a-pleasure-to-work-with-without-send-sync-static/) - or, how to do Async Rust without Send+Sync...  great post on "structured concurrency" and thread-per-core as alternatives to standard work-stealing tasks
 * [Rust Async is Colored](https://morestina.net/blog/1686/rust-async-is-colored) - great deep dive into async vs sync, connecting the two worlds, and implications
 * Book: [Rust Atomics and Locks](https://marabos.nl/atomics/)
-* [Shared/Exclusive Refs, not Mutable/Immutable](https://docs.rs/dtolnay/latest/dtolnay/macro._02__reference_types.html) - excellent explanation from @dtolnay on thinking about `&mut T` as exclusive, not immutable.  Also explaining interior mutability and `RefCell` etc. - and why they allow `&self` safely while providing mutation.
+
+### Types, Traits, Iterators, Structs
+* [Default Values for Maintainability](https://cj.rs//blog/rust-default-values-for-maintainability/) - short and easy guide
 * [Ultimate Guide to Rust NewTypes](https://www.howtocodeit.com/articles/ultimate-guide-rust-newtypes) - great guide to the `struct Foo(InnerType)` pattern
 * [Elegant library APIs in Rust](https://deterministic.space/elegant-apis-in-rust.html) - lots of good tips here
-* [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
-* [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Generics and Associated Types](https://blog.thomasheartman.com/posts/on-generics-and-associated-types) - when to use each one
 * [Defeating Coherence in Rust Traits](https://willcrichton.net/notes/defeating-coherence-rust/) - How to implement multiple different methods of the same name for traits
+* [Alternative Blanket Impls for Rust Traits](https://www.greyblake.com/blog/alternative-blanket-implementations-for-single-rust-trait/)
+
+* [Effectively using Iterators in Rust](https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html) - on differences between `iter()`, `into_iter()`, types, etc.
 * [Returning Iterators](https://depth-first.com/articles/2020/06/22/returning-rust-iterators/) - really helpful article, this is not easy
   - [Recursive Iterators in Rust](https://fasterthanli.me/articles/recursive-iterators-rust) - yelch, using Box
   - [Internal-iterator](https://docs.rs/internal-iterator/0.1.1/internal_iterator/) - a potentially better solution for easily implementing some iterators
   - [propane](https://github.com/withoutboats/propane) - Creating iterators via generator/yield API
 * [Generic Return Types in Rust](https://blog.jcoglan.com/2019/04/22/generic-returns-in-rust/) - deep dive into `Iterator.collect()`, traits, and Rust's type system
-* [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
-* [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 * [Rust TypeState Pattern](http://cliffle.com/blog/rust-typestate/)
 * [Pretty State Machines in Rust](https://hoverbear.org/blog/rust-state-machine-pattern/) - great article on diff state machine patterns, use of enums and structs
 * [Init Struct Pattern](https://xaeroxe.github.io/init-struct-pattern/) - on patterns for initializing struct
 * [How to do named function arguments](https://elastio.github.io/bon/blog/how-to-do-named-function-arguments-in-rust)
 * [In-place construction Seems Surprisingly Simple?](https://blog.yoshuawuyts.com/in-place-construction-seems-surprisingly-simple/) - avoiding a move when constructing new structs, and using `MaybeUninit` instead
 * [COW, Rust vs C++](https://oribenshir.github.io/afternoon_rusting/blog/copy-on-write) - great dive into details of copy-on-write. Might be a great pattern for working with things like strings, where cloning might be expensive.
-* [Stacked Borrows](https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html) - a deep dive into the mental model behind Rust's borrow checker and tools like Miri
+
+### Other random Rust Links
+* [Rust-san](https://github.com/japaric/rust-san/blob/master/README.md) - sanitizers for Rust code, if the basic compiler checks are not enough  :)
+* [Colorized Rust backtraces](https://github.com/athre0z/color-backtrace). :)
 * [Unsafe Code Guidelines](https://github.com/rust-lang/unsafe-code-guidelines/tree/master)
 * [Tools for Verifying Unsafe Rust Code](https://blog.colinbreck.com/making-unsafe-rust-a-little-safer-tools-for-verifying-unsafe-code/) - covers built in sanitizers, Miri, and even how to lint C/C++ code
 * [Magical Zero-Sized Types and Proofs](https://www.hardmo.de/article/2021-03-14-zst-proof-types.md) - for type masochists
 * [Structural Typing in Rust](https://beachape.com/blog/2021/05/25/structural-typing-in-rust/) - HLists, ability to use path-based and shape/signature based trait typing instead of by name
 * [How Rust Solved Dependency Hell](https://stephencoakley.com/2019/04/24/how-rust-solved-dependency-hell) - neat look at what's underneath Cargo to help solve dep issues.  Rustc can handle multiple versions of a dependency.
 * [How to Create a Custom Allocator](https://www.brochweb.com/blog/post/how-to-create-a-custom-memory-allocator-in-rust/)
+* [Rain's Rust CLI Guide](https://rust-cli-recommendations.sunshowers.io) - how to write and organize Rust CLI apps
 
 * [Cacao: Building macOS/iOS Apps in Rust](https://rymc.io/blog/2021/cacao-rs-macos-ios-rust/)
 
@@ -155,6 +163,9 @@ If you need to borrow multiple items mutably from a Vec/array/SmallVec/etc.:
 * You can use [split_at_mut()](https://docs.rs/smallvec/1.10.0/smallvec/struct.SmallVec.html#method.split_at_mut) but this is clumsy
 * [Arref](https://docs.rs/arref/latest/arref/) gives a great solution
 * There is a nightly [get_many_mut()](https://doc.rust-lang.org/core/primitive.slice.html#method.get_many_mut) API
+
+* [Stacked Borrows](https://www.ralfj.de/blog/2018/11/16/stacked-borrows-implementation.html) - a deep dive into the mental model behind Rust's borrow checker and tools like Miri
+* [Jon Gjengset on Rust Lifetime Annotations](https://www.youtube.com/watch?v=rAl-9HwD858#action=share) - actually check out his Youtube channel, lots of great tutorials
 
 If you have a Trait with an associated type that must deal with lifetimes:
 https://stackoverflow.com/questions/33734640/how-do-i-specify-lifetime-parameters-in-an-associated-type
@@ -173,7 +184,6 @@ I started writing Rust macros and it is not only lots of fun, but pretty essenti
 Some crates that may help write macros:
 * [spez](https://crates.io/crates/spez) - match and specialize on the type of an expression.  "A trick to do specialization in non-generic contexts on stable Rust"
 * [concat-ident](https://crates.io/crates/concat-idents) - macro to concat multiple identifiers etc. and use the result, perhaps as a struct or method name. Very useful in macros
-
 
 ## Cool Rust Projects
 
@@ -361,6 +371,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
   - WARNING: `im::HashMap` seems to allocate way too much memory than needed.
 * [immutable-chunkmap](https://github.com/estokes/immutable-chunkmap) - another immutable persistent map
 * [slice_deque](https://docs.rs/slice-deque/0.3.0/slice_deque/) - A really clever Ringbuffer implementation that uses mmap and virtual pages to allow one to treat ranges of the buffer as slices!
+* [chute](https://crates.io/crates/chute) - lock-free MPMC/SPMC broadcast queue
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [orx-split-vec](https://crates.io/crates/orx-split-vec) - vector with dynamic capacity and pinned elements using chunks (ie pointers/refs are stable)
