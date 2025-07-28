@@ -110,6 +110,7 @@ Interesting domain-specific systems:
 
 * [Amoro](https://github.com/apache/amoro) - "Lakehouse management system" with catalog service, support for mixed streaming and batch modes, Flink, Spark, Hive, Trino, multiple formats
 * [Polaris](https://github.com/apache/polaris) - REST table catalog for Apache Iceberg
+  - A really cool [Polaris benchmarking framework](https://www.dremio.com/blog/benchmarking-framework-for-the-apache-iceberg-catalog-polaris/) gives more confidence in Polaris
 * [ice](https://github.com/Altinity/ice/tree/master) - CLI tools for Iceberg from Altinity (Clickhouse community)
   - Includes a [ice-rest-catalog](https://github.com/Altinity/ice/tree/master/ice-rest-catalog) - really simple catalog based on K8s etcd
 * [DuckLake](https://duckdb.org/2025/05/27/ducklake.html) - idea from DuckDB to put both Iceberg table metadata AND the catalog metadata all into the SQL database.  Very early stage, something to watch.
@@ -452,6 +453,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
 * [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
 
+* [FastLanes File Format](https://github.com/cwida/FastLanes/blob/dev/docs/specification.pdf) - excellent new columnar file format, SIMD/GPU friendly, combines cascading LightWeight Compression, Multi-Column Compression, and a novel operator-based "expression encoding" scheme
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
 * [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
@@ -461,6 +463,10 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 
 * [Context-Tree Weighting](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.109.1872&rep=rep1&type=pdf) - a technique for data compression and graph/tree representation.  Warning, paper is very dense.
+
+Some interesting new traditional serialization projects:
+* [Apache Fory](https://fory.apache.org/docs/docs/introduction/)
+* []
 
 ## I/O and Performance
 

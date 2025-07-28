@@ -310,6 +310,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
+* [Iggy](https://iggy.apache.org) - new Apache project for ultra efficient persistent queueing/messaging
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - another stream processing framework, streaming SQL and Rust pipelines!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
@@ -504,6 +505,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * [EVCXR](https://github.com/google/evcxr/tree/master/evcxr_repl) - a Rust REPL!!!  With deps, and tab-completion for methods!!
 * [comby-rust](https://github.com/huitseeker/comby-rust) - rewrite Rust code using comby
 * [rustviz](https://github.com/rustviz/rustviz) - Visualize borrowing and ownership!
+* [Stacksafe](https://fast.github.io/blog/stacksafe-taming-recursion-in-rust-without-stack-overflow/) - crate to transform your recursive functions to prevent stack overflow
 * [no-panics-whatsoever](https://crates.io/crates/no-panics-whatsoever) - crate to detect and ensure at compile time there aren't panics in your code
 * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) - what's taking up space in my Rust binary
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
