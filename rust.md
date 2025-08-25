@@ -216,6 +216,7 @@ CLI tools:
 * [Hyperfine](https://github.com/sharkdp/hyperfine/blob/master/README.md) - Rust performance benchmarking CLI
 * [Alacritty](https://github.com/alacritty/alacritty/blob/master/README.md) - GPU accelerated terminal emulator
 * [jql](https://crates.io/crates/jql/2.5.0) - Rust version of popular `jq` JSON CLI processor, though not as powerful
+* [thoth](https://github.com/anitnilay20/thoth) - From my coworker!  Text UI tool to view very large JSON/NDJSON files!
 * [rq](https://github.com/dflemstr/rq) - a Record Query/Transform tool, translate CSV, Avro, CBOR, Json etc etc to and from each other
 * [htmlq](https://github.com/mgdm/htmlq) - like jq but for HTML
 * [Starship](https://starship.rs) - "The minimal, blazing-fast, and infinitely customizable prompt for any shell!"
@@ -339,6 +340,8 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
 * [TerminusDB-store](https://github.com/terminusdb/terminusdb-store) - a Rust RDF triple data store
 * [BonsaiDB](https://bonsaidb.io) - NoSQL document store written in Rust with Rust schemas
+
+* [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
 
 * [Vector](https://github.com/vectordotdev/vector) - high performance observability data pipeline, for transforming, aggregating, routing logs, metrics, traces, etc.
   - includes a [Vector Remap Language](https://vector.dev/docs/reference/vrl/) for general transformation
