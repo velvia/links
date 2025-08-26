@@ -14,6 +14,7 @@
 - [Rust Concurrency](#rust-concurrency)
   - [Shared Data Across Multiple Threads](#shared-data-across-multiple-threads)
 - [Data Processing and Data Structures](#data-processing-and-data-structures)
+  - [ML/AI](#mlai)
   - [JSON Processing](#json-processing)
   - [Cool Data Structures](#cool-data-structures)
   - [Geospatial and Graph](#geospatial-and-graph)
@@ -301,8 +302,6 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 
 ## Data Processing and Data Structures
 
-* [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
-  - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
 * [Timely Dataflow](https://github.com/TimelyDataflow/timely-dataflow) - distributed data-parallel compute engine in Rust!!!
   * [Pathway](https://toptracing.com/post/cm5awn7q8001l6qz8wdgqom1p/pathway-a-python-etl-framework-for-stream-processing-real-time-analytics-llm-pipelines-and-rag) - Python ETL framework for stream and batch based on differential dataflow
 * [Hydroflow](https://github.com/hydro-project/hydroflow) - a brand new Rust based optimized streaming dataflow engine, relational data, based on very advanced UCBerkeley research on optimization.
@@ -353,6 +352,19 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
 * [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
+
+### ML/AI
+
+Note that pretty much all these crates have standard Tensor support.
+
+* [Are we learning yet?](http://www.arewelearningyet.com) - list of ML Rust crates
+  - [Linfa](https://github.com/rust-ml/linfa) - Rust ML framework
+* [Burn](https://burn.dev) - deep learning and AI framework, written entirely in Rust, with advanced multiple backends, LibTorch/WGPU/CubeCL etc, kernel fusion, and more!  Heavyweight though.
+* [Candle](https://github.com/huggingface/candle?tab=readme-ov-file) - minimalist ML framework from Huggingface, CUDA support
+* [Candle-einops](https://github.com/tomsanbear/candle-einops) - Einstein Operations on tensors... it's like a declarative shortcut for Matrix rearrangement
+
+* [arrayfire](https://crates.io/crates/arrayfire) - parallel computing library, supports CUDA, OpenCL; focused more on signal processing (FFTs, convolutions, etc.)
+* []
 
 ### JSON Processing
 
