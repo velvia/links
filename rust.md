@@ -389,6 +389,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [slice_deque](https://docs.rs/slice-deque/0.3.0/slice_deque/) - A really clever Ringbuffer implementation that uses mmap and virtual pages to allow one to treat ranges of the buffer as slices!
 * [chute](https://crates.io/crates/chute) - lock-free MPMC/SPMC broadcast queue
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
+* [entropy-map](https://crates.io/crates/entropy-map) - "ultra-low-latency" hashmap using minimal perfect hash functions and compact encoding of values.  Might be useful in databases and data processing.  Does not need to know keys at compile time!
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [orx-split-vec](https://crates.io/crates/orx-split-vec) - vector with dynamic capacity and pinned elements using chunks (ie pointers/refs are stable)
 * [radix-trie](https://crates.io/crates/radix_trie)
@@ -647,7 +648,8 @@ Note: this section is mostly about profiling tools -- detailed breakdowns of bot
 
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
-* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- this is now the easiest way to get a FlameGraph on OSX and profile your Rust binaries.  To make it work with bench and Criterion:
+* [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  Quite good, but you need Firefox or Chrome as your browser, and unlike flamegraph, does not need xctrace / Instruments.
+* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- good but on newer versions you now need Xctrace/Xcode fully installed.  To make it work with bench and Criterion:
     - First run `cargo bench` to build your bench executable
     - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
     - `sudo flamegraph target/release/bench-aba573ea464f3f67 --profile-time 180 <filter> --bench` (replace bench-aba* with the name of your bench executable)
@@ -659,7 +661,6 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
   - Note that you can now just install [cargo instruments](https://github.com/cmyr/cargo-instruments)
   - Also useful for heap/memory analysis, including tracking retained vs transient allocations
 * [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
-* [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  WIP.
 * [Iai](https://github.com/bheisler/iai) - a one-shot Rust profiler that uses Valgrind underneath
 * [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
 * [Rust Profiling with DTrace and FlameGraphs on OSX](http://carol-nichols.com/2017/04/20/rust-profiling-with-dtrace-on-osx/) - probably the best bet (besides Instruments), can handle any native executable too
@@ -825,15 +826,32 @@ Some non-enum crates that can also help:
 
 ### SIMD
 
+SIMD in Rust has progressed much in the last few years.  While `std::simd` is still not stable (as of Sept 2025), there are multiple crates with stable Rust support for SIMD primitives.
+
+* [wide](https://docs.rs/wide/0.7.33/wide/) - great support, both ARM NEON and Intel, though this crate actually doesn't have the widest types, like only u64x4.
+* [simd_aligned](https://crates.io/crates/simd_aligned) and [simd_aligned_rust](https://github.com/ralfbiedert/simd_aligned_rust) - work with SIMD and packed_simd using vectors and matrices which have guaranteed alignment.  Uses wide underneath, with EASY API access to raw SIMD types.
+* [pulp](https://docs.rs/pulp/latest/pulp/#traits) - both auto and manual vectorization with runtime dispatch
+* [rten-simd](https://docs.rs/rten-simd/0.21.0/rten_simd) - Another stable Rust SIMD crate, must implement a SimdOp trait
+* [faster](https://github.com/AdamNiederer/faster) - "SIMD for Humans" -- probably my favorite one, very high level translation of numeric map loops into SIMD.  x86 support only, no ARM.  Best for working with regular slices and iterators.
+* [aligned-vec](https://crates.io/crates/aligned-vec) - AVec type, like Vec but with specified alignment
+* [safe-arch](https://crates.io/crates/safe_arch) - Not a cross-platform nor end user crate, more like slightly easier to use/read intrinsics but still architecture dependent versions of stuff in arch::*...
+
+More specialized SIMD libraries, more for math/linear algebra:
+* [nalgebra](https://nalgebra.rs) - Linear algebra/matrix library with SIMD support, sparse matrix support even
+* [faer](https://crates.io/crates/faer) - Another SIMD enabled linear algebra/matrix library
+* [simdly](https://crates.io/crates/simdly) - SIMD crate for math ops like cos, etc.
+
+Not SIMD, but still useful:
+* [ndarray](https://docs.rs/ndarray/0.16.1/ndarray/) - optimal memory layout multi-dimensional arrays, with parallelization
+
+---- Older stuff ----
+
 There is this great article on [Towards fearless SIMD](https://raphlinus.github.io/rust/simd/2018/10/19/fearless-simd.html), about why SIMD is hard, and how to make it easier.   Along with pointers to many interesting crates doing SIMD.  (There is a built in crate, `std::simd` but it is really lacking) (However, [packed_simd](https://crates.io/crates/packed_simd) will soon be merged into it)
 
 Another great article: [learning simd with rust by finding planets](https://medium.com/@razican/learning-simd-with-rust-by-finding-planets-b85ccfb724c3) is great too. simd is really about parallelism.  it is better to do multiple operations in a parallel (vertical) fashion, vector on vector, than to do horizontal operations where the different components of a wide register depend on one another.
 
-* [ssimd](https://crates.io/crates/ssimd) - an effort to bring std::simd/packed_simd to Rust stable, with auto vectorization (meaning auto detect and implement code paths and fallbacks for when SIMD not available!)
-* [faster](https://github.com/AdamNiederer/faster) - "SIMD for Humans" -- probably my favorite one, very high level translation of numeric map loops into SIMD
 * [fearless_simd](https://github.com/raphlinus/fearless_simd), the blog post author's crate.  Runtime CPU detection and use of the most optimal code, no need for unsafe, but only focused on f32.
 * [SIMDeez](https://github.com/jackmott/simdeez) - abstracts intrinsic SIMD instructions over different instruction sets & vector widths, runtime detection
-* [simd_aligned](https://crates.io/crates/simd_aligned) and [simd_aligned_rust](https://github.com/ralfbiedert/simd_aligned_rust) - work with SIMD and packed_simd using vectors which have guaranteed alignment
 * [aligned](https://docs.rs/aligned/0.3.2/aligned/) - newtype with byte alignment, for stack or heap!
 
 * https://www.rustsim.org/blog/2020/03/23/simd-aosoa-in-nalgebra/
