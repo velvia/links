@@ -321,6 +321,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
 * [Bagua](https://github.com/BaguaSys/bagua) - distributed learning/training framework, the very fast communication core is written in Rust
 * [Similari](https://crates.io/crates/similari) - similarity search/computation engine for ML in Rust
+* [GreptimeDB](https://github.com/GreptimeTeam/greptimedb) - Rust based unified observability database
 
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
@@ -349,9 +350,13 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 
 * [plotters](https://github.com/plotters-rs/plotters) - Rust data visualization / graphing library
+* [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
+
+### Distributed Systems
+
+* [hydro](https://hydro.run) - a super exciting project out of Berkeley, "correct and performant distributed systems" with consensus and other distributed primitives, ways of writing code at high level so abstracts away RPC calls, and plans for DST (deterministic simulation testing).  Amazing.
 * [Stateright](https://github.com/stateright/stateright) - distributed protocol/model checker with UI, linearizability checker!
 * [Clepsydra](https://crates.io/crates/clepsydra) - Graydon Hoare working on distributed database protocol - in Rust!
-* [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
 
 ### ML/AI
 
@@ -407,6 +412,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 * [Easy Persistent Data Structures in Rust](https://medium.com/swlh/easy-persistent-data-structures-in-rust-b58334aeaf0a) - replacing `Box` with `Rc`
 * [VecMap](https://contain-rs.github.io/vec-map/vec_map/) - map for small integer keys, may use less space
+* [sharded-vec-writer](https://crates.io/crates/sharded-vec-writer) - parallelized initialization of Vecs, might be useful for large Vec
 
 ### Geospatial and Graph
 
@@ -590,6 +596,7 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [Cheap Tricks - Rust Performance](https://deterministic.space/high-performance-rust.html) - set of quick Cargo settings to try
 * [How to Write Fast Rust Code](https://likebike.com/posts/How_To_Write_Fast_Rust_Code.html) - really good guide
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
+* [Wild Performance Tricks](https://davidlattimore.github.io/posts/2025/09/02/rustforge-wild-performance-tricks.html) - Rust linker perf tricks, including parallel Vec initialization and drop tricks
 * [Hard Mode Rust](https://matklad.github.io/2022/10/06/hard-mode-rust.html) - writing a ray-tracer with pre-allocated chunk of memory.  Really neat, may be useful.
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
