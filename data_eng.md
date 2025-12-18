@@ -108,12 +108,14 @@ Interesting domain-specific systems:
 
 ### DataLakes, Data Warehouses, Lakehouses
 
+* [Mooncake](https://www.mooncake.dev/whitepaper/) - real-time layer with Arrow ingestion buffers + indexing on top of Iceberg
 * [Amoro](https://github.com/apache/amoro) - "Lakehouse management system" with catalog service, support for mixed streaming and batch modes, Flink, Spark, Hive, Trino, multiple formats
 * [Polaris](https://github.com/apache/polaris) - REST table catalog for Apache Iceberg
   - A really cool [Polaris benchmarking framework](https://www.dremio.com/blog/benchmarking-framework-for-the-apache-iceberg-catalog-polaris/) gives more confidence in Polaris
 * [ice](https://github.com/Altinity/ice/tree/master) - CLI tools for Iceberg from Altinity (Clickhouse community)
   - Includes a [ice-rest-catalog](https://github.com/Altinity/ice/tree/master/ice-rest-catalog) - really simple catalog based on K8s etcd
 * [DuckLake](https://duckdb.org/2025/05/27/ducklake.html) - idea from DuckDB to put both Iceberg table metadata AND the catalog metadata all into the SQL database.  Very early stage, something to watch.
+  - [DuckLake-Datafusion](https://github.com/hotdata-dev/datafusion-ducklake) integration!
 
 ## Graph Processing and storage
 
@@ -456,6 +458,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [FastLanes File Format](https://github.com/cwida/FastLanes/blob/dev/docs/specification.pdf) - excellent new columnar file format, SIMD/GPU friendly, combines cascading LightWeight Compression, Multi-Column Compression, and a novel operator-based "expression encoding" scheme
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
 * [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
+* [F3](https://dl.acm.org/doi/pdf/10.1145/3749163) - a new "forwards compatible" columnar format from Andy Pavlo et al, featuring WASM decoders and improvements over Parquet for row grouping and deeply nested layout
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.
 * [Zion - Columnar Compression Without Columns](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.

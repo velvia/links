@@ -307,6 +307,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Hydroflow](https://github.com/hydro-project/hydroflow) - a brand new Rust based optimized streaming dataflow engine, relational data, based on very advanced UCBerkeley research on optimization.
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
+  - DataFusion has integrations with many other projects. [Ducklake-Datafusion](https://github.com/hotdata-dev/datafusion-ducklake) is an example of integrating with DuckDB's DuckLake data lake catalog.
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
@@ -319,6 +320,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Cube Store](https://cube.dev/blog/introducing-cubestore/) - Rust and Arrow/DataFusion-based rollup/aggregation/cache layer for SQL datastores, too bad it's mostly for JS
 * [Noria](https://github.com/mit-pdos/noria) - "data-flow for high-performance web apps" - basically a materialized view cache that updates in real time as database data updates
 * [polars](https://github.com/pola-rs/polars) - super fast and high level DataFrame implementation for both Rust and Python, much faster and higher level than using Arrow itself
+* [RustFrames](https://crates.io/crates/RustFrames) - Pandas like dataframe library rewritten from ground up with SIMD etc.
 * [Bagua](https://github.com/BaguaSys/bagua) - distributed learning/training framework, the very fast communication core is written in Rust
 * [Similari](https://crates.io/crates/similari) - similarity search/computation engine for ML in Rust
 * [GreptimeDB](https://github.com/GreptimeTeam/greptimedb) - Rust based unified observability database
@@ -342,6 +344,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [BonsaiDB](https://bonsaidb.io) - NoSQL document store written in Rust with Rust schemas
 
 * [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
+* [F3](https://github.com/future-file-format/F3) - An extensible "better Parquet" with WASM decoders. From Andy Pavlo.
 
 * [Vector](https://github.com/vectordotdev/vector) - high performance observability data pipeline, for transforming, aggregating, routing logs, metrics, traces, etc.
   - includes a [Vector Remap Language](https://vector.dev/docs/reference/vrl/) for general transformation
@@ -656,17 +659,18 @@ Note: this section is mostly about profiling tools -- detailed breakdowns of bot
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
 * [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  Quite good, but you need Firefox or Chrome as your browser, and unlike flamegraph, does not need xctrace / Instruments.
-* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- good but on newer versions you now need Xctrace/Xcode fully installed.  To make it work with bench and Criterion:
-    - First run `cargo bench` to build your bench executable
+* [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- good and easy but on newer versions you now need Xctrace/Xcode fully installed.  To make it work with bench and Criterion:
     - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
-    - `sudo flamegraph target/release/bench-aba573ea464f3f67 --profile-time 180 <filter> --bench` (replace bench-aba* with the name of your bench executable)
-      + The `--profile-time` is needed for flamegraph to collect enough stats
+    - `cargo flamegraph --bench my_benchmark -- --bench <benchmark_filter> --profile-time 200`
     - `open -a Safari flamegraph.svg`
     - NOTE: you need to turn on `debug = true` in release profile for symbols
     - This method works better for apps than small benchmarks btw, as inlined methods won't show up in the graph.
 * [Rust Profiling with Instruments on OSX](http://carol-nichols.com/2015/12/09/rust-profiling-on-osx-cpu-time/) - but apparently cannot export CSV to FlameGraph :(
   - Note that you can now just install [cargo instruments](https://github.com/cmyr/cargo-instruments)
   - Also useful for heap/memory analysis, including tracking retained vs transient allocations
+  - cargo instruments is really nice in that it can do per-thread/CPU analysis, show CPU
+    balance problems, and show CPU cycles vs just time elapsed.  Also, if you run with `RUSTFLAGS="-C debuginfo=2" cargo instruments` then it will compile all dependencies with debuginfo=2 and give very detailed inlined breakdowns, super useful for benchmarking optimized code.
+  - Beware that -t time profile shows separate per-thread timings, not aggregated across threads.  -t "CPU Profiler" is more useful in this regard.
 * [Rust Performance: Perf and Flamegraph](https://blog.anp.lol/rust/2016/07/24/profiling-rust-perf-flamegraph/) - including finding hot assembly instructions
 * [Iai](https://github.com/bheisler/iai) - a one-shot Rust profiler that uses Valgrind underneath
 * [Top-down Microarchitecture Analysis Method](https://easyperf.net/blog/2019/02/09/Top-Down-performance-analysis-methodology) - TMAM is a formal microprocessor perf analysis method from Intel, works with perf to find out what CPU-level bottlenecks are (mem IO? branch predictions? etc.)
