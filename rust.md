@@ -352,6 +352,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 * [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 
+* [polyglot](https://github.com/tobilg/polyglot) - SQL transpiler crate, can transpile between 32 SQL dialects
 * [plotters](https://github.com/plotters-rs/plotters) - Rust data visualization / graphing library
 * [crepe](https://crates.io/crates/crepe) - Datalog, declarative logic programs as macros in Rust
 
@@ -385,6 +386,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 ### Cool Data Structures
 
+* [bf-tree](https://github.com/microsoft/bf-tree) - innovative new "read-write optimized concurrent larger-than-memory range index".  2.5x faster than RocksDB for scan, 6x faster for writes, 2x faster for point lookups.  The [paper](https://badrish.net/papers/bftree-vldb2024.pdf) is also pretty good.
 * [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops.
   - What's neat about its API is that instead of locking at bucket level, and blocking inserts if a reader is taking too long, it never returns references to data and relies on an atomic API
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.

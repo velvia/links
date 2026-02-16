@@ -77,6 +77,7 @@
 * [Databases in 2024: A Year in Review](https://www.cs.cmu.edu/~pavlo/blog/2025/01/2024-databases-retrospective.html) - really good summary of the landscape from Andy Pavlo
 * [HTAP is Dead](https://www.mooncake.dev/blog/htap-is-dead) -
 * [The Escrow Transaction Method](https://ics.uci.edu/~cs223/papers/p405-o_neil.pdf) - a general method of allowing concurrent accesses alongside long-lived transactions for certain kinds of updates. Has a great summary of similar work.
+* [Tensor Query Processor](https://www.vldb.org/pvldb/vol19/p141-sen.pdf) - a VLDB2025 paper about using tensor cores (GPUs) to speed up traditional analytical processing, including using fast inter-GPU interconnects to speed up shuffles.
 
 * [Pessimistic Cardinality Estimation](https://arxiv.org/pdf/2412.00642) - estimating query costs or upper bound on query output
 
@@ -273,7 +274,7 @@ Interesting data structures from the blockchain world:
 * [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
 * [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
 
-## ML and Data Science
+## ML AI and Data Science
 
 * [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
@@ -291,6 +292,7 @@ Interesting data structures from the blockchain world:
 * [HiPlot](https://github.com/facebookresearch/hiplot) - High-dimensional data plotting
 
 * [The Case for Rho Calculus in AI](https://hackernoon.com/the-case-for-rho-calculus-in-ai) - fascinating look at how Rho Calculus (code vs data vs computation, and the use of computation to morph or alter code, thus altering behavior based on introspection) is important for AI, and how concurrent computation (eg mobile devices) affects things
+* [Ontologies, Context Graphs, Semantic Layers: AI needs in 2026](https://metadataweekly.substack.com/p/ontologies-context-graphs-and-semantic) - an argument that ontologies and context graphs are needed for AI to really be able to reason deeply, to discover the why's and not just compute what's
 * [The Coming Technological Singularity: How to Survive in the Post-Human Era](https://ntrs.nasa.gov/citations/19940022856) - seminal paper by NASA scientists on the coming of super-human intelligent systems
 * [The TESCREAL Bundle: Eugenics and the Promise of Utopia](https://firstmonday.org/ojs/index.php/fm/article/view/13636/11599) - dire warning from esteemed AI researchers Timnit Gebru about the search for AGi.  Is it ethical?  Should it even be pursued?  What about documented harms, marginalizing people groups, plagiarism, racism, and many other problems?  IMPORTANT read.
 
@@ -462,6 +464,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.
 * [Zion - Columnar Compression Without Columns](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
+* [Lite3](https://lite3.io) - JSON encoded as zero-copy, "mutable" BTree.
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
 * [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 
