@@ -186,6 +186,10 @@ Some crates that may help write macros:
 * [spez](https://crates.io/crates/spez) - match and specialize on the type of an expression.  "A trick to do specialization in non-generic contexts on stable Rust"
 * [concat-ident](https://crates.io/crates/concat-idents) - macro to concat multiple identifiers etc. and use the result, perhaps as a struct or method name. Very useful in macros
 
+Some cool Macro crates:
+* [cada](https://codeberg.org/dpp/cada#the-solution) - Scala for comprehensions for Rust
+* [assert2](https://crates.io/crates/assert2) - excellent ergonomic test asserts
+
 ## Cool Rust Projects
 
 NOTE: there's a separate section for Data-related projects.
@@ -387,6 +391,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 ### Cool Data Structures
 
 * [bf-tree](https://github.com/microsoft/bf-tree) - innovative new "read-write optimized concurrent larger-than-memory range index".  2.5x faster than RocksDB for scan, 6x faster for writes, 2x faster for point lookups.  The [paper](https://badrish.net/papers/bftree-vldb2024.pdf) is also pretty good.
+* [masstree](https://github.com/consistent-milk12/masstree) - high performance concurrent ordered map, based on the Masstree paper
 * [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops.
   - What's neat about its API is that instead of locking at bucket level, and blocking inserts if a reader is taking too long, it never returns references to data and relies on an atomic API
 * [concread](https://docs.rs/concread/0.2.14/concread/index.html) - Concurrently Readable (Copy on Write, MVCC) datastructures - "allow multiple readers with transactions to proceed while single writers can operate" - guaranteeing readers same version.  There is a hashmap and ARCache.
@@ -435,11 +440,12 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 Rust has native UTF8 string processing, which is AWESOME for performance.  However, there are two concerns usually:
 
-1. Small string memory efficiency.  The native `String` type uses at least two words just for pointer and length/cap, which might be longer than the string itself;
+1. Small string memory efficiency.  The native `String` type uses 24 bytes for pointer/capacity/length, which might be longer than the string itself;
 2. Minimizing number of heap allocations
 
 Here are some solutions:
 * [String](https://docs.rs/string/0.2.1/string/) - string type with configurable byte storage, including stack byte arrays!
+* [compact_str](https://crates.io/crates/compact_str) - up to 24 inline string chars, expandable on heap. Exact same API as regular string, drop-in replacement.
 * [Inlinable String](http://fitzgen.github.io/inlinable_string/inlinable_string/index.html) - stores strings up to 30 chars inline, automatic promotion to heap string if needed.
 * [flexstr](https://github.com/nu11ptr/flexstr) - Enum String type to unify literals, inlined, and heap strings
 * [kstring](https://docs.rs/kstring/0.1.0/kstring/) - intended for map keys: immutable, inlined for small keys, and have Ref/Cow types to allow efficient sharing.  :)
@@ -604,12 +610,14 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [Wild Performance Tricks](https://davidlattimore.github.io/posts/2025/09/02/rustforge-wild-performance-tricks.html) - Rust linker perf tricks, including parallel Vec initialization and drop tricks
 * [Hard Mode Rust](https://matklad.github.io/2022/10/06/hard-mode-rust.html) - writing a ray-tracer with pre-allocated chunk of memory.  Really neat, may be useful.
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
+* [Allocating Unused Memory, malloc and mmap](https://quickwit.io/blog/performance-investigation) - how tuning `M_MMAP_THRESHOLD` and `M_TRIM_THRESHOLD` are important for Linux glibc and reducing mmap calls
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
 * [Rust Match vs Lookup](https://kevinlynagh.com/notes/match-vs-lookup/) - remember that rustc heavily optimizes matches.  Just rely on match!
 * [Deep Dive into Dynamic Dispatch](https://medium.com/digitalfrontiers/rust-dynamic-dispatching-deep-dive-236a5896e49b) - great details and perf comparison
 * [Rust to Assembly](https://www.eventhelix.com/rust/) - great series of blog posts detailing how various parts of Rust compile down to assembly
 * [Fast Thread Locals in Rust](https://matklad.github.io/2020/10/03/fast-thread-locals-in-rust.html)
   - BTW, a super efficient thread local crate is [scoped-tls](https://docs.rs/scoped-tls/latest/scoped_tls/) - basically just storing a mutable pointer.  If it fits your use case, it's awesome!
+* []
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
   - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
@@ -660,6 +668,19 @@ Note: this section is mostly about profiling tools -- detailed breakdowns of bot
 
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
+On Linux:
+```
+cargo export target/bench -- bench
+
+perf record -F 1000 -m 8M --aio -z --call-graph dwarf,32768 target/bench/rbench_riddle
+```
+
+INFO
+To avoid broken stack traces with perf lower the kernel parameter perf_event_paranoid to -1. Note that setting this parameter like this will reset it after reboot:
+```
+echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid
+```
+
 * [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  Quite good, but you need Firefox or Chrome as your browser, and unlike flamegraph, does not need xctrace / Instruments.
 * [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- good and easy but on newer versions you now need Xctrace/Xcode fully installed.  To make it work with bench and Criterion:
     - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
@@ -688,6 +709,7 @@ NEW: I've created a Docker image for [Linux perf profiling](https://github.com/v
 * [cargo-profiler](https://github.com/kernelmachine/cargo-profiler) - only works in Linux :(
 
 * [coz](https://github.com/plasma-umass/coz) and its Cargo plugin, [coz-rs](https://github.com/alexcrichton/coz-rs)  -- "a new kind of profiler that unlocks optimization opportunities missed by traditional profilers. Coz employs a novel technique we call causal profiling that measures optimization potential"
+* [binggan](https://github.com/PSeitz/binggan) - small perf measurement crate, Linux perf counters, peak memory usage, and more
 * [Rust Perf Book Profiling Page](https://nnethercote.github.io/perf-book/profiling.html) - lots of good links
 * [Divan](https://crates.io/crates/divan) - easy macro to benchmark functions
 

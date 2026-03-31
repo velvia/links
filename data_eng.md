@@ -95,6 +95,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
 * [Aurora DSQL Architecture](https://brooker.co.za/blog/2024/12/04/inside-dsql.html) - really good look at Amazon's architecture to scale out compute, read and write throughput, and storage independently for an ACID OLTP database.  They push simple compute out to edges!
+* [Decoupled by Design: Billion-Scale Vector Search](https://www.databricks.com/blog/decoupled-design-billion-scale-vector-search) - a brilliant look at DataBricks' decoupled storage-compute vector search, using IVF rather than HNSW indexing.
 
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 - [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
