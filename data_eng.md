@@ -16,12 +16,13 @@
   - [Algorithms](#algorithms)
     - [String Processing](#string-processing)
   - [OLAP, Aggregation](#olap-aggregation)
-  - [ML and Data Science](#ml-and-data-science)
+  - [ML AI and Data Science](#ml-ai-and-data-science)
     - [Graph ML](#graph-ml)
     - [Time Series ML](#time-series-ml)
     - [Pattern Matching](#pattern-matching)
     - [Python/Pandas](#pythonpandas)
   - [Data Engineering](#data-engineering)
+    - [Synthetic data generation tools](#synthetic-data-generation-tools)
     - [Streaming Flows / Data Connectors](#streaming-flows--data-connectors)
     - [Geospatial / NearestNeighbor](#geospatial--nearestneighbor)
     - [Unstructured data](#unstructured-data)
@@ -29,6 +30,8 @@
   - [Telemetry, Time Series, Tracing, Logging](#telemetry-time-series-tracing-logging)
   - [Compression, Data Storage](#compression-data-storage)
   - [I/O and Performance](#io-and-performance)
+    - [Memory and HUGETLB](#memory-and-hugetlb)
+  - [Programming Langauges/DSLs/etc.](#programming-langaugesdslsetc)
   - [Misc, Documentation, Etc](#misc-documentation-etc)
   - [Data Justice](#data-justice)
 
@@ -277,6 +280,8 @@ Interesting data structures from the blockchain world:
 
 ## ML AI and Data Science
 
+* [claw-code](https://github.com/instructkr/claw-code) - Port of Claude Code, dev/rust branch has Rust implementation of Claude Code
+
 * [Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) - beautiful and a quick read, using D3 animation
 * [LearnDS](http://learnds.com) - A set of IPython notebooks for learning data science
 * [Machine Learning for developers](http://xyclade.github.io/MachineLearning/)
@@ -481,10 +486,26 @@ Some interesting new traditional serialization projects:
 * [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
 * [Diskplorer](https://github.com/scylladb/diskplorer) - a tool for doing load testing on disks, graphing IOPS vs bandwidth and latency.  With lots of great graphs on different types of hardware and cloud setups.
 * [Are You Sure You Want to Use MMAP?](https://db.cs.cmu.edu/papers/2022/cidr2022-p13-crotty.pdf) - a review of performance and correctness issues with use of MMAP in DBMSes
+* [I/O uring for High Performance DBMSes](https://arxiv.org/pdf/2512.04859v1) - good overview of various optimizations, but this study is focused on traditional DBMSes with 4KB page buffers, and many optimizations are not really usable.   IOPOLL for example requires specific block device access, not really usable from containers.  SQPOLL turns out to not really have any effect in my Arrow based testing.
+* [One Million IOPS using io_uring](https://lancedb.com/blog/one-million-iops#solution-2-io_uring) - Oriented around lots of small 4KB (vector search) reads.  Important takeaway though is that without improving scheduling and concurrency io_uring by itself is useless.
+* [Neon IO Stack: Rust+tokio+io_uring O_DIRECT](https://www.p99conf.io/session/reworking-the-neon-io-stack-rusttokioio_uringo_direct/)
 
 [Conbench](https://conbench.ursa.dev) is a Continuous Benchmarking tool.
 
-Programming Langauges/DSLs/etc.:
+### Memory and HUGETLB
+
+It's not enough to have fast I/O.  You have to have memory pages to which you can write fresh data - and getting pages and waiting for Linux kernel to zero-initialize these pages is often MUCH slower than the actual I/O!!   The default page size given to you is 4KB, and the TLB has very limited space, a super small table for these 4KB pages. The solution is to use huge pages - 2MB or 1GB.   HUGETLB is the way to go - reserved number of huge pages at startup, guaranteed from mmap/allocation time.  In my tests it speeds up initialization and memcpy by 30-40% compared to regular pages, and you reduce the number of page faults by 512x or (512)^2.
+
+You can configure HUGETLB in multiple ways but you might need to talk to CGROUPs directly or set this in the host if you are running natively.  Also note that your app has to specifically request huge pages via mmap, not the regular malloc allocator.
+* [HugeTLB Pages](https://www.kernel.org/doc/html/latest/admin-guide/mm/hugetlbpage.html) - probably the most comprehensive kernel guide
+* [Huge Pages](https://serapheim.substack.com/p/huge-pages) - A great guide to virtual memory, paging, TLBs, and huge pages
+
+Getting HUGETLB to work inside k8s containers is challenging.  It might not be enough to set k8s manifest, as k8s implementations might not set cgroups properly.  Here are some posts:
+* [K8s - Manage HugePages](https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/)
+* [Huge Page config for Postgres](https://thebuild.com/blog/2026/04/24/huge-pages-end-to-end/) - and why you want HUGETLB not THP
+* [Getting hugepages to work with Kubernetes unofficially](https://www.chandergovind.org/blog/5122/karthikai/Getting-hugepages-to-work-with-kubernetes-unofficially.html) - using init container to write cgroup config directly.
+
+## Programming Langauges/DSLs/etc.
 * Mojo - Chris Lattner's new language for fast AI/ML based on Python
 * [Halide](https://github.com/halide/Halide) is a neat language for image/array processing that has a unique way of specifying how low-level operations should be parallelized and optimized (a spec for How) while separating out the what, without needing users to get into super ugly SIMD/GPU code.  Kind of like faster crate in Rust.
 * [Taichi](https://github.com/taichi-dev/taichi?tab=readme-ov-file) - "parallel programming language for high-performance numerical computation" based on Python

@@ -376,6 +376,7 @@ Note that pretty much all these crates have standard Tensor support.
 * [Candle](https://github.com/huggingface/candle?tab=readme-ov-file) - minimalist ML framework from Huggingface, CUDA support
 * [Candle-einops](https://github.com/tomsanbear/candle-einops) - Einstein Operations on tensors... it's like a declarative shortcut for Matrix rearrangement
 
+* [claw-code](https://github.com/instructkr/claw-code) - Port of Claude Code, dev/rust branch has Rust implementation of Claude Code
 * [arrayfire](https://crates.io/crates/arrayfire) - parallel computing library, supports CUDA, OpenCL; focused more on signal processing (FFTs, convolutions, etc.)
 * []
 
@@ -621,6 +622,7 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
   - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
+* [Neon IO Stack: Rust+tokio+io_uring O_DIRECT](https://www.p99conf.io/session/reworking-the-neon-io-stack-rusttokioio_uringo_direct/)
 
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
