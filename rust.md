@@ -312,10 +312,11 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) - a Rust query engine which is part of Apache Arrow!
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
   - DataFusion has integrations with many other projects. [Ducklake-Datafusion](https://github.com/hotdata-dev/datafusion-ducklake) is an example of integrating with DuckDB's DuckLake data lake catalog.
+  - Check out [datafusion_functions_nested](https://crates.io/crates/datafusion-functions-nested) for extra DataFusion functions/UDFs for working with nested structures like MapColumns
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
-* [Iggy](https://iggy.apache.org) - new Apache project for ultra efficient persistent queueing/messaging
+* [Iggy](https://iggy.apache.org) - new Apache project for ultra efficient persistent queueing/messaging - io_uring, thread per core design
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - another stream processing framework, streaming SQL and Rust pipelines!
 * [Weld](https://github.com/weld-project/weld) - Stanford's high-performance runtime for data analytics
 * [Cleora](https://www.linkedin.com/pulse/how-we-handle-billion-scale-graph-data-you-can-too-jacek-dąbrowski) - Super fast Rust tool for billion-scale hypergraph vector embedding ML
@@ -569,6 +570,7 @@ split-debuginfo = "unpacked"
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
 
+* [hegel-rust](https://github.com/hegeldev/hegel-rust) - another property testing crate
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
 * [Cargo-nextest](https://nexte.st/index.html) looks like a really good project to help with test organization, test CI, running tests faster, etc.
 * [rstest](https://crates.io/crates/rstest) - Fixture based test framework.  Think of being able to inject arguments into a test function.  Setup and teardown can be built into fixtures.

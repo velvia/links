@@ -5,6 +5,7 @@
 - [Data Engineering, Databases, Data Structures, ML/DS](#data-engineering-databases-data-structures-mlds)
   - [Indexing, Pagecache, Storage Engines](#indexing-pagecache-storage-engines)
   - [Databases](#databases)
+    - [AI and Agentic Databases](#ai-and-agentic-databases)
   - [Data Processing Systems](#data-processing-systems)
     - [DataLakes, Data Warehouses, Lakehouses](#datalakes-data-warehouses-lakehouses)
   - [Graph Processing and storage](#graph-processing-and-storage)
@@ -83,6 +84,10 @@
 * [Tensor Query Processor](https://www.vldb.org/pvldb/vol19/p141-sen.pdf) - a VLDB2025 paper about using tensor cores (GPUs) to speed up traditional analytical processing, including using fast inter-GPU interconnects to speed up shuffles.
 
 * [Pessimistic Cardinality Estimation](https://arxiv.org/pdf/2412.00642) - estimating query costs or upper bound on query output
+
+### AI and Agentic Databases
+
+* [BrainStore: Architecture for AI Observability](https://www.braintrust.dev/blog/brainstore-architecture) - neat post on what makes AI observability hard and why a new type of database is needed
 
 ## Data Processing Systems
 
@@ -449,6 +454,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
 * [How Scalyr Works](https://www.scalyr.com/help/how-scalyr-works) talks about log pre-aggregation using a 60 second buffer, and
 * [Searching 1.5TB/Sec](https://www.scalyr.com/blog/searching-1tb-sec-systems-engineering-before-algorithms/) - using brute force to search huge amounts of data
+* [CLP](https://github.com/y-scope/clp) - another log search tool using a novel IR based encoding that allows fast search on encoded/compressed logs.  Based on [this paper](https://www.usenix.org/system/files/osdi21-rodrigues.pdf).  Uses a dictionary of common patterns.
 * [pq](https://github.com/iximiuz/pq) - Parse and Query log files as time series, extracting structured records out of common log files
 * [MinSQL](https://github.com/minio/minsql/blob/master/README.md) - interesting POC on lightweight SQL based log search, w automatic field parsing etc.
 
