@@ -88,6 +88,7 @@
 ### AI and Agentic Databases
 
 * [BrainStore: Architecture for AI Observability](https://www.braintrust.dev/blog/brainstore-architecture) - neat post on what makes AI observability hard and why a new type of database is needed
+* [SmithDB](https://www.langchain.com/blog/introducing-smithdb) - from Langchain, the AI Observability database, using DataFusion, Vortex, and Rust!
 
 ## Data Processing Systems
 
@@ -104,6 +105,7 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
 * [Aurora DSQL Architecture](https://brooker.co.za/blog/2024/12/04/inside-dsql.html) - really good look at Amazon's architecture to scale out compute, read and write throughput, and storage independently for an ACID OLTP database.  They push simple compute out to edges!
 * [Decoupled by Design: Billion-Scale Vector Search](https://www.databricks.com/blog/decoupled-design-billion-scale-vector-search) - a brilliant look at DataBricks' decoupled storage-compute vector search, using IVF rather than HNSW indexing.
+* [FluxSieve](https://www.semanticscholar.org/reader/bf99d4237be36998c2cf30fbd45a92e2f3153e15) - combining traditional pull-based query DBMSes with stateless stream processing.  Like streaming materialized views with "multi-pattern matching" using Hyperscan
 
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 - [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
@@ -250,6 +252,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
     - [Java implementation](https://github.com/rohansuri/adaptive-radix-tree/blob/master/README.md)
     - [Rust congee](https://crates.io/crates/congee) - Concurrent ART based on Optimistic Lock Coupling
 * [HAT-Trie](https://tessil.github.io//2017/06/22/hat-trie.html) - a cache concious trie
+* [Masstree](https://pdos.csail.mit.edu/papers/masstree:eurosys12.pdf) - using an in-memory trie of B+Trees with key prefix sharing for fast SMP key-value performance
 * [Arena-friendly Hash Trie](https://nullprogram.com/blog/2023/09/30/) - hash map design for arenas: easy to implement, good for arenas (based on tries, no need for resizing)
 * [PH-Tree](https://github.com/tzaeschke/phtree/raw/master/PH-Tree-v1.1-2014-06-28.pdf) - A (spatial?) Patricia-trie combined with Hypercubes for multidimensional indexing and efficient data storage
 * [Prolly Trees](https://docs.dolthub.com/architecture/storage-engine/prolly-tree) - "Probabilistic B-Tree" with fast diffs and structural sharing.  Good for versioning and immutable maps where minimizing space across versions is important.
@@ -448,7 +451,7 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [FluentBit](https://fluentbit.io) - CNCF standard for observability data connector/processor/forwarder
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
 * [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
-* [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage format for fast analytics on semi-structured data.  Columnar optimization techniques.
+* [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage strategy for fast analytics on semi-structured data, basically by promoting JSON fields to their own columns
 * [Zion](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
 
 Scalyr has a bunch of cool blog posts about how they do fast log/event searching:
@@ -470,8 +473,8 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 * [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
 
 * [FastLanes File Format](https://github.com/cwida/FastLanes/blob/dev/docs/specification.pdf) - excellent new columnar file format, SIMD/GPU friendly, combines cascading LightWeight Compression, Multi-Column Compression, and a novel operator-based "expression encoding" scheme
-* [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel columnar format, a Parquet competitor, which uses some new encoding techniques including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD
-* [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
+* [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel set of cascadable or "stackable" columnar encoding techniques, including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD. However, the fastest techniques are for numeric data, not strings.
+* [Vortex](https://docs.vortex.dev) - next generation file format, the best implementation of BtrBlocks above available.  Extremely flexible and pluggable architecture, like DataFusion.  Has kernels to filter and read encoded data without decoding entire arrays to Arrow.
 * [F3](https://dl.acm.org/doi/pdf/10.1145/3749163) - a new "forwards compatible" columnar format from Andy Pavlo et al, featuring WASM decoders and improvements over Parquet for row grouping and deeply nested layout
 * [VelocyPack](https://github.com/arangodb/velocypack#readme) - compact and fast JSON storage and serialization, used in [ArangoDB](https://www.arangodb.com)
 * [Amazon Ion](https://amzn.github.io/ion-docs/guides/why.html#read-optimized-binary-format) - really interesting MsgPack/CBOR like serialization format from Amazon.  Binary format supposed to be very compact even uncompressed, half the size of JSON, and is designed to be read-optimized with provisions for rapidly skipping to the field one wants. Also has "symbol table" support.

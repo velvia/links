@@ -14,6 +14,7 @@
 - [Rust Concurrency](#rust-concurrency)
   - [Shared Data Across Multiple Threads](#shared-data-across-multiple-threads)
 - [Data Processing and Data Structures](#data-processing-and-data-structures)
+  - [Distributed Systems](#distributed-systems)
   - [ML/AI](#mlai)
   - [JSON Processing](#json-processing)
   - [Cool Data Structures](#cool-data-structures)
@@ -25,6 +26,7 @@
   - [Rust-OtherLanguage Integration / Rust FFI](#rust-otherlanguage-integration--rust-ffi)
 - [CLI and Misc](#cli-and-misc)
 - [IDE/Editor/Tooling](#ideeditortooling)
+  - [Debugging](#debugging)
 - [Testing and CI/CD](#testing-and-cicd)
   - [Cross-compilation](#cross-compilation)
 - [Performance and Low-Level Stuff](#performance-and-low-level-stuff)
@@ -265,6 +267,8 @@ Languages etc.
 
 ## Rust Concurrency
 
+For debugging concurrency see the Tooling section.
+
 * [Rust Concurrency: Five Easy Pieces](https://medium.com/@polyglot_factotum/rust-concurrency-five-easy-pieces-871f1c62906a) - a great intro to threads, using message queues, determinism, and more
 * [A practical guide to Async in Rust](https://blog.logrocket.com/a-practical-guide-to-async-in-rust/)
 * [Benefits of Async/Await](https://docs.rs/dtolnay/0.0.3/dtolnay/macro._01__await_a_minute.html)
@@ -330,6 +334,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [Similari](https://crates.io/crates/similari) - similarity search/computation engine for ML in Rust
 * [GreptimeDB](https://github.com/GreptimeTeam/greptimedb) - Rust based unified observability database
 
+* [SmithDB](https://www.langchain.com/blog/introducing-smithdb) - from Langchain, the AI Observability database, using DataFusion, Vortex, and Rust!
 * [Toshi](https://github.com/toshi-search/Toshi) - ElasticSearch written in Rust using [Tantivy](https://github.com/tantivy-search/tantivy) as the engine
 * [MeiliDB](https://github.com/meilisearch/MeiliDB/blob/master/README.md) - fast full-text search engine
 * [Quickwit](https://github.com/quickwit-oss/quickwit) - Log search DB, like Elastic but built on top of Tantivy
@@ -341,7 +346,6 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
   * [Marble](https://github.com/komora-io/marble) - Sled's next gen disk-based object store with GC, basis for database storage
   * [Komora](https://github.com/komora-io) - other related small crates for building databases
 * [SlateDB](https://github.com/slatedb/slatedb) - embedded LSM object storage engine plus caching layer.  Seems pretty promising.
-* [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 * [Skytable](https://github.com/skytable/skytable) - Rust "realtime NoSQL" key-value database
 * [IOx](https://github.com/influxdata/influxdb_iox) - New in-memory columnar InfluxDB engine using Arrow, DataFusion, rust!  Persists using parquet.  Super awesome stuff.
 * [IndraDB](https://github.com/indradb/indradb) - Graph database/library written in Rust! and inspired by Facebook's TAO.
@@ -349,6 +353,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
 * [BonsaiDB](https://bonsaidb.io) - NoSQL document store written in Rust with Rust schemas
 
 * [Vortex](https://docs.vortex.dev) - next generation file format, supports random access to columnar compressed data, zero-copy on read, many of the same concepts I pioneered in compressed-vec
+* [Lance](https://crates.io/crates/lance-datagen) - "Modern columnar data format for ML"
 * [F3](https://github.com/future-file-format/F3) - An extensible "better Parquet" with WASM decoders. From Andy Pavlo.
 
 * [Vector](https://github.com/vectordotdev/vector) - high performance observability data pipeline, for transforming, aggregating, routing logs, metrics, traces, etc.
@@ -546,9 +551,6 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
 * [cargo-readme](https://github.com/webern/cargo-readme) - tool to generate a README based on the RustDoc in lib.rs, to avoid duplicated effort!
 * [roxygen](https://github.com/geo-ant/roxygen) - documenting Rust function parameters!
-* [mutagen](https://github.com/llogiq/mutagen) - mutation testing tool for Rust programs.  Generates "mutations" in your code to try to break test coverage!
-* [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
-  - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
 * [cargo_hakari](https://docs.rs/cargo-hakari/0.9.4/cargo_hakari/about/index.html) - A crate to speed up builds of workspace-hack packages ... for when you have multiple crates or complex builds, and you have duplicate dependencies
 * [inkwell](https://github.com/TheDan64/inkwell) - LLVM API, including LLVM IR generation and running LLVM JIT to run snippets in your code
 
@@ -566,6 +568,12 @@ BTW for Rust 1.51+ you can speed up MacOS builds with this in your Cargo.toml (s
 split-debuginfo = "unpacked"
 ```
 
+### Debugging
+* [dial9](https://tokio.rs/blog/2026-03-18-dial9) - A "flight recorder" for Tokio, much like JVisualVM for the JVM - super useful to see delays or to debug concurrency issues - like unexpected OS thread scheduling problems, etc.
+* [tokio-console](https://github.com/tokio-rs/console) - remote async debugging facility!
+* [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
+  - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
+
 ## Testing and CI/CD
 
 The two standard property testing crates are [Quickcheck](https://crates.io/crates/quickcheck) and [proptest](https://github.com/AltSysrq/proptest).  Personally I prefer proptest due to much better control over input generation (without having to define your own type class).
@@ -573,6 +581,7 @@ The two standard property testing crates are [Quickcheck](https://crates.io/crat
 * [hegel-rust](https://github.com/hegeldev/hegel-rust) - another property testing crate
 * [Rust Continuous Delivery](https://kflansburg.com/posts/rust-continuous-delivery/) - hints on using Docker, caching deps, and automated cloud-based CI/CD workflows for Rust
 * [Cargo-nextest](https://nexte.st/index.html) looks like a really good project to help with test organization, test CI, running tests faster, etc.
+* [mutagen](https://github.com/llogiq/mutagen) - mutation testing tool for Rust programs.  Generates "mutations" in your code to try to break test coverage!
 * [rstest](https://crates.io/crates/rstest) - Fixture based test framework.  Think of being able to inject arguments into a test function.  Setup and teardown can be built into fixtures.
 * [Faster Build Times on MacOS](https://dsincl12.medium.com/speed-up-your-rust-compiler-macos-d9fbe0f32dbc)
 * [5x Faster Rust Docker Builds with cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) - you need this for faster Rust app deploys!
@@ -669,6 +678,9 @@ they are used in collections.  Here are some "better dyn Any" alternatives:
 ### Perf profiling:
 
 Note: this section is mostly about profiling tools -- detailed breakdowns of bottlenecks, as opposed to benchmarking (which is repeatable, systematic measurement).  The two benchmarking tools I recommend are [criterion](https://github.com/bheisler/criterion.rs) and [Iai](https://github.com/bheisler/iai) for benchmarking.
+
+If I/O and multi-threaded/concurrent profiling with Tokio is what you are after, strongly consider [dial9](https://tokio.rs/blog/2026-03-18-dial9).
+
 
 NEW: I've created a Docker image for [Linux perf profiling](https://github.com/velvia/rust-perf-docker), super easy to use.  The best combo is cargo flamegraph followed by perf and asm analysis.
 
