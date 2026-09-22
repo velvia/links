@@ -10,6 +10,7 @@
     - [DataLakes, Data Warehouses, Lakehouses](#datalakes-data-warehouses-lakehouses)
   - [Graph Processing and storage](#graph-processing-and-storage)
   - [Distributed Systems General](#distributed-systems-general)
+    - [Database and Cloud Engineering](#database-and-cloud-engineering)
     - [BlockChain Systems](#blockchain-systems)
     - [Cryptography](#cryptography)
   - [Cloud, Kubernetes, Deployment](#cloud-kubernetes-deployment)
@@ -18,6 +19,7 @@
     - [String Processing](#string-processing)
   - [OLAP, Aggregation](#olap-aggregation)
   - [ML AI and Data Science](#ml-ai-and-data-science)
+    - [AI Tooling](#ai-tooling)
     - [Graph ML](#graph-ml)
     - [Time Series ML](#time-series-ml)
     - [Pattern Matching](#pattern-matching)
@@ -101,12 +103,14 @@ A good [Map of incremental and streaming systems](https://scattered-thoughts.net
   * related [DBSP](https://www.vldb.org/pvldb/vol16/p1601-budiu.pdf) paper also by Frank McSherry.  Precisely defines Incremental View Maintenance (IVM) and a streaming language DBSP for computing IVMs
   * [Pathway](https://toptracing.com/post/cm5awn7q8001l6qz8wdgqom1p/pathway-a-python-etl-framework-for-stream-processing-real-time-analytics-llm-pipelines-and-rag) - Python ETL framework for stream and batch based on differential dataflow
 * [Arroyo](https://github.com/ArroyoSystems/arroyo) - Rust distributed stream processing engine, does codegen, using WASM.
+* [Streamling](https://www.streamling.dev) - DataFusion mini-batch streaming system
 * [Portals](https://people.kth.se/~jspenger/pdfs/spenger2022portals.pdf) - Dataflow Streaming for Stateful Serverless, using some actor concepts
 * [How Rockset Separates Compute and Storage](https://rockset.com/blog/separate-compute-storage-rocksdb/) - techniques Rockset uses to achieve tight latencies even when compute and storage are separated
 * [Aurora DSQL Architecture](https://brooker.co.za/blog/2024/12/04/inside-dsql.html) - really good look at Amazon's architecture to scale out compute, read and write throughput, and storage independently for an ACID OLTP database.  They push simple compute out to edges!
 * [Decoupled by Design: Billion-Scale Vector Search](https://www.databricks.com/blog/decoupled-design-billion-scale-vector-search) - a brilliant look at DataBricks' decoupled storage-compute vector search, using IVF rather than HNSW indexing.
 * [FluxSieve](https://www.semanticscholar.org/reader/bf99d4237be36998c2cf30fbd45a92e2f3153e15) - combining traditional pull-based query DBMSes with stateless stream processing.  Like streaming materialized views with "multi-pattern matching" using Hyperscan
 
+* [Meta's AI Storage Blueprint](https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale/) - how to adapt blob storage to the ultra low latency demands of AI computing
 * [Improving the Presto Planner](https://prestodb.io/blog/2019/12/23/improve-presto-planner) - aggregation pushdowns in Presto, enabling better usage of DB sources that can handle aggregation
 - [Lotus](https://github.com/guestrin-lab/lotus) - LLM powered structured and unstructured query engine
 
@@ -186,6 +190,10 @@ Some good intro resources:
   - Not strictly about distributed systems, but related (hint: CRDTs are foundational)s: [Local-First Software Development](https://www.inkandswitch.com/local-first/)
 * [Five-Minute Rule for the Cloud: Caching in Analytics Systems](http://andrew.nerdnetworks.org/other/CIDR_2025_Cloud_5_Minute_Rule.pdf) - summary of cost model for cloud object store based analytics and
   at what point it is "worth it" to cache
+
+### Database and Cloud Engineering
+
+* [BtrLog](https://arxiv.org/pdf/2606.27051) - low-latency cloud storage based WAL system, basically a set of WAL-specific nodes that writes to the cloud.  Kind of like Kafka but much lower latency?
 
 ### BlockChain Systems
 
@@ -309,6 +317,10 @@ Interesting data structures from the blockchain world:
 * [Ontologies, Context Graphs, Semantic Layers: AI needs in 2026](https://metadataweekly.substack.com/p/ontologies-context-graphs-and-semantic) - an argument that ontologies and context graphs are needed for AI to really be able to reason deeply, to discover the why's and not just compute what's
 * [The Coming Technological Singularity: How to Survive in the Post-Human Era](https://ntrs.nasa.gov/citations/19940022856) - seminal paper by NASA scientists on the coming of super-human intelligent systems
 * [The TESCREAL Bundle: Eugenics and the Promise of Utopia](https://firstmonday.org/ojs/index.php/fm/article/view/13636/11599) - dire warning from esteemed AI researchers Timnit Gebru about the search for AGi.  Is it ethical?  Should it even be pursued?  What about documented harms, marginalizing people groups, plagiarism, racism, and many other problems?  IMPORTANT read.
+
+### AI Tooling
+
+* [OpenCode](https://opencode.ai) - desktop/CLI based coding agent, connects to many models, including open source ones; has LSP support and IDE integration
 
 ### Graph ML
 
@@ -471,6 +483,7 @@ Scalyr has a bunch of cool blog posts about how they do fast log/event searching
 
 * [TurboTranspose](https://github.com/powturbo/Turbo-Transpose) - Transpose: SIMD Integer+Floating Point Compression Filter.  With lots of links to floating point compression algorithms.
 * [zfp](https://computing.llnl.gov/projects/zfp) - compressed floating-point / integer arrays that allow random access?
+* [ts_zip](https://bellard.org/ts_zip/) - an LLM/GPU based text compression algorithm.  Better compression than standard but MUCH slower.
 
 * [FastLanes File Format](https://github.com/cwida/FastLanes/blob/dev/docs/specification.pdf) - excellent new columnar file format, SIMD/GPU friendly, combines cascading LightWeight Compression, Multi-Column Compression, and a novel operator-based "expression encoding" scheme
 * [BtrBlocks](https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf) - a novel set of cascadable or "stackable" columnar encoding techniques, including frequency and "FSST" and a novel floating point encoding - to achieve much better scan throughput than Parquet without using standard compression like ZSTD. However, the fastest techniques are for numeric data, not strings.

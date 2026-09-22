@@ -317,6 +317,7 @@ There is a neat crate [hybrid-rc](https://crates.io/crates/hybrid-rc) which give
   - NOTE: there is now a Ballista project that is basically like Spark - distributed Data Fusion.
   - DataFusion has integrations with many other projects. [Ducklake-Datafusion](https://github.com/hotdata-dev/datafusion-ducklake) is an example of integrating with DuckDB's DuckLake data lake catalog.
   - Check out [datafusion_functions_nested](https://crates.io/crates/datafusion-functions-nested) for extra DataFusion functions/UDFs for working with nested structures like MapColumns
+* [Streamling](https://www.streamling.dev) - DataFusion mini-batch streaming system
 * [Amadeus](https://github.com/constellation-rs/amadeus) - distributed streams / Parquet / big data processing
 * [DataBend](https://github.com/databendlabs/databend) - open source cloud/on-prem data warehouse written in Rust
 * [Fluvio](https://www.fluvio.io/docs/) - distributed, persistent queuing / stream processing framework using WASM for programmability, written in Rust!
@@ -551,6 +552,7 @@ B. How expensive is it to clone the heap-based version when the string doesn't  
 * [cargo-limit](https://github.com/alopatindev/cargo-limit) - clean up, sort and limit error/warning output.  Great for those of us running cargo in shells!
 * [cargo-readme](https://github.com/webern/cargo-readme) - tool to generate a README based on the RustDoc in lib.rs, to avoid duplicated effort!
 * [roxygen](https://github.com/geo-ant/roxygen) - documenting Rust function parameters!
+* [mr-boxington](https://github.com/jdx/mr-boxington) - A Cargo build cache to reuse cargo builds across worktrees and save disk cache space
 * [cargo_hakari](https://docs.rs/cargo-hakari/0.9.4/cargo_hakari/about/index.html) - A crate to speed up builds of workspace-hack packages ... for when you have multiple crates or complex builds, and you have duplicate dependencies
 * [inkwell](https://github.com/TheDan64/inkwell) - LLVM API, including LLVM IR generation and running LLVM JIT to run snippets in your code
 
@@ -567,6 +569,10 @@ BTW for Rust 1.51+ you can speed up MacOS builds with this in your Cargo.toml (s
 [profile.dev]
 split-debuginfo = "unpacked"
 ```
+
+### Agents and LLM Coding
+
+* [Ponytail](https://github.com/DietrichGebert/ponytail) - skill to minimize AI bloat
 
 ### Debugging
 * [dial9](https://tokio.rs/blog/2026-03-18-dial9) - A "flight recorder" for Tokio, much like JVisualVM for the JVM - super useful to see delays or to debug concurrency issues - like unexpected OS thread scheduling problems, etc.
@@ -621,6 +627,7 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [High Performance Rust](https://www.packtpub.com/application-development/rust-high-performance) - a book
 * [Wild Performance Tricks](https://davidlattimore.github.io/posts/2025/09/02/rustforge-wild-performance-tricks.html) - Rust linker perf tricks, including parallel Vec initialization and drop tricks
 * [Hard Mode Rust](https://matklad.github.io/2022/10/06/hard-mode-rust.html) - writing a ray-tracer with pre-allocated chunk of memory.  Really neat, may be useful.
+* [fast-telemetry](https://github.com/eden-dev-inc/fast-telemetry) - super optimized thread local Prometheus-compatible stats gathering
 * [Optimizing String Processing in Rust](http://lise-henry.github.io/articles/optimising_strings.html) - really useful stuff
 * [Allocating Unused Memory, malloc and mmap](https://quickwit.io/blog/performance-investigation) - how tuning `M_MMAP_THRESHOLD` and `M_TRIM_THRESHOLD` are important for Linux glibc and reducing mmap calls
 * [Achieving warp speed with Rust](http://troubles.md/posts/rust-optimization/#keep-as-much-as-possible-in-registers) - great tips on performance optimization
@@ -698,6 +705,7 @@ echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid
 ```
 
 * [samply](https://github.com/mstange/samply) - used to be called perfrecord, Rust CPU CLI command profiler using Firefox as UI.  Quite good, but you need Firefox or Chrome as your browser, and unlike flamegraph, does not need xctrace / Instruments.
+* [hotpath-rs](https://hotpath.rs/blog/rust-performance-profiling) - A new profiler which combines CPU, Async and memory profiling, but requires you to instrument every method.  Pretty interesting blog post too.
 * [cargo-flamegraph](https://github.com/ferrous-systems/cargo-flamegraph) -- good and easy but on newer versions you now need Xctrace/Xcode fully installed.  To make it work with bench and Criterion:
     - If you haven't already, `cargo install flamegraph` (recommend at least v0.1.13)
     - `cargo flamegraph --bench my_benchmark -- --bench <benchmark_filter> --profile-time 200`
