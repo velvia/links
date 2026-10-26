@@ -40,6 +40,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+[TigerStyle.dev](https://tigerstyle.dev) are amazing engineering principles to live by for high performance work.
+
 # Data Engineering, Databases, Data Structures, ML/DS
 
 ## Indexing, Pagecache, Storage Engines
@@ -50,10 +52,12 @@
 * [WiscKey](https://www.usenix.org/system/files/conference/fast16/fast16-papers-lu.pdf) - Splitting key and value storage for better efficiency/perf
 * [Eyros](https://github.com/peermaps/eyros) - multi-dimensional interval database
 * [Column Sketches](https://stratos.seas.harvard.edu/files/stratos/files/sketches.pdf) - using histogram and approximate/lossy encodings for really fast indexing/scanning.  Neat.  Does not require data clustering.
+* [SlateDB](https://slatedb.io) - embedded key-value LSM store, object storage based
 
 * [The Case for Learned Index Structure](https://ai.google/research/pubs/pub46518) - interesting paper from Google on using DL/ML/AI to create more efficient indexes
 * [ALEX](https://dl.acm.org/doi/abs/10.1145/3318464.3389711) - an updatable learned index structure
 * [PGM-index](https://pgm.di.unipi.it) - "Piecewise Geometric Model", a learned index, really neat.  However only for small keys, not strings
+  - [Rust implementation](https://github.com/gilnett/learned_index_lab)
 * [usort](https://github.com/sisudata/coloring/tree/master/usort) - fast radix/bucket sorting for integers, O(n) compared to quicksort-based O(n log n)
 * [FM-Index](https://en.wikipedia.org/wiki/FM-index), a neat structure that allows for fast exact string indexing and counting while compressing original string data at the same time.  There is a Rust [crate](https://crates.io/crates/fm-index)
 * [Pilosa](https://www.pilosa.com/docs/latest/data-model/) - A matrix bitmap index that can quickly answer queries about relationships between two dimensions, or billions of objects with millions of attributes.  “What attributes are the most common?”, “Which objects have these specific attributes?”, “What groups of attributes often appear together?”
@@ -73,6 +77,7 @@
 * [Doris](https://doris.apache.org) - a Clickhouse competitor for fast, MPP/SIMD columnar OLAP aggregations, but based on open data storage projects like Hudi and Iceberg
 * [Haystack](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf) - Facebook's photo storage object sytem, storing metadata in memory to avoid the infamous metadata bottleneck
 * [Monarch](https://research.google/pubs/monarch-googles-planet-scale-in-memory-time-series-database/) - Google's planet-scale availability-first telemetry system
+* [SlateDB](https://slatedb.io) - embedded key-value LSM store, object storage based
 
 * [PostGraphile](https://github.com/graphile/postgraphile) - GraphQL on PostGres
 * [CitusData](https://github.com/citusdata/citus) - Postgres extension for distributed tables and columnar storage!
@@ -195,6 +200,8 @@ Some good intro resources:
 
 * [BtrLog](https://arxiv.org/pdf/2606.27051) - low-latency cloud storage based WAL system, basically a set of WAL-specific nodes that writes to the cloud.  Kind of like Kafka but much lower latency?
 
+* [Antithesis's Deterministic Hypervisor](https://antithesis.com/blog/deterministic_hypervisor/) - one of the coolest hard core hypervisor tech's.  An entire deterministic simulator posing as a hypervisor so you can test your distributed systems and concurrent data apps and find all kinds of faults deterministically.  Pretty amazing.
+
 ### BlockChain Systems
 
 Starting material:
@@ -267,6 +274,7 @@ If you're on Azure, check out [Kubelogin](https://github.com/Azure/kubelogin) - 
 * [Optimistic Lock Coupling](http://sites.computer.org/debull/A19mar/p73.pdf) - scalable and efficient general-purpose synchronization by using a version counter and checking after reads
 
 * [Counting Quotient Filters](https://blog.acolyer.org/2017/08/08/a-general-purpose-counting-filter-making-every-bit-count/) - much faster at updating and search than Bloom filters, and can count too!  An [implementation in C](https://github.com/vedantk/quotient-filter) exists.
+* [Binary Fuse Filters](https://arxiv.org/abs/2201.01174) - supposed to be much smaller than Bloom filters and even smaller than XOR filters without sacrificing query speed.  Also see constmap and rsconstmap implementations.
 * [Moment-based Quantile Sketches](http://www.bailis.org/papers/moments-vldb2018.pdf) - a paper out of Stanford offering highly efficient alternative to T-Digests for quantile sketches.  Also [repo](https://github.com/stanford-futuredata/momentsketch)
 * [DDSketch](https://blog.acolyer.org/2019/09/06/ddsketch/) - "a fast and fully-mergeable quantile sketch with relative-error guarantees"
     - Our research shows DDSketch may use many more buckets than TDigest, but merges much much faster and provides stricter error guarantees.  Memory diff might not be that big in reality as TDigest needs a tree structure.
@@ -293,6 +301,8 @@ Interesting data structures from the blockchain world:
 * [Nanocubes](http://getprismatic.com/story/1413038758684?share=MzAxNDE.MTQxMzAzODc1ODY4NA.QfCHBvwG6MuLbubytTgXqm0gn4w) - Fast visualization of large spatiotemporal datasets.  Amazing stuff.  [Paper](http://nanocubes.net/assets/pdf/nanocubes_paper.pdf) and [Github repo](https://github.com/laurolins/nanocube).
 * [Quotient Cubes](http://www.vldb.org/conf/2002/S22P02.pdf) - semantic grouping and rollup algorithm for OLAP cubes.  [Ruby implementation](https://github.com/besquared/quotient-cube).
 * [Top K queries and cubes](http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb06_rankcube.pdf)
+
+* [QuickSelect](https://en.wikipedia.org/wiki/Quickselect) - quicksort like algorithm to find nth smallest item in unsorted list
 
 ## ML AI and Data Science
 
@@ -462,7 +472,9 @@ Note that one of the intersections of ML, unstructured data, and nearest neighbo
 * [Apache Skywalking](https://skywalking.apache.org) - APM for distributed systems
 * [FluentBit](https://fluentbit.io) - CNCF standard for observability data connector/processor/forwarder
 * [BTrDB] - Berkeley Tree DataBase, "a next-gen timeseries database for dense, streaming telemetry", claims more than 10 million inserted values/sec/node
+* [Tracegrams](https://github.com/imorph/tracegrams) - from Azul Systems, a hybrid much lighter than full traces, but more informative than histograms, to explain WHERE tail latency is occurring.
 * [Correlating Signals Efficiently in Modern Observability](https://www.bwplotka.dev/2021/correlations-exemplars/) - great article on how to correlate traces, logs, with metrics, using exemplars
+
 * [JSON Tiles](https://db.in.tum.de//~durner/papers/json-tiles-sigmod21.pdf) - storage strategy for fast analytics on semi-structured data, basically by promoting JSON fields to their own columns
 * [Zion](https://sneller.ai/blog/zion-format/) - Sneller's format for JSON like data: hash JSON fields into 16 ion "buckets" and separately zstd-compress them.  Pretty brilliant.
 

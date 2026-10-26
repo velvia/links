@@ -398,6 +398,7 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 
 ### Cool Data Structures
 
+* [Rust Learned Index](https://github.com/gilnett/learned_index_lab) - Rust version of Piecewise Geometric Model (PGM) index - using linear equations instead of B-Trees to index data!
 * [bf-tree](https://github.com/microsoft/bf-tree) - innovative new "read-write optimized concurrent larger-than-memory range index".  2.5x faster than RocksDB for scan, 6x faster for writes, 2x faster for point lookups.  The [paper](https://badrish.net/papers/bftree-vldb2024.pdf) is also pretty good.
 * [masstree](https://github.com/consistent-milk12/masstree) - high performance concurrent ordered map, based on the Masstree paper
 * [leapfrog](https://github.com/robclu/leapfrog) - fast, concurrent `HashMap`, lock-free if types support atomic ops.
@@ -413,12 +414,15 @@ For JSON DOM (IR) processing, using the mimalloc allocator provided me a 2x spee
 * [chute](https://crates.io/crates/chute) - lock-free MPMC/SPMC broadcast queue
 * [rust-phf](https://github.com/rust-phf/rust-phf) - generate efficient lookup tables at compile time using perfect hash functions!
 * [entropy-map](https://crates.io/crates/entropy-map) - "ultra-low-latency" hashmap using minimal perfect hash functions and compact encoding of values.  Might be useful in databases and data processing.  Does not need to know keys at compile time!
+* [constmap](https://github.com/lemire/rsconstmap) - Daniel Lemire's static string -> u64 map based on Binary Fuse Filters paper
+* [hashify](https://github.com/stalwartlabs/hashify) - another really fast but compile-time PHF based hashmap, supposed to be several times faster than phf crate
 * [odht](https://crates.io/crates/odht) - "hash table that can be mapped from disk into memory without need for up-front decoding" - deterministic binary representation, and platform and endianness independent.  Sounds sweet!
 * [orx-split-vec](https://crates.io/crates/orx-split-vec) - vector with dynamic capacity and pinned elements using chunks (ie pointers/refs are stable)
 * [radix-trie](https://crates.io/crates/radix_trie)
 * [Patricia Tree](https://crates.io/crates/patricia_tree) - Radix-tree based map for more compact storage
 * [probabilistic-collections](https://crates.io/crates/probabilistic-collections) - Bloom/Cuckoo/Quotient filters, CountMinSketch, HyperLogLog, streaming approx set membership, etc.
 * [priq](https://github.com/bexxmodd/priq) - "blazing fast" priority queue built using arrays
+* [SimdQuickHeap](https://github.com/RagnarGrootKoerkamp/quickheap) - SIMD heap, splits by pivots so insertions are super fast. From p99 conf.
 * Using [Finite State Automata and Rust](https://blog.burntsushi.net/transducers/) to quickly index and find data amongst HUGE amount of strings
 * [ahash](https://crates.io/crates/ahash) - this seems to be the fastest hash algo for hash keys
 * [Metrohash](https://crates.io/crates/metrohash) - a really fast hash algorithm
@@ -577,8 +581,11 @@ split-debuginfo = "unpacked"
 ### Debugging
 * [dial9](https://tokio.rs/blog/2026-03-18-dial9) - A "flight recorder" for Tokio, much like JVisualVM for the JVM - super useful to see delays or to debug concurrency issues - like unexpected OS thread scheduling problems, etc.
 * [tokio-console](https://github.com/tokio-rs/console) - remote async debugging facility!
+* [tokio-dtrace](https://github.com/oxidecomputer/tokio-dtrace) - capture Tokio tasks and thread usage.  DTrace = usable on Mac, but needs superuser.  Can hook onto running processes.
 * [cargo-rr](https://github.com/danielzfranklin/cargo-rr) - time travel/recording/reverse debugger framework for Rust using rr
   - For more explanation see [Print debugging should go away](https://robert.ocallahan.org/2021/04/print-debugging-should-go-away.html)
+
+* [Tracegrams](https://github.com/imorph/tracegrams) - from Azul Systems, a hybrid much lighter than full traces, but more informative than histograms, to explain WHERE tail latency is occurring.
 
 ## Testing and CI/CD
 
@@ -636,11 +643,12 @@ Also see [Learn Rust the Dangerous Way](https://cliffle.com/p/dangerust/) which 
 * [Rust to Assembly](https://www.eventhelix.com/rust/) - great series of blog posts detailing how various parts of Rust compile down to assembly
 * [Fast Thread Locals in Rust](https://matklad.github.io/2020/10/03/fast-thread-locals-in-rust.html)
   - BTW, a super efficient thread local crate is [scoped-tls](https://docs.rs/scoped-tls/latest/scoped_tls/) - basically just storing a mutable pointer.  If it fits your use case, it's awesome!
-* []
 * [Modern storage is plenty fast](https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a) - using a new Rust crate called [glommio](https://crates.io/crates/glommio) one can achieve multi-GB per sec read throughputs from modern SSDs.  So maybe we don't need memory after all.
   - Along the same lines, not Rust-specific but [ScyllaDB and I/O Access Methods](https://www.scylladb.com/2017/10/05/io-access-methods-scylla/) - discussions of mmap vs AIO/DIO vs standard Linux I/O
   - [Direct I/O Writes](https://itnext.io/direct-i-o-writes-the-best-way-to-improve-your-credit-score-bd6c19cdfe46) - why doing direct I/O writes may end up better than buffered
 * [Neon IO Stack: Rust+tokio+io_uring O_DIRECT](https://www.p99conf.io/session/reworking-the-neon-io-stack-rusttokioio_uringo_direct/)
+
+Not Rust, but [TigerStyle.dev](https://tigerstyle.dev) are amazing engineering principles to live by for high performance work.
 
 * [Representations](https://doc.rust-lang.org/reference/type-layout.html#representations) - super important to understand low-level memory layouts for structs.  C vs packed vs ....  including alignment issues.
 * Precise memory layouts and [how to dump out Rust struct memory layouts](https://stackoverflow.com/questions/26271151/precise-memory-layout-control-in-rust)
